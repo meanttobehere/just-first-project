@@ -1,0 +1,8 @@
+include ../navbar/navbar
+
+mixin header(isLoggedIn)  
+  div.header
+    div.header__logotype-container
+      img(src="public/images/logotype.svg") 
+    +navbar(isLoggedIn)
+    

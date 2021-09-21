@@ -1,0 +1,13 @@
+@import '../navbar/navbar.scss';
+
+.header{
+    max-width: 1440px;
+    width: 1440px;
+    height: 70px;
+    padding-left: 140px;
+    padding-right: 140px;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,6 +1,7 @@
 include ../../components/button/button
 include ../../components/navbar/__item/navbar__item
 include ../../components/navbar/navbar
+include ../../components/header/header
 
 doctype html
 html 
@@ -16,4 +17,7 @@ html
         +button('И еще одна', true)
         +navbar__item('Новости', true)
         +navbar()
+        +navbar(true)
+        +header()
+        +header(true)
 
