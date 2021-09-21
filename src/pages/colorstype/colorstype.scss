@@ -37,7 +37,7 @@ html, body{
     border: 1px black solid; 
     margin-top: 67px;   
     display: inline-grid;
-    grid-template-columns: [line1] 145px [line2] 733px [line3] 30px [line4] auto [line5];
+    grid-template-columns: [line1] 145px [line2] 701px [line3] auto [line4];
     justify-items: start;
     align-items: start;  
 }
@@ -117,5 +117,49 @@ html, body{
     
     &__secondline{
         font-weight: 400;
+    }
+}
+
+.font{
+    font-family: 'Montserrat', Arial, sans-serif;        
+    font-style: normal;
+    font-weight: 400;
+
+    &_weight-bold{
+        font-weight: 700;
+    }
+
+    &_size-x{
+        font-size: 24px;
+        line-height: 29.26px;
+    }
+    &_size-l{
+        font-size: 19px;
+        line-height: 23.16px;
+    }
+    &_size-m{
+        font-size: 14px;
+        line-height: 14.63px;
+    }
+    &_size-s{
+        font-size: 12px;
+        line-height: 24px;
+    }
+}
+
+.right-column{
+    grid-column: line3 / line4;
+    max-width: 436px;
+    border: 1px black solid;
+    display: grid;    
+    grid-template-columns: auto 1fr; 
+
+    & *{
+        margin-bottom: 51px;
+    }
+
+    & :nth-child(2n-1){        
+        text-align: right;
+        margin-right: 30px;
     }
 }
