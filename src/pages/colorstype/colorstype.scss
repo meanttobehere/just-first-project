@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 $color-darkshade100: #1F2041;
 $color-darkshade75: rgba(31, 32, 65, 0.75);
@@ -33,8 +33,7 @@ html, body{
     height: 48px;
 }
 
-.content-container{
-    border: 1px black solid; 
+.content-container{     
     margin-top: 67px;   
     display: inline-grid;
     grid-template-columns: [line1] 145px [line2] 701px [line3] auto [line4];
@@ -44,7 +43,6 @@ html, body{
 
 .left-column{
     grid-column: line2 / line3;
-    border: 1px black solid;
     display: flex;
     justify-content: flex-start;
     align-content: flex-start;
@@ -121,9 +119,10 @@ html, body{
 }
 
 .font{
-    font-family: 'Montserrat', Arial, sans-serif;        
+    font-family: 'Montserrat', sans-serif;        
     font-style: normal;
     font-weight: 400;
+    color: $color-darkshade100;
 
     &_weight-bold{
         font-weight: 700;
@@ -138,28 +137,40 @@ html, body{
         line-height: 23.16px;
     }
     &_size-m{
-        font-size: 14px;
+        font-size: 12px;
         line-height: 14.63px;
+        text-transform: uppercase;
     }
     &_size-s{
-        font-size: 12px;
+        font-size: 14px;
         line-height: 24px;
+    }
+
+    &_color-75{
+        color: $color-darkshade75;
+    }
+
+    &_color-25{
+        color: $color-darkshade25;
     }
 }
 
 .right-column{
     grid-column: line3 / line4;
     max-width: 436px;
-    border: 1px black solid;
     display: grid;    
     grid-template-columns: auto 1fr; 
 
-    & *{
+    & > *{
         margin-bottom: 51px;
     }
 
-    & :nth-child(2n-1){        
+    & div:nth-child(2n-1){        
         text-align: right;
         margin-right: 30px;
+    }
+
+    & p{        
+        margin: 0;
     }
 }
