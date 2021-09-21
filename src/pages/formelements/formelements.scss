@@ -1,0 +1,27 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5E5;
+}
+
+.container{    
+    margin: 0 auto;
+    width: 1440px;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    padding: 30px;
+}
+
+.logotype-container{
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    width: 48px;
+    height: 48px;
+}
+
+.content-container{
+    
+}
+

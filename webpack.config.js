@@ -30,8 +30,8 @@ function generateHtmlPlugins() {
 
     return items.map((item, id) => {
         return new HtmlWebpackPlugin({
-            //filename: `${id}.html`,
-            filename: `main.html`,
+            filename: `${id}.html`,
+            //filename: `main.html`,
             template: item,
             inject: false,
         })
@@ -44,6 +44,7 @@ const cssPlugins = new MiniCssExtractPlugin({filename: ({ chunk }) => `${chunk.n
 module.exports = {
     entry: {
         main: path.resolve(__dirname, './src/pages/main/main.js'),
+        formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
     },
 
     output: {

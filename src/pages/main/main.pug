@@ -2,6 +2,7 @@ include ../../components/button/button
 include ../../components/navbar/__item/navbar__item
 include ../../components/navbar/navbar
 include ../../components/header/header
+include ../../components/textfield/textfield
 
 doctype html
 html 
@@ -20,4 +21,6 @@ html
         +navbar(true, 'Юлий Цезарь')
         +header(false)
         +header(true, 'Юлий Цезарь')
+        +textfield('Email')
+        +textfield('ДД.ММ.ГГГГ', true)
 

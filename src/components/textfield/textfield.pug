@@ -1,0 +1,7 @@
+mixin textfield(placehldr, isDropDown, isSubscription)
+  div.textfield
+    input.textfield__input(placeholder=placehldr)
+    if(isDropDown)
+        div.textfield__img-container
+            img(src="public/images/arrow-down.svg")
+    
