@@ -51,6 +51,26 @@ html, body{
     gap: 20px;
 }
 
+.right-column{
+    grid-column: line3 / line4;
+    max-width: 436px;
+    display: grid;    
+    grid-template-columns: auto 1fr; 
+
+    & > *{
+        margin-bottom: 51px;
+    }
+
+    & div:nth-child(2n-1){        
+        text-align: right;
+        margin-right: 30px;
+    }
+
+    & p{        
+        margin: 0;
+    }
+}
+
 .item{
     display: flex;
     gap: 40px;
@@ -96,7 +116,7 @@ html, body{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-family: 'Montserrat', Arial, sans-serif;        
+        font-family: 'Montserrat', sans-serif;        
         font-style: normal;
         font-size: 19px;
         line-height: 28px;
@@ -145,25 +165,5 @@ html, body{
 
     &_color-25{
         color: $color-darkshade25;
-    }
-}
-
-.right-column{
-    grid-column: line3 / line4;
-    max-width: 436px;
-    display: grid;    
-    grid-template-columns: auto 1fr; 
-
-    & > *{
-        margin-bottom: 51px;
-    }
-
-    & div:nth-child(2n-1){        
-        text-align: right;
-        margin-right: 30px;
-    }
-
-    & p{        
-        margin: 0;
     }
 }
