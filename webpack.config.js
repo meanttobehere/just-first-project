@@ -45,6 +45,7 @@ module.exports = {
     entry: {
         main: path.resolve(__dirname, './src/pages/main/main.js'),
         formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
+        colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
     },
 
     output: {

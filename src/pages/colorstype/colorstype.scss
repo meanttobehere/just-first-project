@@ -1,0 +1,23 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #E5E5E5;
+}
+
+.container{    
+    margin: 0 auto;
+    width: 1440px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    height: inherit;
+}
+
+.logotype-container{
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    width: 48px;
+    height: 48px;
+}

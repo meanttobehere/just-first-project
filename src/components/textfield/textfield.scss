@@ -40,3 +40,44 @@
     width: 44px;
     height: 44px;
 }
+
+
+.inputfield_type-textinput{
+
+}
+
+.inputfield_type-dropdown{
+
+}
+
+.inputfield_type-submit{
+
+}
+
+.inputfield_focused{
+
+}
+
+.inputfield{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+    height: 44px;
+    padding-left: 15px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px; 
+}
+
+.inputfield_middle-size{
+  width: 150px;
+}
+
+.inputfield_little-size{
+  width: 145px;
+}
+
+.inputfield_little-border-radius{
+  border-radius: 2px;
+}
