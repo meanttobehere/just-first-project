@@ -30,7 +30,8 @@ function generateHtmlPlugins() {
 
     return items.map((item, id) => {
         return new HtmlWebpackPlugin({
-            filename: `${id}.html`,
+            //filename: `${id}.html`,
+            filename: `main.html`,
             template: item,
             inject: false,
         })
@@ -59,7 +60,13 @@ module.exports = {
             { 
                 test: /\.s[ac]ss$/i, 
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-            }            
+            },  
+            {   test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, 
+                loader: "file-loader",
+                options: {
+                    name: '/public/images/[name].[ext]'
+                  }
+            }         
         ],
     },
 

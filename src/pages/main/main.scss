@@ -1,1 +1,11 @@
-@import '../../components/button/button.scss'
+@import '../../components/button/button.scss';
+@import '../../components/navbar/__item/navbar__item.scss';
+@import '../../components/navbar/navbar.scss';
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 50px;
+}

@@ -1,0 +1,54 @@
+@import '../text/text.scss';
+
+.button{
+    display: block;
+    width: 99px;
+    height: 44px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);    
+}
+
+.button__container{
+    height: 44px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button__text-container{
+        display: flex;        
+        align-items: center;
+        justify-content: center;        
+        width: 100%;
+        height: 43px;             
+    }
+
+    .text{
+        text-align: center;
+    }
+}
+
+.button_large{
+    width: 320px;
+}
+
+.button__container_large{
+    display: inline-grid;
+    grid-template-columns: [line1] 44px [line2] 232px [line3] 44px [line4];
+    justify-items: center;
+    align-items: center;  
+    
+    .button__text-container_large{
+        grid-column: line2 / line3;               
+    }
+
+    .button__img-container{        
+        grid-column: line3 / line4;
+        display: flex;        
+        align-items: center;
+        justify-content: center;
+        object-fit: cover;
+        width: 44px;
+        height: 43px;                      
+    }
+}

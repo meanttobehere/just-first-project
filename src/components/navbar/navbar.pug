@@ -1,0 +1,9 @@
+include ./__item/navbar__item
+
+mixin navbar()
+  div.navbar
+    +navbar__item('О Нас', false)
+    +navbar__item('Услуги', true)
+    +navbar__item('Вакансии', false)
+    +navbar__item('Новости', false)
+    +navbar__item('Соглашения', true)

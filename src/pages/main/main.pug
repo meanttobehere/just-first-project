@@ -1,4 +1,6 @@
 include ../../components/button/button
+include ../../components/navbar/__item/navbar__item
+include ../../components/navbar/navbar
 
 doctype html
 html 
@@ -6,4 +8,12 @@ html
     meta(charset="UTF-8")
     title Пример страницы
     link(rel="stylesheet" type="text/css" href="main.css")
-  body 
+  body
+    .container
+        +button('Подобрать номер')
+        +button('Подобрать номер', true)
+        +button('CLICK ME')
+        +button('И еще одна', true)
+        +navbar__item('Новости', true)
+        +navbar()
+

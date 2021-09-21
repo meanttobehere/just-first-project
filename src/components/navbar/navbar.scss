@@ -1,0 +1,8 @@
+@import './__item/navbar__item.scss';
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
