@@ -49,13 +49,6 @@ html, body{
     flex-direction: column;
     margin: 0px;
     gap: 20px;
-
-    &__item{
-        width: 70px;
-        height: 70px;
-        border-radius: 6px;
-        background: burlywood;
-    }
 }
 
 .item{
