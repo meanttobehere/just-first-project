@@ -1,7 +1,7 @@
 include ./__item/navbar__item
 include ../button/button
 
-mixin navbar(isLoggedIn)
+mixin navbar(isLoggedIn, name)
   div.navbar
     +navbar__item('О Нас', false)
     +navbar__item('Услуги', true)
@@ -9,5 +9,9 @@ mixin navbar(isLoggedIn)
     +navbar__item('Новости', false)
     +navbar__item('Соглашения', true)
     if(isLoggedIn)
+      div.navbar__stick
+      div.navbar__username
+        +text('text_label', name)
+    else 
       +button('ВОЙТИ')
       +button('ЗАРЕГИСТРИРОВАТЬСЯ', true)

@@ -1,8 +1,8 @@
 include ../navbar/navbar
 
-mixin header(isLoggedIn)  
+mixin header(isLoggedIn, name)  
   div.header
     div.header__logotype-container
       img(src="public/images/logotype.svg") 
-    +navbar(isLoggedIn)
+    +navbar(isLoggedIn, name)
     
