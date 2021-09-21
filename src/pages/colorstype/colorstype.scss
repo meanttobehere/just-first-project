@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$color-darkshade100: #1F2041;
+$color-darkshade75: rgba(31, 32, 65, 0.75);
+$color-darkshade50: rgba(31, 32, 65, 0.5);
+$color-darkshade25: rgba(31, 32, 65, 0.25);
+$color-darkshade5: rgba(31, 32, 65, 0.05);
+$color-purple: #BC9CFF;
+$color-green: #6FCF97;
+
 html, body{
     margin: 0;
     padding: 0;
@@ -9,7 +19,6 @@ html, body{
     margin: 0 auto;
     width: 1440px;
     background-color: #FFFFFF;
-    padding: 30px;
     height: inherit;
 }
 
@@ -18,6 +27,95 @@ html, body{
     align-items: center;
     justify-content: center;
     object-fit: cover;
+    position: relative;
+    padding: 30px 0 0 30px;
     width: 48px;
     height: 48px;
+}
+
+.content-container{
+    border: 1px black solid; 
+    margin-top: 67px;   
+    display: inline-grid;
+    grid-template-columns: [line1] 145px [line2] 733px [line3] 30px [line4] auto [line5];
+    justify-items: start;
+    align-items: start;  
+}
+
+.left-column{
+    grid-column: line2 / line3;
+    border: 1px black solid;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+    margin: 0px;
+    gap: 20px;
+
+    &__item{
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+        background: burlywood;
+    }
+}
+
+.item{
+    display: flex;
+    gap: 40px;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__box{
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+        background: yellow;
+
+        &_color-darkshade100{
+            background: $color-darkshade100;
+        }
+
+        &_color-darkshade75{
+            background: $color-darkshade75;
+        }
+
+        &_color-darkshade50{
+            background: $color-darkshade50;
+        }
+
+        &_color-darkshade25{
+            background: $color-darkshade25;
+        }
+
+        &_color-darkshade5{
+            background: $color-darkshade5;
+        }
+
+        &_color-green{
+            background: $color-green;
+        }
+
+        &_color-purple{
+            background: $color-purple;
+        }
+    }
+
+    &__title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'Montserrat', Arial, sans-serif;        
+        font-style: normal;
+        font-size: 19px;
+        line-height: 28px;
+    }
+
+    &__firstline{
+        font-weight: 700;
+    }
+    
+    &__secondline{
+        font-weight: 400;
+    }
 }

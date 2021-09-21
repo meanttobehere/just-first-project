@@ -1,3 +1,11 @@
+mixin item(params)
+  -var item__box_color = (params.color ? `item__box_${params.color}` : "");
+  div.item
+    div.item__box(class = item__box_color)
+    div.item__title
+      div.item__firstline=params.firstline
+      div.item__secondline=params.secondline
+
 doctype html
 html 
   head 
@@ -8,3 +16,12 @@ html
     div.container
       div.logotype-container
         img(src="public/images/uikit-logotype.svg")
+      div.content-container
+        div.left-column
+          +item({color: 'color-darkshade100', firstline: 'Dark Shade 100%', secondline: '#1F2041'})
+          +item({color: 'color-darkshade75', firstline: 'Dark Shade 75%', secondline: '#1F2041'})
+          +item({color: 'color-darkshade50', firstline: 'Dark Shade 50%', secondline: '#1F2041'})
+          +item({color: 'color-darkshade25', firstline: 'Dark Shade 25%', secondline: '#1F2041'})
+          +item({color: 'color-darkshade5', firstline: 'Dark Shade 5%', secondline: '#1F2041'})
+          +item({color: 'color-purple', firstline: 'Purple', secondline: '#BC9CFF'})
+          +item({color: 'color-green', firstline: 'Green', secondline: '#6FCF97'})
