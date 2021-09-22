@@ -1,7 +1,64 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+/*const MiniCssExtractPlugin = require("mini-css-extract-plugin")*/
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const path = require('path')
 const fs = require('fs')
+
+const htmlPlugins = generateHtmlPlugins();
+//const cssPlugins = new MiniCssExtractPlugin({filename: ({ chunk }) => `${chunk.name.replace('/js/', '/css/')}.css`,})
+
+module.exports = {    
+    entry: {
+        main: path.resolve(__dirname, './src/pages/main/main.js'),
+        formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
+        colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
+    },
+
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: '[name].bundle.js',
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                use: 'pug-loader'
+            },            
+            { 
+                test: /\.s[ac]ss$/i, 
+                use: [/*MiniCssExtractPlugin.loader,*/"style-loader", "css-loader", "sass-loader"],
+            },  
+            {   test: /\.(jpe?g|gif|png|svg|woff|ttf)$/, 
+                loader: "file-loader",
+                options: {
+                    name: '/public/images/[name].[ext]'
+                  }
+            }         
+        ],
+    },
+/*
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                style: {
+                    name: 'style',
+                    test: /style\.s?css$/,
+                    chunks: 'all',
+                    enforce: true,
+                },
+                editor: {
+                    name: 'editor',
+                    test: /editor\.s?css$/,
+                    chunks: 'all',
+                    enforce: true,
+                },
+            },
+        },
+    },
+*/
+    plugins: [/*cssPlugins,*/ ...htmlPlugins, new CleanWebpackPlugin()],
+}
 
 function findByExtension(directoryPath, extension)
 {
@@ -29,67 +86,12 @@ function generateHtmlPlugins() {
     console.log(items);
 
     return items.map((item, id) => {
-        return new HtmlWebpackPlugin({
-            filename: `${id}.html`,
-            //filename: `main.html`,
+        let name = path.basename(item).split('.')[0];
+        return new HtmlWebpackPlugin({            
+            filename: `${name}.html`,
+            chunks : [name],              // inject only the same name bundle
             template: item,
-            inject: false,
+           // inject: false,
         })
     })
-}
-
-const htmlPlugins = generateHtmlPlugins();
-const cssPlugins = new MiniCssExtractPlugin({filename: ({ chunk }) => `${chunk.name.replace('/js/', '/css/')}.css`,})
-
-module.exports = {
-    entry: {
-        main: path.resolve(__dirname, './src/pages/main/main.js'),
-        formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
-        colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
-    },
-
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: '[name].bundle.js',
-    },
-
-    module: {
-        rules: [
-            {
-                test: /\.pug$/,
-                use: 'pug-loader'
-            },            
-            { 
-                test: /\.s[ac]ss$/i, 
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-            },  
-            {   test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, 
-                loader: "file-loader",
-                options: {
-                    name: '/public/images/[name].[ext]'
-                  }
-            }         
-        ],
-    },
-
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                style: {
-                    name: 'style',
-                    test: /style\.s?css$/,
-                    chunks: 'all',
-                    enforce: true,
-                },
-                editor: {
-                    name: 'editor',
-                    test: /editor\.s?css$/,
-                    chunks: 'all',
-                    enforce: true,
-                },
-            },
-        },
-    },
-
-    plugins: [cssPlugins, ...htmlPlugins],
 }

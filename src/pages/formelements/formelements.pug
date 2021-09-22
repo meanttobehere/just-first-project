@@ -1,18 +1,19 @@
-include ../../components/textfield/textfield
 include ../../components/text/text
+include ../../components/inpt/inpt
 
 doctype html
 html 
   head 
     meta(charset="UTF-8")
-    title Form Elements
-    link(rel="stylesheet" type="text/css" href="formelements.css")
+    title Form Elements    
   body
     div.container
       div.logotype-container
         img(src="public/images/uikit-logotype.svg")
       div.content-container
         div.left-column
+          +inpt({type: 'dropdown', size: 's'})
+          
 
          
 
