@@ -1,6 +1,15 @@
-@import '../../components/button/button.scss';
-@import '../../components/navbar/__item/navbar__item.scss';
-@import '../../components/header/header.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+//@import '../../components/button/button.scss';
+//@import '../../components/navbar/__item/navbar__item.scss';
+//@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    min-width: none;
+}
 
 .container{
     display: flex;
@@ -8,4 +17,9 @@
     align-items: center;
     flex-flow: column;
     gap: 50px;
+    max-width: 1440px;
+    min-width: 320px;
+    min-height: 100px;
+    margin: auto;
+   
 }

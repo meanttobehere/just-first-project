@@ -1,0 +1,31 @@
+include ../inpt/inpt
+
+mixin footer()
+  div.footer
+    div.footer__container
+      div.footer__column(class = 'c1')
+        div.footer__list-item
+          div.footer__img-container
+            img(src='images/logotype.svg')
+        div.footer__list-item(class = 'footer__list-item_font-l') Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      div.footer__column
+        div.footer__list-title Навигация
+        div.footer__list-item О нас
+        div.footer__list-item Новости
+        div.footer__list-item Служба поддержки
+        div.footer__list-item Услуги
+      div.footer__column
+        div.footer__list-title О нас
+        div.footer__list-item О сервисе
+        div.footer__list-item Наша команда
+        div.footer__list-item Вакансии
+        div.footer__list-item Инвесторы
+      div.footer__column
+        div.footer__list-title Служба поддержки
+        div.footer__list-item Соглашения
+        div.footer__list-item Сообщества
+        div.footer__list-item Связь с нами
+      div.footer__column(class = 'c12')
+        div.footer__list-title Подписка
+        div.footer__list-item(class = 'footer__list-item_font-l') Получайте специальные предложения и новости сервиса
+        +inpt({size: 'm', type: 'submit'})

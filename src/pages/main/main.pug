@@ -2,22 +2,27 @@ include ../../components/button/button
 include ../../components/navbar/__item/navbar__item
 include ../../components/navbar/navbar
 include ../../components/header/header
+include ../../components/footer/footer
 
 doctype html
 html 
   head 
     meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
     title Пример страницы    
   body
     .container
-        +button('Подобрать номер')
-        +button('Подобрать номер', true)
-        +button('CLICK ME')
-        +button('И еще одна', true)
-        +navbar__item('Новости', true)
-        +navbar(false)
-        +navbar(true, 'Юлий Цезарь')
-        +header(false)
-        +header(true, 'Юлий Цезарь')
+        //-
+          +button('Подобрать номер')
+          +button('Подобрать номер', true)
+          +button('CLICK ME')
+          +button('И еще одна', true)
+          +navbar__item('Новости', true)        
+          +navbar(false)
+          +navbar(true, 'Юлий Цезарь')
+          +header(false)
+          +header(true, 'Юлий Цезарь')        
+        +footer()
+       
         
 

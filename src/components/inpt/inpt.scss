@@ -21,18 +21,16 @@
   line-height: 18px;
 
   &_size-m{
-    width: 267px;
+    width: 260px;
   }
   &_size-s{
     width: 150px;
   }
 
   &_type-dropdown{
-
     & :hover{
       cursor: pointer;
     }
-
   }
 
   &_type-subcription{
@@ -50,6 +48,7 @@
     border-radius: 4px;
     border: none;
     outline-style: none;
+    background: none;
 
     & ::placeholder{
       font-family: 'Montserrat';
@@ -68,16 +67,5 @@
     object-fit: cover;
     width: 44px;
     height: 44px;
-  }
-
-  &__dropdown-menu{
-    position: absolute;    
-    height: 200px;
-    width: 150px;
-    border-radius: 4px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    left: -1px;
-    top: 42px;
-    box-sizing: border-box;
   }
 }
