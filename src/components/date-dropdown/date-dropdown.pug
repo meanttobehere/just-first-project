@@ -1,0 +1,31 @@
+mixin date-dropdown(params) 
+  div.date-dropdown("data-dropdown")
+    div.date-dropdown__container("data-dropdown-button") 
+      div.date-dropdown__text ДД.ММ.ГГГГ
+      div.date-dropdown__img-container
+        img(src="images/arrow-down.svg")
+    div.date-dropdown__container("data-dropdown-button") 
+      div.date-dropdown__text ДД.ММ.ГГГГ
+      div.date-dropdown__img-container
+        img(src="images/arrow-down.svg")
+    div.date-dropdown__dropdown-menu
+      div.date-dropdown__month-selector
+        div.date-dropdown__img-container2(id = 'back')
+          img(src="images/arrow-back.svg")
+        div.date-dropdown__month-title(id = 'title') Август 2019
+        div.date-dropdown__img-container2(id = 'forward')
+          img(src="images/arrow-forward.svg")
+      div.date-dropdown__day-selector(id = 'calendar-page')
+        div.date-dropdown__grid-item Пн
+        div.date-dropdown__grid-item Вт
+        div.date-dropdown__grid-item Ср
+        div.date-dropdown__grid-item Чт
+        div.date-dropdown__grid-item Пт
+        div.date-dropdown__grid-item Сб
+        div.date-dropdown__grid-item Вс
+        - var n = 0        
+        while n < 42 
+          div.date-dropdown__grid-item(class = (n == 21) ? "f1" : "")(class = (n == 25) ? "f2" : "")(class = (n == 16) ? "gg" : "")= n++
+          
+      div.date-dropdown__button
+

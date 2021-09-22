@@ -1,12 +1,8 @@
 import './formelements.scss';
 import img1 from '../../svg/uikit-logotype.svg';
 import img2 from '../../svg/arrow-right.svg';
+import img3 from '../../svg/arrow-back.svg';
+import img4 from '../../svg/arrow-forward.svg';
 import '../../components/inpt/inpt.js'
+import '../../components/date-dropdown/date-dropdown.js'
 
-let elements = document.getElementsByClassName('inpt_type-dropdown');
-
-elements.foreach((inpt) => {
-    inpt.onclick = () =>{
-        console.log('uuu');
-    }
-})
