@@ -27,12 +27,13 @@ module.exports = {
             },            
             { 
                 test: /\.s[ac]ss$/i, 
-                use: [/*MiniCssExtractPlugin.loader,*/"style-loader", "css-loader", "sass-loader"],
+                use: [/*MiniCssExtractPlugin.loader,*/"style-loader", "css-loader", /*"resolve-url-loader",*/ "sass-loader"],
             },  
             {   test: /\.(jpe?g|gif|png|svg|woff|ttf)$/, 
                 loader: "file-loader",
                 options: {
-                    name: '/images/[name].[ext]'
+                    name: '/images/[name].[ext]',
+                    useRelativePaths: true,
                   }
             }         
         ],

@@ -2,8 +2,9 @@
 
 //@import '../../components/button/button.scss';
 //@import '../../components/navbar/__item/navbar__item.scss';
-//@import '../../components/header/header.scss';
+@import '../../components/header/header.scss';
 @import '../../components/footer/footer.scss';
+@import '../../components/search-form/search-form.scss';
 
 html, body{
     margin: 0px;
@@ -12,15 +13,30 @@ html, body{
 }
 
 .container{
-    padding-top: 100px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;    
-    row-gap: 50px;
     max-width: 1440px;    
     margin: auto;   
 
     &__item{
         flex: 1 0 100%;        
+    }
+
+    &__content{
+        //border: 10px pink solid;
+        max-height: 830px;
+        max-width: 1440px;
+        //display: flex;        
+        //align-items: center;
+        //justify-content: center;
+        
+        //position: relative;  
+        img{
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }                   
     }
 }

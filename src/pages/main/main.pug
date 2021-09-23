@@ -3,6 +3,7 @@ include ../../components/navbar/__item/navbar__item
 include ../../components/navbar/navbar
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../components/search-form/search-form
 
 doctype html
 html 
@@ -21,7 +22,13 @@ html
           +navbar(false)
           +navbar(true, 'Юлий Цезарь')
           +header(false)
-          +header(true, 'Юлий Цезарь')  
+        div.container__item
+          +header(true, 'Юлий Цезарь')
+        div.container__item
+          +search-form()
+        div.container__item
+          div.container__content
+            img(src="images/background.png")            
         div.container__item      
           +footer()
        
