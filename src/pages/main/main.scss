@@ -8,18 +8,19 @@
 html, body{
     margin: 0px;
     padding: 0px;
-    min-width: none;
+    background: #E5E5E5;
 }
 
 .container{
+    padding-top: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    gap: 50px;
-    max-width: 1440px;
-    min-width: 320px;
-    min-height: 100px;
-    margin: auto;
-   
+    align-items: center;    
+    row-gap: 50px;
+    max-width: 1440px;    
+    margin: auto;   
+
+    &__item{
+        flex: 1 0 100%;        
+    }
 }
