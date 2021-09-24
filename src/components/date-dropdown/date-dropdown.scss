@@ -110,7 +110,7 @@
 
         & :nth-child(1n + 8){
             font-weight: normal;
-            color: rgba(31, 32, 65, 0.5);
+            color: rgba(31, 32, 65, 1);
         }
     } 
     
@@ -131,6 +131,11 @@
         &.f1 ~ &:not(&.f2 ~&){
             //background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             //opacity: 0.25;
+        }
+
+        &.oo{
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            opacity: 0.25;
         }
 
         &.gg{
