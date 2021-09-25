@@ -50,9 +50,7 @@
         box-sizing: border-box;
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
         border-radius: 4px;
-        background: #FFFFFF;
-
-        
+        background: #FFFFFF;        
 
         opacity: 0;
         pointer-events: none;
@@ -84,11 +82,13 @@
         align-items: center;
         justify-content: center;
         object-fit: cover;
-        width: 24px;
-        height: 24px;
-
-        & :hover{
-            background-color: bisque;
+        width: 40px;
+        height: 40px;
+        border-radius: 22px;
+        box-sizing: border-box;       
+        
+        &:hover{           
+            background-color: #BC9CFF10;
         }
     }
 
@@ -97,21 +97,7 @@
         display: grid;
         align-items: center;
         justify-items: center;
-        grid-template-columns: repeat(7, 1fr);
-
-        & :nth-child(1n){
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            color: #BC9CFF;
-        }
-
-        & :nth-child(1n + 8){
-            font-weight: normal;
-            color: rgba(31, 32, 65, 1);
-        }
+        grid-template-columns: repeat(7, 1fr);        
     } 
     
     &__grid-item{
@@ -120,36 +106,69 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400; 
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(31, 32, 65, 0.5);
+       
+
+        &:nth-child(-n + 7){            
+            font-weight: bold;            
+            color: #BC9CFF;
+        }
+
+        &_not-current-month-date{
+            color: rgba(31, 32, 65, 0.25);
+        }
         
-        &.ff{
+        &_arrival-departure-date{
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             border-radius: 22px;
             color: #FFFFFF;
-            font-weight: 700;            
+            font-weight: 700;           
+
+            // .date-dropdown__grid-item_between-arival-departure-date + &:after
+           
+            &:after{
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;                
+                width: 40px;
+                height: 40px;                 
+                display: none;               
+                background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+            }
+        }  
+        
+        &_arrival-day-set:after{
+            border-radius: 22px 0 0 22px;
+            display:block;            
         }
 
-        &.f1 ~ &:not(&.f2 ~&){
-            //background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            //opacity: 0.25;
+        &_departure-day-set:after{
+            border-radius: 0 22px 22px 0;
+            display:block;            
         }
 
-        &.oo{
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            opacity: 0.25;
+        &_between-arival-departure-date{
+            background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
+            color: rgba(31, 32, 65, 0.5);
         }
 
-        &.gg{
+        &_current-date{
             background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
             border-radius: 22px;
             color: #FFFFFF;
             font-weight: 700;
-        }
+        }        
 
-        &.qq{
-            color: rgba(31, 32, 65, 0.25);
-        }
-
-        &.hidden{
+        &_hidden{
             height: 0;
             display: none;
         }

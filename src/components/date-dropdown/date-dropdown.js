@@ -1,25 +1,5 @@
-document.addEventListener("click", e => {
-    
-    const isDropdownButton = e.target.closest("[data-dropdown-button]")
-    if (isDropdownButton)
-        console.log('click')
-
-    if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
-  
-    let currentDropdown
-    if (isDropdownButton) {
-      currentDropdown = e.target.closest("[data-dropdown]")
-      currentDropdown.classList.toggle("active")
-    }
-  
-    document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-      if (dropdown === currentDropdown) return
-      dropdown.classList.remove("active")
-    })
-})
-
-
-class Calendar{
+class Calendar
+{
     constructor(dateDropdown)
     {
         this.currentDate = new Date();
@@ -106,35 +86,47 @@ class Calendar{
         this.days.forEach((day, idx) => 
         {
             if (idx >= page.length){
-                day.classList.add('hidden');
+                day.classList.add("date-dropdown__grid-item_hidden");
                 return;
             } else
-                day.classList.remove('hidden');
+                day.classList.remove("date-dropdown__grid-item_hidden");
 
             if (page[idx].isArrivalDeraptureDay)
-                day.classList.add('ff')
+                day.classList.add("date-dropdown__grid-item_arrival-departure-date")
             else
-                day.classList.remove('ff')
+                day.classList.remove("date-dropdown__grid-item_arrival-departure-date")
 
             if (page[idx].isCurrentMonth === false)
-                day.classList.add("qq");
+                day.classList.add("date-dropdown__grid-item_not-current-month-date");
             else
-                day.classList.remove("qq");
+                day.classList.remove("date-dropdown__grid-item_not-current-month-date");
                 
             if (page[idx].isCurrentDay)
-                day.classList.add("gg");
+                day.classList.add("date-dropdown__grid-item_current-date");
             else
-                day.classList.remove("gg");
+                day.classList.remove("date-dropdown__grid-item_current-date");
 
             if (page[idx].isBetweenArrivalDeparture)
-                day.classList.add("oo");
+                day.classList.add("date-dropdown__grid-item_between-arival-departure-date");
             else
-                day.classList.remove("oo");
+                day.classList.remove("date-dropdown__grid-item_between-arival-departure-date");
+
+            if (page[idx].isArrivalDay)
+                day.classList.add("date-dropdown__grid-item_arrival-day-set")
+            else
+                day.classList.remove("date-dropdown__grid-item_arrival-day-set");
+
+            if (page[idx].isDepartureDay)
+                day.classList.add("date-dropdown__grid-item_departure-day-set")
+            else
+                day.classList.remove("date-dropdown__grid-item_departure-day-set");
             
             day.textContent = page[idx].day;                       
         })    
           
-        this.title.textContent = this.getMonthString(this.month) + " " + this.year;        
+        this.title.textContent = this.getMonthString(this.month) + " " + this.year;
+        this.arrival.textContent = this.dateToString(this.travel.arrival);
+        this.departure.textContent = this.dateToString(this.travel.departure);      
     }  
 
     getMonthString(month){
@@ -203,6 +195,8 @@ class Calendar{
             isCurrentDay: false,
             isCurrentMonth: false,
             isBetweenArrivalDeparture: false,
+            isArrivalDay: false,
+            isDepartureDay: false,
         };        
       
         if (+date === +this.currentDate)
@@ -216,6 +210,12 @@ class Calendar{
 
         if (date.getMonth() === this.month)
             dayObj.isCurrentMonth = true;
+
+        if (this.travel.departure !== false && +date === +this.travel.arrival)
+            dayObj.isArrivalDay = true;
+
+        if (this.travel.departure !== false && +date === +this.travel.departure)
+            dayObj.isDepartureDay = true;            
         
         return dayObj;
     }
@@ -228,7 +228,14 @@ class Calendar{
             date.setDate(date.getDate() + 1);
         }
         return days;
-    }  
+    }
+
+    dateToString(date){  
+      if (date instanceof Date)
+          return date.getDate().toString().padStart(2, '0') + "." + date.getMonth().toString().padStart(2, '0') + "." + date.getFullYear();
+      else
+          return "ДД.ММ.ГГГГ"
+    }
 }
 
 function dateDropdownsInit()
@@ -241,7 +248,27 @@ function dateDropdownsInit()
     { 
         let calendar = new Calendar(dateDropdowns[i]);
         calendars.push[calendar];
-    }    
+    }   
+    
+    document.addEventListener("click", e => {
+    
+        const isDropdownButton = e.target.closest("[data-dropdown-button]")
+        if (isDropdownButton)
+            console.log('click')
+    
+        if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
+      
+        let currentDropdown
+        if (isDropdownButton) {
+          currentDropdown = e.target.closest("[data-dropdown]")
+          currentDropdown.classList.toggle("active")
+        }
+      
+        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+          if (dropdown === currentDropdown) return
+          dropdown.classList.remove("active")
+        })
+    })
 }
 
 dateDropdownsInit();
