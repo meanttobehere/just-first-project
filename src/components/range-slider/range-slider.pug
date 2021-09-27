@@ -1,0 +1,12 @@
+mixin range-slider(params)
+  -var title = (params.title ? params.title : "No title");
+  -var min_value = (params.min_value ? params.min_value : 0);
+  -var max_value = (params.max_value ? params.max_value : 1000);
+  .range-slider 
+    .range-slider__container 
+      .range-slider__title=title
+      .range-slider__value=(min_value + " - " + max_value)
+    .range-slider__slider
+      .range-slider__pointer 
+      .range-slider__pointer
+      .range-slider__segment

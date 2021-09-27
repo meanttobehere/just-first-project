@@ -2,6 +2,7 @@ include ../../components/text/text
 include ../../components/inpt/inpt
 include ../../components/date-dropdown/date-dropdown
 include ../../components/checkbox-list/checkbox-list
+include ../../components/range-slider/range-slider
 
 doctype html
 html 
@@ -20,6 +21,8 @@ html
                           descriptions: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."],
                           expandable: true,
                           })
+
+          +range-slider({})
           //
             +date-dropdown()
             +custom-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})

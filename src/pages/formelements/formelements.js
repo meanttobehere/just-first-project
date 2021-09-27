@@ -7,4 +7,5 @@ import img5 from '../../images/facebook-icon.svg';
 import '../../components/inpt/inpt.js'
 import '../../components/date-dropdown/date-dropdown.js'
 import '../../components/checkbox-list/checkbox-list.js'
+import '../../components/range-slider/range-slider.js'
 
