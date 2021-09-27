@@ -1,6 +1,11 @@
-mixin custom-checkbox(title)
-  -var checkbox_title = (title ? title : "No title")
+mixin custom-checkbox(title='No title')
+  -var isRich = (block ? true : false);
+  -var container_class = (isRich ? "custom-checkbox__title_type-rich" : "");
   .custom-checkbox 
     .custom-checkbox__box
       img.custom-checkbox__checkmark(src='images/custom-checkbox-checkmark.svg')
-    .custom-checkbox__title=checkbox_title
+    .custom-checkbox__container
+      .custom-checkbox__title(class=container_class)=title
+      if (isRich)
+        .custom-checkbox__block
+          block

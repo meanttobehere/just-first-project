@@ -6,6 +6,5 @@ import img4 from '../../images/arrow-forward.svg';
 import img5 from '../../images/facebook-icon.svg';
 import '../../components/inpt/inpt.js'
 import '../../components/date-dropdown/date-dropdown.js'
-import '../../components/custom-checkbox/custom-checkbox.js'
-import '../../components/custom-list/custom-list.js'
+import '../../components/checkbox-list/checkbox-list.js'
 

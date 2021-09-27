@@ -1,4 +1,4 @@
-import checkmark from '../../images/custom-checkbox-checkmark.svg';
+import checkmark from './custom-checkbox-checkmark.svg';
 
 function checkboxsInit()
 {

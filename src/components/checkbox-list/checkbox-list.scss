@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import '../custom-checkbox/custom-checkbox.scss';
 
-.custom-list{
+.checkbox-list{
     position: relative;
     user-select: none;
 
@@ -17,10 +16,11 @@
         margin-bottom: 2.44px;
 
         height: 44px;
-        width: max-content;
+        width: 268px;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-
+        
         &:hover{
             cursor: pointer;
         }
@@ -29,10 +29,6 @@
     &__arrow{
         width: 44px;
         height: 44px;
-
-        position: absolute;
-        left: 222px;
-        top: 0px;
 
         display: flex;
         justify-content: center;
