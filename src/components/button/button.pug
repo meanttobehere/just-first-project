@@ -1,10 +1,8 @@
-include ../text/text
-
-mixin button(text, isLargeButton)
-  div.button(class = isLargeButton ? "button_large" : "")
-    div.button__container(class = isLargeButton ? "button__container_large" : "")
-      div.button__text-containter(class = isLargeButton ? "button__text-container_large" : "")
-        +text('text_label', text, 'text_color-white')             
-      if(isLargeButton)
-        div.button__img-container
-          img(src="images/arrow-white.svg") 
+mixin button(params)
+  -var button_size = (params.size ? `button_size-${params.size}` : "");
+  -var button_theme = (params.theme ? `button_theme-${params.theme}` : "");  
+  div.button(class=button_size class=button_theme)
+    div.button__text-containter=params.text                
+    if(button_size=="button_size-l")
+      div.button__img-container
+        img(src="images/arrow-white.svg")

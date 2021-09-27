@@ -1,0 +1,14 @@
+include ./__item/dropdown__item
+include ../button/button
+
+mixin dropdown(options)
+  -var dropdown_size = (options.size ? `dropdown_size-${options.size}` : "");
+  -var items = (options.items ? options.items : []);
+  -var placeholder = (options.placeholder ? options.placeholder : "Placeholder...")
+  div.dropdown(class=dropdown_size "data-dropdown")
+    div.dropdown__container("data-dropdown-button")=placeholder
+    div.dropdown__menu
+      div.dropdown__menu-container
+        each item in items.length ? items : "none" 
+          +dropdown__item(item)
+      +button({text: "применить", theme: "no-border"})

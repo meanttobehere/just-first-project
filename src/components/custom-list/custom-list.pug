@@ -1,0 +1,14 @@
+include ../custom-checkbox/custom-checkbox
+
+mixin custom-list(params)
+  -var title = (params.title ? params.title : "No title");
+  -var items = (params.items ? params.items : []);
+  -var expandable = (params.expandable ? true : false);
+  .custom-list
+    .custom-list__title=title
+      if (expandable)
+        .custom-list__arrow 
+          img(src='images/arrow-down.svg')
+    .custom-list__container(class = expandable ? "custom-list__container_expandable" : "")
+      each item in items.length ? items : "none" 
+        +custom-checkbox(item)

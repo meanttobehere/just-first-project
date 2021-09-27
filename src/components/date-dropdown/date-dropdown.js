@@ -22,11 +22,19 @@ class Calendar
         this.back.onclick = this.setPreviousPage.bind(this);
         this.forward.onclick = this.setNextPage.bind(this);
         this.days.forEach((day, idx) => day.onclick = this.dayClickHandler.bind(this, idx));
+        this.days.forEach((day, idx) => day.onmouseover = this.dayHoverHandler.bind(this, idx));
 
         this.travel = {arrival: false, departure: false};
         this.pageData = {};
 
         this.renderPage();
+    }
+
+    dayHoverHandler(idx){
+        //console.log(idx);
+
+        if (this.travel.arrival !== false && this.travel.departure === false)
+            return;
     }
 
     dayClickHandler(idx){        
@@ -197,6 +205,7 @@ class Calendar
             isBetweenArrivalDeparture: false,
             isArrivalDay: false,
             isDepartureDay: false,
+            isHoverMode: false,
         };        
       
         if (+date === +this.currentDate)
@@ -211,11 +220,11 @@ class Calendar
         if (date.getMonth() === this.month)
             dayObj.isCurrentMonth = true;
 
-        if (this.travel.departure !== false && +date === +this.travel.arrival)
+        if (this.travel.departure !== false && +date === +this.travel.arrival && +this.travel.departure !== +this.travel.arrival)
             dayObj.isArrivalDay = true;
 
-        if (this.travel.departure !== false && +date === +this.travel.departure)
-            dayObj.isDepartureDay = true;            
+        if (this.travel.departure !== false && +date === +this.travel.departure && +this.travel.departure !== +this.travel.arrival)
+            dayObj.isDepartureDay = true;        
         
         return dayObj;
     }
@@ -232,7 +241,7 @@ class Calendar
 
     dateToString(date){  
       if (date instanceof Date)
-          return date.getDate().toString().padStart(2, '0') + "." + date.getMonth().toString().padStart(2, '0') + "." + date.getFullYear();
+          return date.getDate().toString().padStart(2, '0') + "." + (date.getMonth() + 1).toString().padStart(2, '0') + "." + date.getFullYear();
       else
           return "ДД.ММ.ГГГГ"
     }

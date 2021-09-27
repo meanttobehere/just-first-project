@@ -1,15 +1,24 @@
+@import '../dropdown/dropdown.scss';
+
 .date-dropdown{
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     user-select: none;
-
-    
-    
+   
     & :hover{
         cursor: pointer;
        // border-color: rgba(31, 32, 65, 0.5);
+    }
+
+    &__date-container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        user-select: none;
     }
 
     &__container{
@@ -61,12 +70,20 @@
         left: 0;
         top: 49.56px;
         padding: 20px;
+        z-index: 289;
+
+        &:hover{
+            cursor: default;
+        }
     }
 
     &__month-selector{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        &:hover{
+            cursor: default;
+        }
     }
 
     &__month-title{
@@ -75,6 +92,10 @@
         font-weight: 700;
         font-size: 19px;
         line-height: 23px;
+
+        &:hover{
+            cursor: default;
+        }
     }
 
     &__img-container2{
@@ -113,20 +134,23 @@
         font-weight: 400; 
         font-size: 12px;
         line-height: 15px;
-        color: rgba(31, 32, 65, 0.5);
-       
+        color: rgba(31, 32, 65, 0.5);       
 
         &:nth-child(-n + 7){            
             font-weight: bold;            
             color: #BC9CFF;
-        }
+
+            &:hover{
+                cursor: default;
+            }
+        }        
 
         &_not-current-month-date{
             color: rgba(31, 32, 65, 0.25);
         }
         
         &_arrival-departure-date{
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            background: linear-gradient(180deg, #BC9CFFCF 0%, #8BA4F9CF 100%);
             border-radius: 22px;
             color: #FFFFFF;
             font-weight: 700;           
@@ -144,6 +168,10 @@
                 display: none;               
                 background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
             }
+
+            &:hover:not(.date-dropdown__grid-item_current-date){
+                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            }
         }  
         
         &_arrival-day-set:after{
@@ -159,22 +187,50 @@
         &_between-arival-departure-date{
             background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
             color: rgba(31, 32, 65, 0.5);
+
+            &:hover{
+                background: linear-gradient(180deg, #BC9CFF60 0%, #8BA4F960 100%); 
+            }
+        }
+
+        &_current-date.date-dropdown__grid-item_arrival-departure-date{
+            background: linear-gradient(180deg, #6FCF97CF 0%, #66D2EACF 100%);
         }
 
         &_current-date{
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            background: linear-gradient(180deg, #6FCF97AF 0%, #66D2EAAF 100%);
             border-radius: 22px;
             color: #FFFFFF;
             font-weight: 700;
-        }        
+
+            &:hover{
+                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            }            
+        }       
 
         &_hidden{
             height: 0;
             display: none;
+        } 
+        
+        &:hover:not(&_arrival-departure-date):not(&_between-arival-departure-date):not(&_current-date):not(&:nth-child(-n + 7)){
+            background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
         }
     }
 
+    &__buttons-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20.44px;
+    }
 }
+
+/*.date-dropdown__day-selector:hover .date-dropdown__grid-item_arrival-departure-date ~ .date-dropdown__grid-item:not(.date-dropdown__grid-item:hover ~ .date-dropdown__grid-item){
+    background: linear-gradient(180deg, #BC9CFF20 0%, #8BA4F920 100%);
+    //opacity: 0.25;
+}*/
+
 
 .date-dropdown.active > .date-dropdown__dropdown-menu {
     opacity: 1;

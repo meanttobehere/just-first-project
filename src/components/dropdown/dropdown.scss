@@ -1,0 +1,76 @@
+@import './__item/dropdown__item.scss';
+
+.dropdown{
+    width: 320px;
+    position: relative;  
+
+    &__container{
+        height: 44px;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        box-sizing: border-box;
+        border-radius: 4px 4px 0 0;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(31, 32, 65, 0.75);
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-indent: 15px;        
+    }
+
+    &__menu{
+        width: inherit;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        border-radius: 0 0 4px 4px;
+        border-top: none;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);        
+        background: #FFFFFF;  
+
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+
+        position: absolute;
+        left: 0;
+        top: 44px;        
+        z-index: 289;       
+    }
+
+    &__menu-container{               
+        margin-top: 6px;
+        margin-left: 15px;
+        margin-right: 7px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;        
+        gap: 6px;
+
+        .dropdown__item{
+            flex: 1 0 100%;
+        }
+    }
+    
+
+
+    .button{
+        margin-top: 20px;
+        margin-left: auto; 
+        margin-right: 7px;
+        margin-bottom: 13px;    
+    }
+}
+
+.dropdown.active > .dropdown__menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}

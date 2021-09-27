@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import '../custom-checkbox/custom-checkbox.scss';
+
+.custom-list{
+    position: relative;
+    user-select: none;
+
+    &__title{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;  
+        text-transform: uppercase;
+        color: #1F2041;
+
+        margin-bottom: 2.44px;
+
+        height: 44px;
+        width: max-content;
+        display: flex;
+        align-items: center;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__arrow{
+        width: 44px;
+        height: 44px;
+
+        position: absolute;
+        left: 222px;
+        top: 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__container{ 
+        display: flex;
+        flex-flow: column;
+        gap: 10px; 
+
+        &_expandable{
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.07s ease-out;  
+        }      
+    }
+}

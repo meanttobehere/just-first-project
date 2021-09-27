@@ -1,6 +1,8 @@
 include ../../components/text/text
 include ../../components/inpt/inpt
 include ../../components/date-dropdown/date-dropdown
+include ../../components/custom-checkbox/custom-checkbox
+include ../../components/custom-list/custom-list
 
 doctype html
 html 
@@ -15,6 +17,9 @@ html
         div.left-column
          
           +date-dropdown()
+          +custom-checkbox()
+          +custom-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
+          +custom-list({title: "checkbox buttons", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"]})
           
 
          

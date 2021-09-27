@@ -1,13 +1,17 @@
+include ../button/button
+include ../dropdown/dropdown
+
 mixin date-dropdown(params) 
   div.date-dropdown("data-dropdown")
-    div.date-dropdown__container("data-dropdown-button") 
-      div.date-dropdown__text ДД.ММ.ГГГГ
-      div.date-dropdown__img-container
-        img(src="images/arrow-down.svg")
-    div.date-dropdown__container("data-dropdown-button") 
-      div.date-dropdown__text ДД.ММ.ГГГГ
-      div.date-dropdown__img-container
-        img(src="images/arrow-down.svg")
+    div.date-dropdown__date-container
+      div.date-dropdown__container("data-dropdown-button") 
+        div.date-dropdown__text ДД.ММ.ГГГГ
+        div.date-dropdown__img-container
+          img(src="images/arrow-down.svg")
+      div.date-dropdown__container("data-dropdown-button") 
+        div.date-dropdown__text ДД.ММ.ГГГГ
+        div.date-dropdown__img-container
+          img(src="images/arrow-down.svg")
     div.date-dropdown__dropdown-menu
       div.date-dropdown__month-selector
         div.date-dropdown__img-container2
@@ -25,7 +29,9 @@ mixin date-dropdown(params)
         div.date-dropdown__grid-item Вс
         - var n = 0        
         while n < 42 
-          div.date-dropdown__grid-item(class = (n == 21) ? "f1" : "")(class = (n == 25) ? "f2" : "")(class = (n == 16) ? "gg" : "")= n++
-          
-      div.date-dropdown__button
+          div.date-dropdown__grid-item= n++
+      div.date-dropdown__buttons-container
+        +button({text: "очистить", size: "s", theme: "no-border"})
+        +button({text: "применить", size: "s", theme: "no-border"})
+    
 

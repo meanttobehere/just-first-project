@@ -1,0 +1,6 @@
+mixin custom-checkbox(title)
+  -var checkbox_title = (title ? title : "No title")
+  .custom-checkbox 
+    .custom-checkbox__box
+      img.custom-checkbox__checkmark(src='images/custom-checkbox-checkmark.svg')
+    .custom-checkbox__title=checkbox_title

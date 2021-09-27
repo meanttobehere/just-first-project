@@ -1,0 +1,53 @@
+.custom-checkbox
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &__box{  
+        position: relative;      
+        width: 20px;
+        height: 20px;
+        background: #FFFFFF;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        object-fit: cover;
+       
+        &_clicked{
+            border: 1px solid #BC9CFF;                      
+        }        
+    }
+
+    &__checkmark{
+        position: absolute;
+        margin: auto;        
+        top: 3px;
+        left: 4.1px;
+
+        display: none;
+        
+        &_clicked{
+            display: block;
+        }
+    }
+
+    &__title{
+        height: 18px;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: rgba(31, 32, 65, 0.5);
+    }
+}
