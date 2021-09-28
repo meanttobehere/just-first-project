@@ -5,6 +5,7 @@ include ../../components/checkbox-list/checkbox-list
 include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
+include ../../components/toggle/toggle
 
 doctype html
 html 
@@ -31,6 +32,12 @@ html
         
         .middle-column
           +checkbox-list({title: "checkbox buttons", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"]})
+          .title radio buttons
+          .title toggle
+          +toggle("Получать спецпредложения")
+          +toggle("Получать спецпредложения")
+          .title like button
+          .title rate button
         
         .right-column
           +range-slider({title: "range slider"})

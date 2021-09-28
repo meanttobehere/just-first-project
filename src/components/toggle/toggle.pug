@@ -1,0 +1,8 @@
+mixin toggle(title)
+  -var toggle_title = (title ? title : "No title");
+  .toggle
+    label.toggle__label 
+      input(type="checkbox").toggle__input  
+      .toggle__slider
+      .toggle__border
+    .toggle__title= toggle_title

@@ -4,6 +4,14 @@
     position: relative;
     user-select: none;
 
+    &_expandable{
+        .checkbox-list__title{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
     &__title{
         font-family: 'Montserrat';
         font-style: normal;
@@ -19,11 +27,7 @@
         width: 268px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        
-        &:hover{
-            cursor: pointer;
-        }
+        align-items: center;       
     }
 
     &__arrow{

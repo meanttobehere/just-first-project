@@ -5,6 +5,7 @@
 @import '../../components/range-slider/range-slider.scss';
 @import '../../components/button/button.scss';
 @import '../../components/pagination/pagination.scss';
+@import '../../components/toggle/toggle.scss';
 
 html, body{
     margin: 0;
@@ -68,6 +69,14 @@ html, body{
 
 .middle-column{
     grid-column: line3 / line4;
+
+    .checkbox-list{
+        max-width: 230px;
+    }
+
+    .toggle{
+        margin-bottom: 10px;
+    }
 }
 
 .right-column{
