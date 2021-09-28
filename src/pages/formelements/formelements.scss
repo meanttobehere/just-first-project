@@ -6,6 +6,7 @@
 @import '../../components/button/button.scss';
 @import '../../components/pagination/pagination.scss';
 @import '../../components/toggle/toggle.scss';
+@import '../../components/rate-button/rate-button.scss';
 
 html, body{
     margin: 0;
@@ -76,6 +77,11 @@ html, body{
 
     .toggle{
         margin-bottom: 10px;
+    }
+
+    .rate-buttons-group{
+        display: flex;
+        gap: 20px;
     }
 }
 

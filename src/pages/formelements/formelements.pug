@@ -6,6 +6,7 @@ include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/toggle/toggle
+include ../../components/rate-button/rate-button
 
 doctype html
 html 
@@ -38,6 +39,9 @@ html
           +toggle("Получать спецпредложения")
           .title like button
           .title rate button
+          .rate-buttons-group
+            +rate-button(4)
+            +rate-button(5)            
         
         .right-column
           +range-slider({title: "range slider"})

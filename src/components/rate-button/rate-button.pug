@@ -1,0 +1,6 @@
+mixin rate-button(rating)    
+    .rate-button 
+      -var i = 0;
+      while i++ < 5
+        .rate-button__star
+          img(src= (i <= rating) ? 'images/rate-button__star.svg' :'images/rate-button__star-border.svg')
