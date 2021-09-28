@@ -11,7 +11,8 @@ mixin checkbox-list(params)
         .checkbox-list__arrow 
           img(src='images/arrow-down.svg')
     .checkbox-list__container(class = expandable ? "checkbox-list__container_expandable" : "")
-      -var i = 0;
-      while i < items.length      
-        +custom-checkbox(items[i])
-          div= (descriptions[i++])
+      -var i = -1;
+      while ++i < items.length      
+        +custom-checkbox({title: items[i], description: descriptions[i]})
+          
+          

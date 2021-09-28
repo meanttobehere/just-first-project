@@ -66,6 +66,10 @@ html, body{
     }
 }
 
+.middle-column{
+    grid-column: line3 / line4;
+}
+
 .right-column{
     grid-column: line4 / line5;
 

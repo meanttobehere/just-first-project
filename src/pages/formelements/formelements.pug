@@ -28,7 +28,11 @@ html
           //
             +date-dropdown()
             +custom-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
-        div.right-column
+        
+        .middle-column
+          +checkbox-list({title: "checkbox buttons", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"]})
+        
+        .right-column
           +range-slider({title: "range slider"})
           .title buttons
           .buttons-block            
@@ -45,6 +49,7 @@ html
               +button({title: "перейти к оплате", size: "l"})
           .title pagination
           +pagination()
+        
 
           
 
