@@ -4,16 +4,16 @@
     position: relative;
     width: 99px;
     height: 44px;
+    margin: 0;
+    padding: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
-  
-    box-sizing: border-box;
-    border: double 2px transparent;
-    border-radius: 22px;
-    background-origin: border-box;    
-    background-clip: content-box, border-box;
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);    
+    user-select: none;
+
+    border-radius: 22px; 
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
     color: #FFFFFF;    
     font-family: 'Montserrat';
@@ -34,6 +34,11 @@
 
     &:hover{
         cursor: pointer;
+        background-image: linear-gradient(180deg, #BC9CFF7F 0%, #8BA4F97F 100%);  
+    }
+
+    &:active{        
+        top: 2px;
     }
     
     &_size-l{
@@ -61,18 +66,28 @@
         
         &:hover{
             color: rgba(31, 32, 65, 0.5);
+            background: none;
         }
     }
 
-    &_theme-white{
-        background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); 
+    &_theme-white{ 
         color: #BC9CFF;
+        box-sizing: border-box;
+        border: double 2px transparent;
+        border-radius: 22px;
+        background-origin: border-box;    
+        background-clip: content-box, border-box;
+        background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);  
+
+        &:hover{
+            background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), linear-gradient(180deg, #BC9CFF7F 0%, #8BA4F97F 100%); 
+        }
     }
     
     &__img-container{        
         position: absolute;
         right: 0;
-        top: 0;
+        top: -2px;
         display: flex;        
         align-items: center;
         justify-content: center;

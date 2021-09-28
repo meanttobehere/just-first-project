@@ -3,6 +3,8 @@ include ../../components/inpt/inpt
 include ../../components/date-dropdown/date-dropdown
 include ../../components/checkbox-list/checkbox-list
 include ../../components/range-slider/range-slider
+include ../../components/button/button
+include ../../components/pagination/pagination
 
 doctype html
 html 
@@ -26,7 +28,24 @@ html
           //
             +date-dropdown()
             +custom-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
-            
+        div.right-column
+          +range-slider({title: "range slider"})
+          .title buttons
+          .buttons-block            
+            .buttons-group
+              +button({title: "click me", size: "s"})
+              +button({title: "click me", size: "s"})              
+            .buttons-group
+              +button({title: "click me", size: "s", theme: "white"})
+              +button({title: "click me", size: "s", theme: "white"})
+            .buttons-group
+              +button({title: "click me", size: "s", theme: "no-border"})
+              +button({title: "click me", size: "s", theme: "no-border"})
+            .buttons-group
+              +button({title: "перейти к оплате", size: "l"})
+          .title pagination
+          +pagination()
+
           
 
          

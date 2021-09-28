@@ -3,6 +3,8 @@
 @import '../../components/date-dropdown/date-dropdown.scss';
 @import '../../components/checkbox-list/checkbox-list.scss';
 @import '../../components/range-slider/range-slider.scss';
+@import '../../components/button/button.scss';
+@import '../../components/pagination/pagination.scss';
 
 html, body{
     margin: 0;
@@ -27,6 +29,22 @@ html, body{
     height: 48px;
 }
 
+.title{
+    height: 15px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+
+    margin-bottom: 16px;
+    margin-top: 40px;
+
+    user-select: none;
+}
+
 .content-container{
     padding-top: 65px;
     display: grid;
@@ -46,4 +64,19 @@ html, body{
         display: flex;
         justify-content: space-between;        
     }
+}
+
+.right-column{
+    grid-column: line4 / line5;
+
+    .buttons-block{
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+
+        .buttons-group{
+            display: flex;
+            gap: 20px;
+        }
+    }    
 }
