@@ -1,0 +1,38 @@
+.like-button{
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.25);
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    &__container{
+        height: 20px;
+        width: 19px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__likes{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;        
+        display: flex;
+        align-items: center;
+    }
+
+    &_emphasized{
+        border: 1px solid #BC9CFF;
+        color: #BC9CFF;
+    }
+
+    &_column-gap{
+        gap: 2px;
+    }
+}

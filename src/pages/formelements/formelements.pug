@@ -1,4 +1,3 @@
-include ../../components/text/text
 include ../../components/inpt/inpt
 include ../../components/date-dropdown/date-dropdown
 include ../../components/checkbox-list/checkbox-list
@@ -7,6 +6,7 @@ include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/toggle/toggle
 include ../../components/rate-button/rate-button
+include ../../components/like-button/like-button
 
 doctype html
 html 
@@ -38,6 +38,9 @@ html
           +toggle("Получать спецпредложения")
           +toggle("Получать спецпредложения")
           .title like button
+          .like-buttons-group
+            +like-button({likes: 2})
+            +like-button({likes: 12, emphasized: true})
           .title rate button
           .rate-buttons-group
             +rate-button(4)
