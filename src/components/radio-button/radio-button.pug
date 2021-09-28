@@ -1,0 +1,11 @@
+mixin radio-button(params)
+  -var title = (params.title ? params.title : "No title");
+  -var state = (params.default_state);
+  -var name = (params.name ? params.name : "default_name")
+  -var value = (params.value ? params.value : "default_value")  
+  .radio-button
+    label.radio-button__label
+      input(type="radio" name=name checked=params.checked).radio-button__input
+      .radio-button__container
+      .radio-button__title=title     
+    

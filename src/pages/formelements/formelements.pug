@@ -7,6 +7,7 @@ include ../../components/pagination/pagination
 include ../../components/toggle/toggle
 include ../../components/rate-button/rate-button
 include ../../components/like-button/like-button
+include ../../components/radio-button/radio-button
 
 doctype html
 html 
@@ -34,9 +35,13 @@ html
         .middle-column
           +checkbox-list({title: "checkbox buttons", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"]})
           .title radio buttons
+          .radio-buttons-group
+            +radio-button({title: "Мужчина", checked: true})
+            +radio-button({title: "Женщина"})
           .title toggle
-          +toggle("Получать спецпредложения")
-          +toggle("Получать спецпредложения")
+          .toggle-group
+            +toggle("Получать спецпредложения")
+            +toggle("Получать спецпредложения")
           .title like button
           .like-buttons-group
             +like-button({likes: 2})
