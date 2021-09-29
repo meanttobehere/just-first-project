@@ -1,0 +1,49 @@
+.bullet-list{
+    &__title{
+        height: 15px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+        color: rgba(31, 32, 65, 0.75);
+        margin-bottom: 12px;
+    }
+
+    &__list{ 
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item{  
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        list-style: none;
+
+        margin-bottom: 10px;
+        display: flex;
+        gap: 10.43px;
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+        &::before{            
+            content: "";
+            display: block;
+            width: 10.43px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(31, 32, 65, 0.25);
+            position: relative;
+            top: 7px;
+            flex-shrink: 0;
+        }
+    }    
+}

@@ -11,4 +11,5 @@ import '../../components/range-slider/range-slider.js'
 import '../../components/pagination/pagination.js'
 import '../../components/rate-button/rate-button.js'
 import '../../components/like-button/like-button.js'
+import '../../components/dropdown/dropdown.js'
 

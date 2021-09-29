@@ -8,6 +8,8 @@ include ../../components/toggle/toggle
 include ../../components/rate-button/rate-button
 include ../../components/like-button/like-button
 include ../../components/radio-button/radio-button
+include ../../components/dropdown/dropdown
+include ../../components/bullet-list/bullet-list
 
 doctype html
 html 
@@ -19,18 +21,8 @@ html
       div.logotype-container
         img(src="images/uikit-logotype.svg")
       div.content-container
-        div.left-column          
-
-          +checkbox-list({title: "checkbox buttons", 
-                          items: ["Широкий коридор", "Помощник для инвалидов"], 
-                          descriptions: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."],
-                          expandable: true,
-                          })
-
-          +range-slider({})
-          //
-            +date-dropdown()
-            +custom-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
+        .left-column
+          
         
         .middle-column
           +checkbox-list({title: "checkbox buttons", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"]})
@@ -69,6 +61,25 @@ html
           .title pagination
           +pagination()
         
+        .middle-column-bottom
+          +dropdown({size: "m", items: ["взрослые", "дети", "младенцы"], placeholder: "Сколько гостей"})
+
+        .middle-column-bottom2
+          +checkbox-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
+
+        .right-column-bottom
+          +dropdown({size: "m", items: ["взрослые", "дети", "младенцы"], placeholder: "Сколько гостей"})
+
+        .right-column-bottom2 
+          +bullet-list({title: "bullet list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+          
+          //
+            +checkbox-list({title: "checkbox buttons", 
+                          items: ["Широкий коридор", "Помощник для инвалидов"], 
+                          descriptions: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."],
+                          expandable: true,
+                          })
+            
 
           
 
