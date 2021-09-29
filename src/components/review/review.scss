@@ -1,0 +1,43 @@
+@import '../like-button/like-button.scss';
+
+.review{    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+
+    display: flex;
+    gap: 9.93px;
+
+    &__name{
+        font-weight: bold;
+    }
+
+    &__text{
+        white-space: pre-line;
+    }
+
+    &__left-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__img{
+        display: block;
+        width: 47.67px;
+        height: 48px;
+        border: 2px solid #FFFFFF;
+        box-sizing: border-box;
+        filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+        border-radius: 32px;    
+        object-fit: cover;         
+    }
+
+    &__text{
+        margin-top: 10px;
+    }
+}

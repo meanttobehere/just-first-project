@@ -12,6 +12,7 @@
 @import '../../components/radio-button/radio-button.scss';
 @import '../../components/dropdown/dropdown.scss';
 @import '../../components/bullet-list/bullet-list.scss';
+@import '../../components/review/review.scss';
 
 html, body{
     margin: 0;
@@ -56,22 +57,22 @@ html, body{
     padding-top: 65px;
     display: grid;
     grid-template-columns: [line1] 141px [line2] 446px [line3] 392px [line4] auto [line5];
-    grid-template-rows: [line1] 733px [line2] 320px [line3] auto [line4];
+    grid-template-rows: [line1] 733px [line2] 320px [line3] 400px [line4] auto [line5];
     justify-items: start;
     align-items: start;  
 }
 
-.left-column{
+.left-column-row1{
     grid-column: line2 / line3;
     grid-row: line1 / line2;
 }
 
-.middle-column{
+.middle-column-row1{
     grid-column: line3 / line4;
     grid-row: line1 / line2;
 
     .checkbox-list{
-        max-width: 230px;
+        white-space: pre-line;
     }
 
     .radio-buttons-group{
@@ -94,7 +95,7 @@ html, body{
     }
 }
 
-.right-column{
+.right-column-row1{
     grid-column: line4 / line5;
     grid-row: line1 / line2;
 
@@ -110,26 +111,44 @@ html, body{
     }    
 }
 
-.middle-column-bottom{
+.middle-column-row2{
     grid-column: line3 / line4;
     grid-row: line2 / line3;
 }
 
-.middle-column-bottom2{
+.middle-column-row3{
     grid-column: line3 / line4;
     grid-row: line3 / line4;
+
+    .checkbox-list{
+        white-space: pre-line;
+    }
 }
 
-.right-column-bottom{
+.right-column-row2{
     grid-column: line4 / line5;
     grid-row: line2 / line3;
 }
 
-.right-column-bottom2{
+.right-column-row3{
     grid-column: line4 / line5;
     grid-row: line3 / line4;
 
     .bullet-list{
-        max-width: 260px;
+        white-space: pre-line;
     }
+}
+
+.left-column-row3{
+    grid-column: line2 / line3;
+    grid-row: line3 / line4;
+
+    & +{
+        margin-bottom: 49px;
+    }
+}
+
+.middle-column-row4{
+    grid-column: line3 / line5;
+    grid-row: line4 / line5;
 }
