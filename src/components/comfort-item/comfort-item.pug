@@ -1,0 +1,14 @@
+mixin comfort-item(params)
+  -var params = (params ? params : {});
+  -var title = (params.title ? params.title : "No title");
+  -var description = (params.description ? params.description : "No description");
+  -var bottom_line = (params.bottom_line ? "comfort-item_bottom-line" : "");
+  -var icon_url = (params.icon_url ? params.icon_url : "");
+  .comfort-item(class=bottom_line)
+    .comfort-item__container
+      .comfort-item__icon
+        if (icon_url)
+          img(src=icon_url)
+      .comfort-item__title-container
+        .comfort-item__title=title 
+        .comfort-item__description=description

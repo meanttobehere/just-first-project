@@ -1,5 +1,11 @@
 include ../dropdown/dropdown
 
-mixin guests-dropdown(adults, children, babies)
+mixin guests-dropdown(params)
   .guests-dropdown
-    +dropdown({title: "dropdown", buttons: true, items: [{title: "взрослые", defaultValue: adults}, {title: "дети", defaultValue: children}, {title: "младенцы", defaultValue: babies}], text: "Сколько гостей"})
+    +dropdown({title: params.title, 
+               buttons: true, 
+               items: [{title: "взрослые", default_value: params.adults}, 
+                       {title: "дети", default_value: params.children}, 
+                       {title: "младенцы", default_value: params.babies}], 
+               text: "Сколько гостей",
+               default_active: params.default_active})

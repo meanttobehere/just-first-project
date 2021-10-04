@@ -1,5 +1,4 @@
 include ../../components/inpt/inpt
-include ../../components/date-dropdown/date-dropdown
 include ../../components/checkbox-list/checkbox-list
 include ../../components/range-slider/range-slider
 include ../../components/button/button
@@ -8,11 +7,11 @@ include ../../components/toggle/toggle
 include ../../components/rate-button/rate-button
 include ../../components/like-button/like-button
 include ../../components/radio-button/radio-button
-include ../../components/dropdown/dropdown
 include ../../components/bullet-list/bullet-list
 include ../../components/review/review
 include ../../components/guests-dropdown/guests-dropdown
 include ../../components/room-dropdown/room-dropdown
+include ../../components/comfort-item/comfort-item
 
 doctype html
 html 
@@ -65,15 +64,19 @@ html
           .title pagination
           +pagination()
         
-        .left-column-row2 
-          +room-dropdown()
-          +room-dropdown()
+        .left-column-row2
+          .container-right-title
+            .right-title default
+            +room-dropdown({title: "dropdown"})
+          .container-right-title
+            .right-title expanded           
+            +room-dropdown({title: "dropdown", default_active: true})
 
         .middle-column-row2
-          +guests-dropdown(0, 0, 0)
+          +guests-dropdown({title: "dropdown", default_active: true, adults: 2, children: 1, babies: 0})
 
         .right-column-row2
-          +guests-dropdown(2, 1, 0)
+          +guests-dropdown({title: "dropdown", default_active: true, adults: 0, children: 0, babies: 0})
 
         .left-column-row3
           +checkbox-list({title: "expandable checkbox list", items: [{title: "Завтрак"}, {title: "Письменный стол"}, {title: "Стул для кормления"}, {title: "Кроватка"}, {title: "Телевизор"}, {title: "Шампунь"}], expandable: true})
@@ -95,5 +98,9 @@ html
                    num_likes: 12,
                    likes_emphasized: true,
                    photo_url: "images/photo.jpg"})
+                  
+        .left-column-row4 
+          +comfort-item({title: "Комфорт", description: "Шумопоглащающие стены", icon_url: "images/smile.svg", bottom_line: true})
+          +comfort-item({title: "Удобство", description: "Окно в каждой из спален", icon_url: "images/building.svg", bottom_line: true})
 
         

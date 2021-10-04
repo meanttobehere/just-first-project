@@ -7,7 +7,8 @@ mixin dropdown(options)
   -var text = (options.text ? options.text : "No text");
   -var title = (options.title ? options.title : "");
   -var buttons = (options.buttons ? true : false);
-  .dropdown(class=dropdown_size)
+  -var default_active = (options.default_active ? "dropdown_active" : "");
+  .dropdown(class=dropdown_size class=default_active)
     if (title != "")
       .dropdown__title=title
     .dropdown__container

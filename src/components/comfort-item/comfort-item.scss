@@ -1,0 +1,41 @@
+.comfort-item{
+    user-select: none; 
+
+    &__container{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }        
+
+    &__icon{
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title-container{
+        height: 48px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+    }
+
+    &__description{
+        font-weight: normal;
+    }
+   
+    &_bottom-line::after{
+        content: "";
+        display: block;
+        height: 1px;
+        min-width: 280px;
+        margin-top: 20px;
+        background: rgba(31, 32, 65, 0.1);
+    }
+}
