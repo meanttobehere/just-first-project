@@ -24,7 +24,7 @@
     width: 92px;
 }
 
-.dropdown__button{
+.dropdown__item-button{
     width: 30px;
     height: 30px;
     border: 1px solid rgba(31, 32, 65, 0.25);
@@ -37,14 +37,33 @@
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 0em;
-    text-align: center;
+    text-align: center;    
+    color: rgba(31, 32, 65, 0.5);
 
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    &:hover{
+        cursor: pointer;
+        border: 1px solid rgba(31, 32, 65, 0.5);      
+    }
+
+    &:active{
+        top: 2px;
+    }
+
+    &_disable{
+        opacity: 0.38;
+        position: static;
+        &:hover{
+            border: 1px solid rgba(31, 32, 65, 0.25);
+        }
+    }
 }
 
-.dropdown__counter{
+.dropdown__item-counter{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: bold;

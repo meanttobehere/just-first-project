@@ -1,8 +1,10 @@
-mixin dropdown__item(title)
-  div.dropdown__item
-    div.dropdown__item-title=title
-    div.dropdown__item-control
-      div.dropdown__button -
-      div.dropdown__counter 0
-      div.dropdown__button +
+mixin dropdown__item(params)
+  -var title = (params.title ? params.title : "No title");
+  -var defaultValue = (params.defaultValue ? params.defaultValue : 0);
+  .dropdown__item
+    .dropdown__item-title=title
+    .dropdown__item-control
+      .dropdown__item-button -
+      .dropdown__item-counter=defaultValue
+      .dropdown__item-button +
   

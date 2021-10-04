@@ -1,0 +1,6 @@
+include ../dropdown/dropdown
+
+mixin room-dropdown()
+  .room-dropdown
+    +dropdown({size: "m", title: "dropdown", items: [{title: "спальни", defaultValue: adults}, {title: "кровати", defaultValue: children}, {title: "ванные комнаты", defaultValue: babies}], text: "Сколько гостей"})
+  

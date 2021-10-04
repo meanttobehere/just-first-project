@@ -11,6 +11,8 @@ include ../../components/radio-button/radio-button
 include ../../components/dropdown/dropdown
 include ../../components/bullet-list/bullet-list
 include ../../components/review/review
+include ../../components/guests-dropdown/guests-dropdown
+include ../../components/room-dropdown/room-dropdown
 
 doctype html
 html 
@@ -27,7 +29,7 @@ html
           +inpt({title: "text field", size: "m", placeholder: "Email"})        
         
         .middle-column-row1
-          +checkbox-list({title: "checkbox buttons", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей\n (до 10 человек)"]})
+          +checkbox-list({title: "checkbox buttons", items: [{title: "Можно курить"}, {title: "Можно с питомцами"}, {title: "Можно пригласить гостей\n (до 10 человек)"}]})
           .title radio buttons
           .radio-buttons-group
             +radio-button({title: "Мужчина", checked: true})
@@ -63,23 +65,27 @@ html
           .title pagination
           +pagination()
         
-        .middle-column-row2
-          +dropdown({size: "m", items: ["взрослые", "дети", "младенцы"], placeholder: "Сколько гостей"})
+        .left-column-row2 
+          +room-dropdown()
+          +room-dropdown()
 
-        .left-column-row3
-          +checkbox-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
-          +checkbox-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], expandable: true})
+        .middle-column-row2
+          +guests-dropdown(0, 0, 0)
 
         .right-column-row2
-          +dropdown({size: "m", items: ["взрослые", "дети", "младенцы"], placeholder: "Сколько гостей"})
+          +guests-dropdown(2, 1, 0)
+
+        .left-column-row3
+          +checkbox-list({title: "expandable checkbox list", items: [{title: "Завтрак"}, {title: "Письменный стол"}, {title: "Стул для кормления"}, {title: "Кроватка"}, {title: "Телевизор"}, {title: "Шампунь"}], expandable: true})
+          +checkbox-list({title: "expandable checkbox list", items: [{title: "Завтрак"}, {title: "Письменный стол", default_clicked: true}, {title: "Стул для кормления", default_clicked: true}, {title: "Кроватка", default_clicked: true}, {title: "Телевизор"}, {title: "Шампунь"}], expandable: true, default_open: true})       
 
         .right-column-row3                  
           +bullet-list({title: "bullet list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00,\n а выезд до 12:00"]}) 
 
         .middle-column-row3  
           +checkbox-list({title: "rich checkbox buttons", 
-                          items: ["Широкий коридор", "Помощник для инвалидов"], 
-                          descriptions: ["Ширина коридоров в номере\n не менее 91 см.", "На 1 этаже вас встретит специалист\n и проводит до номера."],                          
+                          items: [{title: "Широкий коридор", description: "Ширина коридоров в номере\n не менее 91 см."}, 
+                                  {title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист\n и проводит до номера."}]                                                  
                           })
         
         .middle-column-row4

@@ -24,7 +24,11 @@
        
         &_clicked{
             border: 1px solid #BC9CFF;                      
-        }        
+        } 
+        
+        &_clicked > .custom-checkbox__checkmark{
+            display: block;                      
+        }
     }
 
     &__checkmark{
@@ -32,12 +36,7 @@
         margin: auto;        
         top: 3px;
         left: 4.1px;
-
-        display: none;
-        
-        &_clicked{
-            display: block;
-        }
+        display: none;        
     }
 
     &__container{        

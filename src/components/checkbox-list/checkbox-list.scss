@@ -20,8 +20,7 @@
         line-height: 15px;  
         text-transform: uppercase;
         color: #1F2041;
-
-        margin-bottom: 16.5px;
+        
         width: 268px;
         display: flex;
         justify-content: space-between;
@@ -46,6 +45,14 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.07s ease-out;  
-        }      
+        }
+
+        &_open{
+            max-height: max-content;
+        }
+
+        .custom-checkbox:first-child{
+            margin-top: 16.5px;
+        }
     }
 }

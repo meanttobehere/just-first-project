@@ -10,7 +10,7 @@ function checkboxsInit()
         
         cb.onclick = function(){
             this.querySelector('.custom-checkbox__box').classList.toggle('custom-checkbox__box_clicked');
-            this.querySelector('.custom-checkbox__checkmark').classList.toggle('custom-checkbox__checkmark_clicked');
+            //this.querySelector('.custom-checkbox__checkmark').classList.toggle('custom-checkbox__checkmark_clicked');
         }
     }
 }

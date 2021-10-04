@@ -11,10 +11,7 @@ function chechboxListsInit()
         let container = cl.querySelector('.checkbox-list__container');
         
         title.onclick = function(){
-            if (container.style.maxHeight)
-                container.style.maxHeight = null;
-            else
-                container.style.maxHeight = container.scrollHeight + "px";
+            container.classList.toggle('checkbox-list__container_open');
         }
     }
 }

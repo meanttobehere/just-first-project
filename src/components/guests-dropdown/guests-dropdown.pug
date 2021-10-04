@@ -1,0 +1,5 @@
+include ../dropdown/dropdown
+
+mixin guests-dropdown(adults, children, babies)
+  .guests-dropdown
+    +dropdown({title: "dropdown", buttons: true, items: [{title: "взрослые", defaultValue: adults}, {title: "дети", defaultValue: children}, {title: "младенцы", defaultValue: babies}], text: "Сколько гостей"})

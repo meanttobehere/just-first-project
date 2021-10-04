@@ -2,12 +2,15 @@ mixin custom-checkbox(params)
   -var title = (params.title ? params.title : "No title");
   -var description = (params.description ? params.description : "");
   -var isRich = (params.description ? true : false);
-  -var container_class = (isRich ? "custom-checkbox__title_type-rich" : "");
+  -var default_clicked = (params.default_clicked ? true: false);
   .custom-checkbox 
-    .custom-checkbox__box
+    .custom-checkbox__box(class = default_clicked ? "custom-checkbox__box_clicked" : "")
       img.custom-checkbox__checkmark(src='images/custom-checkbox-checkmark.svg')
     .custom-checkbox__container
-      .custom-checkbox__title(class=container_class)=title
-      if (isRich)        
+      if (isRich)
+        .custom-checkbox__title(class="custom-checkbox__title_type-rich")=title
         .custom-checkbox__block=description
+      else 
+        .custom-checkbox__title=title      
+        
           

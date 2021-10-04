@@ -13,4 +13,7 @@ import '../../components/pagination/pagination.js'
 import '../../components/rate-button/rate-button.js'
 import '../../components/like-button/like-button.js'
 import '../../components/dropdown/dropdown.js'
+import '../../components/guests-dropdown/guests-dropdown.js'
+import '../../components/room-dropdown/room-dropdown.js'
+
 
