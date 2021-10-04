@@ -1,6 +1,7 @@
 include ../dropdown/dropdown
 
 mixin room-dropdown(params)
+  -var params = (params ? params : {})
   -var title = (params.title ? params.title : "");
   -var default_active = (params.default_active ? params.default_active : false);
   -var bedrooms = (params.bedrooms ? params.bedrooms : 2);

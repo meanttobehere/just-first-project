@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import '../../components/search-form/search-form.scss';
+@import '../../components/calendar/calendar.scss';
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5E5;
+}
+
+.container{    
+    margin: 0 auto;
+    width: 1440px;
+    min-height: 1853px;
+    background-color: #F4F4F6;
+    padding: 30px;
+
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.left-column{
+    display: flex;
+    justify-content: center;
+}

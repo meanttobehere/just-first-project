@@ -1,4 +1,4 @@
-@import '../dropdown/dropdown.scss';
+@import '../calendar/calendar.scss';
 
 .date-dropdown{
     position: relative;
@@ -52,15 +52,7 @@
         height: 44px;
     }
 
-    &__dropdown-menu{
-        width: 320px;
-        //height: 369px;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        box-sizing: border-box;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        border-radius: 4px;
-        background: #FFFFFF;        
-
+    &__calendar-container{    
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px);
@@ -75,154 +67,6 @@
         &:hover{
             cursor: default;
         }
-    }
-
-    &__month-selector{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &:hover{
-            cursor: default;
-        }
-    }
-
-    &__month-title{
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 19px;
-        line-height: 23px;
-
-        &:hover{
-            cursor: default;
-        }
-    }
-
-    &__img-container2{
-        display: flex;        
-        align-items: center;
-        justify-content: center;
-        object-fit: cover;
-        width: 40px;
-        height: 40px;
-        border-radius: 22px;
-        box-sizing: border-box;       
-        
-        &:hover{           
-            background-color: #BC9CFF10;
-        }
-    }
-
-    &__day-selector{
-        margin-top: 30px;
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        grid-template-columns: repeat(7, 1fr);        
-    } 
-    
-    &__grid-item{
-        height: 40px;
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 400; 
-        font-size: 12px;
-        line-height: 15px;
-        color: rgba(31, 32, 65, 0.5);       
-
-        &:nth-child(-n + 7){            
-            font-weight: bold;            
-            color: #BC9CFF;
-
-            &:hover{
-                cursor: default;
-            }
-        }        
-
-        &_not-current-month-date{
-            color: rgba(31, 32, 65, 0.25);
-        }
-        
-        &_arrival-departure-date{
-            background: linear-gradient(180deg, #BC9CFFCF 0%, #8BA4F9CF 100%);
-            border-radius: 22px;
-            color: #FFFFFF;
-            font-weight: 700;           
-
-            // .date-dropdown__grid-item_between-arival-departure-date + &:after
-           
-            &:after{
-                content: "";
-                position: absolute;
-                z-index: -1;
-                top: 0;
-                left: 0;                
-                width: 40px;
-                height: 40px;                 
-                display: none;               
-                background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
-            }
-
-            &:hover:not(.date-dropdown__grid-item_current-date){
-                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            }
-        }  
-        
-        &_arrival-day-set:after{
-            border-radius: 22px 0 0 22px;
-            display:block;            
-        }
-
-        &_departure-day-set:after{
-            border-radius: 0 22px 22px 0;
-            display:block;            
-        }
-
-        &_between-arival-departure-date{
-            background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
-            color: rgba(31, 32, 65, 0.5);
-
-            &:hover{
-                background: linear-gradient(180deg, #BC9CFF60 0%, #8BA4F960 100%); 
-            }
-        }
-
-        &_current-date.date-dropdown__grid-item_arrival-departure-date{
-            background: linear-gradient(180deg, #6FCF97CF 0%, #66D2EACF 100%);
-        }
-
-        &_current-date{
-            background: linear-gradient(180deg, #6FCF97AF 0%, #66D2EAAF 100%);
-            border-radius: 22px;
-            color: #FFFFFF;
-            font-weight: 700;
-
-            &:hover{
-                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-            }            
-        }       
-
-        &_hidden{
-            height: 0;
-            display: none;
-        } 
-        
-        &:hover:not(&_arrival-departure-date):not(&_between-arival-departure-date):not(&_current-date):not(&:nth-child(-n + 7)){
-            background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
-        }
-    }
-
-    &__buttons-container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20.44px;
     }
 }
 

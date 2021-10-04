@@ -1,10 +1,10 @@
 include ../date-dropdown/date-dropdown
 include ../button/button
-include ../dropdown/dropdown
+include ../guests-dropdown/guests-dropdown
 
 mixin search-form()
   div.search-form
     div.search-form__title Найдём номера под ваши пожелания
     +date-dropdown()
-    +dropdown({size: "m", items: ["взрослые", "дети", "младенцы"], placeholder: "Сколько гостей"})
+    +guests-dropdown()
     +button({title: "Подобрать номер", size: "l"})

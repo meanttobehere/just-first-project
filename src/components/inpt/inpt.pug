@@ -1,10 +1,14 @@
 mixin inpt(params)
-  -var inpt_size = (params.size ? `inpt_size-${params.size}` : "");
-  -var inpt_type = (params.type ? `inpt_type-${params.type}` : "");  
-  div.inpt(class = inpt_size class = inpt_type)
-    input.inpt__textarea    
-    
-    if(params.type === "submit")
-        div.inpt__img-container
-            img(src="images/arrow-right.svg")
+  -var size = (params.size ? `inpt_size-${params.size}` : "");
+  -var type_submit = (params.type_submit ? "inpt_type-submit" : "");
+  -var placeholder = (params.placeholder ? params.placeholder : "");
+  -var title = (params.title ? params.title : "")
+  .inpt(class = size)
+    if (title)
+      .inpt__title=title
+    .inpt__container
+      input.inpt__textarea(placeholder=placeholder)    
+      if(type_submit)
+        .inpt__submit-icon
+          img(src="images/submit-arrow.svg")
         

@@ -1,40 +1,33 @@
+import arrow_back from './arrow-back.svg'
+import arrow_forward from './arrow-forward.svg'
+
 class Calendar
 {
-    constructor(dateDropdown)
+    constructor(calendar)
     {
         this.currentDate = new Date();
         this.month = this.currentDate.getMonth();        
         this.year = this.currentDate.getFullYear();
         this.day = this.currentDate.getDate();
-        this.currentDate = new Date(this.year, this.month, this.day);     
+        this.currentDate = new Date(this.year, this.month, this.day);
         
-        this.title = dateDropdown.getElementsByClassName('date-dropdown__month-title')[0];
-        this.back = dateDropdown.getElementsByClassName('date-dropdown__img-container2')[0];
-        this.forward = dateDropdown.getElementsByClassName('date-dropdown__img-container2')[1];
-        this.arrival = dateDropdown.getElementsByClassName('date-dropdown__text')[0];
-        this.departure = dateDropdown.getElementsByClassName('date-dropdown__text')[1];        
+        this.title = calendar.querySelector('.calendar__month-title');
+        this.back = calendar.getElementsByClassName('calendar__arrow-button')[0];
+        this.forward = calendar.getElementsByClassName('calendar__arrow-button')[1];       
         
         this.days = [];
-        let page = dateDropdown.getElementsByClassName('date-dropdown__day-selector')[0];
+        let page = calendar.querySelector('.calendar__day-selector');
         for (let i = 7; i < page.children.length; i++)
-            this.days.push(page.children[i]); 
+            this.days.push(page.children[i]);
 
         this.back.onclick = this.setPreviousPage.bind(this);
         this.forward.onclick = this.setNextPage.bind(this);
-        this.days.forEach((day, idx) => day.onclick = this.dayClickHandler.bind(this, idx));
-        this.days.forEach((day, idx) => day.onmouseover = this.dayHoverHandler.bind(this, idx));
+        this.days.forEach((day, idx) => day.onclick = this.dayClickHandler.bind(this, idx));        
 
         this.travel = {arrival: false, departure: false};
         this.pageData = {};
 
         this.renderPage();
-    }
-
-    dayHoverHandler(idx){
-        //console.log(idx);
-
-        if (this.travel.arrival !== false && this.travel.departure === false)
-            return;
     }
 
     dayClickHandler(idx){        
@@ -94,47 +87,45 @@ class Calendar
         this.days.forEach((day, idx) => 
         {
             if (idx >= page.length){
-                day.classList.add("date-dropdown__grid-item_hidden");
+                day.classList.add("calendar__grid-item_hidden");
                 return;
             } else
-                day.classList.remove("date-dropdown__grid-item_hidden");
+                day.classList.remove("calendar__grid-item_hidden");
 
             if (page[idx].isArrivalDeraptureDay)
-                day.classList.add("date-dropdown__grid-item_arrival-departure-date")
+                day.classList.add("calendar__grid-item_arrival-departure-date")
             else
-                day.classList.remove("date-dropdown__grid-item_arrival-departure-date")
+                day.classList.remove("calendar__grid-item_arrival-departure-date")
 
             if (page[idx].isCurrentMonth === false)
-                day.classList.add("date-dropdown__grid-item_not-current-month-date");
+                day.classList.add("calendar__grid-item_not-current-month-date");
             else
-                day.classList.remove("date-dropdown__grid-item_not-current-month-date");
+                day.classList.remove("calendar__grid-item_not-current-month-date");
                 
             if (page[idx].isCurrentDay)
-                day.classList.add("date-dropdown__grid-item_current-date");
+                day.classList.add("calendar__grid-item_current-date");
             else
-                day.classList.remove("date-dropdown__grid-item_current-date");
+                day.classList.remove("calendar__grid-item_current-date");
 
             if (page[idx].isBetweenArrivalDeparture)
-                day.classList.add("date-dropdown__grid-item_between-arival-departure-date");
+                day.classList.add("calendar__grid-item_between-arival-departure-date");
             else
-                day.classList.remove("date-dropdown__grid-item_between-arival-departure-date");
+                day.classList.remove("calendar__grid-item_between-arival-departure-date");
 
             if (page[idx].isArrivalDay)
-                day.classList.add("date-dropdown__grid-item_arrival-day-set")
+                day.classList.add("calendar__grid-item_arrival-day-set")
             else
-                day.classList.remove("date-dropdown__grid-item_arrival-day-set");
+                day.classList.remove("calendar__grid-item_arrival-day-set");
 
             if (page[idx].isDepartureDay)
-                day.classList.add("date-dropdown__grid-item_departure-day-set")
+                day.classList.add("calendar__grid-item_departure-day-set")
             else
-                day.classList.remove("date-dropdown__grid-item_departure-day-set");
+                day.classList.remove("calendar__grid-item_departure-day-set");
             
             day.textContent = page[idx].day;                       
         })    
           
-        this.title.textContent = this.getMonthString(this.month) + " " + this.year;
-        this.arrival.textContent = this.dateToString(this.travel.arrival);
-        this.departure.textContent = this.dateToString(this.travel.departure);      
+        this.title.textContent = this.getMonthString(this.month) + " " + this.year;    
     }  
 
     getMonthString(month){
@@ -247,27 +238,16 @@ class Calendar
     }
 }
 
-function dateDropdownsInit()
-{    
-    document.addEventListener("click", e => {
-    
-        const isDropdownButton = e.target.closest("[data-dropdown-button]")
-        if (isDropdownButton)
-            console.log('click')
-    
-        if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
-      
-        let currentDropdown
-        if (isDropdownButton) {
-          currentDropdown = e.target.closest("[data-dropdown]")
-          currentDropdown.classList.toggle("active")
-        }
-      
-        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-          if (dropdown === currentDropdown) return
-          dropdown.classList.remove("active")
-        })
-    })
+function calendarsInit()
+{
+    let calendarsDOM = document.getElementsByClassName('calendar');    
+    let calendars = [];
+
+    for (let i = 0; i < calendarsDOM.length; i++)
+    { 
+        let calendar = new Calendar(calendarsDOM[i]);
+        calendars.push[calendar];
+    }  
 }
 
-dateDropdownsInit();
+calendarsInit();

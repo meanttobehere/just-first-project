@@ -12,6 +12,8 @@ include ../../components/review/review
 include ../../components/guests-dropdown/guests-dropdown
 include ../../components/room-dropdown/room-dropdown
 include ../../components/comfort-item/comfort-item
+include ../../components/date-dropdown/date-dropdown
+include ../../components/dropdown/dropdown
 
 doctype html
 html 
@@ -20,12 +22,26 @@ html
     title Form Elements    
   body
     div.container
+      
       div.logotype-container
         img(src="images/uikit-logotype.svg")
+      
       div.content-container
 
         .left-column-row1
-          +inpt({title: "text field", size: "m", placeholder: "Email"})        
+          .container-right-title
+            .right-title default
+            +inpt({title: "text field", placeholder: "Email"})
+          .container-right-title
+            .right-title hover/focus
+            +inpt({title: "text field", placeholder: "Email"})
+          +guests-dropdown({title: "dropdown"})
+          +inpt({title: "masked text field", placeholder: "ДД.ММ.ГГГГ"})
+          .date-dropdown-container
+            +dropdown({title: "date dropdown", size: "s", text: "ДД.ММ.ГГГГ"})
+            +dropdown({title: "date dropdown", size: "s", text: "19.02.2019"})
+          +dropdown({title: "filter date dropdown", size: "m", text: "19 авг - 23 авг"})
+          +inpt({title: "text field", size: "m", placeholder: "Email", type_submit: true})
         
         .middle-column-row1
           +checkbox-list({title: "checkbox buttons", items: [{title: "Можно курить"}, {title: "Можно с питомцами"}, {title: "Можно пригласить гостей\n (до 10 человек)"}]})

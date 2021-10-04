@@ -1,5 +1,4 @@
-include ../button/button
-include ../dropdown/dropdown
+include ../calendar/calendar
 
 mixin date-dropdown(params) 
   div.date-dropdown("data-dropdown")
@@ -12,26 +11,7 @@ mixin date-dropdown(params)
         div.date-dropdown__text ДД.ММ.ГГГГ
         div.date-dropdown__img-container
           img(src="images/arrow-down.svg")
-    div.date-dropdown__dropdown-menu
-      div.date-dropdown__month-selector
-        div.date-dropdown__img-container2
-          img(src="images/arrow-back.svg")
-        div.date-dropdown__month-title
-        div.date-dropdown__img-container2
-          img(src="images/arrow-forward.svg")
-      div.date-dropdown__day-selector
-        div.date-dropdown__grid-item Пн
-        div.date-dropdown__grid-item Вт
-        div.date-dropdown__grid-item Ср
-        div.date-dropdown__grid-item Чт
-        div.date-dropdown__grid-item Пт
-        div.date-dropdown__grid-item Сб
-        div.date-dropdown__grid-item Вс
-        - var n = 0        
-        while n < 42 
-          div.date-dropdown__grid-item= n++
-      div.date-dropdown__buttons-container
-        +button({text: "очистить", size: "s", theme: "no-border"})
-        +button({text: "применить", size: "s", theme: "no-border"})
+    .date-dropdown__calendar-container
+      +calendar()
     
 

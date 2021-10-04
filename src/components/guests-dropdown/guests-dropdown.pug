@@ -1,11 +1,17 @@
 include ../dropdown/dropdown
 
 mixin guests-dropdown(params)
+  -var params = (params ? params : {});
+  -var title = (params.title ? params.title : "гости");
+  -var default_active = (params.default_active ? params.default_active : false);
+  -var adults = (params.adults ? params.adults : 0);
+  -var children = (params.children ? params.children : 0);
+  -var babies = (params.babies  ? params.babies  : 0);
   .guests-dropdown
-    +dropdown({title: params.title, 
+    +dropdown({title: title,
                buttons: true, 
-               items: [{title: "взрослые", default_value: params.adults}, 
-                       {title: "дети", default_value: params.children}, 
-                       {title: "младенцы", default_value: params.babies}], 
+               items: [{title: "взрослые", default_value: adults}, 
+                       {title: "дети", default_value: children}, 
+                       {title: "младенцы", default_value: babies}], 
                text: "Сколько гостей",
-               default_active: params.default_active})
+               default_active: default_active})

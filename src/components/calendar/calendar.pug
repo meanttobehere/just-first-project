@@ -1,0 +1,24 @@
+include ../button/button
+
+mixin calendar()
+  .calendar
+    .calendar__month-selector
+      .calendar__arrow-button
+        img(src="images/arrow-back.svg")
+      .calendar__month-title Август 2021
+      .calendar__arrow-button
+        img(src="images/arrow-forward.svg")
+    .calendar__day-selector
+      .calendar__grid-item Пн
+      .calendar__grid-item Вт
+      .calendar__grid-item Ср
+      .calendar__grid-item Чт
+      .calendar__grid-item Пт
+      .calendar__grid-item Сб
+      .calendar__grid-item Вс
+      - var n = 0        
+      while n < 42 
+        .calendar__grid-item= n++
+    .calendar__buttons-container
+      +button({title: "очистить", size: "s", theme: "no-border"})
+      +button({title: "применить", size: "s", theme: "no-border"})

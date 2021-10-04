@@ -12,6 +12,7 @@ module.exports = {
         main: path.resolve(__dirname, './src/pages/main/main.js'),
         formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
         colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
+        cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
     },
 
     output: {
