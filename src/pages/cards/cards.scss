@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import '../../components/search-form/search-form.scss';
 @import '../../components/calendar/calendar.scss';
+@import '../../components/registration-form/registration-form.scss';
 
 html, body{
     margin: 0;
@@ -22,5 +23,7 @@ html, body{
 
 .left-column{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    gap: 50px;
 }

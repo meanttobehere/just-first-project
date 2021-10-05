@@ -13,7 +13,9 @@ class Calendar
         
         this.title = calendar.querySelector('.calendar__month-title');
         this.back = calendar.getElementsByClassName('calendar__arrow-button')[0];
-        this.forward = calendar.getElementsByClassName('calendar__arrow-button')[1];       
+        this.forward = calendar.getElementsByClassName('calendar__arrow-button')[1];
+        this.clear = calendar.getElementsByClassName('button')[0];       
+        this.accept = calendar.getElementsByClassName('button')[1];       
         
         this.days = [];
         let page = calendar.querySelector('.calendar__day-selector');
@@ -22,12 +24,36 @@ class Calendar
 
         this.back.onclick = this.setPreviousPage.bind(this);
         this.forward.onclick = this.setNextPage.bind(this);
+        this.clear.onclick = this.clearPage.bind(this);
+        this.accept.onclick = this.acceptClick.bind(this);
         this.days.forEach((day, idx) => day.onclick = this.dayClickHandler.bind(this, idx));        
 
-        this.travel = {arrival: false, departure: false};
         this.pageData = {};
+        this.travelData = {arrival: false, departure: false};        
+        this.changeTravelEvent = () => {};
+
+        this.clearButtonClick = () => {};
+        this.acceptButtonClick = () => {};
 
         this.renderPage();
+    }
+
+    get arrival(){
+        return this.travelData.arrival;         
+    }
+
+    get departure(){
+        return this.travelData.departure;         
+    }
+
+    set arrival(arrival){
+        this.travelData.arrival = arrival;  
+        this.changeTravelEvent();
+    }
+
+    set departure(departure){
+        this.travelData.departure = departure; 
+        this.changeTravelEvent();
     }
 
     dayClickHandler(idx){        
@@ -36,18 +62,34 @@ class Calendar
         if (clikedDate < +this.currentDate)
             return;
 
-        if (this.travel.arrival === false 
-          || this.travel.arrival > clikedDate
-          || this.travel.arrival !== false && this.travel.departure !== false)
+        if (this.arrival === false 
+          || this.arrival > clikedDate
+          || this.arrival !== false && this.departure !== false)
         {
-            this.travel.arrival = clikedDate;            
-            this.travel.departure = false;
+            this.arrival = clikedDate;            
+            this.departure = false;
         } else 
         {
-            this.travel.departure = clikedDate;
+            this.departure = clikedDate;
         }
 
         this.renderPage(); 
+    }
+
+    acceptClick(){
+        this.acceptButtonClick();
+    }
+
+    clearPage(){
+        this.arrival = {};
+        this.departure = {};
+
+        this.month = this.currentDate.getMonth();
+        this.year = this.currentDate.getFullYear();
+
+        this.renderPage();
+
+        this.clearButtonClick();
     }
 
     setPreviousPage()
@@ -202,19 +244,19 @@ class Calendar
         if (+date === +this.currentDate)
             dayObj.isCurrentDay = true;        
 
-        if (+this.travel.arrival === +date || +this.travel.departure === +date)
+        if (+this.arrival === +date || +this.departure === +date)
             dayObj.isArrivalDeraptureDay = true;        
 
-        if (date > this.travel.arrival && date < this.travel.departure)
+        if (date > this.arrival && date < this.departure)
             dayObj.isBetweenArrivalDeparture = true;
 
         if (date.getMonth() === this.month)
             dayObj.isCurrentMonth = true;
 
-        if (this.travel.departure !== false && +date === +this.travel.arrival && +this.travel.departure !== +this.travel.arrival)
+        if (this.departure !== false && +date === +this.arrival && +this.departure !== +this.arrival)
             dayObj.isArrivalDay = true;
 
-        if (this.travel.departure !== false && +date === +this.travel.departure && +this.travel.departure !== +this.travel.arrival)
+        if (this.departure !== false && +date === +this.departure && +this.departure !== +this.arrival)
             dayObj.isDepartureDay = true;        
         
         return dayObj;
@@ -238,16 +280,36 @@ class Calendar
     }
 }
 
+let calendars = [];
+
 function calendarsInit()
 {
-    let calendarsDOM = document.getElementsByClassName('calendar');    
-    let calendars = [];
+    let calendarsDOM = document.getElementsByClassName('calendar');        
 
     for (let i = 0; i < calendarsDOM.length; i++)
     { 
         let calendar = new Calendar(calendarsDOM[i]);
-        calendars.push[calendar];
+        calendars.push({calendar: calendar, DOM: calendarsDOM[i]});
     }  
+}
+
+export function getCalendar(calendarDOM){
+    let calendar = {};
+    
+    calendars.forEach(item => {
+        if (item.DOM === calendarDOM)
+            calendar = item.calendar;
+    })
+
+    return calendar;
+}
+
+export function getArrivalDate(calendar){
+    return calendar.dateToString(calendar.arrival);
+}
+
+export function getDepartureDate(calendar){
+    return calendar.dateToString(calendar.departure);
 }
 
 calendarsInit();

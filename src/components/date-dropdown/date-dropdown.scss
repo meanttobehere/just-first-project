@@ -6,19 +6,17 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    user-select: none;
-   
-    & :hover{
-        cursor: pointer;
-       // border-color: rgba(31, 32, 65, 0.5);
-    }
+    user-select: none;    
 
     &__date-container{
         position: relative;
         display: flex;
         align-items: center;
         gap: 20px;
-        user-select: none;
+
+        &:hover .date-dropdown__container{
+            cursor: pointer;
+        }
     }
 
     &__container{
@@ -31,7 +29,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 15px;
+        padding-left: 15px;  
+    }
+
+    &__dropdown-title{
+        height: 15px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+        margin-bottom: 5.44px;
     }
 
     &__text{
@@ -60,23 +70,12 @@
 
         position: absolute;
         left: 0;
-        top: 49.56px;
-        padding: 20px;
-        z-index: 289;
-
-        &:hover{
-            cursor: default;
-        }
+        top: 49.56px;  
+        z-index: 1;
     }
 }
 
-/*.date-dropdown__day-selector:hover .date-dropdown__grid-item_arrival-departure-date ~ .date-dropdown__grid-item:not(.date-dropdown__grid-item:hover ~ .date-dropdown__grid-item){
-    background: linear-gradient(180deg, #BC9CFF20 0%, #8BA4F920 100%);
-    //opacity: 0.25;
-}*/
-
-
-.date-dropdown.active > .date-dropdown__dropdown-menu {
+.date-dropdown.active > .date-dropdown__calendar-container{
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
