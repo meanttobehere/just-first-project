@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 //@import '../../components/button/button.scss';
-//@import '../../components/navbar/__item/navbar__item.scss';
 @import '../../components/header/header.scss';
 @import '../../components/footer/footer.scss';
 @import '../../components/search-form/search-form.scss';
@@ -17,7 +16,7 @@ html, body{
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;    
-    max-width: 1440px;    
+    //max-width: 1440px;    
     margin: auto;   
 
     &__item{
@@ -27,7 +26,7 @@ html, body{
     &__item:nth-child(2){
         background-image: url('../../images/background.png');
         height: 830px;
-        background-size: 1440px 830px;
+        //background-size: 1440px 830px;
     }
 
     &__content{

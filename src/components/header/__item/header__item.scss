@@ -1,0 +1,31 @@
+.header__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+        cursor: default;
+    }
+
+    height: 18px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.5);
+
+    &_bold{
+        font-weight: bold;
+        color: rgba(31, 32, 65, 0.75);
+    }
+}
+
+.header__item-arrow{
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    width: 24px;
+    height: 21px;  
+}

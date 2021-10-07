@@ -2,6 +2,7 @@ include ../../components/search-form/search-form
 include ../../components/calendar/calendar
 include ../../components/registration-form/registration-form
 include ../../components/login-form/login-form
+include ../../components/summary-form/summary-form
 
 doctype html
 html 
@@ -15,7 +16,8 @@ html
         +search-form()
         +registration-form()
 
-      .middle-column 
+      .middle-column
+        +summary-form()
         +login-form()
 
       .right-column 

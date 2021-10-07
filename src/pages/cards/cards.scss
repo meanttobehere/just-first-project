@@ -3,6 +3,7 @@
 @import '../../components/calendar/calendar.scss';
 @import '../../components/registration-form/registration-form.scss';
 @import '../../components/login-form/login-form.scss';
+@import '../../components/summary-form/summary-form.scss';
 
 html, body{
     margin: 0;
@@ -23,6 +24,13 @@ html, body{
 }
 
 .left-column{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    gap: 50px;
+}
+
+.middle-column{
     display: flex;
     justify-content: flex-start;
     flex-flow: column;

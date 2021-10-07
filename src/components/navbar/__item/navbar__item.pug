@@ -1,8 +1,0 @@
-include ../../text/text
-
-mixin navbar__item(text, isDropDown)
-  div.navbar__item
-    +text('text_label', text)
-    if (isDropDown)
-      div.navbar__arrow-container
-        img(src="images/arrow-down.svg") 

@@ -1,8 +1,27 @@
-include ../navbar/navbar
+include ./__item/header__item
+include ../button/button
+include ../logotype/logotype
 
-mixin header(isLoggedIn, name)  
-  div.header
-    div.header__logotype-container
-      img(src="images/logotype.svg") 
-    +navbar(isLoggedIn, name)
-    
+mixin header(params)
+  -var params = (params ? params : {});
+  -var isLoggedin = (params.isLoggedin ? true : false);
+  -var username = (params.username ? params.username : "No name"); 
+  .header
+    .header__container
+      .header__logotype
+        +logotype()
+      .header__menu-icon 
+        img(src='images/header__menu.svg')
+      .header__navbar      
+        +header__item({title: 'О нас', boldtext: true})
+        +header__item({title: 'Услуги', isDropdown: true})
+        +header__item({title: 'Вакансии'})
+        +header__item({title: 'Новости'})
+        +header__item({title: 'Соглашения', isDropdown: true})
+        .header__userblock
+          if(isLoggedin)
+            .header__stick
+            .header__username=username
+          else 
+            +button({title: 'войти', theme: "white", size: "ss"})
+            +button({title: "зарегистрироватьcя", size: "m"})

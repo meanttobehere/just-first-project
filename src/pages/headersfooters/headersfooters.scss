@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import '../../components/header/header.scss';
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5E5;
+}
+
+.container{
+    max-width: 1440px;
+    min-height: 1853px;
+    margin: auto;
+    background: #F4F4F6;
+    padding-top: 140px;
+
+    display: flex;
+    flex-flow: column;
+    gap: 40px;
+}

@@ -1,0 +1,10 @@
+mixin header__item(params)
+  -var params = (params ? params : {});
+  -var title = (params.title ? params.title : "No title");
+  -var isDropdown = (params.isDropdown ? true : false);
+  -var boldtext = (params.boldtext ? true : false);
+  .header__item(class = boldtext ? "header__item_bold" : "")
+    .header__item-container=title
+    if (isDropdown)
+      .header__item-arrow
+        img(src="images/header__arrow.svg")
