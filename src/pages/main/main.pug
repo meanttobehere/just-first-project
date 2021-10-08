@@ -1,4 +1,3 @@
-include ../../components/button/button
 include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/search-form/search-form
@@ -11,22 +10,15 @@ html
     title Пример страницы    
   body
     .container
-        //-
-          +button('Подобрать номер')
-          +button('Подобрать номер', true)
-          +button('CLICK ME')
-          +button('И еще одна', true)
-          +navbar__item('Новости', true)        
-          +navbar(false)
-          +navbar(true, 'Юлий Цезарь')
-          +header(false)
-        div.container__item
-          +header(true, 'Юлий Цезарь')                 
-        div.container__item
-          div.container__content
-            +search-form()                      
-        div.container__item      
-          +footer()
+      .container__header
+        +header()                 
+      .container__background
+        .container__content
+          .search        
+            +search-form()
+          .text="Лучшие номера для вашей работы,\n отдыха и просто вдохновения"                                  
+      .container__footer      
+        +footer()
        
         
 
