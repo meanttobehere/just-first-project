@@ -1,41 +1,51 @@
-@import '../button/button.scss';
-
 .calendar{
-    width: 320px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    width: 320px;    
     box-sizing: border-box;
+    border: 1px solid $gray-color-25;
     border-radius: 4px;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);        
-    background: #FFFFFF;
+    box-shadow: 0px 10px 20px $gray-color-5;        
+    background: $white-color;
     padding: 20px;
     user-select: none;
+
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: $gray-color-50;
 
     &__month-selector{
         display: flex;
         justify-content: space-between;
-        align-items: center;    
+        align-items: center;
     }
 
     &__month-title{
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
+        color: $gray-color;
+        font-weight: bold;
         font-size: 19px;
         line-height: 23px;
     }
 
-    &__arrow-button{
-        display: flex;        
-        align-items: center;
-        justify-content: center;
+    &__month-button{        
         width: 40px;
         height: 40px;
-        border-radius: 22px;
-        box-sizing: border-box;       
+        border-radius: 22px;             
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: $primary-color;
+        background: $white-color;
         
         &:hover{           
-            background-color: #BC9CFF10;
-            cursor: pointer;
+            background: $primary-gradient-25;         
+        }
+
+        & > i{
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
@@ -61,39 +71,24 @@
         align-items: center;
         justify-content: center;
         position: relative;
+        cursor: pointer;           
 
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 400; 
-        font-size: 12px;
-        line-height: 15px;
-        color: rgba(31, 32, 65, 0.5); 
-        
-        &:hover{
-            cursor: pointer;
+        &:nth-child(-n + 7){
+            font-weight: bold;
+            color: $primary-color;
+            cursor: default;
         }
 
-        &:nth-child(-n + 7){            
-            font-weight: bold;            
-            color: #BC9CFF;
-
-            &:hover{
-                cursor: default;
-            }
-        }        
-
         &_not-current-month-date{
-            color: rgba(31, 32, 65, 0.25);
+            color: $gray-color-25;
         }
         
         &_arrival-departure-date{
-            background: linear-gradient(180deg, #BC9CFFCF 0%, #8BA4F9CF 100%);
-            border-radius: 22px;
-            color: #FFFFFF;
-            font-weight: 700;
-            z-index: 0;          
-
-            // .date-dropdown__grid-item_between-arival-departure-date + &:after
+            background: $primary-gradient-75;
+            color: $white-color;
+            border-radius: 22px;            
+            font-weight: bold;
+            z-index: 0;
            
             &:after{
                 content: "";
@@ -104,11 +99,11 @@
                 width: 40px;
                 height: 40px;                 
                 display: none;               
-                background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+                background: $primary-gradient-25;
             }
 
-            &:hover:not(.date-dropdown__grid-item_current-date){
-                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            &:hover:not(.calendar__grid-item_current-date){
+                background: $primary-gradient;
             }
         }  
         
@@ -119,46 +114,39 @@
 
         &_departure-day-set:after{
             border-radius: 0 22px 22px 0;
-            display:block;            
+            display:block;
         }
 
         &_between-arival-departure-date{
-            background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
-            color: rgba(31, 32, 65, 0.5);
+            background: $primary-gradient-25;         
+            color: $gray-color-50;
 
             &:hover{
-                background: linear-gradient(180deg, #BC9CFF60 0%, #8BA4F960 100%); 
+                background: $primary-gradient-40;
             }
-        }
-
-        &_current-date.date-dropdown__grid-item_arrival-departure-date{
-            background: linear-gradient(180deg, #6FCF97CF 0%, #66D2EACF 100%);
-        }
+        }        
 
         &_current-date{
-            background: linear-gradient(180deg, #6FCF97AF 0%, #66D2EAAF 100%);
+            background: $secondary-gradient-75;
             border-radius: 22px;
-            color: #FFFFFF;
-            font-weight: 700;
+            color: $white-color;
+            font-weight: bold;
 
             &:hover{
-                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+                background: $secondary-gradient;
             }            
-        }       
+        }  
+        
+        &_current-date.calendar__grid-item_arrival-departure-date{
+            background: $secondary-gradient;
+        }
 
-        &_hidden{
-            height: 0;
+        &_hidden{            
             display: none;
         } 
         
         &:hover:not(&_arrival-departure-date):not(&_between-arival-departure-date):not(&_current-date):not(&:nth-child(-n + 7)){
-            background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);            
+            background: $primary-gradient-25;           
         }
     }
-}   
-
-     
-    
-    
-
-    
+}
