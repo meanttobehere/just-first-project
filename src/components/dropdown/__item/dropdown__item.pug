@@ -1,10 +1,14 @@
 mixin dropdown__item(params)
-  -var title = (params.title ? params.title : "No title");
-  -var default_value = (params.default_value ? params.default_value : 0);
-  .dropdown__item
-    .dropdown__item-title=title
-    .dropdown__item-control
-      .dropdown__item-button -
-      .dropdown__item-counter=default_value
-      .dropdown__item-button +
+  -
+    const {
+      title = "Title",
+      value = 0,
+    } = params;
+
+  .dropdown__item.dropdown-item.js-dropdown-item
+    .dropdown-item__title=title
+    .dropdown-item__control
+      .dropdown-item__button.js-dropdown-item__button -
+      .dropdown-item__counter.js-dropdown-item__counter=value
+      .dropdown-item__button.js-dropdown-item__button +
   

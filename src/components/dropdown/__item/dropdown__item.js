@@ -1,57 +1,57 @@
-function dropdownItemsInit()
-{
-    let items = document.getElementsByClassName('dropdown__item');      
-
-    for (let i = 0; i < items.length; i++)
-    { 
-        let buttons = items[i].getElementsByClassName('dropdown__item-button');
-        let counter = items[i].querySelector('.dropdown__item-counter');
-
-        dropdownItemSetStyle(buttons[0], counter);
-        
-        buttons[0].addEventListener("click", () => {
-            counterDown(counter);
-            dropdownItemSetStyle(buttons[0], counter);
-        });
-
-        buttons[1].addEventListener("click", () => {
-            counterUp(counter);
-            dropdownItemSetStyle(buttons[0], counter);
-        })
-    }
+function getCounterDownValue(counter) {
+  let currentValue = Number.parseInt(counter.textContent, 10);
+  if (currentValue === 0) { return 0; }
+  currentValue -= 1;
+  return currentValue;
 }
 
-function counterDown(counter){
-    let currentValue = Number.parseInt(counter.textContent);
-    if (currentValue === 0)
-        return;           
-    currentValue--; 
-    counter.textContent = currentValue;
+function getCounterUpValue(counter) {
+  let currentValue = Number.parseInt(counter.textContent, 10);
+  currentValue += 1;
+  return currentValue;
 }
 
-function counterUp(counter){
-    let currentValue = Number.parseInt(counter.textContent);            
-    currentValue++;
-    counter.textContent = currentValue;
+function getMinusButtonStyle(button, counter) {
+  const { classList } = button;
+  if (counter.textContent === '0') {
+    classList.add('dropdown-item__button_disable');
+  } else {
+    classList.remove('dropdown-item__button_disable');
+  }
+  return classList;
 }
 
-function dropdownItemSetStyle(button, counter){
-    if (counter.textContent === '0')
-        button.classList.add('dropdown__item-button_disable');
-    else
-        button.classList.remove('dropdown__item-button_disable');
-}
+function dropdownItemsInit() {
+  const items = document.getElementsByClassName('js-dropdown-item');
 
-export function dropdownItemReset(item){
-    let buttons = item.getElementsByClassName('dropdown__item-button');
-    let counter = item.querySelector('.dropdown__item-counter');
-    counter.textContent = '0';
-    dropdownItemSetStyle(buttons[0], counter);
-}
+  for (let i = 0; i < items.length; i += 1) {
+    const [minusButton, plusButton] = items[i].getElementsByClassName('js-dropdown-item__button');
+    const counter = items[i].querySelector('.js-dropdown-item__counter');
 
-export function dropdownItemGetCounter(item){
-    let counter = item.querySelector('.dropdown__item-counter');
-    return Number.parseInt(counter.textContent);
+    minusButton.classList = getMinusButtonStyle(minusButton, counter);
+
+    minusButton.addEventListener('click', () => {
+      counter.textContent = getCounterDownValue(counter);
+      minusButton.classList = getMinusButtonStyle(minusButton, counter);
+    });
+
+    plusButton.addEventListener('click', () => {
+      counter.textContent = getCounterUpValue(counter);
+      minusButton.classList = getMinusButtonStyle(minusButton, counter);
+    });
+  }
 }
 
 dropdownItemsInit();
+
+export function dropdownItemReset(item) {
+  const [minusButton] = item.getElementsByClassName('js-dropdown-item__button');
+  const counter = item.querySelector('.js-dropdown-item__counter');
+  counter.textContent = '0';
+  minusButton.classList = getMinusButtonStyle(minusButton, counter);
+}
+
+export function dropdownItemGetCounter(item) {
+  const counter = item.querySelector('.js-dropdown-item__counter');
+  return Number.parseInt(counter.textContent, 10);
+}

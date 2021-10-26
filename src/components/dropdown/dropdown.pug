@@ -1,26 +1,31 @@
 include ./__item/dropdown__item
 include ../button/button
 
-mixin dropdown(options)
-  -var dropdown_size = (options.size ? `dropdown_size-${options.size}` : "");
-  -var items = (options.items ? options.items : []);
-  -var text = (options.text ? options.text : "No text");
-  -var title = (options.title ? options.title : "");
-  -var buttons = (options.buttons ? true : false);
-  -var default_active = (options.default_active ? "dropdown_active" : "");
-  .dropdown(class=dropdown_size class=default_active)
-    if (title != "")
+mixin dropdown(params)
+  -
+    const {
+      size,
+      items = [],
+      text = "Text",
+      title,
+      buttons = false,
+      alwaysOpen = false,
+    } = params;
+
+    const class_size = (size ? `dropdown_size-${size}` : "");
+    const class_open = (alwaysOpen ? "dropdown_always-open" : "");
+
+  .dropdown.js-dropdown(class=class_size class=class_open)
+    if (title)
       .dropdown__title=title
     .dropdown__container
-      .dropdown__field
-        .dropdown__text=text
-        .dropdown__arrow
-          img(src='images/dropdown__arrow.svg')
-      .dropdown__menu
+      .dropdown__field.js-dropdown__field=text        
+        i.material-icons expand_more
+      .dropdown__menu.js-dropdown__menu
         .dropdown__menu-container
-          each item in items.length ? items : "none" 
+          each item in items
             +dropdown__item(item)
         if (buttons)
-          .dropdown__buttons-container
+          .dropdown__buttons-container.js-dropdown__buttons-container
             +button({title: "очистить", theme: "no-border"})
             +button({title: "применить", theme: "no-border"})
