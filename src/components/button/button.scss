@@ -1,51 +1,33 @@
-@import '../text/text.scss';
-
 .button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
     position: relative;
     width: 99px;
     height: 44px;
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-
-    border-radius: 22px; 
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-
-    color: #FFFFFF;    
-    font-family: 'Montserrat';
+    border-radius: 22px;
+    background: $primary-gradient;
+    &:hover{
+        background: $primary-light-gradient;
+    }
+    &:active{        
+        top: 2px;
+    }
+    color: $white-color;
+    font-family: $primary-font;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
-    text-align: center;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 
-    &__text-container{
+    &__title{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 43px;  
-    }
-
-    &_hide{
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
-
-    &:hover{
-        cursor: pointer;
-        background-image: linear-gradient(180deg, #BC9CFF7F 0%, #8BA4F97F 100%);  
-    }
-
-    &:active{        
-        top: 2px;
-    }
+        width: 100%;        
+    }   
     
     &_size-l{
         width: 320px;
@@ -67,42 +49,37 @@
         height: 34px
     }
 
-    &_theme-no-border{
-        border: none;
+    &_theme-no-border{        
         background: none;
-        color: #BC9CFF;
-
+        color: $primary-color;
         width: max-content;
         height: auto;
         
         &:hover{
-            color: rgba(31, 32, 65, 0.5);
+            color: $gray-color-50;
             background: none;
         }
     }
 
     &_theme-white{ 
-        color: #BC9CFF;
+        color: $primary-color;
+        background: $white-color;
         box-sizing: border-box;
-        border: double 2px transparent;
-        border-radius: 22px;
-        background-origin: border-box;    
-        background-clip: content-box, border-box;
-        background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);  
-
+        border: 2px $primary-color solid;
         &:hover{
-            background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), linear-gradient(180deg, #BC9CFF7F 0%, #8BA4F97F 100%); 
+            border-color: $primary-light-color;
+            background: $white-color;
         }
     }
     
-    &__img-container{        
+    & > i{
         position: absolute;
         right: 0;
         top: 0;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
         width: 44px;
-        height: 44px;                  
+        height: 44px;
     }
 }

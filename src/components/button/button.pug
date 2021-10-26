@@ -1,9 +1,17 @@
 mixin button(params)
-  -var button_size = (params.size ? `button_size-${params.size}` : "");
-  -var button_theme = (params.theme ? `button_theme-${params.theme}` : ""); 
-  -var button_title = (params.title ? params.title : "No title");
-  div.button(class=button_size class=button_theme)
-    div.button__text-containter=params.title                
-    if(button_size=="button_size-l")
-      div.button__img-container
-        img(src="images/button__arrow.svg")
+  -
+    const {
+      size,
+      theme,
+      title = "Title",
+      type = "button",
+      arrow = false,
+    } = params;
+
+    const class_size = (size ? `button_size-${size}` : "");
+    const class_theme = (theme ? `button_theme-${theme}` : "");
+
+  button.button(class=class_size class=class_theme type=type)
+    .button__title=title
+    if(arrow)
+      i.material-icons arrow_forward
