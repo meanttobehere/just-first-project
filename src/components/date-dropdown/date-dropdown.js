@@ -1,53 +1,50 @@
-import arrow_down from './arrow-down.svg'
-import {getCalendar, getArrivalDate, getDepartureDate} from '../calendar/calendar.js'
+import { getCalendar } from '../calendar/calendar';
 
-function dateDropdownsInit()
-{    
-    document.addEventListener("click", e => {
-    
-        const isDropdownButton = e.target.closest("[data-dropdown-button]")
-        if (isDropdownButton)
-            console.log('click')
-    
-        if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
-      
-        let currentDropdown
-        if (isDropdownButton) {
-          currentDropdown = e.target.closest("[data-dropdown]")
-          currentDropdown.classList.toggle("active")
-        }
-      
-        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-          if (dropdown === currentDropdown) return
-          dropdown.classList.remove("active")
-        })
-    })
+function dateDropdownsInit() {
+  document.addEventListener('click', (event) => {
+    const dateDropdownContainer = event.target.closest('.js-date-dropdown__container');
+    const currentDateDropdown = event.target.closest('.js-date-dropdown');
 
-    let dropdowns = document.getElementsByClassName('date-dropdown');     
-    
-    for (let i = 0; i < dropdowns.length; i++)
-    {
-        let dropdown = dropdowns[i];
+    if (!dateDropdownContainer && currentDateDropdown) return;
 
-        let calendarDOM = dropdown.querySelector('.calendar');
-        let calendar = getCalendar(calendarDOM);
+    if (dateDropdownContainer) { currentDateDropdown.classList.toggle('active'); }
 
-        let arrival = dropdown.getElementsByClassName('date-dropdown__text')[0];
-        let departure = dropdown.getElementsByClassName('date-dropdown__text')[1];
+    document.querySelectorAll('.js-date-dropdown.active').forEach((dateDropdown) => {
+      if (dateDropdown === currentDateDropdown) return;
+      dateDropdown.classList.remove('active');
+    });
+  });
 
-        calendar.changeTravelEvent = () => {  
-            arrival.textContent = getArrivalDate(calendar);
-            departure.textContent = getDepartureDate(calendar);  
-        }
+  const dropdowns = document.getElementsByClassName('js-date-dropdown');
 
-        calendar.acceptButtonClick = () => {
-            dropdown.classList.remove("active");
-        }
+  for (let i = 0; i < dropdowns.length; i += 1) {
+    const dropdown = dropdowns[i];
 
-        calendar.clearButtonClick = () => {
-            dropdown.classList.remove("active");
-        }     
-    }
+    const calendarDOM = dropdown.querySelector('.js-calendar');
+    const calendar = getCalendar(calendarDOM);
+
+    const arrival = dropdown.getElementsByClassName('date-dropdown__text')[0];
+    const departure = dropdown.getElementsByClassName('date-dropdown__text')[1];
+
+    const acceptButtonClickHandler = function acceptButtonClickHandler() {
+      dropdown.classList.remove('active');
+    };
+
+    const clearButtonClickHandler = function clearButtonClickHandler() {
+      dropdown.classList.remove('active');
+    };
+
+    const travelChangeHandler = function travelChangeHandler() {
+      arrival.textContent = calendar.getArrivalDate();
+      departure.textContent = calendar.getDepartureDate();
+    };
+
+    calendar.setObserver({
+      acceptClick: acceptButtonClickHandler,
+      clearClick: clearButtonClickHandler,
+      travelChange: travelChangeHandler,
+    });
+  }
 }
 
 dateDropdownsInit();

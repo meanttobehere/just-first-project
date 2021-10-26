@@ -1,20 +1,18 @@
 include ../calendar/calendar
 
 mixin date-dropdown(params) 
-  .date-dropdown("data-dropdown")
+  .date-dropdown.js-date-dropdown
     .date-dropdown__date-container
       .date-dropdown__dropdown
         .date-dropdown__dropdown-title прибытие
-        .date-dropdown__container("data-dropdown-button") 
+        .date-dropdown__container.js-date-dropdown__container
           .date-dropdown__text ДД.ММ.ГГГГ
-          .date-dropdown__img-container
-            img(src="images/arrow-down.svg")
+          i.material-icons expand_more            
       .date-dropdown__dropdown
         .date-dropdown__dropdown-title выезд
-        .date-dropdown__container("data-dropdown-button") 
+        .date-dropdown__container.js-date-dropdown__container
           .date-dropdown__text ДД.ММ.ГГГГ
-          .date-dropdown__img-container
-            img(src="images/arrow-down.svg")
+          i.material-icons expand_more
     .date-dropdown__calendar-container
       +calendar()
     

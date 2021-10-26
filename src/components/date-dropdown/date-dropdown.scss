@@ -1,22 +1,23 @@
-@import '../calendar/calendar.scss';
-
 .date-dropdown{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    user-select: none;    
+    user-select: none;
+    
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
 
     &__date-container{
         position: relative;
         display: flex;
         align-items: center;
         gap: 20px;
-
-        &:hover .date-dropdown__container{
-            cursor: pointer;
-        }
+        cursor: pointer;
     }
 
     &__container{
@@ -24,47 +25,41 @@
         height: 44px;    
         box-sizing: border-box;
         border-radius: 4px;
-        border: 1px solid rgba(31, 32, 65, 0.25);
+        border: 1px solid $gray-color-25;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-left: 15px;  
+
+        & > i{
+            color: $gray-color-50;
+            display: flex;        
+            align-items: center;
+            justify-content: center;            
+            width: 44px;
+            height: 44px;
+        }
     }
 
     &__dropdown-title{
         height: 15px;
-        font-family: 'Montserrat';
-        font-style: normal;
         font-weight: bold;
-        font-size: 12px;
-        line-height: 15px;
         text-transform: uppercase;
-        color: #1F2041;
+        color: $gray-color;
         margin-bottom: 5.44px;
     }
 
-    &__text{
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: normal;
+    &__text{        
         font-size: 14px;
         line-height: 18px;
-        color: rgba(31, 32, 65, 0.75);
-    }
+        color: $gray-color-75;
+    }    
 
-    &__img-container{
-        display: flex;        
-        align-items: center;
-        justify-content: center;
-        object-fit: cover;
-        width: 44px;
-        height: 44px;
-    }
-
-    &__calendar-container{    
-        opacity: 0;
+    &__calendar-container{        
+        visibility: hidden;   
         pointer-events: none;
+        opacity: 0;        
         transform: translateY(-10px);
         transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 
@@ -73,10 +68,11 @@
         top: 70px;
         z-index: 1;
     }
-}
 
-.date-dropdown.active > .date-dropdown__calendar-container{
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    &.active > .date-dropdown__calendar-container{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 }
