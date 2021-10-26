@@ -1,10 +1,23 @@
 mixin header__item(params)
-  -var params = (params ? params : {});
-  -var title = (params.title ? params.title : "No title");
-  -var isDropdown = (params.isDropdown ? true : false);
-  -var boldtext = (params.boldtext ? true : false);
-  .header__item(class = boldtext ? "header__item_bold" : "")
-    .header__item-container=title
-    if (isDropdown)
-      .header__item-arrow
-        img(src="images/header__arrow.svg")
+  -
+    var {
+      title = "title",
+      href = "#",
+      selected = false,
+      children = [],
+    } = params;
+    const className = selected ? "header-item_selected" : "";
+  
+  if (children.length == 0)
+    .header__item.header-item(class=className)
+      .header-item__title-container
+        a.header-item__title(href=href)=title
+  else
+    .header__item.header-item.js-header-item(class=className)
+      .header-item__title-container.js-header-item__title-container      
+        .header-item__title=title
+        .header-item__arrow
+          <i class="material-icons">expand_more</i>
+      .header-item__children-container
+        each child in children
+          a.header-item__child(href=child.href)=child.title

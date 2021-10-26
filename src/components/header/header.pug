@@ -3,25 +3,32 @@ include ../button/button
 include ../logotype/logotype
 
 mixin header(params)
-  -var params = (params ? params : {});
-  -var isLoggedin = (params.isLoggedin ? true : false);
-  -var username = (params.username ? params.username : "No name"); 
+  -
+    var {
+      isLoggedIn = false,
+      username = "No name",
+      headerItems = [],
+      signupButtonLink = "#",
+      loginButtonLink = "#",
+      logotypeLink = "#",
+    } = params;
+
   .header
-    .header__container
-      .header__logotype
+    .header__container.js-header__container
+      a.header__logotype(href=logotypeLink)
         +logotype()
-      .header__menu-icon 
+      .header__menu-icon.js-header__menu-icon
         img(src='images/header__menu.svg')
-      .header__navbar      
-        +header__item({title: 'О нас', boldtext: true})
-        +header__item({title: 'Услуги', isDropdown: true})
-        +header__item({title: 'Вакансии'})
-        +header__item({title: 'Новости'})
-        +header__item({title: 'Соглашения', isDropdown: true})
-        .header__userblock
-          if(isLoggedin)
+      nav.header__navbar.js-header__navbar
+        each item in headerItems
+          +header__item(item)
+        .header__userblock.js-header__userblock
+          if(isLoggedIn)
             .header__stick
             .header__username=username
-          else 
-            +button({title: 'войти', theme: "white", size: "ss"})
-            +button({title: "зарегистрироватьcя", size: "m"})
+          else
+            a.header__button(href=loginButtonLink)
+              +button({title: 'войти', theme: "white", size: "ss"})
+            a.header__button(href=signupButtonLink)
+              +button({title: "зарегистрироватьcя", size: "m"})
+              
