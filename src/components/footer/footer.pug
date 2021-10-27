@@ -1,37 +1,42 @@
 include ../inpt/inpt
 include ../logotype/logotype
 
-mixin footer()
-  div.footer
-    div.footer__container
-      div.footer__column(class = 'c1')
-        div.footer__list-item
-          div.footer__img-container
-            +logotype()
-        div.footer__list-item(class = 'footer__list-item_font-l') Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      div.footer__column
-        div.footer__list-title Навигация
-        div.footer__list-item О нас
-        div.footer__list-item Новости
-        div.footer__list-item Служба поддержки
-        div.footer__list-item Услуги
-      div.footer__column
-        div.footer__list-title О нас
-        div.footer__list-item О сервисе
-        div.footer__list-item Наша команда
-        div.footer__list-item Вакансии
-        div.footer__list-item Инвесторы
-      div.footer__column
-        div.footer__list-title Служба поддержки
-        div.footer__list-item Соглашения
-        div.footer__list-item Сообщества
-        div.footer__list-item Связь с нами
-      div.footer__column(class = 'c12')
-        div.footer__list-title Подписка
-        div.footer__list-item(class = 'footer__list-item_font-l') Получайте специальные предложения и новости сервиса
-        +inpt({size: 'm', type: 'submit'})
-    div.footer__bottom
-      div.footer__bottom-container
-        div.footer__bottom-item Copyright © 2018 Toxin отель. Все права защищены.
-        div.footer__bottom-item
-          img(src='images/facebook-icon.svg')
+mixin footer(params)
+  -
+    params = (params ? params : {})
+    const {      
+      groups = [{
+        title: "title",
+        items: [{
+          name: "item1", 
+          href: "#"
+        }],
+      }],
+      submitLink = "#",
+    } = params;
+
+  .footer.js-footer
+    .footer__top-container
+      .footer__group                  
+        +logotype()
+        .footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»        
+      each group in groups
+        .footer__group.js-footer__group
+          .footer__group-title.js-footer__group-title= group.title 
+          each item in group.items
+            a.footer__group-item(href=item.href)= item.name
+      .footer__group
+        .footer__group-title Подписка
+        .footer__text Получайте специальные предложения и новости сервиса
+        +inpt({size: 'm', type_submit: true, placeholder: "Email", link: submitLink})
+    .footer__bottom-container
+      .footer__bottom-item    
+        +logotype()
+      .footer__bottom-item Copyright © 2018 Toxin отель. Все права защищены.
+      .footer__bottom-item
+        a.footer__link(href="#")
+          i.fab.fa-twitter
+        a.footer__link(href="#")
+          i.fab.fa-facebook-square
+        a.footer__link(href="#")
+          i.fab.fa-instagram
