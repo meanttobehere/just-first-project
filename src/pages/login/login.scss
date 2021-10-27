@@ -1,0 +1,51 @@
+@import '../../assets/style.scss';
+@import '../../assets/fonts.scss';
+@import '../../components/header/header.scss';
+@import '../../components/header/__item/header__item.scss';
+@import '../../components/search-form/search-form.scss';
+@import '../../components/dropdown/dropdown.scss';
+@import '../../components/login-form/login-form.scss';
+@import '../../components/dropdown//__item/dropdown__item.scss';
+@import '../../components/date-dropdown/date-dropdown.scss';
+@import '../../components/calendar/calendar.scss';
+@import '../../components/button/button.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/logotype/logotype.scss';
+@import '../../components/signup-form/singup-form.scss';
+@import '../../components/inpt/inpt.scss';
+@import '../../components/radio-button/radio-button.scss';
+@import '../../components/checkbox-list/checkbox-list.scss';
+@import '../../components/custom-checkbox/custom-checkbox.scss';
+@import '../../components/toggle/toggle.scss';
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 29999;
+}
+
+main{
+    padding-top: 70px;
+    height: 830px;
+    
+    background-image: url('./images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;   
+    background-position: center bottom;
+
+    .container__search-form{        
+        padding-top: 70px;
+        padding-left: 7px;
+        padding-right: 7px;
+        margin: auto;
+        display: flex;
+        justify-content: center;        
+    }
+}

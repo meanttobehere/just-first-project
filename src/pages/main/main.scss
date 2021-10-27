@@ -14,6 +14,7 @@
 html, body{
     margin: 0px;
     padding: 0px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 header{
@@ -25,6 +26,7 @@ header{
 
 main{
     padding-top: 70px;
+    height: 830px;
     
     background-image: url('./images/background.png');
     background-repeat: no-repeat;
@@ -51,26 +53,26 @@ main{
     .container__text{
         max-width: 1440px;
         margin: auto;
-        padding-top: 320px;
-        padding-bottom: 18px;       
+        padding-top: 318px;           
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
 
         & > *{
             flex: 1 1 auto;
-        }
+        }        
 
         &::before, &::after{
             content: "";
-            max-width: 140px;
-            flex-grow: 1;
+            max-width: 134px;
+            flex-grow: 1;            
         }
     }    
 
     .text{
+        display: block;
         min-width: 0;
-        max-width: max-content;
+        max-width: 297px;
         height: 48px;
         font-family: $primary-font;
         font-style: normal;
@@ -78,7 +80,6 @@ main{
         font-size: 14px;
         line-height: 24px;
         text-align: right;
-        color: $gray-color-75;        
-        white-space: pre-line;
+        color: $gray-color-75;
     }
 }
