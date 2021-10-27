@@ -1,53 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import '../../assets/style.scss';
+@import '../../assets/fonts.scss';
 @import '../../components/header/header.scss';
-@import '../../components/footer/footer.scss';
+@import '../../components/header/__item/header__item.scss';
 @import '../../components/search-form/search-form.scss';
+@import '../../components/dropdown/dropdown.scss';
+@import '../../components/dropdown//__item/dropdown__item.scss';
+@import '../../components/date-dropdown/date-dropdown.scss';
+@import '../../components/calendar/calendar.scss';
+@import '../../components/button/button.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/logotype/logotype.scss';
 
 html, body{
     margin: 0px;
     padding: 0px;
-    background: #E5E5E5;
 }
 
-.container{
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 29999;
+}
 
-    &__background{
-        height: 830px;
-        background-image: url('./images/background.png');
+main{
+    padding-top: 70px;
+    
+    background-image: url('./images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;   
+    background-position: center bottom;
+
+    .container__search-form{
+        max-width: 1440px;
+        padding-top: 70px;
+        margin: auto;
+        display: flex;
+
+        & > *{
+            flex: 1 1 auto;
+        }
+
+        &::before, &::after{
+            content: "";
+            max-width: 140px;
+            flex-grow: 1;
+        }
     }
 
-    .text{        
+    .container__text{
+        max-width: 1440px;
+        margin: auto;
+        padding-top: 320px;
+        padding-bottom: 18px;       
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        & > *{
+            flex: 1 1 auto;
+        }
+
+        &::before, &::after{
+            content: "";
+            max-width: 140px;
+            flex-grow: 1;
+        }
+    }    
+
+    .text{
+        min-width: 0;
+        max-width: max-content;
         height: 48px;
-        font-family: 'Montserrat';
+        font-family: $primary-font;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 24px;
         text-align: right;
-        color: rgba(31, 32, 65, 0.75);
-
+        color: $gray-color-75;        
         white-space: pre-line;
-
-        display: block;
-        margin-left: auto;
-        margin-top: 320px;
-        padding-right: 140px;
-        width: max-content;
-    }
-    
-    &__content{       
-        max-width: 1440px; 
-        margin: auto;        
-    }
-
-    .search{       
-        max-width: 380px;
-        padding-top: 70px;
-        margin: auto;        
-        
-        @media screen and (min-width: 640px){
-            padding-left: 140px;
-            margin: 0;
-        }
     }
 }

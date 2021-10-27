@@ -2,23 +2,24 @@ include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/search-form/search-form
 
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/main/data.json'));
+
 doctype html
-html 
-  head 
+html
+  head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width")
-    title Пример страницы    
+    title TOXIN
   body
-    .container
-      .container__header
-        +header()                 
-      .container__background
-        .container__content
-          .search        
-            +search-form()
-          .text="Лучшие номера для вашей работы,\n отдыха и просто вдохновения"                                  
-      .container__footer      
-        +footer()
-       
-        
-
+    header
+      +header(data.headerData)
+    main
+      .container__search-form
+        +search-form(data.searchFormData)
+      .container__text   
+        .text="Лучшие номера для вашей работы,\n отдыха и просто вдохновения"                            
+    footer
+      +footer(data.footerData)
