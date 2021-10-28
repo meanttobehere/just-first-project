@@ -1,0 +1,22 @@
+mixin room-card(params)
+  - 
+    let {
+      imageLinks = [], 
+      number = 0, 
+      luxe = false,
+      price = 0, 
+      rate = 0, 
+      reviewCount = 0
+    } = params;    
+
+  .room-card.js-room-card
+    .room-card__images
+      each link in imageLinks
+        img.room-card__image(src=link).js-room-card__image
+      i.material-icons.room-card__arrow.js-room-card__arrow expand_more
+      i.material-icons.room-card__arrow.js-room-card__arrow expand_more
+    .room-card__container 
+      
+
+     
+    
