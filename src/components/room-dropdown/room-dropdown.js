@@ -1,52 +1,38 @@
-import '../dropdown/dropdown.js'
+import '../dropdown/dropdown';
+import { dropdownItemGetCounter } from '../dropdown/__item/dropdown__item';
 
-function roomDropdownsInit()
-{
-    let dropdowns = document.getElementsByClassName('room-dropdown');
-    
-    function generateText(bedrooms, beds, bathrooms)
-    {
-        let text = '';
+function generateText(bedrooms, beds) {
+  let text = '';
 
-        if (bedrooms % 10 === 1 && bedrooms !== 11)
-            text = bedrooms + ' спальня';
-        else if (bedrooms % 10 >= 2 && bedrooms % 10 <= 4)
-            text = bedrooms + ' спальни';
-        else
-            text = bedrooms + ' спален';
+  if (bedrooms % 10 === 1 && bedrooms !== 11) { text = `${bedrooms} спальня`; } else if (bedrooms % 10 >= 2 && bedrooms % 10 <= 4) { text = `${bedrooms} спальни`; } else { text = `${bedrooms} спален`; }
 
-        if (beds === 0)
-            return text;
+  if (beds === 0) { return text; }
 
-        if (beds % 10 === 1 && beds !== 11)
-            text += ', ' + beds + ' кровать...';
-        else if (beds % 10 >= 2 && beds % 10 <= 4)
-            text += ', ' + beds + ' кровати...';
-        else
-            text += ', ' + beds + ' кроватей...';
+  if (beds % 10 === 1 && beds !== 11) { text += `, ${beds} кровать...`; } else if (beds % 10 >= 2 && beds % 10 <= 4) { text += `, ${beds} кровати...`; } else { text += `, ${beds} кроватей...`; }
 
-        return text;
-    }    
-    
-    for (let i = 0; i < dropdowns.length; i++)
-    {        
-        let text = dropdowns[i].querySelector(".dropdown__text");
-        let items = dropdowns[i].getElementsByClassName("dropdown__item-counter");
-        let menu = dropdowns[i].querySelector(".dropdown__menu");
+  return text;
+}
 
-        function setText(){
-            let bedrooms = Number.parseInt(items[0].textContent);
-            let beds = Number.parseInt(items[1].textContent);
-            let bathrooms = Number.parseInt(items[2].textContent);
-            text.textContent = generateText(bedrooms, beds, bathrooms);
-        }
+function roomDropdownsInit() {
+  const dropdowns = document.getElementsByClassName('js-room-dropdown');
 
-        menu.addEventListener("click", () => {
-            setText();
-        });
+  for (let i = 0; i < dropdowns.length; i += 1) {
+    const field = dropdowns[i].querySelector('.js-dropdown__field').childNodes[0];
+    const [bedrooms, beds] = dropdowns[i].getElementsByClassName('js-dropdown-item');
+    const menu = dropdowns[i].querySelector('.js-dropdown__menu');
 
-        setText();
-    }
+    const setText = function setText() {
+      const bedroomsCount = dropdownItemGetCounter(bedrooms);
+      const bedsCount = dropdownItemGetCounter(beds);
+      field.textContent = generateText(bedroomsCount, bedsCount);
+    };
+
+    menu.addEventListener('click', () => {
+      setText();
+    });
+
+    setText();
+  }
 }
 
 roomDropdownsInit();

@@ -3,13 +3,13 @@
     border: none;
     cursor: pointer;
     display: block;
-    position: relative;
+    position: relative;    
     width: 99px;
     height: 44px;
     border-radius: 22px;
     background: $primary-gradient;
     &:hover{
-        background: $primary-light-gradient;
+        background: $primary-gradient-50;
     }
     &:active{        
         top: 2px;
@@ -30,7 +30,8 @@
     }   
     
     &_size-l{
-        width: 320px;
+        width: 100%;
+        max-width: 320px;
         height: 44px;
     }
 
@@ -67,7 +68,7 @@
         box-sizing: border-box;
         border: 2px $primary-color solid;
         &:hover{
-            border-color: $primary-light-color;
+            border-color: $primary-color-50;
             background: $white-color;
         }
     }

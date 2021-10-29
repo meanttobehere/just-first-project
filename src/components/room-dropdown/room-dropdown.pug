@@ -1,18 +1,28 @@
 include ../dropdown/dropdown
 
 mixin room-dropdown(params)
-  -var params = (params ? params : {})
-  -var title = (params.title ? params.title : "");
-  -var default_active = (params.default_active ? params.default_active : false);
-  -var bedrooms = (params.bedrooms ? params.bedrooms : 2);
-  -var beds = (params.beds ? params.beds : 2);
-  -var bathrooms = (params.bathrooms ? params.bathrooms : 0);
-  .room-dropdown
-    +dropdown({size: "m", 
-               title: title,
-               items: [{title: "спальни", default_value: bedrooms}, 
-                       {title: "кровати", default_value: beds}, 
-                       {title: "ванные комнаты", default_value: bathrooms}], 
-               text: "Сколько гостей",
-               default_active: default_active})
+  -
+    const {
+      title = "dropdown",
+      bedrooms = 1,
+      beds = 1,
+      bathrooms = 1,  
+      alwaysOpen = false,
+      size = "l",
+    } = params;
+
+    const newParams = {
+      title: title,
+      text: "Сколько гостей",
+      alwaysOpen: alwaysOpen,
+      size: size,
+      items: [
+        {title: "спальни", value: bedrooms},
+        {title: "кровати", value: beds},
+        {title: "ванные комнаты", value: bathrooms}
+      ]
+    }
+
+  .room-dropdown.js-room-dropdown
+    +dropdown(newParams)
   

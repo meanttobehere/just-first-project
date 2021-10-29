@@ -18,6 +18,7 @@
 @import '../../components/custom-checkbox/custom-checkbox.scss';
 @import '../../components/toggle/toggle.scss';
 @import '../../components/pagination/pagination.scss';
+@import '../../components/room-card/room-card.scss';
 
 html, body{
     margin: 0px;
@@ -65,10 +66,7 @@ main{
 
 .data-container{
 
-    padding-top: 30px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;    
+    padding-top: 30px;   
 
     &__title{
         font-family: 'Montserrat';
@@ -84,7 +82,7 @@ main{
 }
 
 .rooms-container{
-    max-width: 834px;    
+    max-width: 834px;
     flex-grow: 1;
 
     padding-bottom: 41px;
@@ -94,20 +92,17 @@ main{
     gap: 20px 12px;
 }
 
-.room-card{
-    min-width: 270px;
-    height: 257px;
+.room-card{    
     background-color: khaki;
-    flex-grow: 1;
+    flex: 1 1 30%;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 650px){
     main{ 
         flex-flow: column;   
     }
 
     .room-card{
-        min-width: 90%;
     }
 
     .filter-container{

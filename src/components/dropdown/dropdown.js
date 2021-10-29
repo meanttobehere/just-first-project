@@ -28,9 +28,10 @@ function dropdownsInit() {
 
   for (let i = 0; i < dropdowns.length; i += 1) {
     const dropdown = dropdowns[i];
-    const [clearBtn, acceptBtn] = dropdown.querySelector('.js-dropdown__buttons-container').children;
+    const dropdownButtonsContainer = dropdown.querySelector('.js-dropdown__buttons-container');    
 
-    if (clearBtn !== undefined && acceptBtn !== undefined) {
+    if (dropdownButtonsContainer) {
+      const [clearBtn, acceptBtn] = dropdownButtonsContainer.children;
       const items = dropdown.getElementsByClassName('js-dropdown-item');
       const menu = dropdown.querySelector('.js-dropdown__menu');
 

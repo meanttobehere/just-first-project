@@ -1,1 +1,0 @@
-import paginationArrow from './pagination__arrow.svg'

@@ -1,0 +1,24 @@
+include ../inpt/inpt
+include ../button/button
+include ../toggle/toggle
+include ../radio-button/radio-button
+
+mixin signup-form()
+  form.signup-form
+    .signup-form__title Регистрация аккаунта
+    .signup-form__inputdata-container
+      +inpt({placeholder: "Имя"})
+      +inpt({placeholder: "Фамилия"})
+      .signup-form__radio-buttons-container
+        +radio-button({title: "Мужчина", checked: true})
+        +radio-button({title: "Женщина"})
+    .signup-form__birthdate-container
+      +inpt({title: "дата рождения", placeholder: "ДД.ММ.ГГГГ"})    
+    .signup-form__inputdata-container
+      +inpt({title: "данные для входа в сервис", placeholder: "Email"})
+      +inpt({placeholder: "Пароль"})
+      +toggle("Получать спецпредложения")    
+    .signup-form__button-container
+      +button({title: "зарегистрироваться", size: "l", arrow: true, type: "submit"})
+    .signup-form__button-container Уже есть аккаунт на Toxin
+      +button({title: "войти", theme: "white"})

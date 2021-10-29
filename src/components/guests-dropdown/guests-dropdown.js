@@ -23,7 +23,7 @@ function guestsDropdownsInit() {
   for (let i = 0; i < dropdowns.length; i += 1) {
     const dropdown = dropdowns[i];
 
-    const field = dropdown.querySelector('.js-dropdown__field');
+    const field = dropdown.querySelector('.js-dropdown__field').childNodes[0];
     const [adults, children, babies] = dropdown.getElementsByClassName('js-dropdown-item');
     const menu = dropdown.querySelector('.js-dropdown__menu');
 

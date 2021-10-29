@@ -1,4 +1,5 @@
 mixin range-slider(params)
+  -var params = (params ? params : {})
   -var title = (params.title ? params.title : "No title");
   -var min_value = (params.min_value ? params.min_value : 0);
   -var max_value = (params.max_value ? params.max_value : 1000);

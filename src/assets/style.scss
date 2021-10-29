@@ -1,0 +1,22 @@
+$gray-color: #1F2041;
+$gray-color-75: rgba($gray-color, .75);
+$gray-color-50: rgba($gray-color, .50);
+$gray-color-25: rgba($gray-color, .25);
+$gray-color-10: rgba($gray-color, .10);
+$gray-color-5: rgba($gray-color, .05);
+
+$white-color: white;
+
+$primary-color: #BC9CFF;
+$primary-color-50: #BC9CFF7F;
+
+$primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$primary-gradient-90: linear-gradient(180deg, #BC9CFFE7 0%, #8BA4F9E7 100%);
+$primary-gradient-75: linear-gradient(180deg, #BC9CFFC0 0%, #8BA4F9C0 100%);
+$primary-gradient-50: linear-gradient(180deg, #BC9CFF7F 0%, #8BA4F97F 100%);
+$primary-gradient-40: linear-gradient(180deg, #BC9CFF60 0%, #8BA4F960 100%);
+$primary-gradient-25: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+$primary-gradient-10: linear-gradient(180deg, #BC9CFF1A 0%, #8BA4F91A 100%);
+
+$secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$secondary-gradient-75: linear-gradient(180deg, #6FCF97C0 0%, #66D2EAC0 100%);

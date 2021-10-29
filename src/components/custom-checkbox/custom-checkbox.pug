@@ -3,6 +3,7 @@ mixin custom-checkbox(params)
   -var description = (params.description ? params.description : "");
   -var isRich = (params.description ? true : false);
   -var default_clicked = (params.default_clicked ? true: false);
+  
   .custom-checkbox 
     .custom-checkbox__box(class = default_clicked ? "custom-checkbox__box_clicked" : "")
       img.custom-checkbox__checkmark(src='images/custom-checkbox-checkmark.svg')

@@ -7,11 +7,11 @@ function dateDropdownsInit() {
 
     if (!dateDropdownContainer && currentDateDropdown) return;
 
-    if (dateDropdownContainer) { currentDateDropdown.classList.toggle('active'); }
+    if (dateDropdownContainer) { currentDateDropdown.classList.toggle('date-dropdown_active'); }
 
-    document.querySelectorAll('.js-date-dropdown.active').forEach((dateDropdown) => {
+    document.querySelectorAll('.js-date-dropdown.date-dropdown_active').forEach((dateDropdown) => {
       if (dateDropdown === currentDateDropdown) return;
-      dateDropdown.classList.remove('active');
+      dateDropdown.classList.remove('date-dropdown_active');
     });
   });
 
@@ -27,11 +27,11 @@ function dateDropdownsInit() {
     const departure = dropdown.getElementsByClassName('date-dropdown__text')[1];
 
     const acceptButtonClickHandler = function acceptButtonClickHandler() {
-      dropdown.classList.remove('active');
+      dropdown.classList.remove('date-dropdown_active');
     };
 
     const clearButtonClickHandler = function clearButtonClickHandler() {
-      dropdown.classList.remove('active');
+      dropdown.classList.remove('date-dropdown_active');
     };
 
     const travelChangeHandler = function travelChangeHandler() {

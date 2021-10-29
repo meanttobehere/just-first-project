@@ -1,17 +1,22 @@
 include ../custom-checkbox/custom-checkbox
 
 mixin checkbox-list(params)
-  -var title = (params.title ? params.title : "No title");
-  -var items = (params.items ? params.items : []);
-  -var descriptions = (params.descriptions ? params.descriptions : []);
-  -var expandable = (params.expandable ? true : false);
-  -var default_open = (params.default_open ? true : false);
-  .checkbox-list(class = expandable ? "checkbox-list_expandable" : "")
+  -
+    const {
+      title = "title",
+      items = [],
+      descriptions = [],
+      expandable = false,
+      defaultOpen = true,
+    } = params;
+
+    const class_expandable = expandable ? "checkbox-list_expandable" : "";
+
+  .checkbox-list(class = class_expandable)
     .checkbox-list__title=title
       if (expandable)
-        .checkbox-list__arrow 
-          img(src='images/arrow-down.svg')
-    .checkbox-list__container(class = expandable ? "checkbox-list__container_expandable" : "" class = default_open ? "checkbox-list__container_open" : "")
+        i.material-icons expand_more
+    .checkbox-list__container(class = expandable ? "checkbox-list__container_expandable" : "" class = defaultOpen ? "checkbox-list__container_open" : "")
       -var i = -1;
       while ++i < items.length      
         +custom-checkbox(items[i])

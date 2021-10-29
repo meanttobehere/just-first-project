@@ -1,5 +1,11 @@
 .pagination{
     user-select: none;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: $gray-color-50;
 
     &__container{
         display: flex;        
@@ -8,45 +14,38 @@
     &__item{
         width: 40px;
         height: 40px;
-        border-radius: 22px;
-        
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 15px;
-        color: rgba(31, 32, 65, 0.5);
-
+        border-radius: 22px; 
+        box-sizing: border-box;
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center; 
-        
-        &:nth-child(1){
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            font-weight: bold;
-            color: #FFFFFF;
-        }
-
-        &:nth-last-child(1){
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        }
+        transition: transform 0.3s;
 
         &:hover{
-            cursor: pointer;
+            transform: scale(0.9);
+            background: $gray-color-10;
+        }
+        
+        &:first-child{
+            background: $primary-gradient;
+            font-weight: bold;
+            color: $white-color;
+        }
+
+        &:last-child{
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            color: $white-color;
         }
     }
 
     &__description{
+        margin-top: 10.56px;
+        padding-left: 5px;
         height: 24px;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: normal;
         font-size: 14px;
         line-height: 20px;
-        color: rgba(31, 32, 65, 0.75);
-
-        margin-top: 10.56px;
-        padding-left: 5px;        
+        color: $gray-color-75;
     }
 }

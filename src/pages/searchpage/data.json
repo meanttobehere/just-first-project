@@ -100,5 +100,11 @@
     "children": 0,
     "babies": 1,
     "size": "m"
+  },
+  "roomCard":{
+    "imageLinks": [
+      "./images/room1.png",
+      "./images/room2.png"
+    ]
   }
 }

@@ -1,3 +1,4 @@
+import './checkbox-list.scss'
 import '../custom-checkbox/custom-checkbox.js'
 
 function chechboxListsInit()

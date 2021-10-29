@@ -6,11 +6,13 @@ const fs = require('fs');
 module.exports = {    
     entry: {
         main: path.resolve(__dirname, './src/pages/main/main.js'),
-        formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
-        colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
-        cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
-        headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),
+        signup: path.resolve(__dirname, './src/pages/signup/signup.js'),
+        login: path.resolve(__dirname, './src/pages/login/login.js'),
         searchpage: path.resolve(__dirname, './src/pages/searchpage/searchpage.js'),
+        //formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
+        //colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
+        //cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
+        //headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),        
     },
 
     output: {
@@ -36,7 +38,7 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
-                use: 'pug-loader',
+                use: "pug-loader",
             },            
             { 
                 test: /\.s[ac]ss$/i, 

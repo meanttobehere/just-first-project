@@ -1,3 +1,5 @@
+import './range-slider.scss'
+
 function rangeSlidersInit()
 {
     let rangeSliders= document.getElementsByClassName('range-slider');           

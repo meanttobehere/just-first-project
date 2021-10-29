@@ -3,10 +3,10 @@ include ../button/button
 mixin calendar()
   .calendar.js-calendar
     .calendar__month-selector
-      button.calendar__month-button.js-calendar__month-button
+      button(type="button").calendar__month-button.js-calendar__month-button
         i.material-icons arrow_back
       .calendar__month-title.js-calendar__month-title Август 2021
-      button.calendar__month-button.js-calendar__month-button
+      button(type="button").calendar__month-button.js-calendar__month-button
         i.material-icons arrow_forward
     .calendar__day-selector.js-calendar__day-selector
       .calendar__grid-item Пн

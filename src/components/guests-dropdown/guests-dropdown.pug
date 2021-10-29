@@ -9,6 +9,7 @@ mixin guests-dropdown(params)
       adults = 0,
       children = 0,
       babies = 0,
+      size = "l",
     } = params;
 
     const newParams = {
@@ -16,6 +17,7 @@ mixin guests-dropdown(params)
       text: "Сколько гостей",
       buttons: true,
       alwaysOpen: alwaysOpen,
+      size: size,
       items: [
         {title: "взрослые", value: adults}, 
         {title: "дети", value: children}, 

@@ -4,7 +4,7 @@ include ../logotype/logotype
 
 mixin header(params)
   -
-    var {
+    const {
       isLoggedIn = false,
       username = "No name",
       headerItems = [],
@@ -18,7 +18,7 @@ mixin header(params)
       a.header__logotype(href=logotypeLink)
         +logotype()
       .header__menu-icon.js-header__menu-icon
-        img(src='images/header__menu.svg')
+        <i class="material-icons">menu</i>
       nav.header__navbar.js-header__navbar
         each item in headerItems
           +header__item(item)

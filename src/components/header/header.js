@@ -1,7 +1,5 @@
-import headeMenu from './header__menu.svg';
 import './__item/header__item';
 import '../logotype/logotype';
-import '../button/button';
 
 function headersInit() {
   const headers = document.getElementsByClassName('js-header__container');
