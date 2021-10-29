@@ -1,4 +1,5 @@
 .date-dropdown{
+    max-width: 320px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -11,6 +12,10 @@
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
+
+    &_size-m{
+        max-width: 266px;
+    }
 
     &__date-container{
         width: 100%;
@@ -34,8 +39,7 @@
         margin-bottom: 5.44px;
     }
 
-    &__container{
-        max-width: 150px;        
+    &__container{               
         height: 44px;    
         box-sizing: border-box;
         border-radius: 4px;
@@ -64,7 +68,8 @@
         color: $gray-color-75;
     }    
 
-    &__calendar-container{        
+    &__calendar-container{
+        width: 100%;   
         visibility: hidden;   
         pointer-events: none;
         opacity: 0;        
@@ -74,7 +79,7 @@
         position: absolute;
         left: 0;
         top: 70px;
-        z-index: 1;
+        z-index: 999;
     }
 
     &_active > .date-dropdown__calendar-container{

@@ -8,14 +8,23 @@ function getDaysInMonth(month, year) {
   return days;
 }
 
+function getMonthString(month) {
+  const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+  return months[month];
+}
+
 function dateToString(date) {
   if (date instanceof Date) { return `${date.getDate().toString().padStart(2, '0')}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date.getFullYear()}`; }
   return 'ДД.ММ.ГГГГ';
 }
 
-function getMonthString(month) {
-  const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-  return months[month];
+function intervalToString(date1, date2){
+  if (date1 instanceof Date && date2 instanceof Date && date1 !== date2){
+    return `${date1.toLocaleString('ru', {month: 'long', day: 'numeric'})} - ${date2.toLocaleString('ru', {month: 'long', day: 'numeric'})}`;
+  } else if (date1 instanceof Date){
+    return `${date1.toLocaleString('ru', {month: 'long', day: 'numeric'})}`;
+  }
+  return 'Время проживания';
 }
 
 export default class Calendar {
@@ -54,6 +63,10 @@ export default class Calendar {
   
   getDepartureDate() {
     return dateToString(this._departure);
+  }
+
+  getIntervalOfArrivalAndDeparture(){
+    return intervalToString(this._arrival, this._departure);
   }
 
   setObserver(observer){

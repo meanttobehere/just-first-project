@@ -23,8 +23,7 @@ function dateDropdownsInit() {
     const calendarDOM = dropdown.querySelector('.js-calendar');
     const calendar = getCalendar(calendarDOM);
 
-    const arrival = dropdown.getElementsByClassName('date-dropdown__text')[0];
-    const departure = dropdown.getElementsByClassName('date-dropdown__text')[1];
+    const [text, secondText] = dropdown.getElementsByClassName('date-dropdown__text');
 
     const acceptButtonClickHandler = function acceptButtonClickHandler() {
       dropdown.classList.remove('date-dropdown_active');
@@ -35,9 +34,15 @@ function dateDropdownsInit() {
     };
 
     const travelChangeHandler = function travelChangeHandler() {
-      arrival.textContent = calendar.getArrivalDate();
-      departure.textContent = calendar.getDepartureDate();
+      if (secondText !== undefined) {
+        text.textContent = calendar.getArrivalDate();
+        secondText.textContent = calendar.getDepartureDate();
+      } else {
+        text.textContent = calendar.getIntervalOfArrivalAndDeparture();
+      }
     };
+
+    travelChangeHandler();
 
     calendar.setObserver({
       acceptClick: acceptButtonClickHandler,
