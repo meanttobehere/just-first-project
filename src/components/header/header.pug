@@ -1,6 +1,7 @@
 include ./__item/header__item
 include ../button/button
 include ../logotype/logotype
+include ../hamburger/hamburger
 
 mixin header(params)
   -
@@ -18,7 +19,7 @@ mixin header(params)
       a.header__logotype(href=logotypeLink)
         +logotype()
       .header__menu-icon.js-header__menu-icon
-        <i class="material-icons">menu</i>
+        +hamburger()
       nav.header__navbar.js-header__navbar
         each item in headerItems
           +header__item(item)
