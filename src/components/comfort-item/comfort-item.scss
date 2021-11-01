@@ -1,41 +1,39 @@
 .comfort-item{
-    user-select: none; 
+    user-select: none;
 
-    &__container{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }        
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: $gray-color-75;
 
-    &__icon{
-        width: 48px;
-        height: 48px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    max-width: 280px;
+    height: 48px;
 
-    &__title-container{
-        height: 48px;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
+    i {
+        font-size: 48px;
+        background: $primary-gradient;            
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     &__description{
         font-weight: normal;
     }
    
-    &_bottom-line::after{
+    &_underlined::after{
+        flex-basis: 280px;
         content: "";
         display: block;
         height: 1px;
-        min-width: 280px;
         margin-top: 20px;
-        background: rgba(31, 32, 65, 0.1);
+        background: $gray-color-10;
     }
 }
