@@ -1,0 +1,73 @@
+$chart-yellow: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+$chart-green: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$chart-purple: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+
+.chart{
+    position: relative;
+    display: flex;
+    column-gap: 30px;
+    align-items: flex-end;
+    
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $gray-color-75;
+
+    &__container{
+        transform: scale(-1, 1);
+        width: 120px;
+        height: 120px;
+    }
+    
+    svg {               
+        transform: rotate(-90deg);        
+    }
+
+    circle {
+        fill: none;
+        stroke-width: 4;
+        r: 58;
+        cx: 50%;
+        cy: 50%;     
+    }
+
+    &__list{
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+
+        &::before{            
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $gray-color-25;
+        }
+
+        &:nth-child(1)::before{
+            background: $chart-yellow;
+        }
+
+        &:nth-child(2)::before{
+            background: $chart-green;
+        }
+
+        &:nth-child(3)::before{
+            background: $chart-purple;
+        }
+
+        &:nth-child(4)::before{
+            background: $chart-black;
+        }
+    }
+}

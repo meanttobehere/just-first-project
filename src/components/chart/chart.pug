@@ -1,0 +1,59 @@
+mixin chart(params)
+  -
+    const {
+      excellent = 100,
+      good = 50,
+      fine = 50,
+      bad = 0,
+    } = params;
+
+    const gap = 0.5;
+    const length = excellent + good + fine + bad;    
+    let segments = [
+      {len: (excellent / length) * 100, class: 'excellent'},
+      {len: (good / length) * 100, class: 'good'},
+      {len: (fine / length) * 100, class: 'fine'},
+      {len: (bad / length) * 100, class: 'bad'}
+    ];
+    segments = segments.filter((segment) => segment.len > 0);
+    let numGaps = (segments.length > 1) ? segments.length : 0;
+  
+    segments.forEach((segment, idx) => {
+      if (idx > 0){
+        segment.offset = segments[idx - 1].offset + segments[idx - 1].len + gap; 
+      } else {
+        segment.offset = (segments.length > 1) ? (gap / 2) : 0;
+      }
+      segment.len = segment.len - gap;
+    });
+
+    function toPos(val){
+      return (val * (58 * 2 * 3.1416)) / 100;
+    }
+
+    function createDashArray(val){
+      return `${toPos(val)} ${toPos(100) - toPos(val)}`;
+    }
+
+  .chart
+    .chart__container
+      svg(viewBox= "0 0 120 120")
+        defs
+          linearGradient(id="excellent" x1="0%" y1="0%" x2="0%" y2="100%")
+            stop(offset="0%" stop-color="#FFE39C")
+            stop(offset="100%" stop-color="#FFBA9C")
+          linearGradient(id="good" x1="0%" y1="0%" x2="0%" y2="100%")
+            stop(offset="0%" stop-color="#6FCF97")
+            stop(offset="100%" stop-color="#66D2EA")
+          linearGradient(id="fine" x1="0%" y1="0%" x2="0%" y2="100%")
+            stop(offset="0%" stop-color="#BC9CFF")
+            stop(offset="100%" stop-color="#8BA4F9")
+          linearGradient(id="bad" x1="0%" y1="0%" x2="0%" y2="100%")
+            stop(offset="0%" stop-color="#919191")
+            stop(offset="100%" stop-color="#3D4975")
+        each segment in segments 
+          circle(stroke=`url(#${segment.class})` stroke-dasharray=createDashArray(segment.len) stroke-dashoffset=toPos(-segment.offset))
+    - const items = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+    list.chart__list
+      each item in items
+        li.chart__item=item
