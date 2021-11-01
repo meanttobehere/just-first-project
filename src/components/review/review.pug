@@ -1,17 +1,21 @@
 include ../like-button/like-button
 
 mixin review(params)
-  -var name = (params.name ? params.name : "No name");
-  -var date = (params.date ? params.date : "No date");
-  -var text = (params.text ? params.text : "No text");
-  -var num_likes = (params.num_likes ? params.num_likes : 10);
-  -var likes_emphasized = (params.likes_emphasized ? true: false);
-  -var photo_url = (params.photo_url ? params.photo_url : "images/default_photo.png")
+  -
+    const {
+      name = 'name',
+      date = 'date',
+      text = 'text',
+      numLikes = 10,
+      likesEmphasized = false,
+      photoUrl = '',
+    } = params;
+
   .review
     .review__left-container
       .review__photo 
-        img(src=photo_url).review__img
-      +like-button({emphasized: likes_emphasized, likes: num_likes})
+        img(src=photoUrl).review__img
+      +like-button({emphasized: likesEmphasized, numLikes: numLikes})
     .review__right-container 
       .review__name=name 
       .review__date=date

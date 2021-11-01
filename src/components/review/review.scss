@@ -1,22 +1,16 @@
-@import '../like-button/like-button.scss';
-
 .review{    
-    font-family: 'Montserrat';
+    font-family: $primary-font;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
+    color: $gray-color-75;
 
     display: flex;
     gap: 9.93px;
 
     &__name{
         font-weight: bold;
-    }
-
-    &__text{
-        white-space: pre-line;
     }
 
     &__left-container{
@@ -30,9 +24,9 @@
         display: block;
         width: 47.67px;
         height: 48px;
-        border: 2px solid #FFFFFF;
+        border: 2px solid $white-color;
         box-sizing: border-box;
-        filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+        filter: drop-shadow(0px 10px 20px $gray-color-10);
         border-radius: 32px;    
         object-fit: cover;         
     }
