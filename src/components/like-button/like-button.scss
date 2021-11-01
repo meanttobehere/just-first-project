@@ -3,22 +3,26 @@
     height: 20px;
     border-radius: 10px;
     box-sizing: border-box;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    color: rgba(31, 32, 65, 0.25);
+    border: 1px solid $gray-color-25;
+    color: $gray-color-25;
     display: flex;
     align-items: center;
     user-select: none;
 
-    &__container{
+    i{
+        width: 19.86px;
         height: 20px;
-        width: 19px;
+
         display: flex;
         justify-content: center;
         align-items: center;
+
+        font-size: 10px;
+        line-height: 9px;        
     }
 
     &__likes{
-        font-family: 'Montserrat';
+        font-family: $primary-font;
         font-style: normal;
         font-weight: normal;
         font-size: 10px;
@@ -28,11 +32,18 @@
     }
 
     &_emphasized{
-        border: 1px solid #BC9CFF;
-        color: #BC9CFF;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        i{
+            background: $primary-gradient;            
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
-    &_column-gap{
-        gap: 2px;
+    &_gap{
+        column-gap: 2px;
     }
 }

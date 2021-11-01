@@ -1,8 +1,12 @@
 mixin like-button(params)
-  -var num_likes = (params.likes ? params.likes : 10);
-  -var button_class = (params.emphasized ? "like-button_emphasized" : "");
-  -var gap_class = (params.likes < 10 ? "like-button_column-gap" : "");
-  .like-button(class=button_class class=gap_class)
-    .like-button__container 
-      img(src= params.emphasized ? 'images/like-button__like.svg' : 'images/like-button__like-border.svg')
-    .like-button__likes=num_likes
+  -
+    const {
+      numLikes = 10,
+      emphasized = false,      
+    } = params;
+    const class_emphasized = (emphasized ? "like-button_emphasized" : "");
+    const class_gap = (params.likes < 10 ? "like-button_column-gap" : "");
+
+  .like-button(class=class_emphasized class=class_gap)
+    i.material-icons favorite
+    .like-button__likes=numLikes
