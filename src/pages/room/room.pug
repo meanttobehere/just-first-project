@@ -1,0 +1,55 @@
+include ../../components/components
+
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/room/room.json'));
+
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width')
+    title TOXIN
+  body
+    header
+      +header(data.headerData)
+    main
+      figure.room-photos
+        .room-photos__group
+          .room-photos__photo
+            img(src=data.roomPhotos[0].url alt='room photo')
+        .room-photos__group
+          .room-photos__photo
+            img(src=data.roomPhotos[1].url alt='room photo')
+          .room-photos__photo
+            img(src=data.roomPhotos[2].url alt='room photo')
+      section.container
+        .container__first-section
+          .container__group
+            .container__block
+              .container__title Сведения о номере
+              each item in data.comfortItems
+                .container__comfort-item
+                  +comfort-item(item)
+            .container__block
+              .container__title Впечатления от номера
+              +chart(data.chart)
+          .container__group
+            .container__block
+              .container__title Отзывы посетителей номера
+                .container__title-item= `${data.reviews.length} отзыва`
+              each review in data.reviews
+                .container__review
+                  +review(review)
+          .container__group
+            .container__block.container__block_rules
+              .container__title.container__title_rules Правила
+              +bullet-list(data.rules)
+            .container__block.container__block_cancelation
+              .container__title Отмена
+              .container__description= data.cancelation.description
+        .container__second-section
+          +summary-form(data.summaryForm)
+    footer
+      +footer(data.footerData)

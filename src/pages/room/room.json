@@ -1,0 +1,169 @@
+{
+  "headerData": {
+    "isLoggedIn": false,
+    "username": "Юлий Цезарь",
+    "headerItems": [
+      { "title": "О нас", "href": "#" },
+      { "title": "Услуги", "href": "#", "children": [
+        { "title": "Хорошая услуга", "href": "#" },
+        { "title": "Плохая услуга", "href": "#" },
+        { "title": "Отличная услуга", "href": "#" },
+        { "title": "Простая услуга", "href": "#" }
+      ] },
+      { "title": "Вакансии", "href": "#" },
+      { "title": "Новости", "href": "#" },
+      { "title": "Соглашения", "children": [
+        { "title": "Соглашение первое", "href": "#"},
+        { "title": "Соглашение второе", "href": "#"},
+        { "title": "Соглашение третье", "href": "#"}
+      ] }
+    ],
+    "loginButtonLink": "#",
+    "signupButtonLink": "#"      
+  },
+  "searchFormData": {
+    "guestDropdown": {      
+      "adults": 2,
+      "children": 0,
+      "babies": 1
+    }
+  },
+  "footerData": {
+    "groups": [
+      {
+        "title":"Навигация",
+        "items": [
+          {"name": "О нас", "href": "#"},
+          {"name": "Новости", "href": "#"},
+          {"name": "Служба поддержки", "href": "#"},
+          {"name": "Услуги", "href": "#"}
+        ]
+      },
+      {
+        "title":"О нас",
+        "items": [
+          {"name": "О сервисе", "href": "#"},
+          {"name": "Наша команда", "href": "#"},
+          {"name": "Вакансии", "href": "#"},
+          {"name": "Инвесторы", "href": "#"}
+        ]
+      },
+      {
+        "title":"Служба поддержки",
+        "items": [
+          {"name": "Соглашения", "href": "#"},
+          {"name": "Сообщества", "href": "#"},
+          {"name": "Связь с нами", "href": "#"}
+        ]
+      }
+    ]
+  },
+  "rulesCheckbox": {
+    "title": "Правила дома",
+    "items": [
+      {"title": "Можно курить"}, 
+      {"title": "Можно с питомцами"}, 
+      {"title": "Можно пригласить гостей\n (до 10 человек)"}
+    ]
+  },
+  "availabilityCheckbox": {
+    "title": "доступность", 
+    "items": [
+      {"title": "Широкий коридор", "description": "Ширина коридоров в номере\n не менее 91 см."}, 
+      {"title": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист\n и проводит до номера."}
+    ]
+  },
+  "amenitiesCheckbox": {
+    "title": "дополнительные удобства", 
+    "items": [
+      {"title": "Завтрак"}, 
+      {"title": "Письменный стол", "default_clicked": true}, 
+      {"title": "Стул для кормления", "default_clicked": true}, 
+      {"title": "Кроватка", "default_clicked": true}, 
+      {"title": "Телевизор"}, 
+      {"title": "Шампунь"}
+    ], 
+    "expandable": true, 
+    "defaultOpen": true
+  },
+  "roomDropdown": {
+    "title": "удобства номера",
+    "size": "m"
+  },
+  "dateDropdown": {
+    "title": "даты пребывания в отеле", 
+    "size": "m", 
+    "text": "19 авг - 23 авг"
+  },
+  "guestsDropdown": {      
+    "adults": 2,
+    "children": 0,
+    "babies": 1,
+    "size": "m"
+  },
+  "roomCard":{
+    "imageLinks": [
+      "./images/room1.png",
+      "./images/room2.png"
+    ]
+  },
+  "comfortItems": [
+    {
+      "title": "Комфорт", 
+      "description": "Шумопоглощающие стены", 
+      "underlined": true,
+      "icon": "insert_emoticon"
+    },
+    {
+      "title": "Удобство", 
+      "description": "Окно в каждой из спален", 
+      "underlined": true,
+      "icon": "location_city"
+    },
+    {
+      "title": "Уют", 
+      "description": "Номер оснащён камином",
+      "icon": "whatshot"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Мурад Сарафанов",
+      "date": "5 дней назад",
+      "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\n И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\n не жаловался из соседей.",
+      "numLikes": 12,
+      "likesEmphasized": true,
+      "photoUrl": "images/photo1.jpg"
+    },
+    {
+      "name": "Патрисия Стёклышкова",
+      "date": "Неделю назад",
+      "text": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+      "numLikes": 2,
+      "photoUrl": "images/photo2.jpg"
+    }
+  ],
+  "rules":{
+    "items": [
+      "Нельзя с питомцами",
+      "Без вечеринок и мероприятий",
+      "Время прибытия — после 13:00, а выезд до 12:00"
+    ]
+  },
+  "cancelation": {
+    "description": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
+  },
+  "chart": {
+    "excellent": 130,
+    "good": 65,
+    "fine": 65
+  },
+  "summaryForm": {
+
+  },
+  "roomPhotos": [
+    {"url": "images/photo1.png"},
+    {"url": "images/photo2.png"},
+    {"url": "images/photo3.png"}
+  ]
+}
