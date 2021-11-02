@@ -1,13 +1,14 @@
 .bullet-list{
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;    
+    font-size: 12px;
+    line-height: 15px;
+    color: $gray-color;
+
     &__title{
-        height: 15px;
-        font-family: 'Montserrat';
-        font-style: normal;
         font-weight: bold;
-        font-size: 12px;
-        line-height: 15px;
         text-transform: uppercase;
-        color: #1F2041; 
         margin-bottom: 12px;
     }
 
@@ -17,12 +18,9 @@
     }
 
     &__item{  
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: normal;
         font-size: 14px;
         line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
+        color: $gray-color-75;
         list-style: none;
 
         margin-bottom: 10px;
@@ -39,7 +37,7 @@
             width: 10.43px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(31, 32, 65, 0.25);
+            background: $gray-color-25;
             position: relative;
             top: 7px;
             flex-shrink: 0;

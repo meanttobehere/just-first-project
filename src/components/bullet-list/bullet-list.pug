@@ -1,8 +1,13 @@
 mixin bullet-list(params)
-  -var title = (params.title ? params.title : "No title");
-  -var items = (params.items ? params.items : []);
-  .bullet-list 
-    .bullet-list__title=title
+  -
+    const {
+      title,
+      items = [],
+    } = params;
+
+  .bullet-list
+    if (title)
+      .bullet-list__title=title
     ul.bullet-list__list
       each item in items 
         li.bullet-list__item=item
