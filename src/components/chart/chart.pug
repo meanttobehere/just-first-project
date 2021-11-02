@@ -1,9 +1,9 @@
 mixin chart(params)
   -
     const {
-      excellent = 100,
-      good = 50,
-      fine = 50,
+      excellent = 130,
+      good = 65,
+      fine = 65,
       bad = 0,
     } = params;
 
@@ -51,8 +51,9 @@ mixin chart(params)
           linearGradient(id="bad" x1="0%" y1="0%" x2="0%" y2="100%")
             stop(offset="0%" stop-color="#919191")
             stop(offset="100%" stop-color="#3D4975")
-        each segment in segments 
+        each segment in segments
           circle(stroke=`url(#${segment.class})` stroke-dasharray=createDashArray(segment.len) stroke-dashoffset=toPos(-segment.offset))
+      .chart__counter= length
     - const items = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
     list.chart__list
       each item in items
