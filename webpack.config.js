@@ -9,6 +9,7 @@ module.exports = {
         signup: path.resolve(__dirname, './src/pages/signup/signup.js'),
         login: path.resolve(__dirname, './src/pages/login/login.js'),
         searchpage: path.resolve(__dirname, './src/pages/searchpage/searchpage.js'),
+        room: path.resolve(__dirname, './src/pages/room/room.js'),
         //formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
         //colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
         //cards: path.resolve(__dirname, './src/pages/cards/cards.js'),

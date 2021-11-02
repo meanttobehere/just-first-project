@@ -1,30 +1,31 @@
 .summary-form{
-    background: #FFFFFF;
+    background: $white-color;
+
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);  
-    user-select: none;  
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    user-select: none;
 
-    width: 380px;    
-    height: max-content;
-    padding-top: 40px;    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray-color;
+
+    max-width: 380px;
+    padding: 40px 20px 30px 20px;
 
     &__head{
         height: 30px;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: bold;        
-        color: #1F2041;
+        font-weight: bold;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        width: 320px;
-        margin-bottom: 20px;
+        max-width: 320px;
+        margin: auto;
+        margin-bottom: 20px;        
     }
 
     &__number{
@@ -49,19 +50,26 @@
         color: rgba(31, 32, 65, 0.5);
 
         &::after{
+            font-weight: normal;
+            font-size: 12px;
             content: " в сутки";
         }
     }
 
     &__date-dropdown-container{
-        margin-bottom: 20.56px;
+        max-width: 320px;
+        margin: auto;
+        margin-bottom: 20.56px;        
     }
 
     &__guests-dropdown-container{
+        max-width: 320px;
+        margin: auto;
         margin-bottom: 31px;
     }
 
     &__button-container{
-        margin-bottom: 30px;
+        max-width: 320px;
+        margin: auto;
     }
 }

@@ -27,14 +27,8 @@
         justify-content: center;
         align-items: center;
         width: 100%;        
-    }   
+    } 
     
-    &_size-l{
-        width: 100%;
-        max-width: 320px;
-        height: 44px;
-    }
-
     &_size-m{
         width: 196px;
         height: 34px;
@@ -48,6 +42,18 @@
     &_size-ss{
         width: 87px;
         height: 34px
+    }
+
+    &_size-l{
+        width: 100%;
+        max-width: 320px;
+        height: 44px;
+    }
+
+    &_size-xl{
+        width: 100%;
+        max-width: 420px;
+        height: 44px;
     }
 
     &_theme-no-border{        

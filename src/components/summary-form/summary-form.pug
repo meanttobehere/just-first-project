@@ -3,21 +3,22 @@ include ../button/button
 include ../guests-dropdown/guests-dropdown
 
 mixin summary-form(params)
-  -var params = (params ? params : {});
-  -var price = (params.price ? params.price : 9990);
-  -var number = (params.number ? params.number : 888);
-  -var luxe = (params.luxe ? true : true);
-  .summary-form
+  -
+    params = params ? params : {};
+    const {
+      price = 9990,
+      number = 888,
+      luxe = true,
+    } = params;
 
+  form.summary-form
     .summary-form__head
-      .summary-form__number(class = luxe ? "summary-form__number_luxe" : "")=number
-      .summary-form__price= price + "Р"
-      
+      .summary-form__number(class = luxe ? 'summary-form__number_luxe' : '')=number
+      .summary-form__price= price + 'Р'      
     .summary-form__date-dropdown-container
       +date-dropdown()
-
     .summary-form__guests-dropdown-container
       +guests-dropdown()
-
+    .summary-form__
     .summary-form__button-container
-      +button({title: "забронировать", size: "l"})
+      +button({title: 'забронировать', size: 'l', type: 'submit'})

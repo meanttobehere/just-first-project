@@ -7,6 +7,7 @@ import '../../components/range-slider/range-slider.js';
 import '../../components/checkbox-list/checkbox-list.js';
 import '../../components/room-dropdown/room-dropdown.js';
 import '../../components/room-card/room-card.js';
+import '../../components/date-dropdown/date-dropdown';
 
 import './rooms/room1.png';
 import './rooms/room2.png';

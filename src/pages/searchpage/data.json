@@ -3,7 +3,7 @@
     "isLoggedIn": false,
     "username": "Юлий Цезарь",
     "headerItems": [
-      { "title": "О нас", "href": "#", "selected": true },
+      { "title": "О нас", "href": "#" },
       { "title": "Услуги", "href": "#", "children": [
         { "title": "Хорошая услуга", "href": "#" },
         { "title": "Плохая услуга", "href": "#" },
