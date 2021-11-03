@@ -32,17 +32,26 @@
         font-size: 24px;
         line-height: 29.62px;
 
+        display: flex;
+        align-items: flex-end;
+
         &::before{
-            content: "№ ";
+            display: block;
+            content: "№";
             font-size: 14px;
             line-height: 17px;
+            margin-right: 5px;
+            padding-bottom: 3px;
         }
 
         &_luxe::after{
-            content: " ЛЮКС";
+            content: "ЛЮКС";
             color: #BC9CFF;
+            display: block;
             font-size: 12px;
             line-height: 15px;
+            margin-left: 8px;
+            padding-bottom: 3px;
         }
     }
 
@@ -65,11 +74,77 @@
     &__guests-dropdown-container{
         max-width: 320px;
         margin: auto;
-        margin-bottom: 31px;
+        margin-bottom: 20.56px;
+    }
+
+    &__calculator{
+        max-width: 320px;
+        margin: auto;
+        margin-bottom: 20px;
     }
 
     &__button-container{
         max-width: 320px;
         margin: auto;
+    }
+}
+
+.calculator{    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;      
+    color: rgba(31, 32, 65, 0.75);
+    
+    &__row{
+        display: flex;
+        justify-content: space-between;       
+        height: 24px;
+
+        &:last-child{
+            margin-top: 30px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 19px;
+            line-height: 23px;
+            color: #1F2041;
+        }
+    }
+
+    &__sign{        
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid $gray-color-25;
+        color: $gray-color-25;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after{
+            content: 'i';
+        }
+    }
+
+    &__grid{
+        margin-top: 8px;
+        display: grid;
+        row-gap: 16px;
+        grid-template-columns: max-content max-content auto;
+    }
+
+    &__price{
+        text-align: right;
+    }
+
+    &__item{
+        max-width: 214px;
+        margin-right: 5px;
     }
 }

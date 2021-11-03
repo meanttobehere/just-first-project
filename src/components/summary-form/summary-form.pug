@@ -9,16 +9,33 @@ mixin summary-form(params)
       price = 9990,
       number = 888,
       luxe = true,
+      guestsDropdown,
+      dateDropdown,
     } = params;
+    const str = price.toString();
+    const formPrice = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
 
-  form.summary-form
+  form.summary-form.js-summary-form
     .summary-form__head
       .summary-form__number(class = luxe ? 'summary-form__number_luxe' : '')=number
-      .summary-form__price= price + 'Р'      
-    .summary-form__date-dropdown-container
-      +date-dropdown()
+      .summary-form__price=formPrice
+    .summary-form__date-dropdown-container.js-summary-form__date-dropdown-container
+      +date-dropdown(dateDropdown)
     .summary-form__guests-dropdown-container
-      +guests-dropdown()
-    .summary-form__
+      +guests-dropdown(guestsDropdown)
+    .summary-form__calculator.calculator.js-calculator(data-price=price data-days=4)
+      .calculator__row
+        .calculator__item
+        .calculator__price
+      .calculator__grid
+        .calculator__item
+        .calculator__sign
+        .calculator__price
+        .calculator__item
+        .calculator__sign
+        .calculator__price
+      .calculator__row
+        .calculator__item
+        .calculator__price
     .summary-form__button-container
-      +button({title: 'забронировать', size: 'l', type: 'submit'})
+      +button({title: 'забронировать', size: 'l', type: 'submit', arrow: true})
