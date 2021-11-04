@@ -18,7 +18,7 @@ function dateToString(date) {
   return 'ДД.ММ.ГГГГ';
 }
 
-function intervalToString(date1, date2){
+function intervalToString(date1, date2) {
   if (date1 instanceof Date && date2 instanceof Date && date1 !== date2){
     return `${date1.toLocaleString('ru', {month: 'long', day: 'numeric'})} - ${date2.toLocaleString('ru', {month: 'long', day: 'numeric'})}`;
   } else if (date1 instanceof Date){
@@ -55,6 +55,13 @@ export default class Calendar {
     this.#travelData = { arrival: false, departure: false };   
 
     this._renderPage();
+  }
+
+  getNumDays() {
+    if (this._arrival instanceof Date && this._departure instanceof Date){
+      return ((this._departure.getTime() - this._arrival.getTime()) / (1000 * 3600 * 24) + 1)
+    }
+    return 0;
   }
 
   getArrivalDate() {

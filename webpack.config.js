@@ -10,10 +10,10 @@ module.exports = {
         login: path.resolve(__dirname, './src/pages/login/login.js'),
         searchpage: path.resolve(__dirname, './src/pages/searchpage/searchpage.js'),
         room: path.resolve(__dirname, './src/pages/room/room.js'),
-        //formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
-        //colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
-        //cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
-        //headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),        
+        formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
+        colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
+        cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
+        headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),        
     },
 
     output: {
@@ -24,8 +24,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(woff(2)?|ttf|eot)$/,
+                test: /\.(woff(2)?|ttf|eot|svg)$/,
                 type: 'asset/resource',
+                include: [path.resolve(__dirname, 'src/assets/fonts'), path.resolve(__dirname, 'node_modules')],
                 generator: {
                     filename: './fonts/[name][ext]',
                 },
@@ -33,6 +34,7 @@ module.exports = {
             {
                 test: /\.(jpe?g|svg|png)$/,
                 type: 'asset/resource',
+                exclude: path.resolve(__dirname, 'src/assets/fonts'),
                 generator: {
                     filename: './images/[name][ext]',
                 },

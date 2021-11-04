@@ -1,20 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import '../../components/inpt/inpt.scss';
-@import '../../components/checkbox-list/checkbox-list.scss';
-@import '../../components/range-slider/range-slider.scss';
-@import '../../components/button/button.scss';
-@import '../../components/pagination/pagination.scss';
-@import '../../components/toggle/toggle.scss';
-@import '../../components/rate-button/rate-button.scss';
-@import '../../components/like-button/like-button.scss';
-@import '../../components/radio-button/radio-button.scss';
-@import '../../components/bullet-list/bullet-list.scss';
-@import '../../components/review/review.scss';
-@import '../../components/guests-dropdown/guests-dropdown.scss';
-@import '../../components/room-dropdown/room-dropdown.scss';
-@import '../../components/comfort-item/comfort-item.scss';
-@import '../../components/date-dropdown/date-dropdown.scss';
-@import '../../components/dropdown/dropdown.scss';
+@import '../../assets/style.scss';
+@import '../../assets/fonts.scss';
+@import '../../components/components.scss';
 
 html, body{
     margin: 0;

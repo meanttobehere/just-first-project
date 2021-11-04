@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import '../../components/search-form/search-form.scss';
-@import '../../components/calendar/calendar.scss';
-@import '../../components/registration-form/registration-form.scss';
-@import '../../components/login-form/login-form.scss';
-@import '../../components/summary-form/summary-form.scss';
+@import '../../assets/style.scss';
+@import '../../assets/fonts.scss';
+@import '../../components/components.scss';
 
 html, body{
     margin: 0;

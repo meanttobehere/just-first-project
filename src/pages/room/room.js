@@ -7,6 +7,7 @@ import '../../components/dropdown/dropdown';
 import '../../components/room-dropdown/room-dropdown';
 import '../../components/room-card/room-card';
 import '../../components/date-dropdown/date-dropdown';
+import '../../components/summary-form/summary-form';
 
 import './room/photo1.png';
 import './room/photo2.png';

@@ -22,8 +22,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        gap: 20px;
-        cursor: pointer;
+        gap: 20px;        
     }
 
     &__dropdown{
@@ -39,7 +38,8 @@
         margin-bottom: 5.44px;
     }
 
-    &__container{               
+    &__container{ 
+        cursor: pointer;              
         height: 44px;    
         box-sizing: border-box;
         border-radius: 4px;

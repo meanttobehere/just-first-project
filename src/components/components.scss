@@ -1,15 +1,12 @@
 @import './header/header.scss';
 @import './header/__item/header__item.scss';
-@import './search-form/search-form.scss';
 @import './dropdown/dropdown.scss';
-@import './login-form/login-form.scss';
 @import './dropdown//__item/dropdown__item.scss';
 @import './date-dropdown/date-dropdown.scss';
 @import './calendar/calendar.scss';
 @import './button/button.scss';
 @import './footer/footer.scss';
 @import './logotype/logotype.scss';
-@import './signup-form/singup-form.scss';
 @import './inpt/inpt.scss';
 @import './radio-button/radio-button.scss';
 @import './checkbox-list/checkbox-list.scss';
@@ -23,4 +20,8 @@
 @import './like-button/like-button.scss';
 @import './bullet-list/bullet-list.scss';
 @import './chart/chart.scss';
+@import './inpt/inpt.scss';
+@import './signup-form/singup-form.scss';
 @import './summary-form/summary-form.scss';
+@import './login-form/login-form.scss';
+@import './search-form/search-form.scss';
