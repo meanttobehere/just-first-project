@@ -1,1 +1,0 @@
-import logotype__logotype from './logotype__logotype.svg'

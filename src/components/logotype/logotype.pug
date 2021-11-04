@@ -1,3 +1,9 @@
-mixin logotype()
-  .logotype 
-    img(src='images/logotype__logotype.svg')
+mixin logotype(params)
+  - 
+    params = params ? params : {};
+    const {
+      partial = false,
+    } = params;
+    const class_partial = partial ? 'logotype_partial' : '';
+
+  .logotype(class=class_partial)
