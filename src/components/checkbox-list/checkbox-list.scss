@@ -16,6 +16,15 @@
         align-items: center; 
     }
 
+    &__arrow{
+        transition: 0.11s;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__list{
         padding: 0;
         margin: 0;
@@ -26,7 +35,7 @@
         margin-top: 10px;        
 
         &:first-child{
-            margin-top: 16.5px;
+            margin-top: 16px;
         }
     }
 
@@ -39,11 +48,19 @@
             max-height: 0;
             overflow: hidden;
         }
+
+        .checkbox-list__item:first-child{
+            margin-top: 2.44px;
+        }
     }
 
     &_open{
         .checkbox-list__list{
             max-height: max-content;
+        }
+
+        .checkbox-list__arrow{
+            transform: rotate(180deg);
         }
     }
 }

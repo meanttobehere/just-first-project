@@ -34,7 +34,7 @@ module.exports = {
             {
                 test: /\.(jpe?g|svg|png)$/,
                 type: 'asset/resource',
-                exclude: path.resolve(__dirname, 'src/assets/fonts'),
+                exclude: [path.resolve(__dirname, 'src/assets/fonts'), path.resolve(__dirname, 'node_modules')],
                 generator: {
                     filename: './images/[name][ext]',
                 },

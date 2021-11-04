@@ -1,22 +1,6 @@
 @import '../../assets/style.scss';
 @import '../../assets/fonts.scss';
-@import '../../components/header/header.scss';
-@import '../../components/header/__item/header__item.scss';
-@import '../../components/search-form/search-form.scss';
-@import '../../components/dropdown/dropdown.scss';
-@import '../../components/login-form/login-form.scss';
-@import '../../components/dropdown//__item/dropdown__item.scss';
-@import '../../components/date-dropdown/date-dropdown.scss';
-@import '../../components/calendar/calendar.scss';
-@import '../../components/button/button.scss';
-@import '../../components/footer/footer.scss';
-@import '../../components/logotype/logotype.scss';
-@import '../../components/signup-form/singup-form.scss';
-@import '../../components/inpt/inpt.scss';
-@import '../../components/radio-button/radio-button.scss';
-@import '../../components/checkbox-list/checkbox-list.scss';
-@import '../../components/custom-checkbox/custom-checkbox.scss';
-@import '../../components/toggle/toggle.scss';
+@import '../../components/components';
 
 html, body{
     margin: 0px;

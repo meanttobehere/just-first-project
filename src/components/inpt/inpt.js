@@ -1,1 +1,0 @@
-import submit_arrow from './submit-arrow.svg'

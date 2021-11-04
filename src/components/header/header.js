@@ -1,5 +1,4 @@
 import './__item/header__item';
-import '../logotype/logotype';
 
 function headersInit() {
   const headers = document.getElementsByClassName('js-header__container');

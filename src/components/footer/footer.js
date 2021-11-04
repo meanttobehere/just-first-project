@@ -1,5 +1,3 @@
-import '../inpt/inpt';
-
 function footersInit() {
   const footers = document.getElementsByClassName('js-footer');
 

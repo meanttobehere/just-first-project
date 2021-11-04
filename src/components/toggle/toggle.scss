@@ -9,11 +9,7 @@
         display: block;   
         width: 40px;
         height: 20px;
-        border-radius: 10px;
-
-        &:hover{
-            cursor: pointer;
-        }
+        cursor: pointer;
     }    
 
     &__input{
@@ -30,7 +26,7 @@
         height: 20px;
         border-radius: 10px;
         box-sizing: border-box;
-        border: 1px solid rgba(31, 32, 65, 0.25);
+        border: 1px solid $gray-color-25;
     }
 
     &__slider{
@@ -38,28 +34,28 @@
         top: 3px;
         left: 3px;
         width: 12px;
-        height: 12px;        
-        background: rgba(31, 32, 65, 0.25);
-        border-radius: 10px;
+        height: 12px;
+        border-radius: 10px;     
+        background: $gray-color-25;        
         transition: .21s;        
+    }
+
+    &__input:checked ~ &__border{
+        border-color: $primary-color;
     }
 
     &__input:checked + &__slider{
         transform: translateX(20px);
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-
-    &__input:checked ~ &__border{        
-        border: 1px solid #BC9CFF;
+        background: $primary-gradient;        
     }
 
     &__title{
         height: 24px;
-        font-family: 'Montserrat';
+        font-family: $primary-font;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 20px;  
-        color: rgba(31, 32, 65, 0.75);
+        color: $gray-color-75
     }
 }

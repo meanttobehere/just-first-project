@@ -8,7 +8,7 @@
     "webpack-cli": "^4.8.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fontawesome/fontawesome-free": "^5.15.4",
     "autoprefixer": "^10.3.7",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.3.0",

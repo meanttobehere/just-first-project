@@ -9,7 +9,7 @@ html
     div.container
       
       div.logotype-container
-        +logotype()
+        +logotype({partial: true})
       
       div.content-container
 
@@ -36,8 +36,8 @@ html
             +radio-button({title: "Женщина"})
           .title toggle
           .toggle-group
-            +toggle("Получать спецпредложения")
-            +toggle("Получать спецпредложения")
+            +toggle({title: "Получать спецпредложения", checked: true})
+            +toggle({title: "Получать спецпредложения"})
           .title like button
           .like-buttons-group
             +like-button({likes: 2})

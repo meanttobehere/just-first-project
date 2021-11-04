@@ -1,8 +1,13 @@
-mixin toggle(title)
-  -var toggle_title = (title ? title : "No title");
+mixin toggle(params)
+  -
+    const {
+      title,
+      checked = false,
+    } = params;
+
   .toggle
     label.toggle__label 
-      input(type="checkbox").toggle__input  
+      input(type='checkbox' checked=checked).toggle__input
       .toggle__slider
       .toggle__border
-    .toggle__title= toggle_title
+    .toggle__title=title

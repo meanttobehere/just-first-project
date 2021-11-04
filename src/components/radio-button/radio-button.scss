@@ -1,5 +1,14 @@
 .radio-button{
     user-select: none;
+    display: flex; 
+    align-items: center;       
+
+    &__label{
+        position: relative;
+        display: block;
+        height: 20px;
+        cursor: pointer;        
+    }
 
     &__input{
         width: 0px;
@@ -7,59 +16,47 @@
         opacity: 0;
     }
 
-    &__label{
-        display: block;                   
-        position: relative;
-        height: 20px;
-        display: flex; 
-        align-items: center;       
-
-        &:hover{
-            cursor: pointer;
-        }
-    }
-
     &__container::before{
         content: '';
         display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 20px;
         height: 20px;
-        position: absolute;
-        left: -1px;
-        top: -1px;
-        background: #FFFFFF;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        box-sizing: border-box;
         border-radius: 10px;
+        box-sizing: border-box;
+        border: 1px solid $gray-color-25;      
+        background: $white-color;
     }
 
     &__container::after{
         content: '';
         display: block;
+        position: absolute;
+        left: 4px;
+        top: 4px;
         width: 12px;
         height: 12px;
-        position: absolute;
-        left: 3px;
-        top: 3px;
-        background: white;
-        border-radius: 10px;
+        border-radius: 10px;       
+        background: white;        
     }    
 
     &__input:checked + &__container::before{
-        border: 1px solid #BC9CFF;        
+        border-color: $primary-color;        
     }
 
-    &__input:checked +&__container::after{        
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    &__input:checked +&__container::after{
+        background: $primary-gradient;
     }
 
-    &__title{        
-        font-family: 'Montserrat';
+    &__title{
+        font-family: $primary-font;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
-        margin-left: 20px;        
+        color: $gray-color-75;
+        margin-left: 20px; 
     }
 }

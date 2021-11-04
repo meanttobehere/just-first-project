@@ -1,14 +1,20 @@
 mixin inpt(params)
-  -var size = (params.size ? `inpt_size-${params.size}` : "");
-  -var type_submit = (params.type_submit ? "inpt_type-submit" : "");
-  -var placeholder = (params.placeholder ? params.placeholder : "");
-  -var title = (params.title ? params.title : "")
-  .inpt(class = size)
+  -
+    const {
+      title,
+      size,
+      placeholder,
+      type = 'text',
+      submitLink,
+    } = params;
+    const class_size = (size ? `inpt_size-${size}` : "");
+
+  .inpt(class=class_size)
     if (title)
       .inpt__title=title
     .inpt__container
-      input.inpt__textarea(placeholder=placeholder)    
-      if(type_submit)
-        .inpt__submit-icon
-          img(src="images/submit-arrow.svg")
+      input.inpt__textarea(placeholder=placeholder type=type)
+      if(submitLink !== undefined)
+        button.inpt__button(type='submit' )
+          i.material-icons arrow_forward
         
