@@ -1,0 +1,19 @@
+mixin checkbox-list__checkbox(params)
+  -
+    const {
+      title,
+      description,
+      defaultClicked = false,
+    } = params;
+    const isRich = (description ? true : false);
+ 
+  .checkbox-list__checkbox.checkbox
+    label.checkbox__label
+      input(type='checkbox').checkbox__input
+      .checkbox__box
+    .checkbox__container
+      if(isRich)
+        .checkbox__title.checkbox__title_rich=title
+        .checkbox__description=description
+      else
+        .checkbox__title=title

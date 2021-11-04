@@ -1,24 +1,24 @@
-include ../custom-checkbox/custom-checkbox
+include ./__checkbox/checkbox-list__checkbox
 
 mixin checkbox-list(params)
   -
+    params = (params ? params : {});
     const {
-      title = "title",
+      title,
       items = [],
-      descriptions = [],
       expandable = false,
       defaultOpen = true,
     } = params;
 
-    const class_expandable = expandable ? "checkbox-list_expandable" : "";
+    const class_expandable = expandable ? 'checkbox-list_expandable' : '';
+    const class_open = defaultOpen ? 'checkbox-list_open' : '';
 
-  .checkbox-list(class = class_expandable)
-    .checkbox-list__title=title
-      if (expandable)
+  .checkbox-list.js-checkbox-list(class=class_expandable class=class_open)
+    .checkbox-list__title.js-checkbox-list__title=title
+      if(expandable)
         i.material-icons expand_more
-    .checkbox-list__container(class = expandable ? "checkbox-list__container_expandable" : "" class = defaultOpen ? "checkbox-list__container_open" : "")
-      -var i = -1;
-      while ++i < items.length      
-        +custom-checkbox(items[i])
-          
-          
+    ul.checkbox-list__list.js-checkbox-list__list
+      -let i = -1;
+      while ++i < items.length
+        li.checkbox-list__item
+          +checkbox-list__checkbox(items[i])

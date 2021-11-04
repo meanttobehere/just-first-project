@@ -1,20 +1,13 @@
-import './checkbox-list.scss'
-import '../custom-checkbox/custom-checkbox.js'
+function chechboxListsInit() {
+  const checkboxLists = document.getElementsByClassName('js-checkbox-list checkbox-list_expandable');
 
-function chechboxListsInit()
-{
-    let chechboxLists = document.getElementsByClassName('checkbox-list_expandable');       
-    
-    for (let i = 0; i < chechboxLists.length; i++)
-    { 
-        let cl = chechboxLists[i];
-        let title = cl.querySelector('.checkbox-list__title');
-        let container = cl.querySelector('.checkbox-list__container');
-        
-        title.onclick = function(){
-            container.classList.toggle('checkbox-list__container_open');
-        }
-    }
+  for (let i = 0; i < checkboxLists.length; i += 1) {
+    const title = checkboxLists[i].querySelector('.js-checkbox-list__title');
+
+    title.onclick = function titleClickHandler() {
+      checkboxLists[i].classList.toggle('checkbox-list_open');
+    };
+  }
 }
 
 chechboxListsInit();
