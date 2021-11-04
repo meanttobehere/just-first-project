@@ -1,0 +1,94 @@
+{
+  "Col1Row2":{
+    "roomDropdown1":{
+      "title": "dropdown"
+    },
+    "roomDropdown2":{
+      "title": "dropdown",
+      "alwaysOpen": true
+    }    
+  },
+  "Col2Row2":{
+    "guestsDropdown":{
+      "title": "dropdown",
+      "alwaysOpen": true, 
+      "adults": 0, 
+      "children": 0,
+      "babies": 0
+    }
+  },
+  "Col3Row2":{
+    "guestsDropdown":{
+      "title": "dropdown",
+      "alwaysOpen": true, 
+      "adults": 2, 
+      "children": 1,
+      "babies": 0
+    }
+  },
+  "Col1Row3":{
+    "checkboxList1":{
+      "title": "expandable checkbox list",
+      "items": [
+        {"title": "Ничего"}
+      ], 
+      "expandable": true,
+      "defaultOpen": false
+    },
+    "checkboxList2":{
+      "title": "expandable checkbox list",
+      "expandable": true,
+      "items": [
+        {"title": "Завтрак"},
+        {"title": "Письменный стол", "checked": true},
+        {"title": "Стул для кормления", "checked": true},
+        {"title": "Кроватка", "checked": true},
+        {"title": "Телевизор"},
+        {"title": "Шампунь"}
+      ]
+    }
+  },  
+  "Col2Row3":{
+    "checkboxList":{
+      "title": "rich checkbox buttons",       
+      "items": [
+        {"title": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."}, 
+        {"title": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист и проводит до номера."}
+      ]                                                  
+    }
+  },
+  "Col3Row3":{
+    "bulletList":{
+      "title": "bullet list", 
+      "items": [
+        "Нельзя с питомцами", 
+        "Без вечеринок и мероприятий", 
+        "Время прибытия — после 13:00, а выезд до 12:00"
+      ]
+    }    
+  },
+  "Col1Row4":{
+    "comfortItem1":{      
+      "title": "Комфорт", 
+      "description": "Шумопоглощающие стены", 
+      "underlined": true,
+      "icon": "insert_emoticon"
+    },
+    "comfortItem2":{
+      "title": "Удобство", 
+      "description": "Окно в каждой из спален", 
+      "underlined": true,
+      "icon": "location_city"
+    }
+  },
+  "Col2Row4":{
+    "review":{
+      "name": "Мурад Сарафанов",
+      "date": "5 дней назад",
+      "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+      "numLikes": 12,
+      "likesEmphasized": true,
+      "photoUrl": "images/photo.jpg"
+    }
+  }
+}

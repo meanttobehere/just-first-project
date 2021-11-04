@@ -86,9 +86,59 @@ html, body{
     grid-column: line2 / line3;
     grid-row: line2 / line3;
 
+    max-width: 266px;
     display: flex;
-    flex-flow: column;
+    flex-wrap: wrap;
     gap: 20px;
+
+    & > *{
+        flex-basis: 100%;
+    }
+
+    & > :first-child{
+        z-index: 10000;
+    }
+}
+
+.middle-column-row2{
+    grid-column: line3 / line4;
+    grid-row: line2 / line3;
+
+    & > *{
+        min-width: 320px;
+    }
+}
+
+.right-column-row2{
+    grid-column: line4 / line5;
+    grid-row: line2 / line3;
+
+    & > *{
+        min-width: 320px;
+    }
+}
+
+.left-column-row3{
+    grid-column: line2 / line3;
+    grid-row: line3 / line4;
+
+    max-width: 266px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & > *{
+        flex-basis: 100%;
+    }
+}
+
+.right-column-row3{
+    grid-column: line4 / line5;
+    grid-row: line3 / line4;
+
+    .bullet-list{
+        white-space: pre-line;
+    }
 }
 
 .middle-column-row1{
@@ -135,10 +185,7 @@ html, body{
     }    
 }
 
-.middle-column-row2{
-    grid-column: line3 / line4;
-    grid-row: line2 / line3;
-}
+
 
 .middle-column-row3{
     grid-column: line3 / line4;
@@ -149,28 +196,11 @@ html, body{
     }
 }
 
-.right-column-row2{
-    grid-column: line4 / line5;
-    grid-row: line2 / line3;
-}
 
-.right-column-row3{
-    grid-column: line4 / line5;
-    grid-row: line3 / line4;
 
-    .bullet-list{
-        white-space: pre-line;
-    }
-}
 
-.left-column-row3{
-    grid-column: line2 / line3;
-    grid-row: line3 / line4;
 
-    display: flex;
-    flex-flow: column;
-    gap: 50px;
-}
+
 
 .left-column-row4{
     grid-column: line2 / line3;

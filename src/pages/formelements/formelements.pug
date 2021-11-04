@@ -1,5 +1,10 @@
 include ../../components/components
 
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/formelements/formelements.json'));
+
 doctype html
 html 
   head 
@@ -68,40 +73,30 @@ html
         .left-column-row2
           .container-right-title
             .right-title default
-            +room-dropdown({title: "dropdown"})
+            +room-dropdown(data.Col1Row2.roomDropdown1)
           .container-right-title
             .right-title expanded           
-            +room-dropdown({title: "dropdown", default_active: true})
+            +room-dropdown(data.Col1Row2.roomDropdown2)
 
         .middle-column-row2
-          +guests-dropdown({title: "dropdown", default_active: true, adults: 2, children: 1, babies: 0})
+          +guests-dropdown(data.Col2Row2.guestsDropdown)
 
         .right-column-row2
-          +guests-dropdown({title: "dropdown", default_active: true, adults: 0, children: 0, babies: 0})
+          +guests-dropdown(data.Col3Row2.guestsDropdown)
 
         .left-column-row3
-          +checkbox-list({title: "expandable checkbox list", items: [{title: "Завтрак"}, {title: "Письменный стол"}, {title: "Стул для кормления"}, {title: "Кроватка"}, {title: "Телевизор"}, {title: "Шампунь"}], expandable: true})
-          +checkbox-list({title: "expandable checkbox list", items: [{title: "Завтрак"}, {title: "Письменный стол", default_clicked: true}, {title: "Стул для кормления", default_clicked: true}, {title: "Кроватка", default_clicked: true}, {title: "Телевизор"}, {title: "Шампунь"}], expandable: true, default_open: true})       
-
-        .right-column-row3                  
-          +bullet-list({title: "bullet list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00,\n а выезд до 12:00"]}) 
+          +checkbox-list(data.Col1Row3.checkboxList1)
+          +checkbox-list(data.Col1Row3.checkboxList2)
 
         .middle-column-row3  
-          +checkbox-list({title: "rich checkbox buttons", 
-                          items: [{title: "Широкий коридор", description: "Ширина коридоров в номере\n не менее 91 см."}, 
-                                  {title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист\n и проводит до номера."}]                                                  
-                          })
+          +checkbox-list(data.Col2Row3.checkboxList)
+
+        .right-column-row3                  
+          +bullet-list(data.Col3Row3.bulletList) 
+
+        .left-column-row4
+          +comfort-item(data.Col1Row4.comfortItem1)
+          +comfort-item(data.Col1Row4.comfortItem2)    
         
         .middle-column-row4
-          +review({name: "Мурад Сарафанов", 
-                   date: "5 дней назад", 
-                   text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\n И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\n не жаловался из соседей.",
-                   num_likes: 12,
-                   likes_emphasized: true,
-                   photo_url: "images/photo.jpg"})
-                  
-        .left-column-row4 
-          +comfort-item({title: "Комфорт", description: "Шумопоглащающие стены", icon_url: "images/smile.svg", bottom_line: true})
-          +comfort-item({title: "Удобство", description: "Окно в каждой из спален", icon_url: "images/building.svg", bottom_line: true})
-
-        
+          +review(data.Col2Row4.review)
