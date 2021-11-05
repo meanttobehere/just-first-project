@@ -6,97 +6,79 @@ include ../../components/components
   const data = JSON.parse(fs.readFileSync('./src/pages/formelements/formelements.json'));
 
 doctype html
-html 
-  head 
-    meta(charset="UTF-8")
-    title Form Elements    
+html
+  head
+    meta(charset='UTF-8')
+    title Form Elements
   body
-    div.container
-      
-      div.logotype-container
-        +logotype({partial: true})
-      
-      div.content-container
-
-        .left-column-row1
-          .container-right-title
-            .right-title default
-            +inpt({title: "text field", placeholder: "Email"})
-          .container-right-title
-            .right-title hover/focus
-            +inpt({title: "text field", placeholder: "Email"})
-          +guests-dropdown({title: "dropdown"})
-          +inpt({title: "masked text field", placeholder: "ДД.ММ.ГГГГ"})
-          .date-dropdown-container
-            +dropdown({title: "date dropdown", size: "s", text: "ДД.ММ.ГГГГ"})
-            +dropdown({title: "date dropdown", size: "s", text: "19.02.2019"})
-          +dropdown({title: "filter date dropdown", size: "m", text: "19 авг - 23 авг"})
-          +inpt({title: "text field", size: "m", placeholder: "Email", type_submit: true})
-        
-        .middle-column-row1
-          +checkbox-list({title: "checkbox buttons", items: [{title: "Можно курить"}, {title: "Можно с питомцами"}, {title: "Можно пригласить гостей\n (до 10 человек)"}]})
-          .title radio buttons
-          .radio-buttons-group
-            +radio-button({title: "Мужчина", checked: true})
-            +radio-button({title: "Женщина"})
-          .title toggle
-          .toggle-group
-            +toggle({title: "Получать спецпредложения", checked: true})
-            +toggle({title: "Получать спецпредложения"})
-          .title like button
-          .like-buttons-group
-            +like-button({likes: 2})
-            +like-button({likes: 12, emphasized: true})
-          .title rate button
-          .rate-buttons-group
-            +rate-button(4)
-            +rate-button(5)            
-        
-        .right-column-row1
-          +range-slider({title: "range slider"})
-          .title buttons
-          .buttons-block            
-            .buttons-group
-              +button({title: "click me", size: "s"})
-              +button({title: "click me", size: "s"})              
-            .buttons-group
-              +button({title: "click me", size: "s", theme: "white"})
-              +button({title: "click me", size: "s", theme: "white"})
-            .buttons-group
-              +button({title: "click me", size: "s", theme: "no-border"})
-              +button({title: "click me", size: "s", theme: "no-border"})
-            .buttons-group
-              +button({title: "перейти к оплате", size: "l"})
-          .title pagination
-          +pagination()
-        
-        .left-column-row2
-          .container-right-title
-            .right-title default
-            +room-dropdown(data.Col1Row2.roomDropdown1)
-          .container-right-title
-            .right-title expanded           
-            +room-dropdown(data.Col1Row2.roomDropdown2)
-
-        .middle-column-row2
-          +guests-dropdown(data.Col2Row2.guestsDropdown)
-
-        .right-column-row2
-          +guests-dropdown(data.Col3Row2.guestsDropdown)
-
-        .left-column-row3
-          +checkbox-list(data.Col1Row3.checkboxList1)
-          +checkbox-list(data.Col1Row3.checkboxList2)
-
-        .middle-column-row3  
-          +checkbox-list(data.Col2Row3.checkboxList)
-
-        .right-column-row3                  
-          +bullet-list(data.Col3Row3.bulletList) 
-
-        .left-column-row4
-          +comfort-item(data.Col1Row4.comfortItem1)
-          +comfort-item(data.Col1Row4.comfortItem2)    
-        
-        .middle-column-row4
-          +review(data.Col2Row4.review)
+    .logotype-container
+      +logotype(data.logotype)  
+    .content-container
+      .left-column-row1        
+        .title-right(data='default')
+          +inpt(data.Col1Row1.inpt1)        
+        .title-right(data='hover / focus')
+          +inpt(data.Col1Row1.inpt2)
+        +guests-dropdown(data.Col1Row1.guestsDropdown)
+        +inpt(data.Col1Row1.inpt3)
+        .date-dropdown-container
+          +dropdown(data.Col1Row1.dropdown1)
+          +dropdown(data.Col1Row1.dropdown2)
+        +dropdown(data.Col1Row1.dropdown3)
+        +inpt(data.Col1Row1.inpt4)     
+      .middle-column-row1
+        +checkbox-list(data.Col2Row1.checkboxList)
+        .title radio buttons
+        .radio-buttons-group
+          +radio-button(data.Col2Row1.radioButton1)
+          +radio-button(data.Col2Row1.radioButton2)
+        .title toggle
+        .toggle-group
+          +toggle(data.Col2Row1.toggle1)
+          +toggle(data.Col2Row1.toggle2)
+        .title like button
+        .like-buttons-group
+          +like-button(data.Col2Row1.likeButton1)
+          +like-button(data.Col2Row1.likeButton2)
+        .title rate button
+        .rate-buttons-group
+          +rate-button(data.Col2Row1.rateButton1)
+          +rate-button(data.Col2Row1.rateButton2)
+      .right-column-row1
+        +range-slider(data.Col3Row1.rangeSlider)
+        .title buttons
+        .buttons-block
+          .buttons-group
+            +button(data.Col3Row1.button1)
+            +button(data.Col3Row1.button1)   
+          .buttons-group
+            +button(data.Col3Row1.button2)
+            +button(data.Col3Row1.button2)
+          .buttons-group
+            +button(data.Col3Row1.button3)
+            +button(data.Col3Row1.button3)
+          .buttons-group
+            +button(data.Col3Row1.button4)
+        .title pagination
+        +pagination() 
+      .left-column-row2
+        .title-right(data='default')
+          +room-dropdown(data.Col1Row2.roomDropdown1)
+        .title-right(data='expanded')
+          +room-dropdown(data.Col1Row2.roomDropdown2)
+      .middle-column-row2
+        +guests-dropdown(data.Col2Row2.guestsDropdown)
+      .right-column-row2
+        +guests-dropdown(data.Col3Row2.guestsDropdown)
+      .left-column-row3
+        +checkbox-list(data.Col1Row3.checkboxList1)
+        +checkbox-list(data.Col1Row3.checkboxList2)
+      .middle-column-row3
+        +checkbox-list(data.Col2Row3.checkboxList)
+      .right-column-row3
+        +bullet-list(data.Col3Row3.bulletList)
+      .left-column-row4
+        +comfort-item(data.Col1Row4.comfortItem1)
+        +comfort-item(data.Col1Row4.comfortItem2)
+      .middle-column-row4
+        +review(data.Col2Row4.review)

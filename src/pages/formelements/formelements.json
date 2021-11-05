@@ -1,11 +1,115 @@
 {
+  "logotype":{
+    "partial": true
+  },
+  "Col1Row1":{
+    "dropdown1":{
+      "title": "date dropdown", 
+      "size": "s", 
+      "text": "ДД.ММ.ГГГГ"
+    },
+    "dropdown2":{
+      "title": "date dropdown", 
+      "size": "s", 
+      "text": "19.02.2019"
+    },
+    "dropdown3":{
+      "title": "filter date dropdown", 
+      "size": "m", 
+      "text": "19 авг - 23 авг"
+    },
+    "inpt1":{
+      "title": "text field", 
+      "placeholder": "Email"
+    },
+    "inpt2":{
+      "title": "text field", 
+      "value": "This is pretty awesome"
+    },
+    "inpt3":{
+      "title": "masked text field",
+      "placeholder": "ДД.ММ.ГГГГ"
+    },
+    "inpt4":{
+      "title": "subscription text field",
+      "size": "m",
+      "placeholder": "Email",
+      "submitLink": "#"
+    },
+    "guestsDropdown":{
+      "title": "dropdown"
+    }
+  },
+  "Col2Row1":{
+    "checkboxList":{
+      "title": "checkbox buttons", 
+      "items": [
+        {"title": "Можно курить"}, 
+        {"title": "Можно с питомцами"}, 
+        {"title": "Можно пригласить гостей (до 10 человек)"}
+      ]
+    },
+    "radioButton1":{
+      "title": "Мужчина", 
+      "checked": true
+    },
+    "radioButton2":{
+      "title": "Женщина" 
+    },
+    "toggle1":{
+      "title": "Получать спецпредложения", 
+      "checked": true
+    },
+    "toggle2": {
+      "title": "Получать спецпредложения"
+    },
+    "likeButton1":{
+      "numLikes": 2
+    },
+    "likeButton2":{
+      "numLikes": 12,
+      "emphasized": true
+    },
+    "rateButton1": 4,
+    "rateButton2": 5
+  },
+  "Col3Row1":{
+    "rangeSlider":{
+      "title": "range slider"
+    },
+    "button1":{
+      "title": "click me", 
+      "size": "s"
+    },
+    "button2":{
+      "title": "click me", 
+      "size": "s", 
+      "theme": "white"
+    },
+    "button3":{
+      "title": "click me", 
+      "size": "s", 
+      "theme": "no-border"
+    },
+    "button4":{
+      "title": "перейти к оплате", 
+      "size": "l",
+      "arrow": true
+    }
+  },
   "Col1Row2":{
     "roomDropdown1":{
-      "title": "dropdown"
+      "title": "dropdown",
+      "beds": 2,
+      "bedrooms": 2,
+      "bathrooms": 0
     },
     "roomDropdown2":{
       "title": "dropdown",
-      "alwaysOpen": true
+      "alwaysOpen": true,
+      "beds": 2,
+      "bedrooms": 2,
+      "bathrooms": 0
     }    
   },
   "Col2Row2":{
