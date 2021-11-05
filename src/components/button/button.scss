@@ -7,6 +7,7 @@
     width: 99px;
     height: 44px;
     border-radius: 22px;
+    padding: 0;
     background: $primary-gradient;
     &:hover{
         background: $primary-gradient-50;
@@ -59,7 +60,7 @@
     &_theme-no-border{        
         background: none;
         color: $primary-color;
-        width: max-content;
+        width: auto;
         height: auto;
         
         &:hover{
@@ -88,5 +89,9 @@
         justify-content: center;
         width: 44px;
         height: 44px;
+    }
+
+    &_hide{
+        visibility: hidden;
     }
 }

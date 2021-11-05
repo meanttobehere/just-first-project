@@ -19,10 +19,11 @@
     &__arrow{
         transition: 0.11s;
         width: 48px;
-        height: 48px;
+        height: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
+        color: $gray-color-50;
     }
 
     &__list{
@@ -50,7 +51,7 @@
         }
 
         .checkbox-list__item:first-child{
-            margin-top: 2.44px;
+            margin-top: 17.44px;
         }
     }
 

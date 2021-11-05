@@ -1,7 +1,7 @@
-.checkbox{
+.checkbox{    
+    user-select: none;
     display: flex;
     gap: 10px;
-    user-select: none;
 
     font-family: $primary-font;
     font-style: normal;
@@ -12,8 +12,9 @@
 
     &__label{
         position: relative;
-        width: 20px;
+        max-width: 20px;
         height: 20px;
+        flex: 1 0 20px;
         display: block; 
         cursor: pointer;
         overflow: visible;
@@ -50,7 +51,7 @@
             display: block;
             position: absolute;
             top: 4.05px;
-            left: 5.05px;
+            left: 6.05px;
             width: 6px;
             height: 8px;
             box-sizing: border-box;
