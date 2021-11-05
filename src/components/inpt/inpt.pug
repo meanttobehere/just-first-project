@@ -6,15 +6,21 @@ mixin inpt(params)
       placeholder,
       type = 'text',
       submitLink,
+      value,
     } = params;
     const class_size = (size ? `inpt_size-${size}` : "");
 
   .inpt(class=class_size)
     if (title)
       .inpt__title=title
-    .inpt__container
-      input.inpt__textarea(placeholder=placeholder type=type)
-      if(submitLink !== undefined)
-        button.inpt__button(type='submit' )
-          i.material-icons arrow_forward
+    if(submitLink !== undefined)
+      form.inpt__container(action=submitLink)
+        input.inpt__input(placeholder=placeholder, type=type, value=value)      
+        button.inpt__button(type='submit')
+          i.material-icons.inpt__arrow arrow_forward
+    else
+      .inpt__container
+        input.inpt__input(placeholder=placeholder, type=type, value=value)
+      
+          
         
