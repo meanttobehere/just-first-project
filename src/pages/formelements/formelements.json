@@ -45,8 +45,8 @@
       "title": "checkbox buttons", 
       "items": [
         {"title": "Можно курить"}, 
-        {"title": "Можно с питомцами"}, 
-        {"title": "Можно пригласить гостей (до 10 человек)"}
+        {"title": "Можно с питомцами", "checked": true}, 
+        {"title": "Можно пригласить гостей (до 10 человек)", "checked": true}
       ]
     },
     "radioButton1":{
@@ -75,7 +75,12 @@
   },
   "Col3Row1":{
     "rangeSlider":{
-      "title": "range slider"
+      "title": "range slider",
+      "min": 0,
+      "max": 16000,
+      "val1": 5000,
+      "val2": 10000,
+      "step": 100
     },
     "button1":{
       "title": "click me", 
@@ -83,15 +88,32 @@
     },
     "button2":{
       "title": "click me", 
-      "size": "s", 
-      "theme": "white"
+      "size": "s",
+      "disabled": true
     },
     "button3":{
       "title": "click me", 
       "size": "s", 
-      "theme": "no-border"
+      "theme": "white"
     },
     "button4":{
+      "title": "click me", 
+      "size": "s", 
+      "theme": "white",
+      "disabled": true
+    },
+    "button5":{
+      "title": "click me", 
+      "size": "s", 
+      "theme": "no-border"
+    },
+    "button6":{
+      "title": "click me", 
+      "size": "s", 
+      "theme": "no-border",
+      "disabled": true
+    },
+    "button7":{
       "title": "перейти к оплате", 
       "size": "l",
       "arrow": true
@@ -192,7 +214,7 @@
       "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
       "numLikes": 12,
       "likesEmphasized": true,
-      "photoUrl": "images/photo.jpg"
+      "photoUrl": "images/formelements_review_photo.jpg"
     }
   }
 }

@@ -27,7 +27,6 @@ body{
     text-transform: uppercase;
     color: $gray-color;
     margin-bottom: 16px;
-    margin-top: 40px;
 }
 
 .title-right{
@@ -98,17 +97,32 @@ body{
     grid-column: line3 / line4;
     grid-row: line1 / line2;
 
-    .checkbox-list{
-        white-space: pre-line;
+    & > :nth-child(1){
+        max-width: 230px;
+        margin-bottom: 38.88px;
+    }
+
+    & > :nth-child(3){
+        margin-bottom: 40.56px;       
+    }
+
+    & > :nth-child(5){
+        margin-bottom: 40.44px;
+    }
+
+    & > :nth-child(7){
+        margin-bottom: 40px;
+    }
+
+    .toggle-group{
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
     }
 
     .radio-buttons-group{
         display: flex;
         gap: 20px;
-    }
-
-    .toggle{
-        margin-bottom: 10px;
     }
 
     .like-buttons-group{
@@ -126,10 +140,19 @@ body{
     grid-column: line4 / line5;
     grid-row: line1 / line2;
 
+    & > :nth-child(1){
+        margin-bottom: 40px;
+    }
+
+    & > :nth-child(3){
+        margin-bottom: 40.56px;   
+    }
+
     .buttons-block{
         display: flex;
         flex-flow: column;
         gap: 30px;
+        min-width: 330px;
 
         .buttons-group{
             display: flex;

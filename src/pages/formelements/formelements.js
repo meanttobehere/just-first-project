@@ -1,6 +1,6 @@
 import './formelements.scss';
 
-import photo from './images/photo.jpg';
+import './images/formelements_review_photo.jpg';
 
 import '../../components/range-slider/range-slider';
 import '../../components/dropdown/dropdown';
