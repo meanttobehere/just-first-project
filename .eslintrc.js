@@ -4,7 +4,8 @@ module.exports = {
         "es2020": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "plugin:json/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": 12,

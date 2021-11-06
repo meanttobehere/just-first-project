@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 
@@ -65,7 +66,11 @@ module.exports = {
         ],
     },
     plugins: [
-        ...generateHtmlPlugins(), 
+        ...generateHtmlPlugins(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        }),
         new CleanWebpackPlugin()                         
     ],
 }
