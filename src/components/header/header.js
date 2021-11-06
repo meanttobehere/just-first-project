@@ -18,7 +18,9 @@ function headersInit() {
       if (isDesktopView) {
         headers[i].appendChild(userblock);
         const [button1, button2] = userblock.getElementsByClassName('button');
-        [button1, button2].forEach((button) => {button.classList.remove('button_size-xl')});       
+        if (button1 !== undefined && button2 !== undefined){
+          [button1, button2].forEach((button) => {button.classList.remove('button_size-xl')});
+        }    
       } else {
         navbar.appendChild(userblock);
         const [button1, button2] = userblock.getElementsByClassName('button');

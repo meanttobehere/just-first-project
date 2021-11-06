@@ -1,21 +1,33 @@
-@import '../../assets/style.scss';
-@import '../../assets/fonts.scss';
 @import '../../components/components.scss';
 
-html, body{
+html{
     margin: 0;
     padding: 0;
     background-color: #E5E5E5;
 }
 
-.container{
+body{
     max-width: 1440px;
-    min-height: 1853px;
+    min-height: 100vh;
     margin: auto;
-    background: #F4F4F6;
-    padding-top: 140px;
+    background: #F4F4F6;    
 
-    display: flex;
-    flex-flow: column;
-    gap: 40px;
+    & > *{
+        margin-bottom: 40px;
+    }
+
+    & > :nth-child(2){
+        position: relative;
+        z-index: 1000;
+    }
+
+    & > :nth-child(5){
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.logotype-container{
+    padding: 30px 0 22px 30px;   
 }

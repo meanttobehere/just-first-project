@@ -1,14 +1,19 @@
 include ../../components/components
 
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/headersfooters/headersfooters.json'));
+
 doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Headers & Footers
-    body
-      .container
-        //+header()
-        //+header({isLoggedin: true, username: "Юлий Цезарь"})
-        +footer()
+html
+  head
+    meta(charset='UTF-8')
+    title Headers & Footers
+  body
+    .logotype-container
+      +logotype(data.logotype)
+    +header(data.header1)
+    +header(data.header2)
+    +footer(data.footer)
+    +footer(data.footer)(class='footer_uikit')

@@ -15,7 +15,7 @@ mixin footer(params)
       submitLink = "#",
     } = params;
 
-  .footer.js-footer
+  .footer.js-footer&attributes(attributes)
     .footer__top-container
       .footer__group                  
         +logotype()

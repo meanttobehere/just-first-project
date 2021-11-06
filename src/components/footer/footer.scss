@@ -96,6 +96,10 @@
                 max-width: 260px;
             }
         }
+
+        & > .inpt{
+            min-width: 260px;
+        }
     }
 
     &__bottom-container{        
@@ -153,8 +157,29 @@
     }
 
     &__text{        
+        margin-top: -3px;
+        margin-bottom: 3px;
         line-height: 24px;
         font-size: 14px;                          
         color: $gray-color-75;        
-    }    
+    } 
+    
+    &_uikit{
+        .footer__top-container{              
+            display: none;
+        }
+
+        .footer__bottom-container{
+            height: 367px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 25px;
+
+            & > :first-child{
+                display: block;
+            }
+        }        
+    }
 }
