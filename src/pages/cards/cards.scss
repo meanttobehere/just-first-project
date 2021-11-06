@@ -1,22 +1,26 @@
-@import '../../assets/style.scss';
-@import '../../assets/fonts.scss';
 @import '../../components/components.scss';
 
-html, body{
+html{
     margin: 0;
     padding: 0;
     background-color: #E5E5E5;
 }
 
-.container{    
-    margin: 0 auto;
-    width: 1440px;
-    min-height: 1853px;
+body{
+    max-width: 1440px;
+    height: 100vh;
+    margin: auto;
     background-color: #F4F4F6;
-    padding: 30px;
+}
 
+.logotype-container{
+    padding: 30px 0 0 30px;    
+}
+
+.container{ 
+    padding-top: 72px;
     display: flex;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
 }
 
@@ -24,12 +28,21 @@ html, body{
     display: flex;
     justify-content: flex-start;
     flex-flow: column;
-    gap: 50px;
+    gap: 40px;
 }
 
 .middle-column{
     display: flex;
     justify-content: flex-start;
     flex-flow: column;
-    gap: 50px;
+    gap: 40px;
+}
+
+.right-column{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    gap: 40px;
+
+    min-width: 320px;
 }
