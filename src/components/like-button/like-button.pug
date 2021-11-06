@@ -8,5 +8,5 @@ mixin like-button(params)
     const class_gap = (params.likes < 10 ? "like-button_column-gap" : "");
 
   .like-button(class=class_emphasized class=class_gap)
-    i.material-icons favorite
+    i.material-icons= (emphasized ? 'favorite' : 'favorite_border')
     .like-button__likes=numLikes

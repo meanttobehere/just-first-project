@@ -57,6 +57,20 @@
         height: 44px;
     }
 
+    &_disabled{
+        background: $primary-gradient-50;
+    }    
+
+    &_disabled.button_theme-white{
+        border-color: $primary-color-50;
+        background: $white-color;
+    }
+
+    &_disabled.button_theme-no-border{
+        color: $gray-color-50;
+        background: none;
+    }
+
     &_theme-no-border{        
         background: none;
         color: $primary-color;
@@ -93,5 +107,5 @@
 
     &_hide{
         visibility: hidden;
-    }
+    }    
 }

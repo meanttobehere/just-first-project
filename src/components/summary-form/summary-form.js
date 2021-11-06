@@ -1,6 +1,6 @@
 import { getCalendar } from '../calendar/calendar';
 
-function getFormattedPrice(price) {
+export function getFormattedPrice(price) {
   const str = price.toString();
   return `${str.substr(0, str.length - 3)} ${str.substr(-3)}₽`;
 }
