@@ -1,13 +1,17 @@
 mixin range-slider(params)
-  -var params = (params ? params : {})
-  -var title = (params.title ? params.title : "No title");
-  -var min_value = (params.min_value ? params.min_value : 0);
-  -var max_value = (params.max_value ? params.max_value : 1000);
-  .range-slider 
+  -
+    params = params ? params : {};
+    const {
+      title,
+      min = 0,
+      max = 100,
+      val1 = 20,
+      val2 = 80,
+      step = 10,
+    } = params;
+
+  .range-slider.js-range-slider
     .range-slider__container 
       .range-slider__title=title
-      .range-slider__value=(min_value + " - " + max_value)
-    .range-slider__slider
-      .range-slider__pointer 
-      .range-slider__pointer
-      .range-slider__segment
+      .range-slider__price.js-range-slider__price
+    .range-slider__slider.js-range-slider__slider(data-min=min, data-max=max, data-val1=val1, data-val2=val2, data-step=step)

@@ -1,66 +1,39 @@
-import './range-slider.scss'
+import { getFormattedPrice } from '../summary-form/summary-form';
+import './lib/slider';
 
-function rangeSlidersInit()
-{
-    let rangeSliders= document.getElementsByClassName('range-slider');           
-    
-    for (let i = 0; i < rangeSliders.length; i++)
-    {         
-        let pointers = rangeSliders[i].getElementsByClassName('range-slider__pointer');
-        let segment = rangeSliders[i].querySelector('.range-slider__segment');        
+function getPriceAttr(val1, val2) {
+  return `${getFormattedPrice(val1)} - ${getFormattedPrice(val2)}`;
+}
 
-        let leftPointer = {position: 50, offset: 0};
-        let rightPointer = {position: 180, offset: 0};        
-        let currentPointer = {};
+function rangeSlidersInit() {
+  const $rangeSliders = $('.js-range-slider');
 
-        function setPointers()
-        {
-            if (currentPointer == leftPointer)
-            {
-                if (leftPointer.position < -5)
-                    leftPointer.position = -5;            
-                if (leftPointer.position > rightPointer.position - 14)
-                    leftPointer.position = rightPointer.position - 14;                
-            } 
-            else 
-            {
-                if (rightPointer.position < leftPointer.position + 14)
-                    rightPointer.position = leftPointer.position + 14;
-                if (rightPointer.position > 250)
-                    rightPointer.position = 250;                
-            } 
-            pointers[0].style.left = leftPointer.position + 'px';
-            pointers[1].style.left = rightPointer.position + 'px';
-            segment.style.left = leftPointer.position + 12 + 'px';
-            segment.style.width = rightPointer.position - leftPointer.position - 6 + 'px';      
-        }
+  $rangeSliders.each((index, rangeSlider) => {
+    const $slider = $(rangeSlider).find('.js-range-slider__slider');
+    const $price = $('.js-range-slider__price');
 
-        setPointers();
+    const val1 = parseInt($slider.attr('data-val1'), 10);
+    const val2 = parseInt($slider.attr('data-val2'), 10);
+    const step = parseInt($slider.attr('data-step'), 10);
+    const min = parseInt($slider.attr('data-min'), 10);
+    const max = parseInt($slider.attr('data-max'), 10);
 
-        function sliderMove(event)
-        {             
-            currentPointer.position = event.clientX + currentPointer.offset;
-            setPointers();
-        }
-
-        function sliderEndMove()
-        { 
-            document.removeEventListener('mousemove', sliderMove);
-            document.removeEventListener('mouseup', sliderEndMove);
-        }        
-        
-        for (let j = 0; j < 2; j++){
-            pointers[j].onmousedown = function(event)
-            {                                
-                currentPointer = (j === 0) ? leftPointer : rightPointer;                
-                currentPointer.offset = currentPointer.position - event.clientX;
-                
-                document.addEventListener('mousemove', sliderMove);
-                document.addEventListener('mouseup', sliderEndMove);
-                event.preventDefault();  
-            }
-        }  
-    }
+    $slider.superSlider({
+      displayTips: false,
+      pointerPosition: val1,
+      secondPointerPosition: val2,
+      minValue: min,
+      maxValue: max,
+      step,
+    });
+    $slider.superSlider('pointerPosition', val1);
+    $price.attr('data-value', getPriceAttr(val1, val2));
+    $slider.on('sliderupdate', () => {
+      const pos1 = $slider.superSlider('pointerPosition');
+      const pos2 = $slider.superSlider('secondPointerPosition');
+      $price.attr('data-value', getPriceAttr(pos1, pos2));
+    });
+  });
 }
 
 rangeSlidersInit();
