@@ -1,5 +1,3 @@
-@import '../../assets/style.scss';
-@import '../../assets/fonts.scss';
 @import '../../components/components.scss';
 
 html, body{
@@ -8,26 +6,37 @@ html, body{
     -webkit-tap-highlight-color: transparent;
 }
 
+body{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
 header{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 29999;
+    z-index: 2;
 }
 
 main{
     padding-top: 70px;
-    height: 830px;
     
-    background-image: url('./images/background.png');
+    background-image: url('./images/main_background.png');
     background-repeat: no-repeat;
     background-size: cover;   
     background-position: center bottom;
 
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
     .container__search-form{
         max-width: 1440px;
-        padding-top: 70px;
-        margin: auto;
+        width: 100%;
+        padding-top: 70px;        
         display: flex;
 
         & > *{
@@ -35,19 +44,18 @@ main{
         }
 
         &::before, &::after{
-            content: "";
-            max-width: 140px;
-            flex-grow: 1;
+           content: "";
+           max-width: 140px;
+           flex-grow: 1;
         }
     }
 
     .container__text{
         max-width: 1440px;
-        margin: auto;
-        padding-top: 318px;           
+        width: 100%;
+        padding-bottom: 18px;     
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
 
         & > *{
             flex: 1 1 auto;

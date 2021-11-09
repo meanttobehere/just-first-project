@@ -1,5 +1,5 @@
 {
-  "headerData": {
+  "header": {
     "isLoggedIn": false,
     "username": "Юлий Цезарь",
     "headerItems": [
@@ -21,14 +21,14 @@
     "loginButtonLink": "#",
     "signupButtonLink": "#"      
   },
-  "searchFormData": {
+  "searchForm": {
     "guestDropdown": {      
       "adults": 2,
       "children": 0,
       "babies": 1
     }
   },
-  "footerData": {
+  "footer": {
     "groups": [
       {
         "title":"Навигация",

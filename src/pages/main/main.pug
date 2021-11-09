@@ -3,21 +3,21 @@ include ../../components/components
 -
   const path = require('path');
   const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/main/data.json'));
+  const data = JSON.parse(fs.readFileSync('./src/pages/main/main.json'));
 
 doctype html
 html
   head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width')
     title TOXIN
   body
     header
-      +header(data.headerData)
+      +header(data.header)
     main
       .container__search-form
-        +search-form(data.searchFormData)
+        +search-form(data.searchForm)
       .container__text
-        .text= "Лучшие номера для вашей работы, отдыха и просто вдохновения"
+        .text= 'Лучшие номера для вашей работы, отдыха и просто вдохновения'
     footer
-      +footer(data.footerData)
+      +footer(data.footer)
