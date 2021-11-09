@@ -3,13 +3,21 @@ include ../button/button
 include ../toggle/toggle
 include ../radio-button/radio-button
 
-mixin login-form()
-  form.login-form
-    .login-form__title Войти    
+mixin login-form(params)
+  -
+    params = params ? params : {};
+    const {
+      actionLink = 'https://echo.htmlacademy.ru',
+      signupButtonLink = '#',
+    } = params;
+
+  form.login-form(action=actionLink method='post')
+    .login-form__title Войти
     .login-form__inputdata-container
-      +inpt({placeholder: "Email"})
-      +inpt({placeholder: "Пароль"})  
+      +inpt({placeholder: 'Email', type: 'email', name: 'email'})
+      +inpt({placeholder: 'Пароль', type: 'password', name: 'password'})
     .login-form__button-container
-      +button({title: "войти", size: "l"})
+      +button({title: 'войти', size: 'l', type: 'submit'})
     .login-form__button-container Нет аккаунта на Toxin?
-      +button({title: "создать", theme: "white"})
+      a.login-form__signup-button(href=signupButtonLink)
+        +button({title: "создать", theme: "white"})

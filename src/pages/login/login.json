@@ -1,7 +1,6 @@
 {
-  "headerData": {
+  "header": {
     "isLoggedIn": false,
-    "username": "Юлий Цезарь",
     "headerItems": [
       { "title": "О нас", "href": "#", "selected": true },
       { "title": "Услуги", "href": "#", "children": [
@@ -19,16 +18,13 @@
       ] }
     ],
     "loginButtonLink": "#",
-    "signupButtonLink": "#"      
+    "signupButtonLink": "signup.html",
+    "logoLink": "main.html"
   },
-  "searchFormData": {
-    "guestDropdown": {      
-      "adults": 2,
-      "children": 0,
-      "babies": 1
-    }
+  "loginForm":{
+    "signupButtonLink": "signup.html"
   },
-  "footerData": {
+  "footer": {
     "groups": [
       {
         "title":"Навигация",

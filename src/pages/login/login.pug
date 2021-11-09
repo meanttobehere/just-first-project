@@ -1,23 +1,21 @@
-include ../../components/header/header
-include ../../components/footer/footer
-include ../../components/login-form/login-form
+include ../../components/components
 
 -
   const path = require('path');
   const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/main/data.json'));
+  const data = JSON.parse(fs.readFileSync('./src/pages/login/login.json'));
 
 doctype html
 html
   head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width')
     title TOXIN
   body
     header
-      +header(data.headerData)
+      +header(data.header)
     main
-      .container__search-form
-        +login-form(data.searchFormData)
+      .container__login-form
+        +login-form(data.loginForm)
     footer
-      +footer(data.footerData)
+      +footer(data.footer)

@@ -1,4 +1,5 @@
 import './login.scss';
-import '../../components/search-form/search-form.js';
-import '../../components/header/header.js';
-import '../../components/footer/footer.js';
+
+import '../../components/search-form/search-form';
+import '../../components/header/header';
+import '../../components/footer/footer';
