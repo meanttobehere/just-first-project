@@ -334,10 +334,10 @@ function calendarsInit() {
     const arrivalDate = new Date(calendarsDOM[i].getAttribute('data-arrival'));
     const departureDate = new Date(calendarsDOM[i].getAttribute('data-departure'));
 
-    if (arrivalDate instanceof Date)
+    if (!isNaN(arrivalDate.getTime()))
       calendar.setArrivalDate(arrivalDate);
 
-    if (departureDate instanceof Date)
+    if (!isNaN(departureDate.getTime()))
       calendar.setDepartureDate(departureDate);
   }
 }

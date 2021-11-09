@@ -3,22 +3,26 @@ include ../../components/components
 -
   const path = require('path');
   const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/cards/cards.json'));    
+  const data = JSON.parse(fs.readFileSync('./src/pages/cards/cards.json'));
 
 doctype html
-html 
-  head 
+html
+  head
     meta(charset='UTF-8')
-    title Cards    
+    title Cards
   body
     .logotype-container
       +logotype(data.logotype)
     .container
       .left-column
-        +search-form()
-        +signup-form()
+        +search-form(data.searchForm)
+        +signup-form(data.signupForm)
       .middle-column
-        +summary-form()
+        +summary-form(data.summaryForm)
         +login-form()
-      .right-column 
+      .right-column
         +calendar()
+        .room-card-container
+          +room-card(data.roomCard1)
+        .room-card-container
+          +room-card(data.roomCard2)
