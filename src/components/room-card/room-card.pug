@@ -1,22 +1,37 @@
+include ../rate-button/rate-button
+
 mixin room-card(params)
   - 
-    let {
+    const {
       imageLinks = [], 
-      number = 0, 
-      luxe = false,
-      price = 0, 
-      rate = 0, 
-      reviewCount = 0
-    } = params;    
+      number = 888, 
+      luxe = true,
+      price = 9990, 
+      rate = 4, 
+      reviewCount = 145
+    } = params;
+    const str = price.toString();
+    const cardPrice = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
 
   .room-card.js-room-card
     .room-card__images
       each link in imageLinks
         img.room-card__image(src=link).js-room-card__image
-      i.material-icons.room-card__arrow.js-room-card__arrow expand_more
-      i.material-icons.room-card__arrow.js-room-card__arrow expand_more
-    .room-card__container 
-      
-
-     
+      .room-card__dots
+        .room-card__dot.js-room-card__dot
+        .room-card__dot.js-room-card__dot
+        .room-card__dot.js-room-card__dot
+        .room-card__dot.js-room-card__dot
+      .room-card__button.js-room-card__button
+        i.material-icons expand_more
+      .room-card__button.js-room-card__button
+        i.material-icons expand_more
+    .room-card__container
+      .room-card__top
+        .room-card__number(class = luxe ? 'room-card__number_luxe' : '')=number
+        .room-card__price=cardPrice
+      .room-card__stick
+      .room-card__bottom
+        +rate-button(rate)
+        .room-card__count=reviewCount
     
