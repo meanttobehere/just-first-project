@@ -36,11 +36,18 @@
         margin-bottom: 20px;
     }
 
+    &__userdata-container{
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+        margin-bottom: 23.6px;
+    }
+
     &__inputdata-container{
         display: flex;
         flex-flow: column;
         gap: 10px;
-        margin-bottom: 23.7px;
+        margin-bottom: 20px;
     }
 
     &__radio-buttons-container{

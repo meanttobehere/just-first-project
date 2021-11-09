@@ -8,6 +8,7 @@ mixin date-dropdown(params)
       title = 'прибытие',
       secondTitle = 'выезд',
       size,
+      calendar,
     } = params;
     const class_size = size ? `date-dropdown_size-${size}` : '';
 
@@ -25,4 +26,4 @@ mixin date-dropdown(params)
             .date-dropdown__text ДД.ММ.ГГГГ
             i.material-icons expand_more
     .date-dropdown__calendar-container
-      +calendar()
+      +calendar(calendar)

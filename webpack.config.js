@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 
-module.exports = {    
+module.exports = {
     entry: {
         main: path.resolve(__dirname, './src/pages/main/main.js'),
         signup: path.resolve(__dirname, './src/pages/signup/signup.js'),
@@ -14,7 +14,7 @@ module.exports = {
         formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
         colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
         cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
-        headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),        
+        headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),   
     },
 
     output: {
