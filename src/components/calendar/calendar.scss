@@ -18,7 +18,6 @@
     &__month-selector{
         display: flex;
         justify-content: space-between;
-        align-items: center;
     }
 
     &__month-title{
@@ -29,17 +28,17 @@
     }
 
     &__month-button{        
-        width: 40px;
-        height: 40px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;             
         cursor: pointer;
         outline: none;
         border: none;
+        background: none;
         color: $primary-color;
-        background: $white-color;
         
         &:hover{           
-            background: $primary-gradient-25;         
+            color: $gray-color-50;        
         }
 
         & > i{
@@ -50,7 +49,7 @@
     }
 
     &__day-selector{
-        margin-top: 9.375%;
+        margin-top: 10.375%;
         width: 100%;;
         display: grid;
         align-items: center;
@@ -73,7 +72,7 @@
     }
 
     &__buttons-container{
-        margin-top: 6.3875%;
+        margin-top: 8.375%;
         display: flex;
         justify-content: space-between;
         align-items: center;        

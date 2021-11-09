@@ -339,8 +339,6 @@ function calendarsInit() {
 
     if (departureDate instanceof Date)
       calendar.setDepartureDate(departureDate);
-
-    console.log(calendar.getArrivalDate());
   }
 }
 
