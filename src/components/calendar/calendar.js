@@ -72,6 +72,16 @@ export default class Calendar {
     return dateToString(this._departure);
   }
 
+  setArrivalDate(date){
+    this._arrival = this._getDateWithoutHours(date);
+    this._renderPage();
+  }
+
+  setDepartureDate(date){
+    this._departure = this._getDateWithoutHours(date);
+    this._renderPage();
+  }
+
   getIntervalOfArrivalAndDeparture(){
     return intervalToString(this._arrival, this._departure);
   }
@@ -88,6 +98,10 @@ export default class Calendar {
     this.#days = [];
     const page = calendar.querySelector('.js-calendar__day-selector');
     for (let i = 7; i < page.children.length; i += 1) { this.#days.push(page.children[i]); }
+  }
+
+  _getDateWithoutHours(date){
+    return (new Date(date.getFullYear(), date.getMonth(), date.getDate()))
   }
 
   _setCurrentDate(){
@@ -316,6 +330,17 @@ function calendarsInit() {
   for (let i = 0; i < calendarsDOM.length; i += 1) {
     const calendar = new Calendar(calendarsDOM[i]);
     calendars.push({ calendar: calendar, DOM: calendarsDOM[i] });
+
+    const arrivalDate = new Date(calendarsDOM[i].getAttribute('data-arrival'));
+    const departureDate = new Date(calendarsDOM[i].getAttribute('data-departure'));
+
+    if (arrivalDate instanceof Date)
+      calendar.setArrivalDate(arrivalDate);
+
+    if (departureDate instanceof Date)
+      calendar.setDepartureDate(departureDate);
+
+    console.log(calendar.getArrivalDate());
   }
 }
 
