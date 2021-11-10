@@ -9,9 +9,8 @@ import '../../components/room-card/room-card';
 import '../../components/date-dropdown/date-dropdown';
 import '../../components/summary-form/summary-form';
 
-import './room/photo1.png';
-import './room/photo2.png';
-import './room/photo3.png';
-
-import './reviews/photo1.jpg';
-import './reviews/photo2.jpg';
+import '../../assets/images/room1.jpg';
+import '../../assets/images/room2.jpg';
+import '../../assets/images/room3.jpg';
+import '../../assets/images/review1.jpg';
+import '../../assets/images/review2.jpg';
