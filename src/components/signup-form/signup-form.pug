@@ -8,25 +8,26 @@ mixin signup-form(params)
     params = params ? params : {};
     const {
       buttonTitle = 'зарегистрироваться',
-      loginLink = '#',   
+      actionLink = 'https://echo.htmlacademy.ru',
+      loginButtonLink = '#',
     } = params;
 
-  form.signup-form
+  form.signup-form(action=actionLink method='post')
     .signup-form__title Регистрация аккаунта
     .signup-form__userdata-container
-      +inpt({placeholder: 'Имя'})
-      +inpt({placeholder: 'Фамилия'})
+      +inpt({placeholder: 'Имя', name: 'name'})
+      +inpt({placeholder: 'Фамилия', name: 'surname'})
       .signup-form__radio-buttons-container
-        +radio-button({title: 'Мужчина', checked: true})
-        +radio-button({title: 'Женщина'})
+        +radio-button({title: 'Мужчина', checked: true, name: 'gender', value: 'male'})
+        +radio-button({title: 'Женщина', name: 'gender', value: 'female'})
     .signup-form__birthdate-container
-      +inpt({title: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ'})    
+      +inpt({title: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', name: 'birthdate'})
     .signup-form__inputdata-container
-      +inpt({title: 'данные для входа в сервис', placeholder: 'Email'})
-      +inpt({placeholder: 'Пароль'})
-      +toggle({title: 'Получать спецпредложения'})    
+      +inpt({title: 'данные для входа в сервис', placeholder: 'Email', type: 'email', name: 'email'})
+      +inpt({placeholder: 'Пароль', type: 'password', name: 'password'})
+      +toggle({title: 'Получать спецпредложения', name: 'subscription'})
     .signup-form__button-container
       +button({title: buttonTitle, size: 'l', arrow: true, type: 'submit'})
     .signup-form__button-container Уже есть аккаунт на Toxin
-      a.sigup-form__input-button(link=loginLink)
+      a.signup-form__input-button(href=loginButtonLink)
         +button({title: 'войти', theme: 'white'})
