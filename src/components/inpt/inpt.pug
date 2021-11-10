@@ -9,14 +9,14 @@ mixin inpt(params)
       value,
       name = 'name',
     } = params;
-    const class_size = (size ? `inpt_size-${size}` : "");
+    const class_size = (size ? `inpt_size-${size}` : '');
 
   .inpt(class=class_size)
     if (title)
       .inpt__title=title
     if(submitLink !== undefined)
       form.inpt__container(action=submitLink)
-        input.inpt__input(placeholder=placeholder, type=type, value=value)      
+        input.inpt__input(placeholder=placeholder, type=type, value=value, name=name)
         button.inpt__button(type='submit')
           i.material-icons.inpt__arrow arrow_forward
     else
