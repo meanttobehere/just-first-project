@@ -6,19 +6,21 @@ mixin footer(params)
     params = (params ? params : {})
     const {      
       groups = [{
-        title: "title",
+        title: 'title',
         items: [{
-          name: "item1", 
-          href: "#"
+          name: 'item1', 
+          href: '#',
         }],
       }],
-      submitLink = "#",
+      submitLink = 'https://echo.htmlacademy.ru',
+      logotypeLink = '#',
     } = params;
 
   .footer.js-footer&attributes(attributes)
     .footer__top-container
-      .footer__group                  
-        +logotype()
+      .footer__group
+        a.footer__logotype(href=logotypeLink)
+          +logotype()
         .footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»        
       each group in groups
         .footer__group.js-footer__group
@@ -28,15 +30,15 @@ mixin footer(params)
       .footer__group
         .footer__group-title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
-        +inpt({size: 'm', placeholder: "Email", submitLink: submitLink})
+        +inpt({size: 'm', placeholder: 'Email', name: 'email', submitLink: submitLink})
     .footer__bottom-container
       .footer__bottom-item    
         +logotype()
       .footer__bottom-item Copyright © 2018 Toxin отель. Все права защищены.
       .footer__bottom-item
-        a.footer__link(href="#")
+        a.footer__link(href='https://twitter.com/')
           i.fab.fa-twitter
-        a.footer__link(href="#")
+        a.footer__link(href='https://facebook.com/')
           i.fab.fa-facebook-square
-        a.footer__link(href="#")
+        a.footer__link(href='https://instagram.com/')
           i.fab.fa-instagram

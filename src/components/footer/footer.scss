@@ -54,6 +54,10 @@
         line-height: 17px;
         height: 18px;
         color: $gray-color-50;
+
+        &:hover{
+            color: $gray-color;
+        }
     }
 
     &__group{
@@ -140,7 +144,8 @@
     }
 
     &__link{
-        text-decoration: none;
+        text-decoration: none;        
+
         & > i{
             width: 24px;
             height: 24px;
@@ -153,6 +158,11 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            transition: 0.1s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
 
