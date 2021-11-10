@@ -3,33 +3,32 @@ include ../../components/components
 -
   const path = require('path');
   const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/searchpage/data.json'));
+  const data = JSON.parse(fs.readFileSync('./src/pages/searchpage/searchpage.json'));
 
 doctype html
 html
   head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width')
     title TOXIN
   body
     header
-      +header(data.headerData)
+      +header(data.header)
       .filter-control.js-filter-control Фильтр
     main
       .filter-container.js-filter-container
-        +date-dropdown({twoDropdowns: false, size: 'm', title: 'даты пребывания в отеле'})
+        +date-dropdown(data.dateDropdown)
         +guests-dropdown(data.guestsDropdown)
-        +range-slider()
+        +range-slider(data.rangeSlider)
         +checkbox-list(data.rulesCheckbox)
         +checkbox-list(data.availabilityCheckbox)
         +room-dropdown(data.roomDropdown)
         +checkbox-list(data.amenitiesCheckbox)
-      .data-container
+      .data-container.js-data-container
         .data-container__title Номера, которые мы для вас подобрали
         .rooms-container
-          -var i = 0
-          while i++ < 12
-            +room-card(data.roomCard)
+          each roomCard in data.roomCards
+            +room-card(roomCard)
         +pagination()
-    footer
-      +footer(data.footerData)
+    footer.js-footer
+      +footer(data.footer)

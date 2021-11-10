@@ -1,0 +1,270 @@
+{
+  "header": {
+    "isLoggedIn": false,
+    "headerItems": [
+      { "title": "О нас", "href": "#" },
+      { "title": "Услуги", "href": "#", "children": [
+        { "title": "Хорошая услуга", "href": "#" },
+        { "title": "Плохая услуга", "href": "#" },
+        { "title": "Отличная услуга", "href": "#" },
+        { "title": "Простая услуга", "href": "#" }
+      ] },
+      { "title": "Вакансии", "href": "#" },
+      { "title": "Новости", "href": "#" },
+      { "title": "Соглашения", "children": [
+        { "title": "Соглашение первое", "href": "#"},
+        { "title": "Соглашение второе", "href": "#"},
+        { "title": "Соглашение третье", "href": "#"}
+      ] }
+    ],
+    "loginButtonLink": "login.html",
+    "signupButtonLink": "signup.html",
+    "logotypeLink": "main.html"
+  },
+  "footer": {
+    "groups": [
+      {
+        "title":"Навигация",
+        "items": [
+          {"name": "О нас", "href": "#"},
+          {"name": "Новости", "href": "#"},
+          {"name": "Служба поддержки", "href": "#"},
+          {"name": "Услуги", "href": "#"}
+        ]
+      },
+      {
+        "title":"О нас",
+        "items": [
+          {"name": "О сервисе", "href": "#"},
+          {"name": "Наша команда", "href": "#"},
+          {"name": "Вакансии", "href": "#"},
+          {"name": "Инвесторы", "href": "#"}
+        ]
+      },
+      {
+        "title":"Служба поддержки",
+        "items": [
+          {"name": "Соглашения", "href": "#"},
+          {"name": "Сообщества", "href": "#"},
+          {"name": "Связь с нами", "href": "#"}
+        ]
+      }
+    ],
+    "logotypeLink": "main.html"
+  },
+  "rulesCheckbox": {
+    "title": "Правила дома",
+    "items": [
+      {"title": "Можно курить"}, 
+      {"title": "Можно с питомцами", "checked": true}, 
+      {"title": "Можно пригласить гостей (до 10 человек)", "checked": true}
+    ]
+  },
+  "availabilityCheckbox": {
+    "title": "доступность", 
+    "items": [
+      {"title": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."}, 
+      {"title": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист и проводит до номера."}
+    ]
+  },
+  "amenitiesCheckbox": {
+    "title": "дополнительные удобства", 
+    "items": [
+      {"title": "Завтрак"}, 
+      {"title": "Письменный стол", "checked": true}, 
+      {"title": "Стул для кормления", "checked": true}, 
+      {"title": "Кроватка", "checked": true},
+      {"title": "Телевизор"}, 
+      {"title": "Шампунь"}
+    ], 
+    "expandable": true, 
+    "defaultOpen": false
+  },
+  "roomDropdown": {
+    "title": "удобства номера",
+    "beds": 2,
+    "bedrooms": 2,
+    "size": "m"
+  },
+  "guestsDropdown": {      
+    "adults": 2,
+    "children": 0,
+    "babies": 1,
+    "size": "m"
+  },
+  "dateDropdown": {
+    "twoDropdowns": false, 
+    "size": "m", 
+    "title": "даты пребывания в отеле",
+    "calendar":{
+      "arrivalDate": "2022-08-19",
+      "departureDate": "2022-08-23"
+    }
+  },
+  "roomCards":[
+    {
+      "number": 888,
+      "price": 9990,
+      "luxe": true,
+      "rate": 5,
+      "reviewCount": 145,
+      "imageLinks": [
+        "./images/room_photo1.jpg",
+        "./images/room_photo2.jpg",
+        "./images/room_photo3.jpg",
+        "./images/room_photo4.jpg"
+      ]
+    },
+    {
+      "number": 840,
+      "price": 9900,
+      "luxe": false,
+      "rate": 4,
+      "reviewCount": 65,
+      "imageLinks": [
+        "./images/room_photo5.jpg",
+        "./images/room_photo6.jpg",
+        "./images/room_photo7.jpg",
+        "./images/room_photo8.jpg"
+      ]
+    },
+    {
+      "number": 980,
+      "price": 8500,
+      "luxe": true,
+      "rate": 3,
+      "reviewCount": 35,
+      "imageLinks": [
+        "./images/room_photo12.jpg",
+        "./images/room_photo1.jpg",
+        "./images/room_photo2.jpg",
+        "./images/room_photo3.jpg"
+      ]
+    },
+    {
+      "number": 856,
+      "price": 7300,
+      "luxe": false,
+      "rate": 5,
+      "reviewCount": 19,
+      "imageLinks": [
+        "./images/room_photo2.jpg",
+        "./images/room_photo3.jpg",
+        "./images/room_photo4.jpg",
+        "./images/room_photo5.jpg"
+      ]
+    },
+    {
+      "number": 740,
+      "price": 6000,
+      "luxe": false,
+      "rate": 4,
+      "reviewCount": 44,
+      "imageLinks": [
+        "./images/room_photo3.jpg",
+        "./images/room_photo4.jpg",
+        "./images/room_photo5.jpg",
+        "./images/room_photo6.jpg"
+      ]
+    },
+    {
+      "number": 982,
+      "price": 5800,
+      "luxe": false,
+      "rate": 3,
+      "reviewCount": 56,
+      "imageLinks": [
+        "./images/room_photo4.jpg",
+        "./images/room_photo5.jpg",
+        "./images/room_photo6.jpg",
+        "./images/room_photo7.jpg"
+      ]
+    },
+    {
+      "number": 678,
+      "price": 5500,
+      "luxe": false,
+      "rate": 5,
+      "reviewCount": 45,
+      "imageLinks": [
+        "./images/room_photo6.jpg",
+        "./images/room_photo7.jpg",
+        "./images/room_photo8.jpg",
+        "./images/room_photo9.jpg"
+      ]
+    },
+    {
+      "number": 450,
+      "price": 5300,
+      "luxe": false,
+      "rate": 4,
+      "reviewCount": 39,
+      "imageLinks": [
+        "./images/room_photo7.jpg",
+        "./images/room_photo8.jpg",
+        "./images/room_photo9.jpg",
+        "./images/room_photo10.jpg"
+      ]
+    },
+    {
+      "number": 350,
+      "price": 5000,
+      "luxe": false,
+      "rate": 3,
+      "reviewCount": 77,
+      "imageLinks": [
+        "./images/room_photo8.jpg",
+        "./images/room_photo9.jpg",
+        "./images/room_photo10.jpg",
+        "./images/room_photo11.jpg"
+      ]
+    },
+    {
+      "number": 666,
+      "price": 5000,
+      "luxe": false,
+      "rate": 5,
+      "reviewCount": 25,
+      "imageLinks": [
+        "./images/room_photo9.jpg",
+        "./images/room_photo10.jpg",
+        "./images/room_photo11.jpg",
+        "./images/room_photo12.jpg"
+      ]
+    },
+    {
+      "number": 444,
+      "price": 5000,
+      "luxe": false,
+      "rate": 3,
+      "reviewCount": 15,
+      "imageLinks": [
+        "./images/room_photo10.jpg",
+        "./images/room_photo11.jpg",
+        "./images/room_photo12.jpg",
+        "./images/room_photo1.jpg"
+      ]
+    },
+    {
+      "number": 352,
+      "price": 5000,
+      "luxe": false,
+      "rate": 3,
+      "reviewCount": 55,
+      "imageLinks": [
+        "./images/room_photo11.jpg",
+        "./images/room_photo12.jpg",
+        "./images/room_photo1.jpg",
+        "./images/room_photo12.jpg"
+      ]
+    }
+  ],
+  "rangeSlider":{
+    "title": "диапазон цены",
+    "min": 0,
+    "max": 16000,
+    "val1": 5000,
+    "val2": 10000,
+    "step": 100
+  }
+}
