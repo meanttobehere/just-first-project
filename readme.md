@@ -1,4 +1,26 @@
-# Toxin pages учебный проект
+# Toxin pages
+
+## Getting Started 
+
+### Clone repository
+
+```
+git clone https://github.com/meanttobehere/just-first-project
+```
+
+### Installing
+
+```
+npm install
+```
+
+### Building
+
+```
+npm run build
+```
+
+## Demo Pages
 
 <table>
     <tr><th><a href='https://meanttobehere.github.io/toxinpages/main.html' target='_blank'>Landing Page</a></th></tr>
@@ -11,3 +33,9 @@
     <tr><th><a href='https://meanttobehere.github.io/toxinpages/cards.html' target='_blank'>Cards</a></th></tr>
     <tr><th><a href='https://meanttobehere.github.io/toxinpages/headersfooters.html' target='_blank'>Headers & Footers</a></th></tr>
 </table>
+
+## Описание
+
+Toxin pages - учебный проект.
+В проекте выполнена верстка элементов и страниц по макетам, а также реализована работа элементов с помощью js.
+Верстка выполнена по методологии БЭМ с использованием препроцессоров Scss и Pug.
