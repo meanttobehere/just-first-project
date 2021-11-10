@@ -3,19 +3,19 @@ include ../../components/components
 -
   const path = require('path');
   const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/main/data.json'));
+  const data = JSON.parse(fs.readFileSync('./src/pages/signup/signup.json'));
 
 doctype html
 html
   head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width')
     title TOXIN
   body
     header
-      +header(data.headerData)
+      +header(data.header)
     main
       .container__search-form
-        +signup-form(data.searchFormData)
+        +signup-form(data.signupForm)
     footer
-      +footer(data.footerData)
+      +footer(data.footer)

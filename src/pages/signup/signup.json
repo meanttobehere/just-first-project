@@ -1,0 +1,58 @@
+{
+  "header": {
+    "isLoggedIn": false,
+    "headerItems": [
+      { "title": "О нас", "href": "#"},
+      { "title": "Услуги", "href": "#", "children": [
+        { "title": "Хорошая услуга", "href": "#" },
+        { "title": "Плохая услуга", "href": "#" },
+        { "title": "Отличная услуга", "href": "#" },
+        { "title": "Простая услуга", "href": "#" }
+      ] },
+      { "title": "Вакансии", "href": "#" },
+      { "title": "Новости", "href": "#" },
+      { "title": "Соглашения", "children": [
+        { "title": "Соглашение первое", "href": "#"},
+        { "title": "Соглашение второе", "href": "#"},
+        { "title": "Соглашение третье", "href": "#"}
+      ] }
+    ],
+    "loginButtonLink": "login.html",
+    "signupButtonLink": "#",
+    "logotypeLink": "main.html"     
+  },
+  "signupForm": {
+    "loginButtonLink": "login.html"
+  },
+  "footer": {
+    "groups": [
+      {
+        "title":"Навигация",
+        "items": [
+          {"name": "О нас", "href": "#"},
+          {"name": "Новости", "href": "#"},
+          {"name": "Служба поддержки", "href": "#"},
+          {"name": "Услуги", "href": "#"}
+        ]
+      },
+      {
+        "title":"О нас",
+        "items": [
+          {"name": "О сервисе", "href": "#"},
+          {"name": "Наша команда", "href": "#"},
+          {"name": "Вакансии", "href": "#"},
+          {"name": "Инвесторы", "href": "#"}
+        ]
+      },
+      {
+        "title":"Служба поддержки",
+        "items": [
+          {"name": "Соглашения", "href": "#"},
+          {"name": "Сообщества", "href": "#"},
+          {"name": "Связь с нами", "href": "#"}
+        ]
+      }
+    ],
+    "logotypeLink": "main.html"
+  }
+}

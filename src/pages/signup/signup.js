@@ -1,3 +1,4 @@
 import './signup.scss';
-import '../../components/header/header.js';
-import '../../components/footer/footer.js';
+
+import '../../components/header/header';
+import '../../components/footer/footer';
