@@ -1,26 +1,35 @@
 # Toxin pages
 
-## Getting Started 
+## Описание
 
-### Clone repository
+- Toxin pages - учебный проект.
+
+- Задача проекта - верстка элементов и страниц по макетам, а также реализация логики их работы на js.
+
+- Используемые технологии - верстка выполнена по методологии БЭМ с использованием препроцессоров Scss и Pug, и сборщика Webpack.
+
+
+## Быстрый старт 
+
+### Клонирование репозитория
 
 ```
 git clone https://github.com/meanttobehere/just-first-project
 ```
 
-### Installing
+### Установка зависимостей
 
 ```
 npm install
 ```
 
-### Building
+### Сборка
 
 ```
 npm run build
 ```
 
-## Demo Pages
+## Демо страницы
 
 <table>
     <tr><th><a href='https://meanttobehere.github.io/toxinpages/main.html' target='_blank'>Landing Page</a></th></tr>
@@ -33,9 +42,3 @@ npm run build
     <tr><th><a href='https://meanttobehere.github.io/toxinpages/cards.html' target='_blank'>Cards</a></th></tr>
     <tr><th><a href='https://meanttobehere.github.io/toxinpages/headersfooters.html' target='_blank'>Headers & Footers</a></th></tr>
 </table>
-
-## Описание
-
-Toxin pages - учебный проект.
-В проекте выполнена верстка элементов и страниц по макетам, а также реализована работа элементов с помощью js.
-Верстка выполнена по методологии БЭМ с использованием препроцессоров Scss и Pug.
