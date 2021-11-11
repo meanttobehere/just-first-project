@@ -38,7 +38,7 @@
         margin-bottom: 5.44px;
     }
 
-    &__container{ 
+    &__container{
         cursor: pointer;              
         height: 44px;    
         box-sizing: border-box;
@@ -61,8 +61,8 @@
     }    
 
     &__text{
-        overflow: hidden;        
-        min-width: 0;
+        min-width: 0px;
+        overflow: hidden;
         font-size: 14px;
         line-height: 18px;
         color: $gray-color-75;

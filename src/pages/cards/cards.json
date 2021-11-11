@@ -22,6 +22,7 @@
       "luxe": true,
       "rate": 5,
       "reviewCount": 145,
+      "visibleButtons": true,
       "imageLinks": [
         "./images/room_photo1.jpg",
         "./images/room_photo2.jpg",

@@ -29,6 +29,7 @@
     &__title{
         text-decoration: none;
         color: inherit;
+        line-height: 24px;
     }
 
     &__arrow{
@@ -37,7 +38,7 @@
         justify-content: center;
         object-fit: cover;
         width: 24px;
-        height: 21px;  
+        height: 24px;
     }
 
     &__child{

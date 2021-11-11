@@ -8,9 +8,10 @@ mixin search-form(params)
     const {
       guestsDropdown,
       calendar,
+      actionLink = '#',
     } = params;
 
-  form.search-form
+  form.search-form(action=actionLink method='get')
     .search-form__title Найдём номера под ваши пожелания
     .search-form__date-dropdown-container
       +date-dropdown({calendar: calendar})

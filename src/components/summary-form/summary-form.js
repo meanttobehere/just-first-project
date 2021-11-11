@@ -48,6 +48,7 @@ function summaryFormsInit() {
       updateCalculator(calculator);
     });
 
+    calculator.setAttribute('data-days', calendar.getNumDays());
     updateCalculator(calculator);
   }
 }

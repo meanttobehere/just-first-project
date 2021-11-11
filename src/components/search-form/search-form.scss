@@ -4,17 +4,15 @@
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);  
-    user-select: none;  
+    user-select: none;
 
-    min-width: 0;
     max-width: 380px;  
     height: max-content;
-    padding-top: 40px;
+    padding: 40px 10px 0 10px;
     
     & > *{
         max-width: 320px;
         margin: auto;
-        padding: 0 10px;
     }
     
     &__title{        

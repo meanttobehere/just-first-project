@@ -90,12 +90,11 @@
 }
 
 .calculator{    
-    font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 18px;      
-    color: rgba(31, 32, 65, 0.75);
+    line-height: 18px;
+    color: $gray-color-75;
     
     &__row{
         display: flex;
@@ -104,18 +103,17 @@
 
         &:last-child{
             margin-top: 30px;
-            font-family: Montserrat;
-            font-style: normal;
             font-weight: bold;
             font-size: 19px;
             line-height: 23px;
-            color: #1F2041;
+            color: $gray-color;
         }
     }
 
     &__sign{        
         width: 20px;
         height: 20px;
+        margin-right: 30px;
         border-radius: 50%;
         border: 1px solid $gray-color-25;
         color: $gray-color-25;
@@ -136,7 +134,7 @@
         margin-top: 8px;
         display: grid;
         row-gap: 16px;
-        grid-template-columns: max-content max-content auto;
+        grid-template-columns: minmax(min-content, 214px) max-content 1fr;
     }
 
     &__price{
@@ -144,7 +142,8 @@
     }
 
     &__item{
-        max-width: 214px;
+        max-width: max-content;
         margin-right: 5px;
+        justify-self: start;
     }
 }
