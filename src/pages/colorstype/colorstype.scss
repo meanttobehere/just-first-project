@@ -1,69 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-$color-darkshade100: #1F2041;
-$color-darkshade75: rgba(31, 32, 65, 0.75);
-$color-darkshade50: rgba(31, 32, 65, 0.5);
-$color-darkshade25: rgba(31, 32, 65, 0.25);
-$color-darkshade5: rgba(31, 32, 65, 0.05);
-$color-purple: #BC9CFF;
-$color-green: #6FCF97;
+@import '../../components/components.scss';
 
 html, body{
     margin: 0;
     padding: 0;
-    height: 100%;
     background-color: #E5E5E5;
 }
 
-.container{    
-    margin: 0 auto;
-    width: 1440px;
-    background-color: #FFFFFF;
-    height: inherit;
+body{
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: auto;
+    background: #FFFFFF; 
 }
 
 .logotype-container{
-    display: flex;        
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-    position: relative;
     padding: 30px 0 0 30px;
-    width: 48px;
-    height: 48px;
 }
 
 .content-container{     
-    margin-top: 67px;   
-    display: inline-grid;
-    grid-template-columns: [line1] 145px [line2] 701px [line3] auto [line4];
-    justify-items: start;
-    align-items: start;  
+    margin-top: 67px; 
+    margin-left: 150px;  
+    display: grid;
+    grid-template-columns: 697px 436px;
+    align-items: start;
 }
 
 .left-column{
-    grid-column: line2 / line3;
     display: flex;
-    justify-content: flex-start;
-    align-content: flex-start;
     flex-direction: column;
-    margin: 0px;
     gap: 20px;
 }
 
 .right-column{
-    grid-column: line3 / line4;
-    max-width: 436px;
     display: grid;    
     grid-template-columns: auto 1fr; 
+    column-gap: 30px;
 
-    & > *{
-        margin-bottom: 51px;
+    & > *:nth-child(2){
+        margin-bottom: 52px;
     }
 
-    & div:nth-child(2n-1){        
-        text-align: right;
-        margin-right: 30px;
+    & > *:nth-child(4){
+        margin-bottom: 53px;
+    }
+
+    & > *:nth-child(6){
+        margin-bottom: 47px;
     }
 
     & p{        
@@ -72,98 +54,39 @@ html, body{
 }
 
 .item{
-    display: flex;
-    gap: 40px;
-    justify-content: flex-start;
-    align-items: center;
-
-    &__box{
-        width: 70px;
-        height: 70px;
-        border-radius: 6px;
-        background: yellow;
-
-        &_color-darkshade100{
-            background: $color-darkshade100;
-        }
-
-        &_color-darkshade75{
-            background: $color-darkshade75;
-        }
-
-        &_color-darkshade50{
-            background: $color-darkshade50;
-        }
-
-        &_color-darkshade25{
-            background: $color-darkshade25;
-        }
-
-        &_color-darkshade5{
-            background: $color-darkshade5;
-        }
-
-        &_color-green{
-            background: $color-green;
-        }
-
-        &_color-purple{
-            background: $color-purple;
-        }
-    }
-
-    &__title{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-family: 'Montserrat', sans-serif;        
-        font-style: normal;
-        font-size: 19px;
-        line-height: 28px;
-    }
-
-    &__firstline{
-        font-weight: 700;
-    }
-    
-    &__secondline{
-        font-weight: 400;
-    }
-}
-
-.font{
-    font-family: 'Montserrat', sans-serif;        
+    font-family: $primary-font;        
     font-style: normal;
-    font-weight: 400;
-    color: $color-darkshade100;
+    font-weight: normal;
+    color: $gray-color;
+    font-size: 14px;
+    line-height: 24px;
 
-    &_weight-bold{
-        font-weight: 700;
+    &_bold{
+        font-weight: bold;
     }
 
     &_size-x{
         font-size: 24px;
         line-height: 29.26px;
     }
+
     &_size-l{
         font-size: 19px;
         line-height: 23.16px;
     }
+
     &_size-m{
         font-size: 12px;
         line-height: 14.63px;
         text-transform: uppercase;
     }
-    &_size-s{
-        font-size: 14px;
-        line-height: 24px;
+
+    &:nth-child(2n-1){        
+        text-align: right;
+        color: $gray-color-25;
     }
 
-    &_color-75{
-        color: $color-darkshade75;
-    }
-
-    &_color-25{
-        color: $color-darkshade25;
+    &:last-child{
+        color: $gray-color-75;
     }
 }

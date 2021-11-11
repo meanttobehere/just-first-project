@@ -1,0 +1,12 @@
+mixin color-item(params)
+  -
+    const {
+        color,
+        title,
+    } = params;
+
+  .color-item
+    .color-item__box(style={background: color})
+    .color-item__title
+      .color-item__firstline=title
+      .color-item__secondline=color

@@ -1,37 +1,30 @@
-mixin item(params)
-  -var item__box_color = (params.color ? `item__box_${params.color}` : "");
-  div.item
-    div.item__box(class = item__box_color)
-    div.item__title
-      div.item__firstline=params.firstline
-      div.item__secondline=params.secondline
+include ../../components/components
+
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/colorstype/colorstype.json'));
 
 doctype html
-html 
-  head 
-    meta(charset="UTF-8")
-    title Colors & Type    
+html
+  head
+    meta(charset='UTF-8')
+    title Colors & Type
   body
-    div.container
-      div.logotype-container
-        img(src="images/uikit-logotype.svg")
-      div.content-container
-        div.left-column
-          +item({color: 'color-darkshade100', firstline: 'Dark Shade 100%', secondline: '#1F2041'})
-          +item({color: 'color-darkshade75', firstline: 'Dark Shade 75%', secondline: '#1F2041'})
-          +item({color: 'color-darkshade50', firstline: 'Dark Shade 50%', secondline: '#1F2041'})
-          +item({color: 'color-darkshade25', firstline: 'Dark Shade 25%', secondline: '#1F2041'})
-          +item({color: 'color-darkshade5', firstline: 'Dark Shade 5%', secondline: '#1F2041'})
-          +item({color: 'color-purple', firstline: 'Purple', secondline: '#BC9CFF'})
-          +item({color: 'color-green', firstline: 'Green', secondline: '#6FCF97'})
-        div.right-column
-          div(class = 'font font_size-x font_color-25') H1          
-          div(class = 'font font_size-x font_weight-bold') This one is the sub-section or widget title          
-          div(class = 'font font_size-l font_color-25') H2
-          div(class = 'font font_size-l font_weight-bold') Next one is the item title inside widgets         
-          div(class = 'font font_size-m font_color-25') H3
-          div(class = 'font font_size-m font_weight-bold') This is a label or CTA text          
-          div(class = 'font font_size-s font_color-25') Body
-          div(class = 'font font_size-s font_color-75') 
-            p This is the body text which is used for most                         
-            p of the design, like paragraphs, lists, etc.
+    .logotype-container
+      +logotype(data.logotype)
+    .content-container
+      .left-column
+        each item in data.colorItems
+          +color-item(item)
+      .right-column
+        .item.item_size-x H1          
+        .item.item_size-x.item_bold This one is the sub-section or widget title    
+        .item.item_size-l H2
+        .item.item_size-l.item_bold Next one is the item title inside widgets
+        .item.item_size-m H3
+        .item.item_size-m.item_bold This is a label or CTA text
+        .item Body
+        .item
+          p This is the body text which is used for most
+          p of the design, like paragraphs, lists, etc.
