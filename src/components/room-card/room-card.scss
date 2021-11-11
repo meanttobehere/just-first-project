@@ -1,5 +1,6 @@
 .room-card {
     min-width: 270px;
+    max-height: 257px;
     background: $white-color;
     color: $white-color;
     box-shadow: 0px 10px 20px $gray-color-5;
@@ -27,7 +28,13 @@
         .room-card__image_visible{
             width: 100%;
         }
-    }    
+    }
+
+    &:hover, &_visible-buttons{
+        .room-card__button{
+            opacity: 1;
+        }
+    }
 
     &__button{
         cursor: pointer;
@@ -36,6 +43,9 @@
         position: absolute;
         z-index: 2;
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        
+        transition: opacity .3s linear;
+        opacity: 0;
 
         & > *{
             position: absolute;
@@ -79,6 +89,11 @@
     }
 
     &__container{
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: inherit;
+        width: 100%;
         font-family: $primary-font;
         font-style: normal;
         font-weight: bold;

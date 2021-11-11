@@ -108,6 +108,7 @@
       "luxe": true,
       "rate": 5,
       "reviewCount": 145,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo1.jpg",
         "./images/room_photo2.jpg",
@@ -121,6 +122,7 @@
       "luxe": false,
       "rate": 4,
       "reviewCount": 65,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo5.jpg",
         "./images/room_photo6.jpg",
@@ -134,6 +136,7 @@
       "luxe": true,
       "rate": 3,
       "reviewCount": 35,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo12.jpg",
         "./images/room_photo1.jpg",
@@ -147,6 +150,7 @@
       "luxe": false,
       "rate": 5,
       "reviewCount": 19,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo2.jpg",
         "./images/room_photo3.jpg",
@@ -160,6 +164,7 @@
       "luxe": false,
       "rate": 4,
       "reviewCount": 44,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo3.jpg",
         "./images/room_photo4.jpg",
@@ -173,6 +178,7 @@
       "luxe": false,
       "rate": 3,
       "reviewCount": 56,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo4.jpg",
         "./images/room_photo5.jpg",
@@ -186,6 +192,7 @@
       "luxe": false,
       "rate": 5,
       "reviewCount": 45,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo6.jpg",
         "./images/room_photo7.jpg",
@@ -199,6 +206,7 @@
       "luxe": false,
       "rate": 4,
       "reviewCount": 39,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo7.jpg",
         "./images/room_photo8.jpg",
@@ -212,6 +220,7 @@
       "luxe": false,
       "rate": 3,
       "reviewCount": 77,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo8.jpg",
         "./images/room_photo9.jpg",
@@ -225,6 +234,7 @@
       "luxe": false,
       "rate": 5,
       "reviewCount": 25,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo9.jpg",
         "./images/room_photo10.jpg",
@@ -238,6 +248,7 @@
       "luxe": false,
       "rate": 3,
       "reviewCount": 15,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo10.jpg",
         "./images/room_photo11.jpg",
@@ -251,6 +262,7 @@
       "luxe": false,
       "rate": 3,
       "reviewCount": 55,
+      "link": "room.html",
       "imageLinks": [
         "./images/room_photo11.jpg",
         "./images/room_photo12.jpg",

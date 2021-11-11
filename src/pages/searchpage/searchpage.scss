@@ -17,7 +17,7 @@ header{
 main{
     display: flex;
     justify-content: space-between;
-    gap: 25px;
+    column-gap: 25px;
     max-width: 1160px;
     margin: auto;
     padding: 0 20px 70px 20px;
@@ -136,5 +136,9 @@ main{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .data-container{
+        padding-top: 0;
     }
 }
