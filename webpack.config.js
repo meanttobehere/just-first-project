@@ -19,7 +19,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, './dist/toxinpages'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundles/[name].bundle.js',
   },
 
