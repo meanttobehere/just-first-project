@@ -1,7 +1,6 @@
 {
   "header": {
     "isLoggedIn": false,
-    "username": "Юлий Цезарь",
     "headerItems": [
       { "title": "О нас", "href": "#", "selected": true },
       { "title": "Услуги", "href": "#", "children": [
@@ -18,15 +17,21 @@
         { "title": "Соглашение третье", "href": "#"}
       ] }
     ],
-    "loginButtonLink": "#",
-    "signupButtonLink": "#"      
+    "loginButtonLink": "login.html",
+    "signupButtonLink": "signup.html",
+    "logotypeLink": "#"
   },
   "searchForm": {
     "guestDropdown": {      
       "adults": 2,
       "children": 0,
       "babies": 1
-    }
+    },
+    "calendar": {
+      "arrivalDate": "",
+      "departureDate": ""
+    },
+    "actionLink": "searchpage.html"
   },
   "footer": {
     "groups": [
@@ -56,6 +61,7 @@
           {"name": "Связь с нами", "href": "#"}
         ]
       }
-    ]
+    ],
+    "logotypeLink": "main.html"
   }
 }
