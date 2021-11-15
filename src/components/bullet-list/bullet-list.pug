@@ -7,7 +7,7 @@ mixin bullet-list(params)
 
   .bullet-list
     if (title)
-      .bullet-list__title=title
+      .bullet-list__title= title
     ul.bullet-list__list
-      each item in items 
-        li.bullet-list__item=item
+      each item in items
+        li.bullet-list__item= item
