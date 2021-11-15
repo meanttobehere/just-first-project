@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)$/,
         type: 'asset/resource',
-        include: [path.resolve(__dirname, 'src/assets/fonts'), path.resolve(__dirname, 'node_modules')],
+        include: [path.resolve(__dirname, 'src/resources/fonts'), path.resolve(__dirname, 'node_modules')],
         generator: {
           filename: './fonts/[name][ext]',
         },
@@ -36,7 +36,7 @@ module.exports = {
       {
         test: /\.(jpe?g|svg|png)$/,
         type: 'asset/resource',
-        exclude: [path.resolve(__dirname, 'src/assets/fonts'), path.resolve(__dirname, 'node_modules')],
+        exclude: [path.resolve(__dirname, 'src/resources/fonts'), path.resolve(__dirname, 'node_modules')],
         generator: {
           filename: './images/[name][ext]',
         },
@@ -73,7 +73,7 @@ module.exports = {
       jQuery: 'jquery',
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/assets/images/favicon.png',
+      logo: './src/resources/images/favicon.png',
       favicons: {
         icons: {
           appleStartup: false,

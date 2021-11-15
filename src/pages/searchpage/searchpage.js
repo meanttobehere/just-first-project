@@ -9,18 +9,18 @@ import '../../components/room-dropdown/room-dropdown';
 import '../../components/checkbox-list/checkbox-list';
 import '../../components/room-card/room-card';
 
-import '../../assets/images/room_photo1.jpg';
-import '../../assets/images/room_photo2.jpg';
-import '../../assets/images/room_photo3.jpg';
-import '../../assets/images/room_photo4.jpg';
-import '../../assets/images/room_photo5.jpg';
-import '../../assets/images/room_photo6.jpg';
-import '../../assets/images/room_photo7.jpg';
-import '../../assets/images/room_photo8.jpg';
-import '../../assets/images/room_photo9.jpg';
-import '../../assets/images/room_photo10.jpg';
-import '../../assets/images/room_photo11.jpg';
-import '../../assets/images/room_photo12.jpg';
+import '../../resources/images/room_photo1.jpg';
+import '../../resources/images/room_photo2.jpg';
+import '../../resources/images/room_photo3.jpg';
+import '../../resources/images/room_photo4.jpg';
+import '../../resources/images/room_photo5.jpg';
+import '../../resources/images/room_photo6.jpg';
+import '../../resources/images/room_photo7.jpg';
+import '../../resources/images/room_photo8.jpg';
+import '../../resources/images/room_photo9.jpg';
+import '../../resources/images/room_photo10.jpg';
+import '../../resources/images/room_photo11.jpg';
+import '../../resources/images/room_photo12.jpg';
 
 function searchPageInit() {
   const filterControl = document.querySelector('.js-filter-control');
