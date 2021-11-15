@@ -1,5 +1,3 @@
-import { getCalendar } from '../calendar/calendar';
-
 export function getFormattedPrice(price) {
   const str = price.toString();
   return `${str.substr(0, str.length - 3)} ${str.substr(-3)}₽`;
@@ -40,7 +38,7 @@ function summaryFormsInit() {
 
   for (let i = 0; i < forms.length; i += 1) {
     const calendarDOM = forms[i].querySelector('.js-calendar');
-    const calendar = getCalendar(calendarDOM);
+    const calendar = calendarDOM._calendar;
     const calculator = forms[i].querySelector('.js-calculator');
 
     calendarDOM.addEventListener('click', () => {

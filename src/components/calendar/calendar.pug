@@ -14,11 +14,11 @@ mixin calendar(params)
 
   .calendar.js-calendar(data-arrival=arrivalDate, data-departure=departureDate)
     .calendar__month-selector
-      button(type='button').calendar__month-button.js-calendar__month-button
-        i.material-icons arrow_back
+      button.calendar__month-button.js-calendar__month-button(type="button")
+        i.calendar__arrow.material-icons arrow_back
       .calendar__month-title.js-calendar__month-title Август 2021
-      button(type='button').calendar__month-button.js-calendar__month-button
-        i.material-icons arrow_forward
+      button.calendar__month-button.js-calendar__month-button(type="button")
+        i.calendar__arrow.material-icons arrow_forward
     .calendar__day-selector.js-calendar__day-selector
       .calendar__grid-item Пн
       .calendar__grid-item Вт
@@ -29,7 +29,7 @@ mixin calendar(params)
       .calendar__grid-item Вс
       - let n = 0
       while n < 42
-        .calendar__grid-item= n++
+        .calendar__grid-item.js-calendar__grid-item= n++
     .calendar__buttons-container.js-calendar__buttons-container
       +button({title: 'очистить', size: 's', theme: 'no-border'})
       +button({title: 'применить', size: 's', theme: 'no-border'})

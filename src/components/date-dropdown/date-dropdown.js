@@ -1,4 +1,4 @@
-import { getCalendar } from '../calendar/calendar';
+import '../calendar/calendar';
 
 function dateDropdownsInit() {
   document.addEventListener('click', (event) => {
@@ -21,7 +21,7 @@ function dateDropdownsInit() {
     const dropdown = dropdowns[i];
 
     const calendarDOM = dropdown.querySelector('.js-calendar');
-    const calendar = getCalendar(calendarDOM);
+    const calendar = calendarDOM._calendar;
 
     const [text, secondText] = dropdown.getElementsByClassName('date-dropdown__text');
 
