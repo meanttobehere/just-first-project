@@ -1,43 +1,40 @@
 .comfort-item{
-    user-select: none;
+  user-select: none;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  color: $gray-color-75;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  width: 280px;
 
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 24px;
-    color: $gray-color-75;
+  &__icon{
+    height: 48px;
+    font-size: 48px;
+    background: $primary-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 10px;
+  &__text{
+    height: 48px;
+  }
 
-    width: 280px;
+  &__description{
+    font-weight: normal;
+  }
 
-    i{
-        height: 48px;
-        font-size: 48px;
-        background: $primary-gradient;            
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    &__text{
-        height: 48px;
-    }
-
-    &__description{
-        font-weight: normal;
-    }
-   
-    &_underlined::after{
-        flex-basis: 280px;
-        content: "";
-        display: block;
-        height: 1px;
-        margin-top: 20px;
-        background: $gray-color-10;
-    }
+  &_underlined::after{
+    flex-basis: 280px;
+    content: '';
+    display: block;
+    height: 1px;
+    margin-top: 20px;
+    background: $gray-color-10;
+  }
 }

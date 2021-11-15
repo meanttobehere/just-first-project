@@ -1,15 +1,15 @@
 mixin comfort-item(params)
   -
     const {
-      title = "title",
-      description = "description",
-      icon = "whatshot",
+      title = 'title',
+      description = 'description',
+      icon = 'whatshot',
       underlined = false,
     } = params;
-    const class_underline = (underlined ? "comfort-item_underlined" : "");
+    const class_underline = underlined ? 'comfort-item_underlined' : '';
 
-  .comfort-item(class=class_underline)    
-    i.material-icons= icon
+  .comfort-item(class=class_underline)
+    i.comfort-item__icon.material-icons= icon
     .comfort-item__text
-      .comfort-item__title=title 
-      .comfort-item__description=description
+      .comfort-item__title= title
+      .comfort-item__description= description
