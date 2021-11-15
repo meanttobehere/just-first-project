@@ -1,8 +1,8 @@
 include ../calendar/calendar
 
-mixin date-dropdown(params) 
+mixin date-dropdown(params)
   -
-    params = (params ? params : {});  
+    params = params ? params : {};
     const {
       twoDropdowns = true,
       title = 'прибытие',
@@ -17,13 +17,13 @@ mixin date-dropdown(params)
       .date-dropdown__dropdown
         .date-dropdown__title= title
         .date-dropdown__container.js-date-dropdown__container
-          .date-dropdown__text ДД.ММ.ГГГГ
-          i.material-icons expand_more
-      if (twoDropdowns)            
+          .date-dropdown__text.js-date-dropdown__text ДД.ММ.ГГГГ
+          i.date-dropdown__arrow.material-icons expand_more
+      if (twoDropdowns)
         .date-dropdown__dropdown
           .date-dropdown__title= secondTitle
           .date-dropdown__container.js-date-dropdown__container
-            .date-dropdown__text ДД.ММ.ГГГГ
-            i.material-icons expand_more
+            .date-dropdown__text.js-date-dropdown__text ДД.ММ.ГГГГ
+            i.date-dropdown__arrow.material-icons expand_more
     .date-dropdown__calendar-container
       +calendar(calendar)

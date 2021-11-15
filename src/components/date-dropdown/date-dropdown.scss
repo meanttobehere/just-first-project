@@ -1,91 +1,88 @@
 .date-dropdown{
-    max-width: 320px;
+  max-width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+
+  &_size-m{
+    max-width: 266px;
+  }
+
+  &__date-container{
+    width: 100%;
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 20px;
-    user-select: none;
-    
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 15px;
+  }
 
-    &_size-m{
-        max-width: 266px;
-    }
+  &__dropdown{
+    flex-basis: 100%;
+    min-width: 0;
+  }
 
-    &__date-container{
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 20px;        
-    }
+  &__title{
+    height: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $gray-color;
+    margin-bottom: 5.44px;
+  }
 
-    &__dropdown{
-        flex-basis: 100%;
-        min-width: 0;
-    }
+  &__container{
+    cursor: pointer;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $gray-color-25;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+  }
 
-    &__title{        
-        height: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: $gray-color;
-        margin-bottom: 5.44px;
-    }
+  &__arrow{
+    color: $gray-color-50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+  }
 
-    &__container{
-        cursor: pointer;              
-        height: 44px;    
-        box-sizing: border-box;
-        border-radius: 4px;
-        border: 1px solid $gray-color-25;
+  &__text{
+    min-width: 0px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray-color-75;
+  }
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 15px;  
+  &__calendar-container{
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    z-index: 999;
+  }
 
-        & > i{
-            color: $gray-color-50;
-            display: flex;        
-            align-items: center;
-            justify-content: center;            
-            width: 44px;
-            height: 44px;
-        }
-    }    
-
-    &__text{
-        min-width: 0px;
-        overflow: hidden;
-        font-size: 14px;
-        line-height: 18px;
-        color: $gray-color-75;
-    }    
-
-    &__calendar-container{
-        width: 100%;   
-        visibility: hidden;   
-        pointer-events: none;
-        opacity: 0;        
-        transform: translateY(-10px);
-        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-
-        position: absolute;
-        left: 0;
-        top: 70px;
-        z-index: 999;
-    }
-
-    &_active > .date-dropdown__calendar-container{
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
+  &_active > .date-dropdown__calendar-container{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }

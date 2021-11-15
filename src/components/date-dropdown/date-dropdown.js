@@ -1,55 +1,70 @@
 import '../calendar/calendar';
 
-function dateDropdownsInit() {
-  document.addEventListener('click', (event) => {
-    const dateDropdownContainer = event.target.closest('.js-date-dropdown__container');
-    const currentDateDropdown = event.target.closest('.js-date-dropdown');
+class DateDropdown{
+  #dropdown;
+  #containers;
+  #text;
+  #secondText;
+  #calendar;
 
-    if (!dateDropdownContainer && currentDateDropdown) return;
+  constructor(dropdown){
+    this.#dropdown = dropdown;
+    this.#containers = dropdown.querySelectorAll('.js-date-dropdown__container');
+    [this.#text, this.#secondText] = dropdown.querySelectorAll('.js-date-dropdown__text');
+    this.#calendar = dropdown.querySelector('.js-calendar')._calendar;
 
-    if (dateDropdownContainer) { currentDateDropdown.classList.toggle('date-dropdown_active'); }
-
-    document.querySelectorAll('.js-date-dropdown.date-dropdown_active').forEach((dateDropdown) => {
-      if (dateDropdown === currentDateDropdown) return;
-      dateDropdown.classList.remove('date-dropdown_active');
+    this.#calendar.setObserver({
+      acceptClick: this._handleCalendarAcceptClick.bind(this),
+      clearClick: this._handleCalendarClearClick.bind(this),
+      travelChange: this._handleCalendarTravelChange.bind(this),
     });
-  });
 
-  const dropdowns = document.getElementsByClassName('js-date-dropdown');
+    this.#containers.forEach(container => {
+      container.onclick = this._handleContainerClick.bind(this);
+    });
+  }
 
-  for (let i = 0; i < dropdowns.length; i += 1) {
-    const dropdown = dropdowns[i];
+  _handleCalendarAcceptClick(){
+    this.#dropdown.classList.remove('date-dropdown_active');
+  }
 
-    const calendarDOM = dropdown.querySelector('.js-calendar');
-    const calendar = calendarDOM._calendar;
+  _handleCalendarClearClick(){
+    this.#dropdown.classList.remove('date-dropdown_active');
+  }
 
-    const [text, secondText] = dropdown.getElementsByClassName('date-dropdown__text');
+  _handleCalendarTravelChange(){
+    if (this.#secondText !== undefined) {
+      this.#text.textContent = this.#calendar.getArrivalDate();
+      this.#secondText.textContent = this.#calendar.getDepartureDate();
+    } else {
+      this.#text.textContent = this.#calendar.getIntervalOfArrivalAndDeparture();
+    }
+  }
 
-    const acceptButtonClickHandler = function acceptButtonClickHandler() {
-      dropdown.classList.remove('date-dropdown_active');
-    };
+  _handleContainerClick(event){
+    const dropdownIsNotActive = this.#dropdown.classList.contains('date-dropdown_active') === false;
 
-    const clearButtonClickHandler = function clearButtonClickHandler() {
-      dropdown.classList.remove('date-dropdown_active');
-    };
+    if (dropdownIsNotActive){
+      this.#dropdown.classList.add('date-dropdown_active');
+      document.addEventListener('click', this._createDocumentClickHandler());
+      event.stopPropagation();
+    }
+  }
 
-    const travelChangeHandler = function travelChangeHandler() {
-      if (secondText !== undefined) {
-        text.textContent = calendar.getArrivalDate();
-        secondText.textContent = calendar.getDepartureDate();
-      } else {
-        text.textContent = calendar.getIntervalOfArrivalAndDeparture();
+  _createDocumentClickHandler(){
+    const handleDocumentClick = (event) => {
+      const dateDropdown = event.target.closest('.js-date-dropdown');
+      const isContainer = event.target.closest('.js-date-dropdown__container');
+      if (dateDropdown !== this.#dropdown 
+        || dateDropdown === this.#dropdown && isContainer){
+        this.#dropdown.classList.remove('date-dropdown_active');
+        document.removeEventListener('click', handleDocumentClick);
       }
-    };
-
-    travelChangeHandler();
-
-    calendar.setObserver({
-      acceptClick: acceptButtonClickHandler,
-      clearClick: clearButtonClickHandler,
-      travelChange: travelChangeHandler,
-    });
+    }
+    return handleDocumentClick;
   }
 }
 
-dateDropdownsInit();
+document.querySelectorAll('.js-date-dropdown').forEach(dropdown => {
+  dropdown._dateDropdown = new DateDropdown(dropdown);
+})
