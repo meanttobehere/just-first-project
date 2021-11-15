@@ -1,4 +1,4 @@
-include ../inpt/inpt
+include ../field/field
 include ../logotype/logotype
 
 mixin footer(params)
@@ -30,7 +30,7 @@ mixin footer(params)
       .footer__group
         .footer__group-title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
-        +inpt({size: 'm', placeholder: 'Email', name: 'email', submitLink: submitLink})
+        +field({size: 'm', placeholder: 'Email', name: 'email', submitLink: submitLink})
     .footer__bottom-container
       .footer__bottom-item    
         +logotype()

@@ -1,4 +1,4 @@
-include ../inpt/inpt
+include ../field/field
 include ../button/button
 include ../toggle/toggle
 include ../radio-button/radio-button
@@ -14,8 +14,8 @@ mixin login-form(params)
   form.login-form(action=actionLink method='post')
     .login-form__title Войти
     .login-form__inputdata-container
-      +inpt({placeholder: 'Email', type: 'email', name: 'email'})
-      +inpt({placeholder: 'Пароль', type: 'password', name: 'password'})
+      +field({placeholder: 'Email', type: 'email', name: 'email'})
+      +field({placeholder: 'Пароль', type: 'password', name: 'password'})
     .login-form__button-container
       +button({title: 'войти', size: 'l', type: 'submit'})
     .login-form__button-container Нет аккаунта на Toxin?

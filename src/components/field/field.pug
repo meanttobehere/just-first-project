@@ -1,0 +1,24 @@
+mixin field(params)
+  -
+    const {
+      title,
+      size,
+      placeholder,
+      type = 'text',
+      submitLink,
+      value,
+      name = 'name',
+    } = params;
+    const class_size = (size ? `field_size-${size}` : '');
+
+  .field(class=class_size)
+    if (title)
+      .field__title=title
+    if(submitLink !== undefined)
+      form.field__container(action=submitLink)
+        input.field__input(placeholder=placeholder, type=type, value=value, name=name)
+        button.field__button(type='submit')
+          i.material-icons.field__arrow arrow_forward
+    else
+      .field__container
+        input.field__input(placeholder=placeholder, type=type, value=value, name=name)
