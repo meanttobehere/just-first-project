@@ -107,8 +107,8 @@
     "price": 9990,
     "number": 888,
     "luxe": true,
-    "guestsDropdown":{      
-      "adults": 3      
+    "guestsDropdown":{
+      "adults": 3
     },
     "calendar":{
       "arrivalDate": "2022-08-19",

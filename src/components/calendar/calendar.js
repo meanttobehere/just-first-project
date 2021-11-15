@@ -17,14 +17,14 @@ export default class Calendar {
   #travelData;
 
   constructor(calendar) {
+    this.#observer = {};
+    this.#pageData = {};
+    this.#travelData = { arrival: false, departure: false };
+
     this._findHtmlElements(calendar);
     this._readDates(calendar);
     this._bindEventHandlersOnHtmlElements();
     this._setCurrentDate();
-
-    this.#observer = {};
-    this.#pageData = {};
-    this.#travelData = { arrival: false, departure: false };
 
     this._renderPage();
   }

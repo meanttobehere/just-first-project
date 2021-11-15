@@ -8,7 +8,7 @@ mixin chart(params)
     } = params;
 
     const gap = 0.5;
-    const length = excellent + good + fine + bad;    
+    const length = excellent + good + fine + bad;
     let segments = [
       {len: (excellent / length) * 100, class: 'excellent'},
       {len: (good / length) * 100, class: 'good'},
@@ -17,10 +17,9 @@ mixin chart(params)
     ];
     segments = segments.filter((segment) => segment.len > 0);
     let numGaps = (segments.length > 1) ? segments.length : 0;
-  
     segments.forEach((segment, idx) => {
       if (idx > 0){
-        segment.offset = segments[idx - 1].offset + segments[idx - 1].len + gap; 
+        segment.offset = segments[idx - 1].offset + segments[idx - 1].len + gap;
       } else {
         segment.offset = (segments.length > 1) ? (gap / 2) : 0;
       }
@@ -37,7 +36,7 @@ mixin chart(params)
 
   .chart
     .chart__container
-      svg(viewBox= "0 0 120 120")
+      svg.chart__svg(viewBox="0 0 120 120")
         defs
           linearGradient(id="excellent" x1="0%" y1="0%" x2="0%" y2="100%")
             stop(offset="0%" stop-color="#FFE39C")
@@ -52,7 +51,16 @@ mixin chart(params)
             stop(offset="0%" stop-color="#919191")
             stop(offset="100%" stop-color="#3D4975")
         each segment in segments
-          circle(stroke=`url(#${segment.class})` stroke-dasharray=createDashArray(segment.len) stroke-dashoffset=toPos(-segment.offset))
+          circle(
+            stroke=`url(#${segment.class})`,
+            stroke-dasharray=createDashArray(segment.len),
+            stroke-dashoffset=toPos(-segment.offset),
+            stroke-width=4,
+            fill="none",
+            r=58,
+            cx="50%",
+            cy="50%",
+          )
       .chart__counter= length
     - const items = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
     list.chart__list
