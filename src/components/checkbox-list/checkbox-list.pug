@@ -2,7 +2,7 @@ include ./__checkbox/checkbox-list__checkbox
 
 mixin checkbox-list(params)
   -
-    params = (params ? params : {});
+    params = params ? params : {};
     const {
       title,
       items = [],
@@ -14,9 +14,9 @@ mixin checkbox-list(params)
     const class_open = defaultOpen ? 'checkbox-list_open' : '';
 
   .checkbox-list.js-checkbox-list(class=class_expandable class=class_open)
-    .checkbox-list__title.js-checkbox-list__title=title
+    .checkbox-list__title.js-checkbox-list__title= title
       if(expandable)
-        i.material-icons.checkbox-list__arrow expand_more
+        i.checkbox-list__arrow.material-icons expand_more
     ul.checkbox-list__list.js-checkbox-list__list
       -let i = -1;
       while ++i < items.length
