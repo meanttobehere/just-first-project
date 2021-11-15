@@ -1,111 +1,111 @@
 .button{
-    outline: none;
-    border: none;
-    cursor: pointer;
-    display: block;
-    position: relative;    
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 99px;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0;
+  background: $primary-gradient;
+  &:hover{
+    background: $primary-gradient-50;
+  }
+  &:active{
+    top: 2px;
+  }
+  color: $white-color;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  &__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &_size-m{
+    width: 196px;
+    height: 34px;
+  }
+
+  &_size-s{
     width: 99px;
+    height: 44px
+  }
+
+  &_size-ss{
+    width: 87px;
+    height: 34px
+  }
+
+  &_size-l{
+    width: 100%;
+    max-width: 320px;
     height: 44px;
-    border-radius: 22px;
-    padding: 0;
-    background: $primary-gradient;
+  }
+
+  &_size-xl{
+    width: 100%;
+    max-width: 420px;
+    height: 44px;
+  }
+
+  &_disabled{
+    background: $primary-gradient-50;
+  }
+
+  &_disabled.button_theme-white{
+    border-color: $primary-color-50;
+    background: $white-color;
+  }
+
+  &_disabled.button_theme-no-border{
+    color: $gray-color-50;
+    background: none;
+  }
+
+  &_theme-no-border{
+    background: none;
+    color: $primary-color;
+    width: auto;
+    height: auto;
+
     &:hover{
-        background: $primary-gradient-50;
+      color: $gray-color-50;
+      background: none;
     }
-    &:active{        
-        top: 2px;
-    }
-    color: $white-color;
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
+  }
 
-    &__title{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;        
-    } 
-    
-    &_size-m{
-        width: 196px;
-        height: 34px;
+  &_theme-white{
+    color: $primary-color;
+    background: $white-color;
+    box-sizing: border-box;
+    border: 2px $primary-color solid;
+    &:hover{
+      border-color: $primary-color-50;
+      background: $white-color;
     }
+  }
 
-    &_size-s{
-        width: 99px;
-        height: 44px
-    }
+  &__arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+  }
 
-    &_size-ss{
-        width: 87px;
-        height: 34px
-    }
-
-    &_size-l{
-        width: 100%;
-        max-width: 320px;
-        height: 44px;
-    }
-
-    &_size-xl{
-        width: 100%;
-        max-width: 420px;
-        height: 44px;
-    }
-
-    &_disabled{
-        background: $primary-gradient-50;
-    }    
-
-    &_disabled.button_theme-white{
-        border-color: $primary-color-50;
-        background: $white-color;
-    }
-
-    &_disabled.button_theme-no-border{
-        color: $gray-color-50;
-        background: none;
-    }
-
-    &_theme-no-border{        
-        background: none;
-        color: $primary-color;
-        width: auto;
-        height: auto;
-        
-        &:hover{
-            color: $gray-color-50;
-            background: none;
-        }
-    }
-
-    &_theme-white{ 
-        color: $primary-color;
-        background: $white-color;
-        box-sizing: border-box;
-        border: 2px $primary-color solid;
-        &:hover{
-            border-color: $primary-color-50;
-            background: $white-color;
-        }
-    }
-    
-    & > i{
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-    }
-
-    &_hide{
-        visibility: hidden;
-    }    
+  &_hide{
+    visibility: hidden;
+  }
 }

@@ -3,17 +3,23 @@ mixin button(params)
     const {
       size,
       theme,
-      title = "Title",
-      type = "button",
+      title = 'title',
+      type = 'button',
       arrow = false,
       disabled = false,
     } = params;
 
-    const class_size = (size ? `button_size-${size}` : "");
-    const class_theme = (theme ? `button_theme-${theme}` : "");
-    const class_disabled = (disabled ? 'button_disabled' : '');
+    const class_size = size ? `button_size-${size}` : '';
+    const class_theme = theme ? `button_theme-${theme}` : '';
+    const class_disabled = disabled ? 'button_disabled' : '';
 
-  button.button(class=class_size, class=class_theme, class=class_disabled, type=type, disabled=disabled)
-    .button__title=title
-    if(arrow)
-      i.material-icons arrow_forward
+  button.button(
+    class=class_size,
+    class=class_theme,
+    class=class_disabled,
+    type=type,
+    disabled=disabled
+  )
+    .button__title= title
+    if (arrow)
+      i.button__arrow.material-icons arrow_forward
