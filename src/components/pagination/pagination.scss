@@ -1,51 +1,55 @@
 .pagination{
-    user-select: none;
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 15px;
-    color: $gray-color-50;
+  user-select: none;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 12px;
+  color: $gray-color-50;
 
-    &__container{
-        display: flex;        
+  &__container{
+    display: flex;
+  }
+
+  &__item{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+
+    &:hover{
+      background: $gray-color-10;
     }
 
-    &__item{
-        width: 40px;
-        height: 40px;
-        border-radius: 22px; 
-        box-sizing: border-box;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center; 
-        transition: transform 0.3s;
-
-        &:hover{
-            transform: scale(0.9);
-            background: $gray-color-10;
-        }
-        
-        &:first-child{
-            background: $primary-gradient;
-            font-weight: bold;
-            color: $white-color;
-        }
-
-        &:last-child{
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-            color: $white-color;
-        }
+    &:first-child{
+      background: $primary-gradient;
+      font-weight: bold;
+      color: $white-color;
+      &:hover{
+        background: $primary-gradient-75;
+      }
     }
 
-    &__description{
-        margin-top: 10.56px;
-        padding-left: 5px;
-        height: 24px;
-        font-size: 14px;
-        line-height: 20px;
-        color: $gray-color-75;
+    &:last-child{
+      background: $secondary-gradient;
+      color: $white-color;
+      &:hover{
+        background: $secondary-gradient-75;
+      }
     }
+  }
+
+  &__description{
+    margin-top: 10.56px;
+    padding-left: 5px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-color-75;
+  }
 }
