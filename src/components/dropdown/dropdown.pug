@@ -6,26 +6,26 @@ mixin dropdown(params)
     const {
       size,
       items = [],
-      text = "Text",
+      text = 'Text',
       title,
       buttons = false,
       alwaysOpen = false,
     } = params;
 
-    const class_size = (size ? `dropdown_size-${size}` : "");
-    const class_open = (alwaysOpen ? "dropdown_always-open" : "");
+    const class_size = size ? `dropdown_size-${size}` : '';
+    const class_open = alwaysOpen ? 'dropdown_always-open' : '';
 
-  .dropdown.js-dropdown(class=class_size class=class_open)
+  .dropdown.js-dropdown(class=class_size, class=class_open)
     if (title)
-      .dropdown__title=title
+      .dropdown__title= title
     .dropdown__container
-      .dropdown__field.js-dropdown__field=text   
-        i.material-icons expand_more
+      .dropdown__field.js-dropdown__field= text
+        i.dropdown__arrow.material-icons expand_more
       .dropdown__menu.js-dropdown__menu
         .dropdown__menu-container
           each item in items
             +dropdown__item(item)
         if (buttons)
           .dropdown__buttons-container.js-dropdown__buttons-container
-            +button({title: "очистить", theme: "no-border"})
-            +button({title: "применить", theme: "no-border"})
+            +button({title: 'очистить', theme: 'no-border'})
+            +button({title: 'применить', theme: 'no-border'})

@@ -1,7 +1,7 @@
 mixin dropdown__item(params)
   -
     const {
-      title = "Title",
+      title = 'Title',
       value = 0,
     } = params;
 
@@ -9,6 +9,5 @@ mixin dropdown__item(params)
     .dropdown-item__title=title
     .dropdown-item__control
       .dropdown-item__button.js-dropdown-item__button -
-      .dropdown-item__counter.js-dropdown-item__counter=value
+      .dropdown-item__counter.js-dropdown-item__counter= value
       .dropdown-item__button.js-dropdown-item__button +
-  
