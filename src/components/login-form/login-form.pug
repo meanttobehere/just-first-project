@@ -11,7 +11,7 @@ mixin login-form(params)
       signupButtonLink = '#',
     } = params;
 
-  form.login-form(action=actionLink method='post')
+  form.login-form(action=actionLink, method='post')
     .login-form__title Войти
     .login-form__inputdata-container
       +field({placeholder: 'Email', type: 'email', name: 'email'})
@@ -20,4 +20,4 @@ mixin login-form(params)
       +button({title: 'войти', size: 'l', type: 'submit'})
     .login-form__button-container Нет аккаунта на Toxin?
       a.login-form__signup-button(href=signupButtonLink)
-        +button({title: "создать", theme: "white"})
+        +button({title: 'создать', theme: 'white'})

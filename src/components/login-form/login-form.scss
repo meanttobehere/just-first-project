@@ -1,51 +1,49 @@
 .login-form{
-    background: $white-color;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    user-select: none;
+  background: $white-color;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  font-family: $primary-font;
+  color: $gray-color;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  max-width: 380px;
+  padding: 40px 10px 0 10px;
 
-    font-family: $primary-font;
-    color: $gray-color;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 29px;
+  &__title{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
 
-    max-width: 380px;
-    padding: 40px 10px 0 10px;
-    
-    &__title{
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 20px;
-        font-weight: bold;        
-    }
+  &__inputdata-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+  }
 
-    &__inputdata-container{
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 20px;
-        display: flex;
-        flex-flow: column;
-        gap: 10px;        
-    }
+  &__button-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+  }
 
-    &__button-container{
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        font-size: 14px;
-        line-height: 18px;
-        color: black;
-    }
-
-    &__signup-button{
-        text-decoration: none;
-    }
+  &__signup-button{
+    text-decoration: none;
+  }
 }
