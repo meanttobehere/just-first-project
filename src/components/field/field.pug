@@ -9,16 +9,16 @@ mixin field(params)
       value,
       name = 'name',
     } = params;
-    const class_size = (size ? `field_size-${size}` : '');
+    const class_size = size ? `field_size-${size}` : '';
 
   .field(class=class_size)
     if (title)
-      .field__title=title
+      .field__title= title
     if(submitLink !== undefined)
       form.field__container(action=submitLink)
         input.field__input(placeholder=placeholder, type=type, value=value, name=name)
         button.field__button(type='submit')
-          i.material-icons.field__arrow arrow_forward
+          i.field__arrow.material-icons arrow_forward
     else
       .field__container
         input.field__input(placeholder=placeholder, type=type, value=value, name=name)

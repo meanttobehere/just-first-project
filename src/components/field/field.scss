@@ -1,91 +1,82 @@
 .field{
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    color: $gray-color;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $gray-color;
+  max-width: 320px;
 
-    max-width: 320px;
+  &_size-m{
+    max-width: 266px;
+  }
 
-    &_size-m{
-        max-width: 266px;
+  &__title{
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $gray-color-25;
+
+    &:hover, &:focus-within{
+      border-color: $gray-color-50;
     }
+  }
 
-    &__title{
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        margin-bottom: 5px;
+  &__input{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    padding-left: 15px;
+    border: none;
+    outline-style: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: $gray-color-75;
+
+    &::placeholder{
+      color: $gray-color-25;
     }
+  }
 
-    &__container{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;        
-        width: 100%;
-        height: 44px;
-        box-sizing: border-box;
-        border-radius: 4px;
-        border: 1px solid $gray-color-25;
+  &__button{
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
 
-        &:hover, &:focus-within{
-            border-color: $gray-color-50;
-        }
-    }        
+  &__arrow{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $primary-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-    &__input{
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        padding-left: 15px;
-        border: none;
-        outline-style: none;
-        background: none;
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        color: $gray-color-75;        
-
-        &::placeholder{
-            color: $gray-color-25;
-        }
+    &:hover{
+      background: $primary-gradient-50;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
-    &__button{
-        padding: 0;
-        outline: none;
-        border: none;
-        background: none;
-        cursor: pointer;
-    }
-
-    &__arrow{
-        width: 44px;
-        height: 44px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: $primary-gradient;          
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        &:hover{
-            background: $primary-gradient-50; 
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
-    
-    &__submit-icon{
-        display: flex;        
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-    }
+  }
 }
