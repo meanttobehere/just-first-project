@@ -8,7 +8,7 @@ mixin toggle(params)
 
   .toggle
     label.toggle__label 
-      input(type='checkbox', checked=checked, name=name).toggle__input
+      input.toggle__input(type='checkbox', checked=checked, name=name)
       .toggle__slider
       .toggle__border
-    .toggle__title=title
+    .toggle__title= title

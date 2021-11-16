@@ -1,61 +1,61 @@
 .toggle{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
 
-    &__label{
-        position: relative; 
-        display: block;   
-        width: 40px;
-        height: 20px;
-        cursor: pointer;
-    }    
+  &__label{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+  }
 
-    &__input{
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
+  &__input{
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
 
-    &__border{        
-        position: absolute;
-        left: -1px;
-        top: -1px;
-        width: 40px;
-        height: 20px;
-        border-radius: 10px;
-        box-sizing: border-box;
-        border: 1px solid $gray-color-25;
-    }
+  &__border{
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 1px solid $gray-color-25;
+  }
 
-    &__slider{
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        width: 12px;
-        height: 12px;
-        border-radius: 10px;     
-        background: $gray-color-25;        
-        transition: .21s;        
-    }
+  &__slider{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: $gray-color-25;
+    transition: .21s;
+  }
 
-    &__input:checked ~ &__border{
-        border-color: $primary-color;
-    }
+  &__input:checked ~ &__border{
+    border-color: $primary-color;
+  }
 
-    &__input:checked + &__slider{
-        transform: translateX(20px);
-        background: $primary-gradient;        
-    }
+  &__input:checked + &__slider{
+    transform: translateX(20px);
+    background: $primary-gradient;
+  }
 
-    &__title{
-        height: 24px;
-        font-family: $primary-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 20px;  
-        color: $gray-color-75
-    }
+  &__title{
+    height: 24px;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-color-75;
+  }
 }
