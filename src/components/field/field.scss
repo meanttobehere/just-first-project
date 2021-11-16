@@ -6,6 +6,7 @@
   line-height: 18px;
   color: $gray-color;
   max-width: 320px;
+  width: 100%;
 
   &_size-m{
     max-width: 266px;
@@ -36,10 +37,10 @@
   }
 
   &__input{
-    width: 100%;
+    flex-grow: 1;
     height: 100%;
     padding: 0;
-    padding-left: 15px;
+    margin-left: 15px;
     border: none;
     outline-style: none;
     background: none;
@@ -54,6 +55,8 @@
   }
 
   &__button{
+    min-width: 42px;
+    display: block;
     padding: 0;
     outline: none;
     border: none;
@@ -62,8 +65,8 @@
   }
 
   &__arrow{
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
