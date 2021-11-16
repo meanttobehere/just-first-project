@@ -20,38 +20,35 @@
     overflow: visible;
   }
 
-  &__box{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    border: 1px solid $gray-color-25;
-  }
-
-  &__mark{
-    z-index: 3;
-    height: 20px;
-    width: 20px;
-  }
-
   &__input{
-    width: 0;
-    height: 0;
-    opacity: 0;
+    display: block;
+    appearance: none;
+    cursor: inherit;
+
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      border: 1px solid $gray-color-25;
+    }
   }
 
-  &__input:checked + &__box{
-    border-color: $primary-color;
-    
+  &__input:checked{
+    &::before{
+      border-color: $primary-color;
+    }
     &::after{
       content: '';
       display: block;
       position: absolute;
-      top: 4.05px;
-      left: 6.05px;
+      top: 5px;
+      left: 7px;
       width: 6px;
       height: 8px;
       box-sizing: border-box;
