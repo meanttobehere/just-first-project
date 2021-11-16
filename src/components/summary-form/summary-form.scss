@@ -1,149 +1,142 @@
 .summary-form{
-    background: $white-color;
+  background: $white-color;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $gray-color;
+  max-width: 380px;
+  padding: 40px 20px 30px 20px;
 
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    user-select: none;
+  &__head{
+    height: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    color: $gray-color;
+  &__number{
+    font-size: 24px;
+    line-height: 29.62px;
+    display: flex;
+    align-items: flex-end;
 
-    max-width: 380px;
-    padding: 40px 20px 30px 20px;
-
-    &__head{
-        height: 30px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 20px;        
+    &::before{
+      display: block;
+      content: '№';
+      font-size: 14px;
+      line-height: 17px;
+      margin-right: 5px;
+      padding-bottom: 3px;
     }
 
-    &__number{
-        font-size: 24px;
-        line-height: 29.62px;
-
-        display: flex;
-        align-items: flex-end;
-
-        &::before{
-            display: block;
-            content: "№";
-            font-size: 14px;
-            line-height: 17px;
-            margin-right: 5px;
-            padding-bottom: 3px;
-        }
-
-        &_luxe::after{
-            content: "ЛЮКС";
-            color: #BC9CFF;
-            display: block;
-            font-size: 12px;
-            line-height: 15px;
-            margin-left: 8px;
-            padding-bottom: 3px;
-        }
+    &_luxe::after{
+      content: 'ЛЮКС';
+      color: $primary-color;
+      display: block;
+      font-size: 12px;
+      line-height: 15px;
+      margin-left: 8px;
+      padding-bottom: 3px;
     }
+  }
 
-    &__price{        
-        color: rgba(31, 32, 65, 0.5);
-
-        &::after{
-            font-weight: normal;
-            font-size: 12px;
-            content: " в сутки";
-        }
+  &__price{
+    color: $gray-color-50;
+    &::after{
+      font-weight: normal;
+      font-size: 12px;
+      content: ' в сутки';
     }
+  }
 
-    &__date-dropdown-container{
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 20.56px;        
-    }
+  &__date-dropdown-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20.56px;
+  }
 
-    &__guests-dropdown-container{
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 20.56px;
-    }
+  &__guests-dropdown-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20.56px;
+  }
 
-    &__calculator{
-        max-width: 320px;
-        margin: auto;
-        margin-bottom: 20px;
-    }
+  &__calculator{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 
-    &__button-container{
-        max-width: 320px;
-        margin: auto;
-    }
+  &__button-container{
+    max-width: 320px;
+    margin: auto;
+  }
 }
 
-.calculator{    
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    color: $gray-color-75;
-    
-    &__row{
-        display: flex;
-        justify-content: space-between;       
-        height: 24px;
+.calculator{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $gray-color-75;
 
-        &:last-child{
-            margin-top: 30px;
-            font-weight: bold;
-            font-size: 19px;
-            line-height: 23px;
-            color: $gray-color;
-        }
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+    &:last-child{
+       margin-top: 30px;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 23px;
+      color: $gray-color;
     }
+  }
 
-    &__sign{        
-        width: 20px;
-        height: 20px;
-        margin-right: 30px;
-        border-radius: 50%;
-        border: 1px solid $gray-color-25;
-        color: $gray-color-25;
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 14px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &::after{
-            content: 'i';
-        }
+  &__sign{
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+    border-radius: 50%;
+    border: 1px solid $gray-color-25;
+    color: $gray-color-25;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after{
+      content: 'i';
     }
+  }
 
-    &__grid{
-        margin-top: 8px;
-        display: grid;
-        row-gap: 16px;
-        grid-template-columns: minmax(min-content, 214px) max-content 1fr;
-    }
+  &__grid{
+    margin-top: 8px;
+    display: grid;
+    row-gap: 16px;
+    grid-template-columns: minmax(min-content, 214px) max-content 1fr;
+  }
 
-    &__price{
-        text-align: right;
-    }
+  &__price{
+    text-align: right;
+  }
 
-    &__item{
-        max-width: max-content;
-        margin-right: 5px;
-        justify-self: start;
-    }
+  &__item{
+    max-width: max-content;
+    margin-right: 5px;
+    justify-self: start;
+  }
 }

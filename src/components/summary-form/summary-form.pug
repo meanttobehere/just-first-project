@@ -12,18 +12,17 @@ mixin summary-form(params)
       guestsDropdown,
       calendar,
     } = params;
-    const str = price.toString();
-    const formPrice = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
+    const class_luxe = luxe ? 'summary-form__number_luxe' : '';
 
-  form.summary-form.js-summary-form
+  form.summary-form.js-summary-form(data-price=price)
     .summary-form__head
-      .summary-form__number(class = luxe ? 'summary-form__number_luxe' : '')=number
-      .summary-form__price=formPrice
+      .summary-form__number(class=class_luxe)= number
+      .summary-form__price.js-summary-form__price
     .summary-form__date-dropdown-container.js-summary-form__date-dropdown-container
       +date-dropdown({calendar})
     .summary-form__guests-dropdown-container
       +guests-dropdown(guestsDropdown)
-    .summary-form__calculator.calculator.js-calculator(data-price=price data-days=4)
+    .summary-form__calculator.js-summary-form__calculator.calculator
       .calculator__row
         .calculator__item
         .calculator__price
