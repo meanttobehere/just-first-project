@@ -1,19 +1,16 @@
 .rate-button{
+  display: flex;
+  user-select: none;
+
+  &__star{
+    width: 24px;
+    height: 24px;
     display: flex;
-    user-select: none;
-
-    &__star{
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    i{
-        background: $primary-gradient;            
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    align-items: center;
+    justify-content: center;
+    background: $primary-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

@@ -13,11 +13,10 @@ mixin review(params)
 
   .review
     .review__left-container
-      .review__photo 
-        img(src=photoUrl).review__img
+      .review__photo
+        img.review__img(src=photoUrl, alt="user photo")
       +like-button({emphasized: likesEmphasized, numLikes: numLikes})
-    .review__right-container 
-      .review__name=name 
+    .review__right-container
+      .review__name=name
       .review__date=date
       .review__text=text
-      

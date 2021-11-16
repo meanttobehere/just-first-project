@@ -1,6 +1,5 @@
 mixin rate-button(rating)
-  .rate-button 
+  .rate-button
     -let i = 0;
     while i++ < 5
-      .rate-button__star
-        i.material-icons= (i <= rating ? 'star' : 'star_border')
+      i.rate-button__star.material-icons= i <= rating ? 'star' : 'star_border'
