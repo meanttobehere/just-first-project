@@ -3,26 +3,25 @@ include ../dropdown/dropdown
 mixin room-dropdown(params)
   -
     const {
-      title = "dropdown",
+      title = 'dropdown',
       bedrooms = 1,
       beds = 1,
-      bathrooms = 1,  
+      bathrooms = 1,
       alwaysOpen = false,
-      size = "l",
+      size = l,
     } = params;
 
     const newParams = {
       title: title,
-      text: "Сколько гостей",
+      text: 'Сколько гостей',
       alwaysOpen: alwaysOpen,
       size: size,
       items: [
-        {title: "спальни", value: bedrooms},
-        {title: "кровати", value: beds},
-        {title: "ванные комнаты", value: bathrooms}
+        {title: 'спальни', value: bedrooms},
+        {title: 'кровати', value: beds},
+        {title: 'ванные комнаты', value: bathrooms}
       ]
     }
 
   .room-dropdown.js-room-dropdown
     +dropdown(newParams)
-  
