@@ -22,13 +22,9 @@
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-
-  &__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &_size-m{
     width: 196px;

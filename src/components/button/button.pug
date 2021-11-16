@@ -19,7 +19,6 @@ mixin button(params)
     class=class_disabled,
     type=type,
     disabled=disabled
-  )
-    .button__title= title
+  )= title
     if (arrow)
       i.button__arrow.material-icons arrow_forward
