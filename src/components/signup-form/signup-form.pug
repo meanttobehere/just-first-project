@@ -12,18 +12,32 @@ mixin signup-form(params)
       loginButtonLink = '#',
     } = params;
 
-  form.signup-form(action=actionLink method='post')
+  form.signup-form(action=actionLink, method='post')
     .signup-form__title Регистрация аккаунта
     .signup-form__userdata-container
       +field({placeholder: 'Имя', name: 'name'})
       +field({placeholder: 'Фамилия', name: 'surname'})
       .signup-form__radio-buttons-container
-        +radio-button({title: 'Мужчина', checked: true, name: 'gender', value: 'male'})
+        +radio-button({
+          title: 'Мужчина',
+          checked: true,
+          name: 'gender',
+          value: 'male'
+        })
         +radio-button({title: 'Женщина', name: 'gender', value: 'female'})
     .signup-form__birthdate-container
-      +field({title: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', name: 'birthdate'})
+      +field({
+        title: 'дата рождения',
+        placeholder: 'ДД.ММ.ГГГГ',
+        name: 'birthdate'
+      })
     .signup-form__inputdata-container
-      +field({title: 'данные для входа в сервис', placeholder: 'Email', type: 'email', name: 'email'})
+      +field({
+        title: 'данные для входа в сервис',
+        placeholder: 'Email',
+        type: 'email',
+        name: 'email'
+      })
       +field({placeholder: 'Пароль', type: 'password', name: 'password'})
       +toggle({title: 'Получать спецпредложения', name: 'subscription'})
     .signup-form__button-container

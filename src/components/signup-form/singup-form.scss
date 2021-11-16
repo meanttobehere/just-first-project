@@ -1,75 +1,76 @@
 .signup-form{
-    background: $white-color;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);  
-    user-select: none;
+  background: $white-color;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $gray-color;
+  max-width: 380px;
+  height: max-content;
+  padding: 40px 10px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
 
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    color: $gray-color;
+  &__title{
+    max-width: 320px;
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 20px;
+  }
 
-    max-width: 380px;    
-    height: max-content;
-    padding-top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-
+  &__userdata-container{
+    max-width: 320px;
+    flex-grow: 1;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    flex-flow: column;
+    gap: 10px;
+    margin-bottom: 23.6px;
+  }
 
-    & > *{
-        flex-grow: 1;
-        max-width: 320px;
-    }
-    
-    &__title{
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 29px;        
-        margin-bottom: 20px;
-    }
+  &__inputdata-container{
+    max-width: 320px;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
 
-    &__userdata-container{
-        display: flex;
-        flex-flow: column;
-        gap: 10px;
-        margin-bottom: 23.6px;
-    }
+  &__radio-buttons-container{
+    max-width: 320px;
+    flex-grow: 1;
+    display: flex;
+    gap: 20px;
+  }
 
-    &__inputdata-container{
-        display: flex;
-        flex-flow: column;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
+  &__birthdate-container{
+    max-width: 320px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
 
-    &__radio-buttons-container{
-        display: flex;
-        gap: 20px;
-    }
+  &__button-container{
+    max-width: 320px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    color: black;
+  }
 
-    &__birthdate-container{
-        margin-bottom: 20px;
-    }
-
-    &__button-container{
-        max-width: 320px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px; 
-        gap: 20px;      
-        color: black;
-    }
-
-    &__input-button{
-        text-decoration: none;
-    }
+  &__input-button{
+    text-decoration: none;
+  }
 }
