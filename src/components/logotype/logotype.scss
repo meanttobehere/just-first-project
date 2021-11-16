@@ -1,11 +1,11 @@
 .logotype{
-    background-image: url('logotype_full.svg');
-    width: 106px;
-    height: 40px;
+  background-image: url('logotype_full.svg');
+  width: 106px;
+  height: 40px;
 
-    &_partial{
-        background-image: url('logotype_partial.svg');
-        width: 48px;
-        height: 48px;
-    }
+  &_partial{
+    background-image: url('logotype_partial.svg');
+    width: 48px;
+    height: 48px;
+  }
 }
