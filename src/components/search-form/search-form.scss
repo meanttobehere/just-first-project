@@ -1,39 +1,41 @@
 .search-form{
-    background: $white-color;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);  
-    user-select: none;
+  background: $white-color;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  max-width: 380px;
+  height: max-content;
+  padding: 40px 10px 0 10px;
 
-    max-width: 380px;  
-    height: max-content;
-    padding: 40px 10px 0 10px;
-    
-    & > *{
-        max-width: 320px;
-        margin: auto;
-    }
-    
-    &__title{        
-        font-family: $primary-font;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 29px;
-        color: $gray-color;       
-        margin-bottom: 21px;   
-    }
+  &__title{
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: $gray-color;
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 21px;
+  }
 
-    &__date-dropdown-container{
-        margin-bottom: 20.56px;
-    }
+  &__date-dropdown-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 20.56px;
+  }
 
-    &__guests-dropdown-container{
-        margin-bottom: 31px;
-    }
+  &__guests-dropdown-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 31px;
+  }
 
-    &__button-container{ 
-        margin-bottom: 30px;
-    }
+  &__button-container{
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
 }

@@ -4,18 +4,23 @@ include ../guests-dropdown/guests-dropdown
 
 mixin search-form(params)
   -
-    params = (params ? params : {})
+    params = params ? params : {};
     const {
       guestsDropdown,
       calendar,
       actionLink = '#',
     } = params;
 
-  form.search-form(action=actionLink method='get')
+  form.search-form(action=actionLink, method='get')
     .search-form__title Найдём номера под ваши пожелания
     .search-form__date-dropdown-container
       +date-dropdown({calendar: calendar})
     .search-form__guests-dropdown-container
       +guests-dropdown(guestDropdown)
     .search-form__button-container
-      +button({title: "Подобрать номер", size: "l", arrow: true, type: 'submit'})
+      +button({
+        title: 'Подобрать номер', 
+        size: 'l', 
+        arrow: true, 
+        type: 'submit'
+      })
