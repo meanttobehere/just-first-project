@@ -35,7 +35,7 @@ mixin chart(params)
     }
 
   .chart
-    .chart__container
+    .chart__svg-container
       svg.chart__svg(viewBox="0 0 120 120")
         defs
           linearGradient(id="excellent" x1="0%" y1="0%" x2="0%" y2="100%")
@@ -62,7 +62,8 @@ mixin chart(params)
             cy="50%",
           )
       .chart__counter= length
-    - const items = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
-    list.chart__list
-      each item in items
-        li.chart__item=item
+    .chart__list-container
+      - const items = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+      list.chart__list
+        each item in items
+          li.chart__item=item

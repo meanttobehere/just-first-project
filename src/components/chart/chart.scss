@@ -16,7 +16,7 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
   line-height: 24px;
   color: $gray-color-75;
 
-  &__container{
+  &__svg-container{
     width: 120px;
     height: 120px;
     position: relative;
@@ -42,11 +42,12 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
     }
   }
 
-  &__svg {
+  &__svg{
     transform: rotate(90deg) scale(-1, 1);
   }
 
   &__list{
+    display: block;
     padding: 28px 0 0 30px;
     margin: 0;
   }

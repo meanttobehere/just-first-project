@@ -13,38 +13,43 @@
   }
 
   &__input{
-    width: 0;
-    height: 0;
-    opacity: 0;
+    display: block;
+    padding: 0;
+    appearance: none;
+    cursor: inherit;
+
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      border: 1px solid $gray-color-25;
+    }
+
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 10px;
+      background: $gray-color-25;
+      transition: .21s;
+    }
   }
 
-  &__border{
-    position: absolute;
-    left: -1px;
-    top: -1px;
-    width: 40px;
-    height: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    border: 1px solid $gray-color-25;
-  }
-
-  &__slider{
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 12px;
-    height: 12px;
-    border-radius: 10px;
-    background: $gray-color-25;
-    transition: .21s;
-  }
-
-  &__input:checked ~ &__border{
+  &__input:checked::before{
     border-color: $primary-color;
   }
 
-  &__input:checked + &__slider{
+  &__input:checked::after{
     transform: translateX(20px);
     background: $primary-gradient;
   }
