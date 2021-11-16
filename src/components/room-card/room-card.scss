@@ -1,170 +1,162 @@
 .room-card {
-    min-width: 270px;
-    max-height: 257px;
-    background: $white-color;
-    color: $white-color;
-    box-shadow: 0px 10px 20px $gray-color-5;
-    border-radius: 4px;
-    transition: box-shadow .2s ease;
-    &:hover {
-      box-shadow: 0 10px 20px $gray-color-25;
+  min-width: 270px;
+  max-height: 257px;
+  background: $white-color;
+  color: $white-color;
+  box-shadow: 0px 10px 20px $gray-color-5;
+  border-radius: 4px;
+  transition: box-shadow .2s ease;
+  &:hover {
+    box-shadow: 0 10px 20px $gray-color-25;
+  }
+  overflow: hidden;
+
+  &__images{
+    user-select: none;
+    height: 151px;
+    position: relative;
+  }
+
+  &__image{
+    z-index: 1;
+    position: absolute;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 0%;
+
+    &_visible{
+      width: 100%;
     }
-    overflow: hidden;
+  }
 
-    &__images{
-        user-select: none;
-        height: 151px;
-        position: relative;        
-
-        .room-card__image{
-            z-index: 1;
-            position: absolute;
-            display: block;
-            object-fit: cover;                        
-            height: 100%;
-            width: 0%;               
-        }        
-
-        .room-card__image_visible{
-            width: 100%;
-        }
+  &:hover, &_visible-buttons{
+    .room-card__button{
+      opacity: 1;
     }
+  }
 
-    &:hover, &_visible-buttons{
-        .room-card__button{
-            opacity: 1;
-        }
+  &__button{
+    cursor: pointer;
+    width: 42px;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    transition: opacity .3s linear;
+    opacity: 0;
+    &:last-child{
+      right: 0;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
     }
+  }
 
-    &__button{
-        cursor: pointer;
-        width: 42px;
-        height: 100%;
-        position: absolute;
-        z-index: 2;
-        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-        
-        transition: opacity .3s linear;
-        opacity: 0;
+  &__arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg); 
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        & > *{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%) rotate(90deg); 
-            z-index: 3;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }        
+  &__dots{
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    gap: 3.75px;
+    right: 15px;
+    bottom: 15px;
+  }
 
-        &:last-child{
-            right: 0;  
-            transform: matrix(-1, 0, 0, 1, 0, 0);
-        }
+  &__dot{
+    cursor: pointer;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid $white-color;
+    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+
+    &_selected{
+      background: $white-color;
     }
+  }
 
-    &__dots{
-        position: absolute;
-        z-index: 3;
-        display: flex;
-        gap: 3.75px;
-        right: 15px;
-        bottom: 15px;
-    }
+  &__container{
+    cursor: pointer;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray-color;
+    padding: 20px 17px 20px 20px;
+  }
 
-    &__dot{
-        cursor: pointer;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        box-sizing: border-box;
-        border: 1px solid $white-color;        
-        box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+  &__top{
+    height: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
 
-        &_selected{
-            background: $white-color;
-        }
-    }
+  &__stick{
+    height: 1px;
+    background: $gray-color-10;
+    padding-right: 3px;
+    margin-bottom: 11px;
+  }
 
-    &__container{
-        background: none;
-        border: none;
-        cursor: pointer;
-        outline: inherit;
-        width: 100%;
-        font-family: $primary-font;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 18px;
-        color: $gray-color;
-        padding: 20px 17px 20px 20px;
-    }
+  &__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 
-    &__top{
-        height: 23px;        
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 10px;
-    }
+  &__number{
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: flex-end;
 
-    &__stick{
-        height: 1px;
-        background: $gray-color-10;
-        padding-right: 3px;
-        margin-bottom: 11px;
-    }
-
-    &__bottom{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-
-    &__number{
-        font-size: 20px;
-        line-height: 20px;
-        display: flex;
-        align-items: flex-end;
-
-        &::before{
-            display: block;
-            content: "№";
-            font-size: 14px;
-            line-height: 17px;
-            margin-right: 4px;
-        }
-
-        &_luxe::after{
-            content: "ЛЮКС";
-            color: $primary-color;
-            display: block;
-            font-size: 12px;
-            line-height: 15px;
-        }
+    &::before{
+      display: block;
+      content: '№';
+      font-size: 14px;
+      line-height: 17px;
+      margin-right: 4px;
     }
 
-    &__price{        
-        color: $gray-color-50;
-
-        &::after{
-            font-weight: normal;
-            font-size: 12px;
-            content: " в сутки";
-        }
+    &_luxe::after{
+      content: 'ЛЮКС';
+      color: $primary-color;
+      display: block;
+      font-size: 12px;
+      line-height: 15px;
     }
+  }
 
-    &__count{
-        color: $gray-color-50;
-        padding-right: 3px;
-        padding-bottom: 3px;
-
-        &::after{
-            font-weight: normal;            
-            content: " Отзывов";
-        }
+  &__price{
+    color: $gray-color-50;
+    &::after{
+      font-weight: normal;
+      font-size: 12px;
+      content: ' в сутки';
     }
+  }
+
+  &__count{
+    color: $gray-color-50;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    &::after{
+      font-weight: normal;
+      content: ' Отзывов';
+    }
+  }
 }

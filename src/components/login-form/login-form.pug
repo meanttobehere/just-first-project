@@ -11,7 +11,7 @@ mixin login-form(params)
       signupButtonLink = '#',
     } = params;
 
-  form.login-form(action=actionLink, method='post')
+  form.login-form(action=actionLink, method="post")
     .login-form__title Войти
     .login-form__inputdata-container
       +field({placeholder: 'Email', type: 'email', name: 'email'})

@@ -1,43 +1,59 @@
-function updateImagesAndDots(images, dots, idx) {
-  for (let i = 0; i < images.length; i += 1) {
-    images[i].classList.remove('room-card__image_visible');
-    dots[i].classList.remove('room-card__dot_selected');
+class RoomCard{
+  #images;
+  #dots;
+  #currentImageNum = 1;
+
+  constructor(card){
+    const [back, forward] = card.querySelectorAll('.js-room-card__button');
+    this.#images = card.querySelectorAll('.js-room-card__image');
+    this.#dots = card.querySelectorAll('.js-room-card__dot');
+
+    back.addEventListener('click', this._handleBackClick.bind(this));
+    forward.addEventListener('click', this._handleForwardClick.bind(this));
+    this.#dots.forEach(dot => {
+      dot.addEventListener('click', this._handleDotClick.bind(this));
+    });
+
+    this._updateCard();
   }
-  images[idx].classList.add('room-card__image_visible');
-  dots[idx].classList.add('room-card__dot_selected');
-}
 
-function cardInit(card) {
-  const [back, forward] = card.getElementsByClassName('js-room-card__button');
-  const images = card.getElementsByClassName('js-room-card__image');
-  const dots = card.getElementsByClassName('js-room-card__dot');
+  _handleBackClick(){
+    this.#currentImageNum -= 1;
+    if (this.#currentImageNum < 0) {
+      this.#currentImageNum = this.#images.length - 1;
+    }
+    this._updateCard();
+  }
 
-  let currentImage = 0;
-  updateImagesAndDots(images, dots, currentImage);
+  _handleForwardClick(){
+    this.#currentImageNum += 1;
+    if (this.#currentImageNum >= this.#images.length) {
+      this.#currentImageNum = 0;
+    }
+    this._updateCard();
+  }
 
-  back.addEventListener('click', () => {
-    currentImage -= 1;
-    if (currentImage < 0) { currentImage = images.length - 1; }
-    updateImagesAndDots(images, dots, currentImage);
-  });
+  _handleDotClick(event){
+    this.#currentImageNum = [...this.#dots].findIndex(dot => dot === event.target);
+    this._updateCard();
+  }
 
-  forward.addEventListener('click', () => {
-    currentImage += 1;
-    if (currentImage >= images.length) { currentImage = 0; }
-    updateImagesAndDots(images, dots, currentImage);
-  });
-
-  for (let i = 0; i < 4; i += 1) {
-    dots[i].addEventListener('click', () => {
-      currentImage = i;
-      updateImagesAndDots(images, dots, currentImage);
+  _updateCard(){
+    this.#images.forEach((image, idx) => {
+      if (this.#currentImageNum === idx) {
+        image.classList.add('room-card__image_visible');
+      }
+      else { image.classList.remove('room-card__image_visible'); }
+    });
+    this.#dots.forEach((dot, idx) => {
+      if (this.#currentImageNum === idx) {
+        dot.classList.add('room-card__dot_selected');
+      }
+      else { dot.classList.remove('room-card__dot_selected'); }
     });
   }
 }
 
-function roomCardsInit() {
-  const cards = document.getElementsByClassName('js-room-card');
-  for (let i = 0; i < cards.length; i += 1) { cardInit(cards[i]); }
-}
-
-roomCardsInit();
+document.querySelectorAll('.js-room-card').forEach(roomCard => {
+  roomCard._roomCard = new RoomCard(roomCard);
+})
