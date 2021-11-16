@@ -1,64 +1,64 @@
 .radio-button{
-    user-select: none;
-    display: flex; 
-    align-items: center;       
+  user-select: none;
+  display: flex;
+  align-items: center;
 
-    &__label{
-        position: relative;
-        display: block;
-        height: 20px;
-        width: 20px;
-        cursor: pointer;        
-    }
+  &__label{
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
 
-    &__input{
-        width: 0px;
-        height: 0px;
-        opacity: 0;
-        padding: 0;
-    }
+  &__input{
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    padding: 0;
+  }
 
-    &__container::before{
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-        box-sizing: border-box;
-        border: 1px solid $gray-color-25;      
-        background: $white-color;
-    }
+  &__container::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 1px solid $gray-color-25;
+    background: $white-color;
+  }
 
-    &__container::after{
-        content: '';
-        display: block;
-        position: absolute;
-        left: 4px;
-        top: 4px;
-        width: 12px;
-        height: 12px;
-        border-radius: 10px;       
-        background: white;        
-    }    
+  &__container::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: white;
+  }
 
-    &__input:checked + &__container::before{
-        border-color: $primary-color;        
-    }
+  &__input:checked + &__container::before{
+    border-color: $primary-color;
+  }
 
-    &__input:checked +&__container::after{
-        background: $primary-gradient;
-    }
+  &__input:checked +&__container::after{
+    background: $primary-gradient;
+  }
 
-    &__title{
-        font-family: $primary-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 20px;
-        color: $gray-color-75;
-        margin-left: 10px; 
-    }
+  &__title{
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-color-75;
+    margin-left: 10px;
+  }
 }

@@ -2,14 +2,17 @@ mixin radio-button(params)
   -
     const {
       title,
-      name = 'default_name',
-      value = 'default_value',
+      name = 'defaultName',
+      value = 'defaultValue',
       checked = false,
     } = params;
 
   .radio-button
     label.radio-button__label
-      input(type='radio', name=name, value=value, checked=checked).radio-button__input
+      input.radio-button__input(
+        type='radio', name=name,
+        value=value, 
+        checked=checked
+      )
       .radio-button__container
     .radio-button__title=title
-    
