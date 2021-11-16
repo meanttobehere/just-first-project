@@ -22,6 +22,8 @@ class DateDropdown{
     this.#containers.forEach(container => {
       container.onclick = this._handleContainerClick.bind(this);
     });
+
+    this._handleCalendarTravelChange();
   }
 
   _handleCalendarAcceptClick(){

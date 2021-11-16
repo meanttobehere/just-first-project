@@ -1,39 +1,51 @@
 import { getFormattedPrice } from '../summary-form/summary-form';
 import './lib/slider';
 
-function getPriceAttr(val1, val2) {
-  return `${getFormattedPrice(val1)} - ${getFormattedPrice(val2)}`;
-}
+class RangeSlider{
+  #price;
+  #slider;
 
-function rangeSlidersInit() {
-  const $rangeSliders = $('.js-range-slider');
+  constructor(rangeSlider){
+    this.#price = $(rangeSlider).find('.js-range-slider__price');
+    this.#slider = $(rangeSlider).find('.js-range-slider__slider');
+    this.#slider.superSlider(this._getSliderInitObject(this.#slider));
+    this.#slider.on('sliderupdate', this._handleSliderUpdate.bind(this));
+    this.#slider.superSlider('pointerPosition', 5000);
+  }
 
-  $rangeSliders.each((index, rangeSlider) => {
-    const $slider = $(rangeSlider).find('.js-range-slider__slider');
-    const $price = $('.js-range-slider__price');
-
+  _getSliderInitObject($slider){
     const val1 = parseInt($slider.attr('data-val1'), 10);
     const val2 = parseInt($slider.attr('data-val2'), 10);
     const step = parseInt($slider.attr('data-step'), 10);
     const min = parseInt($slider.attr('data-min'), 10);
     const max = parseInt($slider.attr('data-max'), 10);
 
-    $slider.superSlider({
+    return {
       displayTips: false,
       pointerPosition: val1,
       secondPointerPosition: val2,
       minValue: min,
       maxValue: max,
-      step,
-    });
-    $slider.superSlider('pointerPosition', val1);
-    $price.attr('data-value', getPriceAttr(val1, val2));
-    $slider.on('sliderupdate', () => {
-      const pos1 = $slider.superSlider('pointerPosition');
-      const pos2 = $slider.superSlider('secondPointerPosition');
-      $price.attr('data-value', getPriceAttr(pos1, pos2));
-    });
-  });
+      step: step,
+    }
+  }
+
+  _handleSliderUpdate(event){
+    const pos1 = this.#slider.superSlider('pointerPosition');
+    const pos2 = this.#slider.superSlider('secondPointerPosition');
+    this.#price.attr('data-value', this._getPriceAttr(pos1, pos2));
+  }
+
+  _getPriceAttr(val1, val2) {
+    return `${this._getFormattedPrice(val1)} - ${this._getFormattedPrice(val2)}`;
+  }
+
+  _getFormattedPrice(price) {
+    const str = price.toString();
+    return `${str.substr(0, str.length - 3)} ${str.substr(-3)}₽`;
+  }
 }
 
-rangeSlidersInit();
+document.querySelectorAll('.js-range-slider').forEach(rangeSlider => {
+  rangeSlider._rangeSlider = new RangeSlider(rangeSlider);
+})
