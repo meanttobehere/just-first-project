@@ -7,14 +7,14 @@ mixin header(params)
   -
     const {
       isLoggedIn = false,
-      username = "No name",
+      username = 'No name',
       headerItems = [],
-      signupButtonLink = "#",
-      loginButtonLink = "#",
-      logotypeLink = "#",
+      signupButtonLink = '#',
+      loginButtonLink = '#',
+      logotypeLink = '#',
     } = params;
 
-  .header
+  .header.js-header
     .header__container.js-header__container
       a.header__logotype(href=logotypeLink)
         +logotype()
@@ -26,10 +26,9 @@ mixin header(params)
         .header__userblock.js-header__userblock
           if(isLoggedIn)
             .header__stick
-            .header__username=username
+            .header__username= username
           else
             a.header__button(href=loginButtonLink)
-              +button({title: 'войти', theme: "white", size: "ss"})
+              +button({title: 'войти', theme: 'white', size: 'ss'})
             a.header__button(href=signupButtonLink)
-              +button({title: "зарегистрироватьcя", size: "m"})
-              
+              +button({title: 'зарегистрироватьcя', size: 'm'})

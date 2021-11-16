@@ -1,23 +1,23 @@
 mixin header__item(params)
   -
     const {
-      title = "title",
-      href = "#",
+      title = 'title',
+      href = '#',
       selected = false,
       children = [],
     } = params;
-    const className = selected ? "header-item_selected" : "";
-  
+    const class_selected = selected ? 'header-item_selected' : '';
+
   if (children.length == 0)
-    .header__item.header-item(class=className)
+    .header__item.header-item(class=class_selected)
       .header-item__title-container
-        a.header-item__title(href=href)=title
+        a.header-item__title(href=href)= title
   else
-    .header__item.header-item.js-header-item(class=className)
-      .header-item__title-container.js-header-item__title-container      
-        .header-item__title=title
+    .header__item.header-item.js-header-item(class=class_selected)
+      .header-item__title-container.js-header-item__title-container
+        .header-item__title= title
         .header-item__arrow
           i.material-icons expand_more
       .header-item__children-container
         each child in children
-          a.header-item__child(href=child.href)=child.title
+          a.header-item__child(href=child.href)= child.title

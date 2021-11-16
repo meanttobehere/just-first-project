@@ -1,39 +1,42 @@
 import './__item/header__item';
 
-function headersInit() {
-  const headers = document.getElementsByClassName('js-header__container');
-  const mediaQueryList = window.matchMedia('(min-width: 600px)');
+class Header{
+  #container;
+  #menu;
+  #userblock;
+  #navbar;
+  #buttons;
 
-  for (let i = 0; i < headers.length; i += 1) {
-    const menu = headers[i].querySelector('.js-header__menu-icon');
-    const userblock = headers[i].querySelector('.js-header__userblock');
-    const navbar = headers[i].querySelector('.js-header__navbar');
+  constructor(header){
+    this.#container = header.querySelector('.js-header__container');
+    this.#menu = header.querySelector('.js-header__menu-icon');
+    this.#userblock = header.querySelector('.js-header__userblock');
+    this.#navbar = header.querySelector('.js-header__navbar');
+    this.#buttons = this.#userblock.querySelectorAll('.button');
 
-    menu.addEventListener('click', () => {
-      navbar.classList.toggle('header__navbar_open');
-      menu.children[0].classList.toggle('hamburger_active');
-    });
+    this.#menu.addEventListener('click', this._handleMenuClick.bind(this));
 
-    const changeHeader = (isDesktopView) => {
-      if (isDesktopView) {
-        headers[i].appendChild(userblock);
-        const [button1, button2] = userblock.getElementsByClassName('button');
-        if (button1 !== undefined && button2 !== undefined){
-          [button1, button2].forEach((button) => {button.classList.remove('button_size-xl')});
-        }    
-      } else {
-        navbar.appendChild(userblock);
-        const [button1, button2] = userblock.getElementsByClassName('button');
-        [button1, button2].forEach((button) => {button.classList.add('button_size-xl')}); 
-      }
-    };
+    const widthQuery = window.matchMedia('(min-width: 600px)');
+    this._handleQueryWidth(widthQuery.matches);
+    widthQuery.addEventListener('change', (e) => {this._handleQueryWidth(e.matches)});
+  }
 
-    changeHeader(mediaQueryList.matches);
+  _handleMenuClick(){
+    this.#navbar.classList.toggle('header__navbar_open');
+    this.#menu.children[0].classList.toggle('hamburger_active');
+  }
 
-    mediaQueryList.addEventListener('change', (e) => {
-      changeHeader(e.matches);
-    });
+  _handleQueryWidth(isDesktopView){
+    if (isDesktopView) {
+      this.#container.appendChild(this.#userblock);
+      this.#buttons.forEach((button) => {button.classList.remove('button_size-xl')});
+    } else {
+      this.#navbar.appendChild(this.#userblock);
+      this.#buttons.forEach((button) => {button.classList.add('button_size-xl')});
+    }
   }
 }
 
-headersInit();
+document.querySelectorAll('.js-header').forEach(header => {
+  header._header = new Header(header);
+})
