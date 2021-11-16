@@ -2,28 +2,28 @@ include ../dropdown/dropdown
 
 mixin guests-dropdown(params)
   -
-    params = (params ? params : {})
+    params = params ? params : {};
     const {
-      title = "гости",
+      title = 'гости',
       alwaysOpen = false,
       adults = 0,
       children = 0,
       babies = 0,
-      size = "l",
+      size = 'l',
     } = params;
 
     const newParams = {
       title: title,
-      text: "Сколько гостей",
+      text: 'Сколько гостей',
       buttons: true,
       alwaysOpen: alwaysOpen,
       size: size,
       items: [
-        {title: "взрослые", value: adults}, 
-        {title: "дети", value: children}, 
-        {title: "младенцы", value: babies}
+        {title: 'взрослые', value: adults}, 
+        {title: 'дети', value: children}, 
+        {title: 'младенцы', value: babies}
       ]
-    }  
-  
+    }
+
   .guests-dropdown.js-guests-dropdown
     +dropdown(newParams)

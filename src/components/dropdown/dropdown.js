@@ -26,6 +26,14 @@ class Dropdown{
     }
   }
 
+  setText(text){
+    this.#field.childNodes[0].textContent = text;
+  }
+
+  getItems(){
+    return this.#items.map(item => item._dropdownItem);
+  }
+
   _close(){
     this.#dropdown.classList.remove('dropdown_active');
   }
