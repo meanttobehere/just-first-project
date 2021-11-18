@@ -1,84 +1,75 @@
 @import '../../components/components.scss';
 
-html, body{
-    margin: 0px;
-    padding: 0px;
-    -webkit-tap-highlight-color: transparent;
+html{
+  margin: 0px;
+  padding: 0px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body{
-    display: grid;
-    grid-template-rows: 1fr auto;
-    min-height: 100vh;
-
-    * {
-        min-width: 0;
-    }
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
 }
 
-header{
+.mainpage{
+  &__header{
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
-}
+  }
 
-main{
-    padding-top: 70px;
-
+  &__main{
     background-image: url('../../resources/images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
-
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+    padding-top: 70px;
+    min-width: 0;
+  }
 
-    .container__search-form{
-        max-width: 1440px;
-        width: 100%;
-        padding-top: 70px;      
-        display: flex;
-
-        & > *{
-            flex: 1 1 auto;
-        }
-
-        &::before, &::after{
-           content: '';
-           max-width: 140px;
-           flex-grow: 1;
-        }
+  &__search-form-container{
+    max-width: 1440px;
+    width: 100%;
+    padding-top: 70px;
+    display: flex;
+    &::before, &::after{
+      content: '';
+      max-width: 140px;
+      flex-grow: 1;
     }
+  }
 
-    .container__text{
-        max-width: 1440px;
-        width: 100%;
-        padding-bottom: 20px;   
-        display: flex;
-        justify-content: flex-end;       
-
-        &::before, &::after{
-            content: '';
-            max-width: 124px;
-            flex-grow: 1;        
-        }
-    }    
-
-    .text{
-        flex: 1 1 auto;
-        display: block;
-        max-width: 297px;
-        padding: 0 10px;
-        font-family: $primary-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 24px;
-        text-align: right;
-        color: $gray-color-75;
+  &__text-container{
+    max-width: 1440px;
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    &::before, &::after{
+      content: '';
+      max-width: 124px;
+      flex-grow: 1;
     }
+  }
+
+  &__text{
+    flex: 1 1 auto;
+    display: block;
+    max-width: 297px;
+    padding: 0 10px;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: $gray-color-75;
+  }
 }

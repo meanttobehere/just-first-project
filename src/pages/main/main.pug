@@ -8,16 +8,18 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width')
+    meta(charset="UTF-8")
+    meta(name="description" content="main page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, main")
+    meta(name="viewport" content="width=device-width")
     title TOXIN
-  body
-    header
+  body.mainpage
+    header.mainpage__header
       +header(data.header)
-    main
-      .container__search-form
+    main.mainpage__main
+      .mainpage__search-form-container
         +search-form(data.searchForm)
-      .container__text
-        .text= 'Лучшие номера для вашей работы, отдыха и просто вдохновения'
-    footer
+      .mainpage__text-container
+        .mainpage__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    footer.mainpage__footer
       +footer(data.footer)
