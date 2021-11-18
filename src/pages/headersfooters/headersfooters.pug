@@ -8,12 +8,17 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
+    meta(charset="UTF-8")
+    meta(name="description" content="headersfooters page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, headersfooters")
     title Headers & Footers
-  body
-    .logotype-container
+  body.headersfooters
+    .headersfooters__logotype-container
       +logotype(data.logotype)
-    +header(data.header1)
-    +header(data.header2)
-    +footer(data.footer)
-    +footer(data.footer)(class='footer_uikit')
+    .headersfooters__data-container
+      .headersfooters__header
+        +header(data.header1)
+      +header(data.header2)
+      +footer(data.footer)
+      .headersfooters__footer
+        +footer(data.footer)(class='footer_uikit')
