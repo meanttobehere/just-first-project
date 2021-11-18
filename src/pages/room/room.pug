@@ -8,48 +8,50 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width')
+    meta(charset="UTF-8")
+    meta(name="description" content="room page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, room")
+    meta(name="viewport" content="width=device-width")
     title TOXIN
-  body
-    header
+  body.room
+    header.room__header
       +header(data.header)
-    main
-      figure.room-photos
-        .room-photos__group
-          .room-photos__photo
-            img(src=data.roomPhotos[0].url alt='room photo')
-        .room-photos__group
-          .room-photos__photo
-            img(src=data.roomPhotos[1].url alt='room photo')
-          .room-photos__photo
-            img(src=data.roomPhotos[2].url alt='room photo')
-      section.container
-        .container__first-section
-          .container__group
-            .container__block
-              .container__title Сведения о номере
-              each item in data.comfortItems
-                .container__comfort-item
+    main.room__main
+      figure.room__figure
+        .room__photo-group
+          .room__photo-container
+            img.room__photo(src=data.roomPhotos[0].url, alt="room photo")
+        .room__photo-group
+          .room__photo-container
+            img.room__photo(src=data.roomPhotos[1].url, alt="room photo")
+          .room__photo-container
+            img.room__photo(src=data.roomPhotos[2].url, alt="room photo")
+      section.room__section
+        .room__container
+          .room__group
+            .room__group-block
+              .room__title Сведения о номере
+              .room__comfort-items-container
+                each item in data.comfortItems
                   +comfort-item(item)
-            .container__block
-              .container__title Впечатления от номера
+            .room__group-block
+              .room__title Впечатления от номера
               +chart(data.chart)
-          .container__group
-            .container__block
-              .container__title Отзывы посетителей номера
-                .container__title-item= `${data.reviews.length} отзыва`
-              each review in data.reviews
-                .container__review
+          .room__group
+            .room__group-block
+              .room__title Отзывы посетителей номера
+                .room__review-counter= `${data.reviews.length} отзыва`
+              .room__reviews-container
+                each review in data.reviews
                   +review(review)
-          .container__group
-            .container__block.container__block_rules
-              .container__title.container__title_rules Правила
+          .room__group
+            .room__group-block.room__group-block_rules
+              .room__title.room__title_rules Правила
               +bullet-list(data.rules)
-            .container__block.container__block_cancelation
-              .container__title Отмена
-              .container__description= data.cancelation.description
-        .container__second-section
+            .room__group-block.room__group-block_cancelation
+              .room__title Отмена
+              .room__cancelation-description= data.cancelation.description
+        .room__summary-form-container
           +summary-form(data.summaryForm)
-    footer
+    footer.room__footer
       +footer(data.footer)

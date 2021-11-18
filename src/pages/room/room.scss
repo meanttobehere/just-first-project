@@ -1,71 +1,71 @@
 @import '../../components/components.scss';
 
 html, body{
-    margin: 0px;
-    padding: 0px;
-    -webkit-tap-highlight-color: transparent;
-    background: $white-color;
+  margin: 0px;
+  padding: 0px;
+  -webkit-tap-highlight-color: transparent;
+  background: $white-color;
 }
 
-header{
+.room{
+  &__header{
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 29999;
-}
+    z-index: 5;
+  }
 
-main{    
+  &__main{
     max-width: 1440px;
     margin: auto;
-}
+  }
 
-footer{
+  &__footer{
     border-top: 1px solid $gray-color-25;
-}
+  }
 
-.room-photos{
-    margin: auto;    
+  &__figure{
+    margin: auto;
     display: flex;
+  }
 
-    img{
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+  &__photo-group{
+    max-height: 485px;
+
+    &:first-child{
+      flex-basis: 68%;
+      .room__photo-container{
+        position: relative;
+        padding-bottom: 49.6%;
+      }
     }
 
-    &__group{
-        max-height: 485px;
-    }
+    &:last-child{
+      flex-basis: 32%;
+      .room__photo-container{
+        position: relative;
+        padding-bottom: 52.7%;
+      }
+    } 
+  }
 
-    & > :first-child{
-        flex-basis: 68%;
-        .room-photos__photo{
-            position: relative;
-            padding-bottom: 49.6%;
-        }
-    }
+  &__photo{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    & > :last-child{
-        flex-basis: 32%;  
-        .room-photos__photo{
-            position: relative;
-            padding-bottom: 52.7%;
-        }
-    }     
-}
-
-.container{
+  &__section{
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
     column-gap: 68px;
     row-gap: 30px;
-    max-width: 1160px;       
+    max-width: 1160px;
     padding: 70px 40px;
     margin: auto;
-
     font-family: $primary-font;
     font-style: normal;
     font-weight: normal;
@@ -74,85 +74,88 @@ footer{
     color: $gray-color;
 
     @media screen and (max-width: 520px){
-        padding: 20px;
+      padding: 20px;
+    }
+  }
+
+  &__container{
+    max-width: 712px;
+    min-width: 0;
+  }
+
+  &__summary-form-container{
+    max-width: 380px;
+    min-width: 0;
+    flex: 1 0 100%;
+  }
+
+  &__group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+
+    &:first-child{
+      max-width: 671.89px;
+      padding-bottom: 34px;
     }
 
-    &__first-section{
-        max-width: 712px;
-        min-width: 0;
+    &:last-child{
+      max-width: 702px;
+      padding-top: 32px;
     }
+  }
 
-    &__second-section{
-        max-width: 380px;
-        min-width: 0;
-        flex: 1 0 100%;
+  &__group-block{
+    max-width: max-content;
+    &_rules{
+        max-width: 260px;
     }
-
-    &__title{
-        font-weight: bold;
-        font-size: 19px;
-        line-height: 23px;
-        
-        padding-bottom: 20px;         
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        &_rules{
-            padding-left: 20px;
-
-            @media screen and (max-width: 800px){
-                padding-left: 0;
-            }
-        }        
-    }   
-
-    &__title-item{
-        font-size: 14px;
-        line-height: 14px;
-        font-weight: normal;
-        color: $gray-color-50;
+    &_cancelation{
+        max-width: 341px;
     }
+  }
 
-    &__description{
-        line-height: 24px;   
-        color: $gray-color-75;        
+  &__title{
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &_rules{
+      padding-left: 20px;
+      @media screen and (max-width: 800px){
+        padding-left: 0;
+      }
     }
+  }
 
-    &__group{
-        display: flex;
-        flex-wrap: wrap;        
-        justify-content: space-between;
-        gap: 32px;
+  &__review-counter{
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: normal;
+    color: $gray-color-50;
+  }
 
-        &:first-child{
-            max-width: 671.89px;
-            padding-bottom: 34px;
-        }
+  &__cancelation-description{
+    line-height: 24px;
+    color: $gray-color-75;
+  }
 
-        &:last-child{
-            max-width: 702px;            
-            padding-top: 32px;
-        }
-    }
+  &__comfort-items-container{
+    display: flex;
+    flex-flow: column;
+    row-gap: 20px;
+  }
 
-    &__block{
-        max-width: max-content;
-        &_rules{
-            max-width: 260px;
-        }
-        &_cancelation{
-            max-width: 341px;
-        }
-    }
-
-    &__comfort-item:nth-last-child(n + 2){
-        margin-bottom: 20px;
-    }
-
-    &__review:nth-last-child(n + 2){
-        margin-bottom: 23px;
-    }
+  &__reviews-container{
+    display: flex;
+    flex-flow: column;
+    row-gap: 23px;
+  }
 }
