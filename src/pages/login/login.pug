@@ -8,14 +8,16 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width')
+    meta(charset="UTF-8")
+    meta(name="description" content="login page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, login")
+    meta(name="viewport" content="width=device-width")
     title TOXIN
-  body
-    header
+  body.login
+    header.login__header
       +header(data.header)
-    main
-      .container__login-form
+    main.login__main
+      .login__login-form-container
         +login-form(data.loginForm)
-    footer
+    footer.login__footer
       +footer(data.footer)
