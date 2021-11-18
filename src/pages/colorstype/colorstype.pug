@@ -8,23 +8,23 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
+    meta(charset="UTF-8")
+    meta(name="description" content="colorstype page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, colorstype")
     title Colors & Type
-  body
-    .logotype-container
+  body.colorstype
+    .colorstype__logotype-container
       +logotype(data.logotype)
-    .content-container
-      .left-column
+    .colorstype__data-container
+      .colorstype__left-column
         each item in data.colorItems
           +color-item(item)
-      .right-column
-        .item.item_size-x H1          
-        .item.item_size-x.item_bold This one is the sub-section or widget title    
-        .item.item_size-l H2
-        .item.item_size-l.item_bold Next one is the item title inside widgets
-        .item.item_size-m H3
-        .item.item_size-m.item_bold This is a label or CTA text
-        .item Body
-        .item
-          p This is the body text which is used for most
-          p of the design, like paragraphs, lists, etc.
+      .colorstype__right-column
+        .colorstype__item H1
+        .colorstype__item This one is the sub-section or widget title
+        .colorstype__item H2
+        .colorstype__item Next one is the item title inside widgets
+        .colorstype__item H3
+        .colorstype__item This is a label or CTA text
+        .colorstype__item Body
+        .colorstype__item This is the body text which is used for most of the design, like paragraphs, lists, etc.
