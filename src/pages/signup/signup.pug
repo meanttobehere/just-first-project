@@ -8,14 +8,16 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width')
+    meta(charset="UTF-8")
+    meta(name="description" content="signup page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, signup")
+    meta(name="viewport" content="width=device-width")
     title TOXIN
-  body
-    header
+  body.signup
+    header.signup__header
       +header(data.header)
-    main
-      .container__search-form
+    main.signup__main
+      .signup__search-form-container
         +signup-form(data.signupForm)
-    footer
+    footer.signup__footer
       +footer(data.footer)

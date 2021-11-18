@@ -1,36 +1,37 @@
 @import '../../components/components.scss';
 
-html, body{
-    margin: 0px;
-    padding: 0px;
-    -webkit-tap-highlight-color: transparent;
+html{
+  margin: 0px;
+  padding: 0px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body{
-    display: grid;
-    grid-template-rows: 1fr auto;
-    min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
 }
 
-header{
+.signup{
+  &__header{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
-}
+    z-index: 2; 
+  }
 
-main{
+  &__main{
     padding-top: 70px;
-    
     background-image: url('../../resources/images/background.jpg');
     background-repeat: no-repeat;
-    background-size: cover;   
+    background-size: cover;
     background-position: center bottom;
+  }
 
-    .container__search-form{        
-        padding: 70px 0;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-    }
+  &__search-form-container{
+    padding: 70px 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
 }

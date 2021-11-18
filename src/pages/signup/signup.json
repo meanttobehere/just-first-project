@@ -19,7 +19,7 @@
     ],
     "loginButtonLink": "login.html",
     "signupButtonLink": "#",
-    "logotypeLink": "main.html"     
+    "logotypeLink": "main.html"
   },
   "signupForm": {
     "loginButtonLink": "login.html"
