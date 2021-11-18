@@ -1,46 +1,46 @@
 {
-    "logotype":{
-      "partial": true
-    },
-    "searchForm":{
-      "calendar":{
-        "arrivalDate": "",
-        "departureDate": ""
-      }
-    },
-    "signupForm":{
-      "buttonTitle": "перейти к оплате"
-    },
-    "summaryForm":{
-      "guestsDropdown":{
-        "adults": 3
-      }
-    },
-    "roomCard1":{
-      "number": 888,
-      "price": 9990,
-      "luxe": true,
-      "rate": 5,
-      "reviewCount": 145,
-      "visibleButtons": true,
-      "imageLinks": [
-        "./images/room_photo1.jpg",
-        "./images/room_photo2.jpg",
-        "./images/room_photo3.jpg",
-        "./images/room_photo4.jpg"
-      ]
-    },
-    "roomCard2":{
-      "number": 840,
-      "price": 9900,
-      "luxe": false,
-      "rate": 4,
-      "reviewCount": 65,
-      "imageLinks": [
-        "./images/room_photo5.jpg",
-        "./images/room_photo6.jpg",
-        "./images/room_photo7.jpg",
-        "./images/room_photo8.jpg"
-      ]
-    }    
+  "logotype":{
+    "partial": true
+  },
+  "searchForm":{
+    "calendar":{
+      "arrivalDate": "",
+      "departureDate": ""
+    }
+  },
+  "signupForm":{
+    "buttonTitle": "перейти к оплате"
+  },
+  "summaryForm":{
+    "guestsDropdown":{
+      "adults": 3
+    }
+  },
+  "roomCard1":{
+    "number": 888,
+    "price": 9990,
+    "luxe": true,
+    "rate": 5,
+    "reviewCount": 145,
+    "visibleButtons": true,
+    "imageLinks": [
+      "./images/room_photo1.jpg",
+      "./images/room_photo2.jpg",
+      "./images/room_photo3.jpg",
+      "./images/room_photo4.jpg"
+    ]
+  },
+  "roomCard2":{
+    "number": 840,
+    "price": 9900,
+    "luxe": false,
+    "rate": 4,
+    "reviewCount": 65,
+    "imageLinks": [
+      "./images/room_photo5.jpg",
+      "./images/room_photo6.jpg",
+      "./images/room_photo7.jpg",
+      "./images/room_photo8.jpg"
+    ]
+  }
 }

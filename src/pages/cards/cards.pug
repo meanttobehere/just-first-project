@@ -8,21 +8,23 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
+    meta(charset="UTF-8")
+    meta(name="description" content="cards page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, cards")
     title Cards
-  body
-    .logotype-container
+  body.cards
+    .cards__logotype-container
       +logotype(data.logotype)
-    .container
-      .left-column
+    .cards__data-container
+      .cards__column
         +search-form(data.searchForm)
         +signup-form(data.signupForm)
-      .middle-column
+      .cards__column
         +summary-form(data.summaryForm)
         +login-form()
-      .right-column
+      .cards__column
         +calendar()
-        .room-card-container
+        .cards__room-card-container
           +room-card(data.roomCard1)
-        .room-card-container
+        .cards__room-card-container
           +room-card(data.roomCard2)
