@@ -4,7 +4,8 @@ class DropdownItem{
   #counter;
 
   constructor(item){
-    [this.#minusButton, this.#plusButton] = item.querySelectorAll('.js-dropdown-item__button');
+    [this.#minusButton, this.#plusButton]
+      = item.querySelectorAll('.js-dropdown-item__button');
     this.#counter = item.querySelector('.js-dropdown-item__counter');
 
     this.#minusButton.onclick = this._handleMinusButtonClick.bind(this);

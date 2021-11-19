@@ -31,7 +31,8 @@ export default class Calendar {
 
   getNumDays() {
     if (this._arrival instanceof Date && this._departure instanceof Date){
-      return ((this._departure.getTime() - this._arrival.getTime()) / (1000 * 3600 * 24) + 1)
+      return ((this._departure.getTime() - this._arrival.getTime())
+        / (1000 * 3600 * 24) + 1)
     }
     return 0;
   }
@@ -75,8 +76,10 @@ export default class Calendar {
 
   _findHtmlElements(calendar){
     this.#title = calendar.querySelector('.js-calendar__month-title');
-    [this.#back, this.#forward] = calendar.getElementsByClassName('js-calendar__month-button');
-    [this.#clear, this.#accept] = calendar.querySelector('.js-calendar__buttons-container').children;
+    [this.#back, this.#forward]
+      = calendar.getElementsByClassName('js-calendar__month-button');
+    [this.#clear, this.#accept]
+      = calendar.querySelector('.js-calendar__buttons-container').children;
     this.#days = [...calendar.querySelectorAll('.js-calendar__grid-item')];
   }
 
@@ -213,7 +216,8 @@ export default class Calendar {
       if (page[idx].isBetweenArrivalDeparture) {
         day.classList.add('calendar__grid-item_between-arival-departure-date');
       } else {
-        day.classList.remove('calendar__grid-item_between-arival-departure-date');
+        day.classList
+          .remove('calendar__grid-item_between-arival-departure-date');
       }
 
       if (page[idx].isArrivalDay) {
@@ -230,7 +234,8 @@ export default class Calendar {
 
       day.textContent = page[idx].day;
     }
-    this.#title.textContent = `${this._getMonthString(this.#month)} ${this.#year}`;
+    this.#title.textContent
+      = `${this._getMonthString(this.#month)} ${this.#year}`;
   }
 
   _updatePageData() {
@@ -341,7 +346,10 @@ export default class Calendar {
   }
   
   _getMonthString(month) {
-    const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    const months = [
+      'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+    ];
     return months[month];
   }
   
@@ -357,11 +365,14 @@ export default class Calendar {
   
   _intervalToString(date1, date2) {
     if (date1 instanceof Date && date2 instanceof Date && date1 !== date2){
-      const formattedDate1 = date1.toLocaleString('ru', {month: 'long', day: 'numeric'});
-      const formattedDate2 = date2.toLocaleString('ru', {month: 'long', day: 'numeric'});
+      const formattedDate1
+        = date1.toLocaleString('ru', {month: 'long', day: 'numeric'});
+      const formattedDate2
+        = date2.toLocaleString('ru', {month: 'long', day: 'numeric'});
       return `${formattedDate1} - ${formattedDate2}`;
     } else if (date1 instanceof Date){
-      const formattedDate1 = date1.toLocaleString('ru', {month: 'long', day: 'numeric'});
+      const formattedDate1
+        = date1.toLocaleString('ru', {month: 'long', day: 'numeric'});
       return `${formattedDate1}`;
     }
     return 'Время проживания';

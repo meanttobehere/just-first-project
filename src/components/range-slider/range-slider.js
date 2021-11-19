@@ -37,7 +37,9 @@ class RangeSlider{
   }
 
   _getPriceAttr(val1, val2) {
-    return `${this._getFormattedPrice(val1)} - ${this._getFormattedPrice(val2)}`;
+    return (
+      `${this._getFormattedPrice(val1)} - ${this._getFormattedPrice(val2)}`
+    );
   }
 
   _getFormattedPrice(price) {

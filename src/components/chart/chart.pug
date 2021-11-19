@@ -63,7 +63,10 @@ mixin chart(params)
           )
       .chart__counter= length
     .chart__list-container
-      - const items = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+      -
+        const items = [
+          'Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'
+        ];
       ul.chart__list
         each item in items
           li.chart__item=item

@@ -32,7 +32,8 @@ class GuestsDropdown{
     if (babies === 0) { return text; }
 
     if (babies % 10 === 1 && babies !== 11) { text += `, ${babies} младенец`; }
-    else if (babies % 10 >= 2 && babies % 10 <= 4) { text += `, ${babies} младенца`; }
+    else if (babies % 10 >= 2 && babies % 10 <= 4)
+      { text += `, ${babies} младенца`; }
     else { text += `, ${babies} младенцев`; }
 
     return text;

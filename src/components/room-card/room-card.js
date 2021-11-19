@@ -16,7 +16,8 @@ class RoomCard{
     this.#dots.forEach(dot => {
       dot.addEventListener('click', this._handleDotClick.bind(this));
     });
-    roomCardContainer.addEventListener('click', this._handleRoomCardContainerClick.bind(this));
+    roomCardContainer
+      .addEventListener('click', this._handleRoomCardContainerClick.bind(this));
 
     this._updateCard();
   }
@@ -38,7 +39,8 @@ class RoomCard{
   }
 
   _handleDotClick(event){
-    this.#currentImageNum = [...this.#dots].findIndex(dot => dot === event.target);
+    this.#currentImageNum
+      = [...this.#dots].findIndex(dot => dot === event.target);
     this._updateCard();
   }
 

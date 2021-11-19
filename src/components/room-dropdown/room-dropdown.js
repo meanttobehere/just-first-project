@@ -21,14 +21,17 @@ class RoomDropdown{
   _generateText(bedrooms, beds){
     let text = '';
 
-    if (bedrooms % 10 === 1 && bedrooms !== 11) { text = `${bedrooms} спальня`; }
-    else if (bedrooms % 10 >= 2 && bedrooms % 10 <= 4) { text = `${bedrooms} спальни`; }
+    if (bedrooms % 10 === 1 && bedrooms !== 11)
+      { text = `${bedrooms} спальня`; }
+    else if (bedrooms % 10 >= 2 && bedrooms % 10 <= 4)
+      { text = `${bedrooms} спальни`; }
     else { text = `${bedrooms} спален`; }
 
     if (beds === 0) { return text; }
 
     if (beds % 10 === 1 && beds !== 11) { text += `, ${beds} кровать...`; }
-    else if (beds % 10 >= 2 && beds % 10 <= 4) { text += `, ${beds} кровати...`; }
+    else if (beds % 10 >= 2 && beds % 10 <= 4)
+      { text += `, ${beds} кровати...`; }
     else { text += `, ${beds} кроватей...`; }
 
     return text;

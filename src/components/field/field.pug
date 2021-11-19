@@ -16,9 +16,19 @@ mixin field(params)
       .field__title= title
     if(submitLink !== undefined)
       form.field__container(action=submitLink)
-        input.field__input(placeholder=placeholder, type=type, value=value, name=name)
+        input.field__input(
+          placeholder=placeholder,
+          type=type,
+          value=value,
+          name=name
+        )
         button.field__button(type="submit")
           i.field__arrow.material-icons arrow_forward
     else
       .field__container
-        input.field__input(placeholder=placeholder, type=type, value=value, name=name)
+        input.field__input(
+          placeholder=placeholder,
+          type=type,
+          value=value,
+          name=name
+        )

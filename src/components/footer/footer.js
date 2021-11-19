@@ -2,7 +2,8 @@ class Footer{
   constructor(footer){
     const groups = footer.querySelectorAll('.js-footer__group');
     groups.forEach(group => {
-      group.querySelector('.js-footer__group-title').onclick = this._handleTitleClick.bind(group);
+      group.querySelector('.js-footer__group-title').onclick
+        = this._handleTitleClick.bind(group);
     });
   }
 

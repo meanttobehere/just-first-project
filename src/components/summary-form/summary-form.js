@@ -10,11 +10,14 @@ class SummaryForm{
     this.#calendar = form.querySelector('.js-calendar');
     this.#price = form.querySelector('.js-summary-form__price');
     this.#calculator = form.querySelector('.js-summary-form__calculator');
-    this.#calculatorItems = this.#calculator.querySelectorAll('.calculator__item');
-    this.#calculatorPrices = this.#calculator.querySelectorAll('.calculator__price');
+    this.#calculatorItems
+      = this.#calculator.querySelectorAll('.calculator__item');
+    this.#calculatorPrices
+      = this.#calculator.querySelectorAll('.calculator__price');
     this.#priceValue = parseInt(form.getAttribute('data-price'), 10);
 
-    this.#calendar.addEventListener('click', this._handleCalendarClick.bind(this));
+    this.#calendar
+      .addEventListener('click', this._handleCalendarClick.bind(this));
     this._updateForm();
   }
 
@@ -49,8 +52,12 @@ class SummaryForm{
       this._getFormattedPrice(0)
     ]
 
-    this.#calculatorItems.forEach((item, idx) => {item.textContent = itemsValue[idx]});
-    this.#calculatorPrices.forEach((price, idx) => {price.textContent = pricesValue[idx]});
+    this.#calculatorItems.forEach((item, idx) => {
+      item.textContent = itemsValue[idx]
+    });
+    this.#calculatorPrices.forEach((price, idx) => {
+      price.textContent = pricesValue[idx]
+    });
     this.#price.textContent = this._getFormattedPrice(this.#priceValue);
   }
 

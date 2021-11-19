@@ -21,7 +21,9 @@ mixin footer(params)
       .footer__group
         a.footer__logotype(href=logotypeLink)
           +logotype()
-        .footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .footer__text 
+          |Бронирование номеров в лучшем отеле 2019 
+          |года по версии ассоциации «Отельные взгляды»
       each group in groups
         .footer__group.js-footer__group
           .footer__group-title.js-footer__group-title= group.title
@@ -30,7 +32,13 @@ mixin footer(params)
       .footer__group
         .footer__group-title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
-        +field({size: 'm', placeholder: 'Email', name: 'email', submitLink: submitLink})
+        +field({
+          size: 'm',
+          placeholder:
+          'Email', name:
+          'email',
+          submitLink: submitLink
+        })
     .footer__bottom-container
       .footer__bottom-item
         +logotype()

@@ -9,8 +9,10 @@ class DateDropdown{
 
   constructor(dropdown){
     this.#dropdown = dropdown;
-    this.#containers = dropdown.querySelectorAll('.js-date-dropdown__container');
-    [this.#text, this.#secondText] = dropdown.querySelectorAll('.js-date-dropdown__text');
+    this.#containers
+      = dropdown.querySelectorAll('.js-date-dropdown__container');
+    [this.#text, this.#secondText]
+      = dropdown.querySelectorAll('.js-date-dropdown__text');
     this.#calendar = dropdown.querySelector('.js-calendar')._calendar;
 
     this.#calendar.setObserver({
@@ -39,12 +41,14 @@ class DateDropdown{
       this.#text.textContent = this.#calendar.getArrivalDate();
       this.#secondText.textContent = this.#calendar.getDepartureDate();
     } else {
-      this.#text.textContent = this.#calendar.getIntervalOfArrivalAndDeparture();
+      this.#text.textContent
+        = this.#calendar.getIntervalOfArrivalAndDeparture();
     }
   }
 
   _handleContainerClick(event){
-    const dropdownIsNotActive = this.#dropdown.classList.contains('date-dropdown_active') === false;
+    const dropdownIsNotActive
+      = this.#dropdown.classList.contains('date-dropdown_active') === false;
 
     if (dropdownIsNotActive){
       this.#dropdown.classList.add('date-dropdown_active');

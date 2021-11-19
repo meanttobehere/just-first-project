@@ -21,7 +21,7 @@
     ] }
     ],
     "loginButtonLink": "#",
-    "signupButtonLink": "#"      
+    "signupButtonLink": "#"
 },
 "header2": {
   "isLoggedIn": true,

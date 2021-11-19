@@ -17,8 +17,8 @@ class Header{
     this.#menu.addEventListener('click', this._handleMenuClick.bind(this));
 
     const widthQuery = window.matchMedia('(min-width: 600px)');
-    this._handleQueryWidth(widthQuery.matches);
-    widthQuery.addEventListener('change', (e) => {this._handleQueryWidth(e.matches)});
+    this._changeHierarchy(widthQuery.matches);
+    widthQuery.addEventListener('change', this._handleQueryWidth.bind(this));
   }
 
   _handleMenuClick(){
@@ -26,13 +26,21 @@ class Header{
     this.#menu.children[0].classList.toggle('hamburger_active');
   }
 
-  _handleQueryWidth(isDesktopView){
+  _handleQueryWidth(event){
+    this._changeHierarchy(event.matches);
+  }
+
+  _changeHierarchy(isDesktopView){
     if (isDesktopView) {
       this.#container.appendChild(this.#userblock);
-      this.#buttons.forEach((button) => {button.classList.remove('button_size-xl')});
+      this.#buttons.forEach((button) => {
+        button.classList.remove('button_size-xl')
+      });
     } else {
       this.#navbar.appendChild(this.#userblock);
-      this.#buttons.forEach((button) => {button.classList.add('button_size-xl')});
+      this.#buttons.forEach((button) => {
+        button.classList.add('button_size-xl')
+      });
     }
   }
 }

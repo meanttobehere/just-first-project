@@ -12,6 +12,8 @@ class CheckboxList{
   }
 }
 
-document.querySelectorAll('.js-checkbox-list.checkbox-list_expandable').forEach((list) => {
+document
+  .querySelectorAll('.js-checkbox-list.checkbox-list_expandable')
+  .forEach((list) => {
   list._checkboxList = new CheckboxList(list);
 });

@@ -16,7 +16,8 @@ mixin room-card(params)
     const class_buttons = visibleButtons ? 'room-card_visible-buttons' : '';
     const class_luxe = luxe ? 'room-card__number_luxe' : '';
     const str = price.toString();
-    const cardPrice = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
+    const cardPrice
+      = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
 
   form.room-card.js-room-card(action=link, method="get", class=class_buttons)
     .room-card__images
