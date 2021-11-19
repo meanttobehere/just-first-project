@@ -4,14 +4,8 @@
   },
   "Col1Row1":{
     "dropdown1":{
-      "title": "date dropdown", 
-      "size": "s", 
-      "text": "ДД.ММ.ГГГГ"
-    },
-    "dropdown2":{
-      "title": "date dropdown", 
-      "size": "s", 
-      "text": "19.02.2019"
+      "title": "date dropdown",
+      "secondTitle": ""
     },
     "dropdown3":{
       "title": "filter date dropdown", 

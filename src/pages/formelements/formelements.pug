@@ -8,77 +8,91 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
+    meta(charset="UTF-8")
+    meta(name="description" content="formelements page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, formelements")
     title Form Elements
-  body
-    .logotype-container
-      +logotype(data.logotype)  
-    .content-container
-      .left-column-row1        
-        .title-right(data='default')
-          +field(data.Col1Row1.inpt1)        
-        .title-right(data='hover / focus')
-          +field(data.Col1Row1.inpt2)
-        +guests-dropdown(data.Col1Row1.guestsDropdown)
-        +field(data.Col1Row1.inpt3)
-        .date-dropdown-container
-          +dropdown(data.Col1Row1.dropdown1)
-          +dropdown(data.Col1Row1.dropdown2)
-        +dropdown(data.Col1Row1.dropdown3)
-        +field(data.Col1Row1.inpt4)     
-      .middle-column-row1
-        +checkbox-list(data.Col2Row1.checkboxList)
-        .title radio buttons
-        .radio-buttons-group
-          +radio-button(data.Col2Row1.radioButton1)
-          +radio-button(data.Col2Row1.radioButton2)
-        .title toggle
-        .toggle-group
-          +toggle(data.Col2Row1.toggle1)
-          +toggle(data.Col2Row1.toggle2)
-        .title like button
-        .like-buttons-group
-          +like-button(data.Col2Row1.likeButton1)
-          +like-button(data.Col2Row1.likeButton2)
-        .title rate button
-        .rate-buttons-group
-          +rate-button(data.Col2Row1.rateButton1)
-          +rate-button(data.Col2Row1.rateButton2)
-      .right-column-row1
-        +range-slider(data.Col3Row1.rangeSlider)
-        .title buttons
-        .buttons-block
-          .buttons-group
+  body.formelements
+    .formelements__logotype-container
+      +logotype(data.logotype)
+    .formelements__data-container
+      .formelements__row
+        .formelements__column
+          .formelements__item.formelements__item_with-right-title(data-text-right="default")
+            +field(data.Col1Row1.inpt1)
+          .formelements__item.formelements__item_with-right-title(data-text-right="hover / focus")
+            +field(data.Col1Row1.inpt2)
+          .formelements__item
+            +guests-dropdown(data.Col1Row1.guestsDropdown)
+          .formelements__item
+            +field(data.Col1Row1.inpt3)
+          .formelements__item
+            +date-dropdown(data.Col1Row1.dropdown1)
+          .formelements__item
+            +dropdown(data.Col1Row1.dropdown3)
+          .formelements__item
+            +field(data.Col1Row1.inpt4)
+        .formelements__column
+          .formelements__item
+            +checkbox-list(data.Col2Row1.checkboxList)
+          .formelements__item.formelements__item_with-title(data-text="radio buttons")
+            +radio-button(data.Col2Row1.radioButton1)
+            +radio-button(data.Col2Row1.radioButton2)
+          .formelements__item.formelements__item_with-title(data-text="toggle")
+            +toggle(data.Col2Row1.toggle1)
+            +toggle(data.Col2Row1.toggle2)
+          .formelements__item.formelements__item_with-title(data-text="like button")
+            +like-button(data.Col2Row1.likeButton1)
+            +like-button(data.Col2Row1.likeButton2)
+          .formelements__item.formelements__item_with-title(data-text="rate button")
+            +rate-button(data.Col2Row1.rateButton1)
+            +rate-button(data.Col2Row1.rateButton2)
+        .formelements__column
+          .formelements__item
+            +range-slider(data.Col3Row1.rangeSlider)
+          .formelements__item.formelements__item_with-title(data-text="buttons")
             +button(data.Col3Row1.button1)
-            +button(data.Col3Row1.button2)   
-          .buttons-group
+            +button(data.Col3Row1.button2)
+          .formelements__item
             +button(data.Col3Row1.button3)
             +button(data.Col3Row1.button4)
-          .buttons-group
+          .formelements__item
             +button(data.Col3Row1.button5)
             +button(data.Col3Row1.button6)
-          .buttons-group
+          .formelements__item
             +button(data.Col3Row1.button7)
-        .title pagination
-        +pagination() 
-      .left-column-row2
-        .title-right(data='default')
-          +room-dropdown(data.Col1Row2.roomDropdown1)
-        .title-right(data='expanded')
-          +room-dropdown(data.Col1Row2.roomDropdown2)
-      .middle-column-row2
-        +guests-dropdown(data.Col2Row2.guestsDropdown)
-      .right-column-row2
-        +guests-dropdown(data.Col3Row2.guestsDropdown)
-      .left-column-row3
-        +checkbox-list(data.Col1Row3.checkboxList1)
-        +checkbox-list(data.Col1Row3.checkboxList2)
-      .middle-column-row3
-        +checkbox-list(data.Col2Row3.checkboxList)
-      .right-column-row3
-        +bullet-list(data.Col3Row3.bulletList)
-      .left-column-row4
-        +comfort-item(data.Col1Row4.comfortItem1)
-        +comfort-item(data.Col1Row4.comfortItem2)
-      .middle-column-row4
-        +review(data.Col2Row4.review)
+          .formelements__item.formelements__item_with-title(data-text="pagination")
+            +pagination()
+      .formelements__row
+        .formelements__column
+          .formelements__item.formelements__item_with-right-title(data-text-right="default")
+            +room-dropdown(data.Col1Row2.roomDropdown1)
+          .formelements__item.formelements__item_with-right-title(data-text-right="expanded")
+            +room-dropdown(data.Col1Row2.roomDropdown2)
+        .formelements__column
+          .formelements__item
+            +guests-dropdown(data.Col2Row2.guestsDropdown)
+        .formelements__column
+          .formelements__item
+            +guests-dropdown(data.Col3Row2.guestsDropdown)
+      .formelements__row
+        .formelements__column
+          .formelements__item
+            +checkbox-list(data.Col1Row3.checkboxList1)
+          .formelements__item
+            +checkbox-list(data.Col1Row3.checkboxList2)
+        .formelements__column
+          .formelements__item
+            +checkbox-list(data.Col2Row3.checkboxList)
+        .formelements__column
+          .formelements__item
+            +bullet-list(data.Col3Row3.bulletList)
+      .formelements__row
+        .formelements__column
+          .formelements__item
+            +comfort-item(data.Col1Row4.comfortItem1)
+          .formelements__item
+            +comfort-item(data.Col1Row4.comfortItem2)
+        .formelements__column
+          .formelements__item
+            +review(data.Col2Row4.review)
