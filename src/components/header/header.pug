@@ -28,7 +28,14 @@ mixin header(params)
             .header__stick
             .header__username= username
           else
-            a.header__button(href=loginButtonLink)
-              +button({title: 'войти', theme: 'white', size: 'ss'})
-            a.header__button(href=signupButtonLink)
-              +button({title: 'зарегистрироватьcя', size: 'm'})
+            .header__button
+              +button({
+                title: 'войти',
+                theme: 'white',
+                size: 'ss',
+                href: loginButtonLink})
+            .header__button
+              +button({
+                title: 'зарегистрироватьcя',
+                size: 'm',
+                href: signupButtonLink})

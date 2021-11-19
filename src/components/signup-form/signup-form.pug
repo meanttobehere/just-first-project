@@ -43,5 +43,5 @@ mixin signup-form(params)
     .signup-form__button-container
       +button({title: buttonTitle, size: 'l', arrow: true, type: 'submit'})
     .signup-form__button-container Уже есть аккаунт на Toxin
-      a.signup-form__input-button(href=loginButtonLink)
-        +button({title: 'войти', theme: 'white'})
+      .signup-form__input-button
+        +button({title: 'войти', theme: 'white', href: loginButtonLink})

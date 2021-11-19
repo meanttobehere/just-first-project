@@ -7,18 +7,27 @@ mixin button(params)
       type = 'button',
       arrow = false,
       disabled = false,
+      href,
     } = params;
 
     const class_size = size ? `button_size-${size}` : '';
     const class_theme = theme ? `button_theme-${theme}` : '';
     const class_disabled = disabled ? 'button_disabled' : '';
 
-  button.button(
-    class=class_size,
-    class=class_theme,
-    class=class_disabled,
-    type=type,
-    disabled=disabled
-  )= title
+  if (href)
+    a.button(
+      class=class_size,
+      class=class_theme,
+      class=class_disabled,
+      href=href
+    )= title
+  else
+    button.button(
+      class=class_size,
+      class=class_theme,
+      class=class_disabled,
+      type=type,
+      disabled=disabled,
+   )= title
     if (arrow)
       i.button__arrow.material-icons arrow_forward

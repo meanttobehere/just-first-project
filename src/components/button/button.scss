@@ -1,20 +1,14 @@
 .button{
   outline: none;
+  text-decoration: none;
   border: none;
   cursor: pointer;
-  display: block;
   position: relative;
   width: 99px;
   height: 44px;
   border-radius: 22px;
   padding: 0;
   background: $primary-gradient;
-  &:hover{
-    background: $primary-gradient-50;
-  }
-  &:active{
-    top: 2px;
-  }
   color: $white-color;
   font-family: $primary-font;
   font-style: normal;
@@ -25,6 +19,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
+  &:hover{
+    background: $primary-gradient-50;
+  }
+
+  &:active{
+    top: 2px;
+  }
+
+  &_hide{
+    visibility: hidden;
+  }
 
   &_size-m{
     width: 196px;
@@ -99,9 +106,5 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-  }
-
-  &_hide{
-    visibility: hidden;
   }
 }
