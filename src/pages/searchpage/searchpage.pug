@@ -8,27 +8,36 @@ include ../../components/components
 doctype html
 html
   head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width')
+    meta(charset="UTF-8")
+    meta(name="description" content="search page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, searchpage")
+    meta(name="viewport" content="width=device-width")
     title TOXIN
-  body
-    header
+  body.searchpage
+    header.searchpage__header
       +header(data.header)
-      .filter-control.js-filter-control Фильтр
-    main
-      .filter-container.js-filter-container
-        +date-dropdown(data.dateDropdown)
-        +guests-dropdown(data.guestsDropdown)
-        +range-slider(data.rangeSlider)
-        +checkbox-list(data.rulesCheckbox)
-        +checkbox-list(data.availabilityCheckbox)
-        +room-dropdown(data.roomDropdown)
+      .searchpage__filter.js-searchpage__filter Фильтр
+    main.searchpage__main
+      .searchpage__filter-container.js-searchpage__filter-container
+        .searchpage__date-dropdown-container
+          +date-dropdown(data.dateDropdown)
+        .searchpage__guests-dropdown-container
+          +guests-dropdown(data.guestsDropdown)
+        .searchpage__range-slider-container
+          +range-slider(data.rangeSlider)
+        .searchpage__rules-checkbox-container
+          +checkbox-list(data.rulesCheckbox)
+        .searchpage__availability-checkbox-container
+          +checkbox-list(data.availabilityCheckbox)
+        .searchpage__room-dropdown-container
+          +room-dropdown(data.roomDropdown)
         +checkbox-list(data.amenitiesCheckbox)
-      .data-container.js-data-container
-        .data-container__title Номера, которые мы для вас подобрали
-        .rooms-container
+      .searchpage__data-container.js-searchpage__data-container
+        .searchpage__title Номера, которые мы для вас подобрали
+        .searchpage__rooms-container
           each roomCard in data.roomCards
-            +room-card(roomCard)
+            .searchpage__room-card-container
+              +room-card(roomCard)
         +pagination()
-    footer.js-footer
+    footer.searchpage__footer.js-searchpage__footer
       +footer(data.footer)

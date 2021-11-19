@@ -22,25 +22,36 @@ import '../../resources/images/room_photo10.jpg';
 import '../../resources/images/room_photo11.jpg';
 import '../../resources/images/room_photo12.jpg';
 
-function searchPageInit() {
-  const filterControl = document.querySelector('.js-filter-control');
-  const filterContainer = document.querySelector('.js-filter-container');
-  const footer = document.querySelector('.js-footer');
-  const data = document.querySelector('.js-data-container');
+class Searchpage{
+  #filter;
+  #filterContainer;
+  #footer;
+  #dataContainer;
 
-  let stateIsOpen = true;
-  filterControl.addEventListener('click', () => {
-    filterContainer.classList.toggle('filter-container_open');
-    if (stateIsOpen) {
-      footer.style.display = 'none';
-      data.style.display = 'none';
+  constructor(searchpage){
+    this.#filter = searchpage.querySelector('.js-searchpage__filter');
+    this.#filterContainer = searchpage
+      .querySelector('.js-searchpage__filter-container');
+    this.#footer = searchpage.querySelector('.js-searchpage__footer');
+    this.#dataContainer = searchpage
+      .querySelector('.js-searchpage__data-container');
+
+    this.#filter.addEventListener('click', this._handleFilterClick.bind(this));
+  }
+
+  _handleFilterClick(){
+    this.#filterContainer.classList.toggle('searchpage__filter-container_open');
+    const filterContainerIsOpen = this.#filterContainer
+      .classList.contains('searchpage__filter-container_open');
+    if (filterContainerIsOpen) {
+      this.#footer.style.display = 'none';
+      this.#dataContainer.style.display = 'none';
       window.scrollTo(0, 0);
     } else {
-      footer.style.display = 'block';
-      data.style.display = 'flex';
+      this.#footer.style.display = 'block';
+      this.#dataContainer.style.display = 'flex';
     }
-    stateIsOpen = !stateIsOpen;
-  });
+  }
 }
 
-searchPageInit();
+new Searchpage(document.querySelector('.searchpage'));
