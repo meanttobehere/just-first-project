@@ -24,10 +24,10 @@
     "reviewCount": 145,
     "visibleButtons": true,
     "imageLinks": [
-      "./images/room_photo1.jpg",
-      "./images/room_photo2.jpg",
-      "./images/room_photo3.jpg",
-      "./images/room_photo4.jpg"
+      "./images/room-photo1.jpg",
+      "./images/room-photo2.jpg",
+      "./images/room-photo3.jpg",
+      "./images/room-photo4.jpg"
     ]
   },
   "roomCard2":{
@@ -37,10 +37,10 @@
     "rate": 4,
     "reviewCount": 65,
     "imageLinks": [
-      "./images/room_photo5.jpg",
-      "./images/room_photo6.jpg",
-      "./images/room_photo7.jpg",
-      "./images/room_photo8.jpg"
+      "./images/room-photo5.jpg",
+      "./images/room-photo6.jpg",
+      "./images/room-photo7.jpg",
+      "./images/room-photo8.jpg"
     ]
   }
 }

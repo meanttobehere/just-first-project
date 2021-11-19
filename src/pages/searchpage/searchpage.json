@@ -63,8 +63,14 @@
   "availabilityCheckbox": {
     "title": "доступность", 
     "items": [
-      {"title": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."}, 
-      {"title": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист и проводит до номера."}
+      {
+        "title": "Широкий коридор",
+        "description": "Ширина коридоров в номере не менее 91 см."
+      },
+      {
+        "title": "Помощник для инвалидов",
+        "description": "На 1 этаже вас встретит специалист и проводит до номера."
+      }
     ]
   },
   "amenitiesCheckbox": {
@@ -86,7 +92,7 @@
     "bedrooms": 2,
     "size": "m"
   },
-  "guestsDropdown": {      
+  "guestsDropdown": {
     "adults": 2,
     "children": 0,
     "babies": 1,
@@ -110,10 +116,10 @@
       "reviewCount": 145,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo1.jpg",
-        "./images/room_photo2.jpg",
-        "./images/room_photo3.jpg",
-        "./images/room_photo4.jpg"
+        "./images/room-photo1.jpg",
+        "./images/room-photo2.jpg",
+        "./images/room-photo3.jpg",
+        "./images/room-photo4.jpg"
       ]
     },
     {
@@ -124,10 +130,10 @@
       "reviewCount": 65,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo5.jpg",
-        "./images/room_photo6.jpg",
-        "./images/room_photo7.jpg",
-        "./images/room_photo8.jpg"
+        "./images/room-photo5.jpg",
+        "./images/room-photo6.jpg",
+        "./images/room-photo7.jpg",
+        "./images/room-photo8.jpg"
       ]
     },
     {
@@ -138,10 +144,10 @@
       "reviewCount": 35,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo12.jpg",
-        "./images/room_photo1.jpg",
-        "./images/room_photo2.jpg",
-        "./images/room_photo3.jpg"
+        "./images/room-photo12.jpg",
+        "./images/room-photo1.jpg",
+        "./images/room-photo2.jpg",
+        "./images/room-photo3.jpg"
       ]
     },
     {
@@ -152,10 +158,10 @@
       "reviewCount": 19,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo2.jpg",
-        "./images/room_photo3.jpg",
-        "./images/room_photo4.jpg",
-        "./images/room_photo5.jpg"
+        "./images/room-photo2.jpg",
+        "./images/room-photo3.jpg",
+        "./images/room-photo4.jpg",
+        "./images/room-photo5.jpg"
       ]
     },
     {
@@ -166,10 +172,10 @@
       "reviewCount": 44,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo3.jpg",
-        "./images/room_photo4.jpg",
-        "./images/room_photo5.jpg",
-        "./images/room_photo6.jpg"
+        "./images/room-photo3.jpg",
+        "./images/room-photo4.jpg",
+        "./images/room-photo5.jpg",
+        "./images/room-photo6.jpg"
       ]
     },
     {
@@ -180,10 +186,10 @@
       "reviewCount": 56,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo4.jpg",
-        "./images/room_photo5.jpg",
-        "./images/room_photo6.jpg",
-        "./images/room_photo7.jpg"
+        "./images/room-photo4.jpg",
+        "./images/room-photo5.jpg",
+        "./images/room-photo6.jpg",
+        "./images/room-photo7.jpg"
       ]
     },
     {
@@ -194,10 +200,10 @@
       "reviewCount": 45,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo6.jpg",
-        "./images/room_photo7.jpg",
-        "./images/room_photo8.jpg",
-        "./images/room_photo9.jpg"
+        "./images/room-photo6.jpg",
+        "./images/room-photo7.jpg",
+        "./images/room-photo8.jpg",
+        "./images/room-photo9.jpg"
       ]
     },
     {
@@ -208,10 +214,10 @@
       "reviewCount": 39,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo7.jpg",
-        "./images/room_photo8.jpg",
-        "./images/room_photo9.jpg",
-        "./images/room_photo10.jpg"
+        "./images/room-photo7.jpg",
+        "./images/room-photo8.jpg",
+        "./images/room-photo9.jpg",
+        "./images/room-photo10.jpg"
       ]
     },
     {
@@ -222,10 +228,10 @@
       "reviewCount": 77,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo8.jpg",
-        "./images/room_photo9.jpg",
-        "./images/room_photo10.jpg",
-        "./images/room_photo11.jpg"
+        "./images/room-photo8.jpg",
+        "./images/room-photo9.jpg",
+        "./images/room-photo10.jpg",
+        "./images/room-photo11.jpg"
       ]
     },
     {
@@ -236,10 +242,10 @@
       "reviewCount": 25,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo9.jpg",
-        "./images/room_photo10.jpg",
-        "./images/room_photo11.jpg",
-        "./images/room_photo12.jpg"
+        "./images/room-photo9.jpg",
+        "./images/room-photo10.jpg",
+        "./images/room-photo11.jpg",
+        "./images/room-photo12.jpg"
       ]
     },
     {
@@ -250,10 +256,10 @@
       "reviewCount": 15,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo10.jpg",
-        "./images/room_photo11.jpg",
-        "./images/room_photo12.jpg",
-        "./images/room_photo1.jpg"
+        "./images/room-photo10.jpg",
+        "./images/room-photo11.jpg",
+        "./images/room-photo12.jpg",
+        "./images/room-photo1.jpg"
       ]
     },
     {
@@ -264,10 +270,10 @@
       "reviewCount": 55,
       "link": "room.html",
       "imageLinks": [
-        "./images/room_photo11.jpg",
-        "./images/room_photo12.jpg",
-        "./images/room_photo1.jpg",
-        "./images/room_photo12.jpg"
+        "./images/room-photo11.jpg",
+        "./images/room-photo12.jpg",
+        "./images/room-photo1.jpg",
+        "./images/room-photo12.jpg"
       ]
     }
   ],

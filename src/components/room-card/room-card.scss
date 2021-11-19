@@ -30,7 +30,7 @@
     }
   }
 
-  &:hover, &_visible-buttons{
+  &:hover, &_buttons-visible{
     .room-card__button{
       opacity: 1;
     }

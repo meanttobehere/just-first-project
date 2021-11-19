@@ -1,5 +1,3 @@
-import './searchpage.scss';
-
 import '../../components/header/header';
 import '../../components/footer/footer';
 import '../../components/date-dropdown/date-dropdown';
@@ -8,19 +6,19 @@ import '../../components/range-slider/range-slider';
 import '../../components/room-dropdown/room-dropdown';
 import '../../components/checkbox-list/checkbox-list';
 import '../../components/room-card/room-card';
-
-import '../../resources/images/room_photo1.jpg';
-import '../../resources/images/room_photo2.jpg';
-import '../../resources/images/room_photo3.jpg';
-import '../../resources/images/room_photo4.jpg';
-import '../../resources/images/room_photo5.jpg';
-import '../../resources/images/room_photo6.jpg';
-import '../../resources/images/room_photo7.jpg';
-import '../../resources/images/room_photo8.jpg';
-import '../../resources/images/room_photo9.jpg';
-import '../../resources/images/room_photo10.jpg';
-import '../../resources/images/room_photo11.jpg';
-import '../../resources/images/room_photo12.jpg';
+import '../../resources/images/room-photo1.jpg';
+import '../../resources/images/room-photo2.jpg';
+import '../../resources/images/room-photo3.jpg';
+import '../../resources/images/room-photo4.jpg';
+import '../../resources/images/room-photo5.jpg';
+import '../../resources/images/room-photo6.jpg';
+import '../../resources/images/room-photo7.jpg';
+import '../../resources/images/room-photo8.jpg';
+import '../../resources/images/room-photo9.jpg';
+import '../../resources/images/room-photo10.jpg';
+import '../../resources/images/room-photo11.jpg';
+import '../../resources/images/room-photo12.jpg';
+import './searchpage.scss';
 
 class Searchpage{
   #filter;

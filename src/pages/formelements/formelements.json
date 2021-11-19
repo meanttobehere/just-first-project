@@ -13,11 +13,11 @@
       "text": "19 авг - 23 авг"
     },
     "inpt1":{
-      "title": "text field", 
+      "title": "text field",
       "placeholder": "Email"
     },
     "inpt2":{
-      "title": "text field", 
+      "title": "text field",
       "value": "This is pretty awesome"
     },
     "inpt3":{
@@ -36,22 +36,22 @@
   },
   "Col2Row1":{
     "checkboxList":{
-      "title": "checkbox buttons", 
+      "title": "checkbox buttons",
       "items": [
-        {"title": "Можно курить"}, 
-        {"title": "Можно с питомцами", "checked": true}, 
+        {"title": "Можно курить"},
+        {"title": "Можно с питомцами", "checked": true},
         {"title": "Можно пригласить гостей (до 10 человек)", "checked": true}
       ]
     },
     "radioButton1":{
-      "title": "Мужчина", 
+      "title": "Мужчина",
       "checked": true
     },
     "radioButton2":{
-      "title": "Женщина" 
+      "title": "Женщина"
     },
     "toggle1":{
-      "title": "Получать спецпредложения", 
+      "title": "Получать спецпредложения",
       "checked": true
     },
     "toggle2": {
@@ -77,38 +77,38 @@
       "step": 100
     },
     "button1":{
-      "title": "click me", 
+      "title": "click me",
       "size": "s"
     },
     "button2":{
-      "title": "click me", 
+      "title": "click me",
       "size": "s",
       "disabled": true
     },
     "button3":{
-      "title": "click me", 
-      "size": "s", 
+      "title": "click me",
+      "size": "s",
       "theme": "white"
     },
     "button4":{
-      "title": "click me", 
+      "title": "click me",
       "size": "s", 
       "theme": "white",
       "disabled": true
     },
     "button5":{
-      "title": "click me", 
+      "title": "click me",
       "size": "s", 
       "theme": "no-border"
     },
     "button6":{
-      "title": "click me", 
-      "size": "s", 
+      "title": "click me",
+      "size": "s",
       "theme": "no-border",
       "disabled": true
     },
     "button7":{
-      "title": "перейти к оплате", 
+      "title": "перейти к оплате",
       "size": "l",
       "arrow": true
     }
@@ -126,12 +126,12 @@
       "beds": 2,
       "bedrooms": 2,
       "bathrooms": 0
-    }    
+    }
   },
   "Col2Row2":{
     "guestsDropdown":{
       "title": "dropdown",
-      "alwaysOpen": true, 
+      "alwaysOpen": true,
       "adults": 0, 
       "children": 0,
       "babies": 0
@@ -140,7 +140,7 @@
   "Col3Row2":{
     "guestsDropdown":{
       "title": "dropdown",
-      "alwaysOpen": true, 
+      "alwaysOpen": true,
       "adults": 2, 
       "children": 1,
       "babies": 0
@@ -167,7 +167,7 @@
         {"title": "Шампунь"}
       ]
     }
-  },  
+  },
   "Col2Row3":{
     "checkboxList":{
       "title": "rich checkbox buttons",
@@ -191,18 +191,18 @@
         "Без вечеринок и мероприятий", 
         "Время прибытия — после 13:00, а выезд до 12:00"
       ]
-    }    
+    }
   },
   "Col1Row4":{
-    "comfortItem1":{      
-      "title": "Комфорт", 
-      "description": "Шумопоглощающие стены", 
+    "comfortItem1":{
+      "title": "Комфорт",
+      "description": "Шумопоглощающие стены",
       "underlined": true,
       "icon": "insert_emoticon"
     },
     "comfortItem2":{
-      "title": "Удобство", 
-      "description": "Окно в каждой из спален", 
+      "title": "Удобство",
+      "description": "Окно в каждой из спален",
       "underlined": true,
       "icon": "location_city"
     }
