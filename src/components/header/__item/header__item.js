@@ -1,5 +1,6 @@
 class HeaderItem{
   #item;
+  #eventBubblesUpFromTitle;
 
   constructor(item){
     this.#item = item;
@@ -25,17 +26,22 @@ class HeaderItem{
 
     if (itemIsNotOpen){
       this._open();
-      document.addEventListener('click', this._createDocumentClickHandler());
-      event.stopPropagation();
+      this.#eventBubblesUpFromTitle = true;
+      document.addEventListener('click', this._makeDocumentClickHandler());
     }
   }
 
-  _createDocumentClickHandler(){
+  _makeDocumentClickHandler(){
     const handleDocumentClick = (event) => {
+      if (this.#eventBubblesUpFromTitle === true) {
+        this.#eventBubblesUpFromTitle = false;
+        return;
+      }
       const item = event.target.closest('.js-header-item');
-      const isTitle = event.target.closest('.js-header-item__title-container');
-      if (item !== this.#item
-        || item === this.#item && isTitle){
+      const title = event.target.closest('.js-header-item__title-container');
+      const clickWasOutside = item !== this.#item;
+      const clickWasOnTitle = item === this.#item && title;
+      if (clickWasOutside || clickWasOnTitle) {
         this._close();
         document.removeEventListener('click', handleDocumentClick);
       }
