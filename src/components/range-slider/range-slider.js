@@ -10,7 +10,7 @@ class RangeSlider{
     this.#slider = $(rangeSlider).find('.js-range-slider__slider');
     this.#slider.superSlider(this._getSliderInitObject(this.#slider));
     this.#slider.on('sliderupdate', this._handleSliderUpdate.bind(this));
-    this.#slider.superSlider('pointerPosition', 5000);
+    this._updatePrice();
   }
 
   _getSliderInitObject($slider){
@@ -30,10 +30,14 @@ class RangeSlider{
     }
   }
 
-  _handleSliderUpdate(event){
+  _updatePrice(){
     const pos1 = this.#slider.superSlider('pointerPosition');
     const pos2 = this.#slider.superSlider('secondPointerPosition');
     this.#price.attr('data-value', this._getPriceAttr(pos1, pos2));
+  }
+
+  _handleSliderUpdate(event){
+    this._updatePrice();
   }
 
   _getPriceAttr(val1, val2) {
