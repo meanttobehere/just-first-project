@@ -22,19 +22,21 @@ mixin summary-form(params)
       +date-dropdown({calendar})
     .summary-form__guests-dropdown-container
       +guests-dropdown(guestsDropdown)
-    .summary-form__calculator.js-summary-form__calculator.calculator
-      .calculator__row
-        .calculator__item
-        .calculator__price
-      .calculator__grid
-        .calculator__item
-        .calculator__sign
-        .calculator__price
-        .calculator__item
-        .calculator__sign
-        .calculator__price
-      .calculator__row
-        .calculator__item
-        .calculator__price
+    .summary-form__calculator.js-summary-form__calculator
+      .summary-form__calculator-row
+        .summary-form__calculator-item.js-summary-form__calculator-item 0 суток
+        .summary-form__calculator-price.js-summary-form__calculator-price 0
+      .summary-form__calculator-grid
+        .summary-form__calculator-item.js-summary-form__calculator-item
+          |Сбор за услуги
+        .summary-form__calculator-sign
+        .summary-form__calculator-price.js-summary-form__calculator-price 0
+        .summary-form__calculator-item.js-summary-form__calculator-item
+          |Сбор за дополнительные услуги
+        .summary-form__calculator-sign
+        .summary-form__calculator-price.js-summary-form__calculator-price 0
+      .summary-form__calculator-row
+        .summary-form__calculator-item.js-summary-form__calculator-item Итого
+        .summary-form__calculator-price.js-summary-form__calculator-price 0
     .summary-form__button-container
       +button({title: 'забронировать', size: 'l', type: 'submit', arrow: true})

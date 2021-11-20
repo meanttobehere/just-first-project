@@ -11,9 +11,9 @@ class SummaryForm{
     this.#price = form.querySelector('.js-summary-form__price');
     this.#calculator = form.querySelector('.js-summary-form__calculator');
     this.#calculatorItems
-      = this.#calculator.querySelectorAll('.calculator__item');
+      = this.#calculator.querySelectorAll('.js-summary-form__calculator-item');
     this.#calculatorPrices
-      = this.#calculator.querySelectorAll('.calculator__price');
+      = this.#calculator.querySelectorAll('.js-summary-form__calculator-price');
     this.#priceValue = parseInt(form.getAttribute('data-price'), 10);
 
     this.#calendar

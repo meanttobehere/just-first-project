@@ -82,21 +82,17 @@
     max-width: 320px;
     margin: auto;
   }
-}
 
-.calculator{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: $gray-color-75;
+  &__calculator{
+    color: $gray-color-75;
+  }
 
-  &__row{
+  &__calculator-row{
     display: flex;
     justify-content: space-between;
     height: 24px;
     &:last-child{
-       margin-top: 30px;
+      margin-top: 30px;
       font-weight: bold;
       font-size: 19px;
       line-height: 23px;
@@ -104,10 +100,26 @@
     }
   }
 
-  &__sign{
+  &__calculator-grid{
+    margin-top: 8px;
+    display: grid;
+    row-gap: 16px;
+    grid-template-columns: minmax(min-content, 214px) max-content 1fr;
+  }
+
+  &__calculator-price{
+    text-align: right;
+  }
+
+  &__calculator-item{
+    display: inline;
+    justify-self: start;
+  }
+
+  &__calculator-sign{
     width: 20px;
     height: 20px;
-    margin-right: 30px;
+    margin: 0 5px;
     border-radius: 50%;
     border: 1px solid $gray-color-25;
     color: $gray-color-25;
@@ -121,22 +133,5 @@
     &::after{
       content: 'i';
     }
-  }
-
-  &__grid{
-    margin-top: 8px;
-    display: grid;
-    row-gap: 16px;
-    grid-template-columns: minmax(min-content, 214px) max-content 1fr;
-  }
-
-  &__price{
-    text-align: right;
-  }
-
-  &__item{
-    max-width: max-content;
-    margin-right: 5px;
-    justify-self: start;
   }
 }
