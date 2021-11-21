@@ -2,11 +2,12 @@ class Footer {
   constructor(footer) {
     const groups = footer.querySelectorAll('.js-footer__group');
     groups.forEach((group) => {
-      group.querySelector('.js-footer__group-title').onclick = this._handleTitleClick.bind(group);
+      const title = group.querySelector('.js-footer__group-title');
+      title.addEventListener('click', this.#handleTitleClick.bind(group));
     });
   }
 
-  _handleTitleClick() {
+  #handleTitleClick() {
     const group = this;
     group.classList.toggle('footer__group_open');
     if (group.classList.contains('footer__group_open')) {
@@ -18,5 +19,6 @@ class Footer {
 }
 
 document.querySelectorAll('.js-footer').forEach((footer) => {
-  footer._footer = new Footer(footer);
+  const footerDOM = footer;
+  footerDOM.footer = new Footer(footer);
 });
