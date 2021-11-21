@@ -8,7 +8,7 @@
   height: 44px;
   border-radius: 22px;
   padding: 0;
-  background: $primary-gradient;
+  background-image: $primary-gradient;
   color: $white-color;
   font-family: $primary-font;
   font-style: normal;
@@ -22,14 +22,14 @@
   overflow: hidden;
 
   &:hover{
-    background: $primary-gradient-50;
+    background-image: $primary-gradient-50;
   }
 
   &:active{
     top: 2px;
   }
 
-  &_hide{
+  &_hidden{
     visibility: hidden;
   }
 
@@ -61,17 +61,15 @@
   }
 
   &_disabled{
-    background: $primary-gradient-50;
+    background-image: $primary-gradient-50;
   }
 
   &_disabled.button_theme-white{
-    border-color: $primary-color-50;
-    background: $white-color;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50;
   }
 
   &_disabled.button_theme-no-border{
     color: $gray-color-50;
-    background: none;
   }
 
   &_theme-no-border{
@@ -82,18 +80,20 @@
 
     &:hover{
       color: $gray-color-50;
-      background: none;
+      background-image: none;
     }
   }
 
   &_theme-white{
     color: $primary-color;
-    background: $white-color;
     box-sizing: border-box;
-    border: 2px $primary-color solid;
+    border: double 2px transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient;
+
     &:hover{
-      border-color: $primary-color-50;
-      background: $white-color;
+      background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50; 
     }
   }
 
