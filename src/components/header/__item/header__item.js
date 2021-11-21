@@ -3,47 +3,39 @@ class HeaderItem {
 
   #title;
 
-  #handleDocumentClick;
-
   constructor(item) {
     this.#item = item;
     this.#title = item.querySelector('.js-header-item__title-container');
 
-    this._init();
+    this.#title.addEventListener('click', this.#handleTitleClick.bind(this));
   }
 
-  _init() {
-    this.#title.addEventListener('click', this._handleTitleClick.bind(this));
-    this._initDocumentClickHandler();
-  }
-
-  _open() {
+  #open() {
     this.#item.classList.add('header-item_open');
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
-  _close() {
+  #close() {
     this.#item.classList.remove('header-item_open');
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
-  _isOpen() {
+  get #isOpen() {
     return this.#item.classList.contains('header-item_open') === true;
   }
 
-  _handleTitleClick() {
-    if (this._isOpen()) { this._close(); } else { this._open(); }
+  #handleTitleClick() {
+    if (this.#isOpen) { this.#close(); } else { this.#open(); }
   }
 
-  _initDocumentClickHandler() {
-    this.#handleDocumentClick = (event) => {
-      const item = event.target.closest('.js-header-item');
-      const clickWasOutside = item !== this.#item;
-      if (clickWasOutside) { this._close(); }
-    };
-  }
+  #handleDocumentClick = (event) => {
+    const item = event.target.closest('.js-header-item');
+    const clickWasOutside = item !== this.#item;
+    if (clickWasOutside) { this.#close(); }
+  };
 }
 
-document.querySelectorAll('.js-header-item').forEach((item) => {
-  item._headerItem = new HeaderItem(item);
+document.querySelectorAll('.js-header-item').forEach((headerItem) => {
+  const headerItemDOM = headerItem;
+  headerItemDOM.headerItem = new HeaderItem(headerItem);
 });

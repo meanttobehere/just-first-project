@@ -18,28 +18,28 @@ class Header {
     this.#navbar = header.querySelector('.js-header__navbar');
     this.#buttons = this.#userblock.querySelectorAll('.button');
 
-    this._init();
+    this.#init();
   }
 
-  _init() {
-    this.#menu.addEventListener('click', this._handleMenuClick.bind(this));
+  #init() {
+    this.#menu.addEventListener('click', this.#handleMenuClick.bind(this));
 
     const widthQuery = window.matchMedia('(min-width: 600px)');
-    widthQuery.addEventListener('change', this._handleQueryWidth.bind(this));
+    widthQuery.addEventListener('change', this.#handleQueryWidth.bind(this));
 
-    this._changeHierarchy(widthQuery.matches);
+    this.#changeHierarchy(widthQuery.matches);
   }
 
-  _handleMenuClick() {
+  #handleMenuClick() {
     this.#navbar.classList.toggle('header__navbar_open');
     this.#menu.children[0].classList.toggle('hamburger_active');
   }
 
-  _handleQueryWidth(event) {
-    this._changeHierarchy(event.matches);
+  #handleQueryWidth(event) {
+    this.#changeHierarchy(event.matches);
   }
 
-  _changeHierarchy(isDesktopView) {
+  #changeHierarchy(isDesktopView) {
     if (isDesktopView) {
       this.#container.appendChild(this.#userblock);
       this.#buttons.forEach((button) => {
@@ -55,5 +55,6 @@ class Header {
 }
 
 document.querySelectorAll('.js-header').forEach((header) => {
-  header._header = new Header(header);
+  const headerDOM = header;
+  headerDOM.header = new Header(header);
 });
