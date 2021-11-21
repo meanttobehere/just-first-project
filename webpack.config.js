@@ -56,6 +56,9 @@ module.exports = {
             options: { sourceMap: true },
           },
           {
+            loader: 'postcss-loader',
+          },
+          {
             loader: 'resolve-url-loader',
           },
           {
@@ -74,6 +77,7 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: './src/resources/images/favicon.png',
+      prefix: 'favicons/',
       favicons: {
         icons: {
           appleStartup: false,
