@@ -1,19 +1,28 @@
 export default class Calendar {
   #title;
+
   #back;
+
   #forward;
+
   #clear;
+
   #accept;
+
   #days;
 
   #currentDate;
+
   #month;
+
   #day;
+
   #year;
 
   #observer;
 
   #pageData;
+
   #travelData;
 
   constructor(calendar) {
@@ -30,9 +39,9 @@ export default class Calendar {
   }
 
   getNumDays() {
-    if (this._arrival instanceof Date && this._departure instanceof Date){
+    if (this._arrival instanceof Date && this._departure instanceof Date) {
       return ((this._departure.getTime() - this._arrival.getTime())
-        / (1000 * 3600 * 24) + 1)
+        / (1000 * 3600 * 24) + 1);
     }
     return 0;
   }
@@ -40,54 +49,50 @@ export default class Calendar {
   getArrivalDate() {
     return this._dateToString(this._arrival);
   }
-  
+
   getDepartureDate() {
     return this._dateToString(this._departure);
   }
 
-  setArrivalDate(date){
+  setArrivalDate(date) {
     this._arrival = this._getDateWithoutHours(date);
     this._renderPage();
   }
 
-  setDepartureDate(date){
+  setDepartureDate(date) {
     this._departure = this._getDateWithoutHours(date);
     this._renderPage();
   }
 
-  getIntervalOfArrivalAndDeparture(){
+  getIntervalOfArrivalAndDeparture() {
     return this._intervalToString(this._arrival, this._departure);
   }
 
-  setObserver(observer){
+  setObserver(observer) {
     this.#observer = observer;
   }
 
-  _readDates(calendar){
+  _readDates(calendar) {
     const arrivalDate = new Date(calendar.getAttribute('data-arrival'));
     const departureDate = new Date(calendar.getAttribute('data-departure'));
 
-    if (!isNaN(arrivalDate.getTime()))
-      this.setArrivalDate(arrivalDate);
+    if (!isNaN(arrivalDate.getTime())) this.setArrivalDate(arrivalDate);
 
-    if (!isNaN(departureDate.getTime()))
-      this.setDepartureDate(departureDate);
+    if (!isNaN(departureDate.getTime())) this.setDepartureDate(departureDate);
   }
 
-  _findHtmlElements(calendar){
+  _findHtmlElements(calendar) {
     this.#title = calendar.querySelector('.js-calendar__month-title');
-    [this.#back, this.#forward]
-      = calendar.getElementsByClassName('js-calendar__month-button');
-    [this.#clear, this.#accept]
-      = calendar.querySelector('.js-calendar__buttons-container').children;
+    [this.#back, this.#forward] = calendar.getElementsByClassName('js-calendar__month-button');
+    [this.#clear, this.#accept] = calendar.querySelector('.js-calendar__buttons-container').children;
     this.#days = [...calendar.querySelectorAll('.js-calendar__grid-item')];
   }
 
-  _getDateWithoutHours(date){
-    return (new Date(date.getFullYear(), date.getMonth(), date.getDate()))
+  _getDateWithoutHours(date) {
+    return (new Date(date.getFullYear(), date.getMonth(), date.getDate()));
   }
 
-  _setCurrentDate(){
+  _setCurrentDate() {
     const currentDate = new Date();
     this.#month = currentDate.getMonth();
     this.#year = currentDate.getFullYear();
@@ -95,7 +100,7 @@ export default class Calendar {
     this.#currentDate = new Date(this.#year, this.#month, this.#day);
   }
 
-  _bindEventHandlersOnHtmlElements(){
+  _bindEventHandlersOnHtmlElements() {
     this.#back.onclick = this._handleBackClick.bind(this);
     this.#forward.onclick = this._handleForwardClick.bind(this);
     this.#clear.onclick = this._handleClearClick.bind(this);
@@ -130,7 +135,7 @@ export default class Calendar {
 
     if (this._arrival === false
       || this._arrival > clikedDate
-      || (this._arrival !== false 
+      || (this._arrival !== false
       && this._departure !== false)) {
       this._arrival = clikedDate;
       this._departure = false;
@@ -141,7 +146,7 @@ export default class Calendar {
     this._renderPage();
   }
 
-  _handleAcceptClick(){
+  _handleAcceptClick() {
     this.#observer.acceptClick?.();
   }
 
@@ -154,7 +159,7 @@ export default class Calendar {
 
     this._renderPage();
 
-    this.#observer.clearClick?.(); 
+    this.#observer.clearClick?.();
   }
 
   _handleBackClick() {
@@ -194,9 +199,9 @@ export default class Calendar {
         day.classList.add('calendar__grid-item_hidden');
         continue;
       } day.classList.remove('calendar__grid-item_hidden');
-      
+
       if (page[idx].isArrivalDeraptureDay) {
-        day.classList.add('calendar__grid-item_arrival-departure-date'); 
+        day.classList.add('calendar__grid-item_arrival-departure-date');
       } else {
         day.classList.remove('calendar__grid-item_arrival-departure-date');
       }
@@ -234,8 +239,7 @@ export default class Calendar {
 
       day.textContent = page[idx].day;
     }
-    this.#title.textContent
-      = `${this._getMonthString(this.#month)} ${this.#year}`;
+    this.#title.textContent = `${this._getMonthString(this.#month)} ${this.#year}`;
   }
 
   _updatePageData() {
@@ -288,9 +292,7 @@ export default class Calendar {
       weekDayLastDay += 1;
     }
 
-    const newPage = dates.map(date => {
-      return this._createDayObject(date);
-    })
+    const newPage = dates.map((date) => this._createDayObject(date));
 
     this.#pageData = newPage;
   }
@@ -320,8 +322,8 @@ export default class Calendar {
 
     if (date.getMonth() === this.#month) { dayObj.isCurrentMonth = true; }
 
-    if (this._departure !== false 
-      && +date === +this._arrival 
+    if (this._departure !== false
+      && +date === +this._arrival
       && +this._departure !== +this._arrival) {
       dayObj.isArrivalDay = true;
     }
@@ -344,15 +346,15 @@ export default class Calendar {
     }
     return days;
   }
-  
+
   _getMonthString(month) {
     const months = [
       'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
     ];
     return months[month];
   }
-  
+
   _dateToString(date) {
     if (date instanceof Date) {
       const day = date.getDate().toString().padStart(2, '0');
@@ -362,17 +364,14 @@ export default class Calendar {
     }
     return 'ДД.ММ.ГГГГ';
   }
-  
+
   _intervalToString(date1, date2) {
-    if (date1 instanceof Date && date2 instanceof Date && date1 !== date2){
-      const formattedDate1
-        = date1.toLocaleString('ru', {month: 'long', day: 'numeric'});
-      const formattedDate2
-        = date2.toLocaleString('ru', {month: 'long', day: 'numeric'});
+    if (date1 instanceof Date && date2 instanceof Date && date1 !== date2) {
+      const formattedDate1 = date1.toLocaleString('ru', { month: 'long', day: 'numeric' });
+      const formattedDate2 = date2.toLocaleString('ru', { month: 'long', day: 'numeric' });
       return `${formattedDate1} - ${formattedDate2}`;
-    } else if (date1 instanceof Date){
-      const formattedDate1
-        = date1.toLocaleString('ru', {month: 'long', day: 'numeric'});
+    } if (date1 instanceof Date) {
+      const formattedDate1 = date1.toLocaleString('ru', { month: 'long', day: 'numeric' });
       return `${formattedDate1}`;
     }
     return 'Время проживания';

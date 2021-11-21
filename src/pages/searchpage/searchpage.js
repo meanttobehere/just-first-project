@@ -20,13 +20,16 @@ import '../../resources/images/room-photo11.jpg';
 import '../../resources/images/room-photo12.jpg';
 import './searchpage.scss';
 
-class Searchpage{
+class Searchpage {
   #filter;
+
   #filterContainer;
+
   #footer;
+
   #dataContainer;
 
-  constructor(searchpage){
+  constructor(searchpage) {
     this.#filter = searchpage.querySelector('.js-searchpage__filter');
     this.#filterContainer = searchpage
       .querySelector('.js-searchpage__filter-container');
@@ -37,7 +40,7 @@ class Searchpage{
     this.#filter.addEventListener('click', this._handleFilterClick.bind(this));
   }
 
-  _handleFilterClick(){
+  _handleFilterClick() {
     this.#filterContainer.classList.toggle('searchpage__filter-container_open');
     const filterContainerIsOpen = this.#filterContainer
       .classList.contains('searchpage__filter-container_open');

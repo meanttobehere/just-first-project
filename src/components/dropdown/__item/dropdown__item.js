@@ -1,33 +1,34 @@
-class DropdownItem{
+class DropdownItem {
   #minusButton;
+
   #plusButton;
+
   #counter;
 
-  constructor(item){
-    [this.#minusButton, this.#plusButton]
-      = item.querySelectorAll('.js-dropdown-item__button');
+  constructor(item) {
+    [this.#minusButton, this.#plusButton] = item.querySelectorAll('.js-dropdown-item__button');
     this.#counter = item.querySelector('.js-dropdown-item__counter');
 
     this.#minusButton.onclick = this._handleMinusButtonClick.bind(this);
     this.#plusButton.onclick = this._handlePlusButtonClick.bind(this);
   }
 
-  getCounterValue(){
+  getCounterValue() {
     return Number.parseInt(this.#counter.textContent, 10);
   }
 
-  reset(){
+  reset() {
     this.#counter.textContent = '0';
     this._updateMinusButtonStyle();
   }
 
-  _handleMinusButtonClick(){
+  _handleMinusButtonClick() {
     if (this.getCounterValue() === 0) { return; }
     this.#counter.textContent = this.getCounterValue() - 1;
     this._updateMinusButtonStyle();
   }
 
-  _handlePlusButtonClick(){
+  _handlePlusButtonClick() {
     this.#counter.textContent = this.getCounterValue() + 1;
     this._updateMinusButtonStyle();
   }
@@ -41,6 +42,6 @@ class DropdownItem{
   }
 }
 
-document.querySelectorAll('.js-dropdown-item').forEach(item => {
+document.querySelectorAll('.js-dropdown-item').forEach((item) => {
   item._dropdownItem = new DropdownItem(item);
 });

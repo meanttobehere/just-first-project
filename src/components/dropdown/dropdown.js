@@ -2,20 +2,23 @@ import './__item/dropdown__item';
 
 class Dropdown {
   #dropdown;
+
   #clearButton;
+
   #acceptButton;
+
   #menu;
+
   #items;
+
   #field;
-  #handleDocumentClick;
 
   constructor(dropdown) {
     this.#dropdown = dropdown;
     this.#menu = dropdown.querySelector('.js-dropdown__menu');
     this.#field = dropdown.querySelector('.js-dropdown__field');
     [...this.#items] = dropdown.querySelectorAll('.js-dropdown-item');
-    [this.#clearButton, this.#acceptButton]
-      = dropdown.querySelectorAll('.js-dropdown__button');
+    [this.#clearButton, this.#acceptButton] = dropdown.querySelectorAll('.js-dropdown__button');
 
     this._init();
   }
@@ -25,7 +28,7 @@ class Dropdown {
   }
 
   getItems() {
-    return this.#items.map(item => item._dropdownItem);
+    return this.#items.map((item) => item._dropdownItem);
   }
 
   _init() {
@@ -39,20 +42,18 @@ class Dropdown {
         .addEventListener('click', this._handleAcceptButtonClick.bind(this));
       this._updateClearButtonStyle();
     }
-    this._initDocumentClickHandler();
   }
 
   _updateClearButtonStyle() {
     const sum = this.#items
-      .map(item => item._dropdownItem.getCounterValue())
+      .map((item) => item._dropdownItem.getCounterValue())
       .reduce((val1, val2) => val1 + val2);
- 
-    if (sum === 0) { this.#clearButton.classList.add('button_hide'); } 
-    else { this.#clearButton.classList.remove('button_hide'); }
+
+    if (sum === 0) { this.#clearButton.classList.add('button_hide'); } else { this.#clearButton.classList.remove('button_hide'); }
   }
 
   _handleClearButtonClick() {
-    this.#items.forEach(item => { item._dropdownItem.reset(); });
+    this.#items.forEach((item) => { item._dropdownItem.reset(); });
     this._close();
   }
 
@@ -65,7 +66,7 @@ class Dropdown {
   }
 
   _handleFieldClick() {
-    if (this._isOpen()){ this._close(); } else { this._open(); }
+    if (this._isOpen()) { this._close(); } else { this._open(); }
   }
 
   _isOpen() {
@@ -82,15 +83,13 @@ class Dropdown {
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
-  _initDocumentClickHandler() {
-    this.#handleDocumentClick = (event) => {
-      const dropdown = event.target.closest('.js-dropdown');
-      const clickWasOutside = dropdown !== this.#dropdown;
-      if (clickWasOutside) { this._close(); }
-    }
-  }
+  #handleDocumentClick = (event) => {
+    const dropdown = event.target.closest('.js-dropdown');
+    const clickWasOutside = dropdown !== this.#dropdown;
+    if (clickWasOutside) { this._close(); }
+  };
 }
 
-document.querySelectorAll('.js-dropdown').forEach(dropdown => {
+document.querySelectorAll('.js-dropdown').forEach((dropdown) => {
   dropdown._dropdown = new Dropdown(dropdown);
 });
