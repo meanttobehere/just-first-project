@@ -15,25 +15,31 @@ class SummaryForm {
     this.#calendar = form.querySelector('.js-calendar');
     this.#price = form.querySelector('.js-summary-form__price');
     this.#calculator = form.querySelector('.js-summary-form__calculator');
-    this.#calculatorItems = this.#calculator.querySelectorAll('.js-summary-form__calculator-item');
-    this.#calculatorPrices = this.#calculator.querySelectorAll('.js-summary-form__calculator-price');
+    this.#calculatorItems = this.#calculator
+      .querySelectorAll('.js-summary-form__calculator-item');
+    this.#calculatorPrices = this.#calculator
+      .querySelectorAll('.js-summary-form__calculator-price');
     this.#priceValue = parseInt(form.getAttribute('data-price'), 10);
 
+    this.#init();
+  }
+
+  #init() {
     this.#calendar
-      .addEventListener('click', this._handleCalendarClick.bind(this));
-    this._updateForm();
+      .addEventListener('click', this.#handleCalendarClick.bind(this));
+    this.#updateForm();
   }
 
-  _handleCalendarClick() {
-    this._updateForm();
+  #handleCalendarClick() {
+    this.#updateForm();
   }
 
-  _updateForm() {
-    const days = this.#calendar._calendar.getNumDays();
+  #updateForm() {
+    const days = this.#calendar.calendar.getNumDays();
     const price = this.#priceValue;
 
-    const itemsValue = days > 0 ? [
-      `${this._getFormattedPrice(price)} x ${days} суток`,
+    const itemsValues = days > 0 ? [
+      `${SummaryForm.#getFormattedPrice(price)} x ${days} суток`,
       'Сбор за услуги: скидка 2 179₽',
       'Сбор за дополнительные услуги',
       'Итого',
@@ -43,33 +49,39 @@ class SummaryForm {
       'Сбор за дополнительные услуги',
       'Итого',
     ];
-    const pricesValue = days > 0 ? [
-      this._getFormattedPrice(price * days),
-      this._getFormattedPrice(0),
-      this._getFormattedPrice(300),
-      this._getFormattedPrice(price * days - 2179 + 300),
-    ] : [
-      this._getFormattedPrice(0),
-      this._getFormattedPrice(0),
-      this._getFormattedPrice(0),
-      this._getFormattedPrice(0),
-    ];
+    const pricesValues = days > 0
+      ? [price * days, 0, 300, price * days - 2179 + 300]
+      : [0, 0, 0, 0];
 
-    this.#calculatorItems.forEach((item, idx) => {
-      item.textContent = itemsValue[idx];
-    });
-    this.#calculatorPrices.forEach((price, idx) => {
-      price.textContent = pricesValue[idx];
-    });
-    this.#price.textContent = this._getFormattedPrice(this.#priceValue);
+    this.#updateCalculatorItems(itemsValues);
+    this.#updateCalculatorPrices(pricesValues);
+    this.#updatePrice(price);
   }
 
-  _getFormattedPrice(price) {
+  #updateCalculatorItems(values) {
+    values.forEach((value, idx) => {
+      this.#calculatorItems[idx].textContent = value;
+    });
+  }
+
+  #updateCalculatorPrices(values) {
+    values.forEach((value, idx) => {
+      this.#calculatorPrices[idx].textContent = SummaryForm
+        .#getFormattedPrice(value);
+    });
+  }
+
+  #updatePrice(value) {
+    this.#price.textContent = SummaryForm.#getFormattedPrice(value);
+  }
+
+  static #getFormattedPrice(price) {
     const str = price.toString();
     return `${str.substr(0, str.length - 3)} ${str.substr(-3)}₽`;
   }
 }
 
-document.querySelectorAll('.js-summary-form').forEach((form) => {
-  form._summaryForm = new SummaryForm(form);
+document.querySelectorAll('.js-summary-form').forEach((summaryForm) => {
+  const summaryFormDOM = summaryForm;
+  summaryFormDOM.summaryForm = new SummaryForm(summaryForm);
 });
