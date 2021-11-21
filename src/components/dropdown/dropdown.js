@@ -53,9 +53,9 @@ class Dropdown {
       .reduce((val1, val2) => val1 + val2);
 
     if (sum === 0) {
-      this.#clearButton.classList.add('button_hidden');
+      this.#clearButton.classList.add('dropdown__button_hidden');
     } else {
-      this.#clearButton.classList.remove('button_hidden');
+      this.#clearButton.classList.remove('dropdown__button_hidden');
     }
   }
 
