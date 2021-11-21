@@ -1,6 +1,12 @@
 class RoomCard {
   #card;
 
+  #container;
+
+  #back;
+
+  #forward;
+
   #images;
 
   #dots;
@@ -9,48 +15,56 @@ class RoomCard {
 
   constructor(card) {
     this.#card = card;
-    const roomCardContainer = card.querySelector('.js-room-card__container');
-    const [back, forward] = card.querySelectorAll('.js-room-card__button');
+    this.#container = card.querySelector('.js-room-card__container');
+    [
+      this.#back,
+      this.#forward,
+    ] = card.querySelectorAll('.js-room-card__button');
     this.#images = card.querySelectorAll('.js-room-card__image');
     this.#dots = card.querySelectorAll('.js-room-card__dot');
 
-    back.addEventListener('click', this._handleBackClick.bind(this));
-    forward.addEventListener('click', this._handleForwardClick.bind(this));
-    this.#dots.forEach((dot) => {
-      dot.addEventListener('click', this._handleDotClick.bind(this));
-    });
-    roomCardContainer
-      .addEventListener('click', this._handleRoomCardContainerClick.bind(this));
-
-    this._updateCard();
+    this.#init();
   }
 
-  _handleBackClick() {
+  #init() {
+    this.#back.addEventListener('click', this.#handleBackClick.bind(this));
+    this.#forward.addEventListener('click', this.#handleForwardClick.bind(this));
+    this.#container
+      .addEventListener('click', this.#handleContainerClick.bind(this));
+    this.#dots.forEach((dot) => {
+      dot.addEventListener('click', this.#handleDotClick.bind(this));
+    });
+
+    this.#update();
+  }
+
+  #handleBackClick() {
     this.#currentImageNum -= 1;
     if (this.#currentImageNum < 0) {
       this.#currentImageNum = this.#images.length - 1;
     }
-    this._updateCard();
+    this.#update();
   }
 
-  _handleForwardClick() {
+  #handleForwardClick() {
     this.#currentImageNum += 1;
     if (this.#currentImageNum >= this.#images.length) {
       this.#currentImageNum = 0;
     }
-    this._updateCard();
+    this.#update();
   }
 
-  _handleDotClick(event) {
-    this.#currentImageNum = [...this.#dots].findIndex((dot) => dot === event.target);
-    this._updateCard();
+  #handleDotClick(event) {
+    this.#currentImageNum = [...this.#dots]
+      .findIndex((dot) => dot === event.target);
+    this.#update();
   }
 
-  _handleRoomCardContainerClick() {
+  #handleContainerClick() {
     this.#card.submit();
   }
 
-  _updateCard() {
+  #update() {
     this.#images.forEach((image, idx) => {
       if (this.#currentImageNum === idx) {
         image.classList.add('room-card__image_visible');
@@ -65,5 +79,6 @@ class RoomCard {
 }
 
 document.querySelectorAll('.js-room-card').forEach((roomCard) => {
-  roomCard._roomCard = new RoomCard(roomCard);
+  const roomCardDOM = roomCard;
+  roomCardDOM.roomCard = new RoomCard(roomCard);
 });
