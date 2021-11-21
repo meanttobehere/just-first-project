@@ -1,4 +1,4 @@
-export default class Calendar {
+class Calendar {
   #title;
 
   #back;
@@ -30,69 +30,75 @@ export default class Calendar {
     this.#pageData = {};
     this.#travelData = { arrival: false, departure: false };
 
-    this._findHtmlElements(calendar);
-    this._readDates(calendar);
-    this._bindEventHandlersOnHtmlElements();
-    this._setCurrentDate();
+    this.#findHtmlElements(calendar);
+    this.#readDates(calendar);
+    this.#bindEventHandlers();
+    this.#setCurrentDate();
 
-    this._renderPage();
+    this.#renderPage();
   }
 
   getNumDays() {
-    if (this._arrival instanceof Date && this._departure instanceof Date) {
-      return ((this._departure.getTime() - this._arrival.getTime())
+    if (this.#arrival instanceof Date && this.#departure instanceof Date) {
+      return ((this.#departure.getTime() - this.#arrival.getTime())
         / (1000 * 3600 * 24) + 1);
     }
     return 0;
   }
 
   getArrivalDate() {
-    return this._dateToString(this._arrival);
-  }
-
-  getDepartureDate() {
-    return this._dateToString(this._departure);
+    return Calendar.#dateToString(this.#arrival);
   }
 
   setArrivalDate(date) {
-    this._arrival = this._getDateWithoutHours(date);
-    this._renderPage();
+    this.#arrival = Calendar.#getDateWithoutHours(date);
+    this.#renderPage();
+  }
+
+  getDepartureDate() {
+    return Calendar.#dateToString(this.#departure);
   }
 
   setDepartureDate(date) {
-    this._departure = this._getDateWithoutHours(date);
-    this._renderPage();
+    this.#departure = Calendar.#getDateWithoutHours(date);
+    this.#renderPage();
   }
 
   getIntervalOfArrivalAndDeparture() {
-    return this._intervalToString(this._arrival, this._departure);
+    return Calendar.#intervalToString(this.#arrival, this.#departure);
   }
 
   setObserver(observer) {
     this.#observer = observer;
   }
 
-  _readDates(calendar) {
+  #readDates(calendar) {
     const arrivalDate = new Date(calendar.getAttribute('data-arrival'));
     const departureDate = new Date(calendar.getAttribute('data-departure'));
 
-    if (!isNaN(arrivalDate.getTime())) this.setArrivalDate(arrivalDate);
+    if (!Number.isNaN(arrivalDate.getTime())) {
+      this.setArrivalDate(arrivalDate);
+    }
 
-    if (!isNaN(departureDate.getTime())) this.setDepartureDate(departureDate);
+    if (!Number.isNaN(departureDate.getTime())) {
+      this.setDepartureDate(departureDate);
+    }
   }
 
-  _findHtmlElements(calendar) {
+  #findHtmlElements(calendar) {
     this.#title = calendar.querySelector('.js-calendar__month-title');
-    [this.#back, this.#forward] = calendar.getElementsByClassName('js-calendar__month-button');
-    [this.#clear, this.#accept] = calendar.querySelector('.js-calendar__buttons-container').children;
+    [
+      this.#back,
+      this.#forward,
+    ] = calendar.querySelectorAll('.js-calendar__month-button');
+    [
+      this.#clear,
+      this.#accept,
+    ] = calendar.querySelectorAll('.js-calendar__control-button');
     this.#days = [...calendar.querySelectorAll('.js-calendar__grid-item')];
   }
 
-  _getDateWithoutHours(date) {
-    return (new Date(date.getFullYear(), date.getMonth(), date.getDate()));
-  }
-
-  _setCurrentDate() {
+  #setCurrentDate() {
     const currentDate = new Date();
     this.#month = currentDate.getMonth();
     this.#year = currentDate.getFullYear();
@@ -100,69 +106,69 @@ export default class Calendar {
     this.#currentDate = new Date(this.#year, this.#month, this.#day);
   }
 
-  _bindEventHandlersOnHtmlElements() {
-    this.#back.onclick = this._handleBackClick.bind(this);
-    this.#forward.onclick = this._handleForwardClick.bind(this);
-    this.#clear.onclick = this._handleClearClick.bind(this);
-    this.#accept.onclick = this._handleAcceptClick.bind(this);
+  #bindEventHandlers() {
+    this.#back.addEventListener('click', this.#handleBackClick.bind(this));
+    this.#forward.addEventListener('click', this.#handleForwardClick.bind(this));
+    this.#clear.addEventListener('click', this.#handleClearClick.bind(this));
+    this.#accept.addEventListener('click', this.#handleAcceptClick.bind(this));
     this.#days.forEach((day, idx) => {
-      day.onclick = this._handleDayClick.bind(this, idx);
+      day.addEventListener('click', this.#handleDayClick.bind(this, idx));
     });
   }
 
-  get _arrival() {
+  get #arrival() {
     return this.#travelData.arrival;
   }
 
-  get _departure() {
-    return this.#travelData.departure;
-  }
-
-  set _arrival(arrival) {
+  set #arrival(arrival) {
     this.#travelData.arrival = arrival;
     this.#observer.travelChange?.();
   }
 
-  set _departure(departure) {
+  get #departure() {
+    return this.#travelData.departure;
+  }
+
+  set #departure(departure) {
     this.#travelData.departure = departure;
     this.#observer.travelChange?.();
   }
 
-  _handleDayClick(idx) {
+  #handleDayClick(idx) {
     const clikedDate = this.#pageData[idx].d;
 
     if (clikedDate < +this.#currentDate) { return; }
 
-    if (this._arrival === false
-      || this._arrival > clikedDate
-      || (this._arrival !== false
-      && this._departure !== false)) {
-      this._arrival = clikedDate;
-      this._departure = false;
+    if (this.#arrival === false
+      || this.#arrival > clikedDate
+      || (this.#arrival !== false
+      && this.#departure !== false)) {
+      this.#arrival = clikedDate;
+      this.#departure = false;
     } else {
-      this._departure = clikedDate;
+      this.#departure = clikedDate;
     }
 
-    this._renderPage();
+    this.#renderPage();
   }
 
-  _handleAcceptClick() {
+  #handleAcceptClick() {
     this.#observer.acceptClick?.();
   }
 
-  _handleClearClick() {
-    this._arrival = {};
-    this._departure = {};
+  #handleClearClick() {
+    this.#arrival = {};
+    this.#departure = {};
 
     this.#month = this.#currentDate.getMonth();
     this.#year = this.#currentDate.getFullYear();
 
-    this._renderPage();
+    this.#renderPage();
 
     this.#observer.clearClick?.();
   }
 
-  _handleBackClick() {
+  #handleBackClick() {
     const date = new Date();
     const mmm = date.getMonth();
     const yyy = date.getFullYear();
@@ -175,74 +181,77 @@ export default class Calendar {
       this.#year -= 1;
     }
 
-    this._renderPage();
+    this.#renderPage();
   }
 
-  _handleForwardClick() {
+  #handleForwardClick() {
     this.#month += 1;
     if (this.#month > 11) {
       this.#month = 0;
       this.#year += 1;
     }
 
-    this._renderPage();
+    this.#renderPage();
   }
 
-  _renderPage() {
-    this._updatePageData();
-    const page = this.#pageData;
+  #renderPage() {
+    this.#updatePageData();
 
-    for (let idx = 0; idx < this.#days.length; idx += 1) {
-      const day = this.#days[idx];
+    this.#days.forEach((day, idx) => {
+      if (idx < this.#pageData.length) {
+        day.classList.remove('calendar__grid-item_hidden');
+        this.#renderDay(idx);
+      } else { day.classList.add('calendar__grid-item_hidden'); }
+    });
 
-      if (idx >= page.length) {
-        day.classList.add('calendar__grid-item_hidden');
-        continue;
-      } day.classList.remove('calendar__grid-item_hidden');
+    this.#title.textContent = `${Calendar.#getMonthString(this.#month)} ${this.#year}`;
+  }
 
-      if (page[idx].isArrivalDeraptureDay) {
-        day.classList.add('calendar__grid-item_arrival-departure-date');
-      } else {
-        day.classList.remove('calendar__grid-item_arrival-departure-date');
-      }
+  #renderDay(idx) {
+    const day = this.#days[idx];
+    const dayObj = this.#pageData[idx];
 
-      if (page[idx].isCurrentMonth === false) {
-        day.classList.add('calendar__grid-item_not-current-month-date');
-      } else {
-        day.classList.remove('calendar__grid-item_not-current-month-date');
-      }
+    day.textContent = dayObj.day;
 
-      if (page[idx].isCurrentDay) {
-        day.classList.add('calendar__grid-item_current-date');
-      } else {
-        day.classList.remove('calendar__grid-item_current-date');
-      }
-
-      if (page[idx].isBetweenArrivalDeparture) {
-        day.classList.add('calendar__grid-item_between-arival-departure-date');
-      } else {
-        day.classList
-          .remove('calendar__grid-item_between-arival-departure-date');
-      }
-
-      if (page[idx].isArrivalDay) {
-        day.classList.add('calendar__grid-item_arrival-day-set');
-      } else {
-        day.classList.remove('calendar__grid-item_arrival-day-set');
-      }
-
-      if (page[idx].isDepartureDay) {
-        day.classList.add('calendar__grid-item_departure-day-set');
-      } else {
-        day.classList.remove('calendar__grid-item_departure-day-set');
-      }
-
-      day.textContent = page[idx].day;
+    if (dayObj.isArrivalDeraptureDay) {
+      day.classList.add('calendar__grid-item_arrival-departure-date');
+    } else {
+      day.classList.remove('calendar__grid-item_arrival-departure-date');
     }
-    this.#title.textContent = `${this._getMonthString(this.#month)} ${this.#year}`;
+
+    if (dayObj.isCurrentMonth === false) {
+      day.classList.add('calendar__grid-item_not-current-month-date');
+    } else {
+      day.classList.remove('calendar__grid-item_not-current-month-date');
+    }
+
+    if (dayObj.isCurrentDay) {
+      day.classList.add('calendar__grid-item_current-date');
+    } else {
+      day.classList.remove('calendar__grid-item_current-date');
+    }
+
+    if (dayObj.isBetweenArrivalDeparture) {
+      day.classList.add('calendar__grid-item_between-arival-departure-date');
+    } else {
+      day.classList
+        .remove('calendar__grid-item_between-arival-departure-date');
+    }
+
+    if (dayObj.isArrivalDay) {
+      day.classList.add('calendar__grid-item_arrival-day-set');
+    } else {
+      day.classList.remove('calendar__grid-item_arrival-day-set');
+    }
+
+    if (dayObj.isDepartureDay) {
+      day.classList.add('calendar__grid-item_departure-day-set');
+    } else {
+      day.classList.remove('calendar__grid-item_departure-day-set');
+    }
   }
 
-  _updatePageData() {
+  #updatePageData() {
     let prevMonth = this.#month;
     let prevYear = this.#year;
     prevMonth -= 1;
@@ -259,8 +268,8 @@ export default class Calendar {
       nextYear += 1;
     }
 
-    let numDaysCurrentMonth = this._getDaysInMonth(this.#month, this.#year);
-    const numDaysPrevMonth = this._getDaysInMonth(prevMonth, prevYear);
+    let numDaysCurrentMonth = Calendar.#getDaysInMonth(this.#month, this.#year);
+    const numDaysPrevMonth = Calendar.#getDaysInMonth(prevMonth, prevYear);
 
     const date = new Date(this.#year, this.#month, 1);
     let weekDay = date.getDay();
@@ -292,12 +301,12 @@ export default class Calendar {
       weekDayLastDay += 1;
     }
 
-    const newPage = dates.map((date) => this._createDayObject(date));
+    const newPage = dates.map((item) => this.#createDayObject(item));
 
     this.#pageData = newPage;
   }
 
-  _createDayObject(date) {
+  #createDayObject(date) {
     const dayObj = {
       d: date,
       day: date.getDate(),
@@ -312,32 +321,32 @@ export default class Calendar {
 
     if (+date === +this.#currentDate) { dayObj.isCurrentDay = true; }
 
-    if (+this._arrival === +date || +this._departure === +date) {
+    if (+this.#arrival === +date || +this.#departure === +date) {
       dayObj.isArrivalDeraptureDay = true;
     }
 
-    if (date > this._arrival && date < this._departure) {
+    if (date > this.#arrival && date < this.#departure) {
       dayObj.isBetweenArrivalDeparture = true;
     }
 
     if (date.getMonth() === this.#month) { dayObj.isCurrentMonth = true; }
 
-    if (this._departure !== false
-      && +date === +this._arrival
-      && +this._departure !== +this._arrival) {
+    if (this.#departure !== false
+      && +date === +this.#arrival
+      && +this.#departure !== +this.#arrival) {
       dayObj.isArrivalDay = true;
     }
 
-    if (this._departure !== false
-      && +date === +this._departure
-      && +this._departure !== +this._arrival) {
+    if (this.#departure !== false
+      && +date === +this.#departure
+      && +this.#departure !== +this.#arrival) {
       dayObj.isDepartureDay = true;
     }
 
     return dayObj;
   }
 
-  _getDaysInMonth(month, year) {
+  static #getDaysInMonth(month, year) {
     const date = new Date(year, month, 1);
     let days = 0;
     while (date.getMonth() === month) {
@@ -347,7 +356,7 @@ export default class Calendar {
     return days;
   }
 
-  _getMonthString(month) {
+  static #getMonthString(month) {
     const months = [
       'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
       'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
@@ -355,7 +364,7 @@ export default class Calendar {
     return months[month];
   }
 
-  _dateToString(date) {
+  static #dateToString(date) {
     if (date instanceof Date) {
       const day = date.getDate().toString().padStart(2, '0');
       const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -365,19 +374,27 @@ export default class Calendar {
     return 'ДД.ММ.ГГГГ';
   }
 
-  _intervalToString(date1, date2) {
+  static #intervalToString(date1, date2) {
     if (date1 instanceof Date && date2 instanceof Date && date1 !== date2) {
-      const formattedDate1 = date1.toLocaleString('ru', { month: 'long', day: 'numeric' });
-      const formattedDate2 = date2.toLocaleString('ru', { month: 'long', day: 'numeric' });
+      const formattedDate1 = date1
+        .toLocaleString('ru', { month: 'long', day: 'numeric' });
+      const formattedDate2 = date2
+        .toLocaleString('ru', { month: 'long', day: 'numeric' });
       return `${formattedDate1} - ${formattedDate2}`;
     } if (date1 instanceof Date) {
-      const formattedDate1 = date1.toLocaleString('ru', { month: 'long', day: 'numeric' });
+      const formattedDate1 = date1
+        .toLocaleString('ru', { month: 'long', day: 'numeric' });
       return `${formattedDate1}`;
     }
     return 'Время проживания';
   }
+
+  static #getDateWithoutHours(date) {
+    return (new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+  }
 }
 
-document.querySelectorAll('.js-calendar').forEach((element) => {
-  element._calendar = new Calendar(element);
+document.querySelectorAll('.js-calendar').forEach((calendar) => {
+  const calendarDOM = calendar;
+  calendarDOM.calendar = new Calendar(calendar);
 });

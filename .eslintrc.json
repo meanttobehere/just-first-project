@@ -11,7 +11,7 @@
     "airbnb-base"
   ],
   "rules": {
-    "max-len": ["error", { "code": 80 }],
+    "max-len": ["error", { "code": 81, "ignoreTemplateLiterals": true}],
     "linebreak-style": ["error", "windows"]
   }
 }

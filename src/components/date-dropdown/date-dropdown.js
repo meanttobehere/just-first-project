@@ -17,7 +17,7 @@ class DateDropdown {
     this.#dropdown = dropdown;
     this.#containers = dropdown.querySelectorAll('.js-date-dropdown__container');
     [this.#text, this.#secondText] = dropdown.querySelectorAll('.js-date-dropdown__text');
-    this.#calendar = dropdown.querySelector('.js-calendar')._calendar;
+    this.#calendar = dropdown.querySelector('.js-calendar').calendar;
 
     this._init();
   }

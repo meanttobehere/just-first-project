@@ -30,6 +30,8 @@ mixin calendar(params)
       - let n = 0
       while n < 42
         .calendar__grid-item.js-calendar__grid-item= n++
-    .calendar__buttons-container.js-calendar__buttons-container
-      +button({title: 'очистить', size: 's', theme: 'no-border'})
-      +button({title: 'применить', size: 's', theme: 'no-border'})
+    .calendar__buttons-container
+      .calendar__control-button.js-calendar__control-button
+        +button({title: 'очистить', size: 's', theme: 'no-border'})
+      .calendar__control-button.js-calendar__control-button
+        +button({title: 'применить', size: 's', theme: 'no-border'})
