@@ -1,48 +1,48 @@
 import './__item/dropdown__item';
 
-class Dropdown{
+class Dropdown {
   #dropdown;
   #clearButton;
   #acceptButton;
   #menu;
   #items;
   #field;
+  #handleDocumentClick;
 
-  constructor(dropdown){
+  constructor(dropdown) {
     this.#dropdown = dropdown;
     this.#menu = dropdown.querySelector('.js-dropdown__menu');
     this.#field = dropdown.querySelector('.js-dropdown__field');
     [...this.#items] = dropdown.querySelectorAll('.js-dropdown-item');
+    [this.#clearButton, this.#acceptButton]
+      = dropdown.querySelectorAll('.js-dropdown__button');
 
-    this.#menu.onclick = this._handleMenuClick.bind(this);
-    this.#field.onclick = this._handleFieldClick.bind(this);
-
-    const buttonsContainer = dropdown.querySelector('.js-dropdown__buttons-container');
-    if (buttonsContainer){
-      [this.#clearButton, this.#acceptButton] = buttonsContainer.children;
-      this.#clearButton.onclick = this._handleClearButtonClick.bind(this);
-      this.#acceptButton.onclick = this._handleAcceptButtonClick.bind(this);
-      this._updateClearButtonStyle();
-    }
+    this._init();
   }
 
-  setText(text){
+  setText(text) {
     this.#field.childNodes[0].textContent = text;
   }
 
-  getItems(){
+  getItems() {
     return this.#items.map(item => item._dropdownItem);
   }
 
-  _close(){
-    this.#dropdown.classList.remove('dropdown_active');
+  _init() {
+    this.#menu.addEventListener('click', this._handleMenuClick.bind(this));
+    this.#field.addEventListener('click', this._handleFieldClick.bind(this));
+
+    if (this.#clearButton !== undefined && this.#acceptButton !== undefined) {
+      this.#clearButton
+        .addEventListener('click', this._handleClearButtonClick.bind(this));
+      this.#acceptButton
+        .addEventListener('click', this._handleAcceptButtonClick.bind(this));
+      this._updateClearButtonStyle();
+    }
+    this._initDocumentClickHandler();
   }
 
-  _open(){
-    this.#dropdown.classList.add('dropdown_active');
-  }
-
-  _updateClearButtonStyle(){
+  _updateClearButtonStyle() {
     const sum = this.#items
       .map(item => item._dropdownItem.getCounterValue())
       .reduce((val1, val2) => val1 + val2);
@@ -51,42 +51,43 @@ class Dropdown{
     else { this.#clearButton.classList.remove('button_hide'); }
   }
 
-  _handleClearButtonClick(){
+  _handleClearButtonClick() {
     this.#items.forEach(item => { item._dropdownItem.reset(); });
     this._close();
   }
 
-  _handleAcceptButtonClick(){
+  _handleAcceptButtonClick() {
     this._close();
   }
 
-  _handleMenuClick(){
-    if (this.#clearButton){
-      this._updateClearButtonStyle();
-    }
+  _handleMenuClick() {
+    if (this.#clearButton !== undefined) { this._updateClearButtonStyle(); }
   }
 
-  _handleFieldClick(event){
-    const dropdownIsNotActive = this.#dropdown.classList.contains('dropdown_active') === false;
-
-    if (dropdownIsNotActive){
-      this._open();
-      document.addEventListener('click', this._createDocumentClickHandler());
-      event.stopPropagation();
-    }
+  _handleFieldClick() {
+    if (this._isOpen()){ this._close(); } else { this._open(); }
   }
 
-  _createDocumentClickHandler(){
-    const handleDocumentClick = (event) => {
+  _isOpen() {
+    return this.#dropdown.classList.contains('dropdown_active');
+  }
+
+  _open() {
+    this.#dropdown.classList.add('dropdown_active');
+    document.addEventListener('click', this.#handleDocumentClick);
+  }
+
+  _close() {
+    this.#dropdown.classList.remove('dropdown_active');
+    document.removeEventListener('click', this.#handleDocumentClick);
+  }
+
+  _initDocumentClickHandler() {
+    this.#handleDocumentClick = (event) => {
       const dropdown = event.target.closest('.js-dropdown');
-      const isField = event.target.closest('.js-dropdown__field');
-      if (dropdown !== this.#dropdown
-        || dropdown === this.#dropdown && isField){
-        this._close();
-        document.removeEventListener('click', handleDocumentClick);
-      }
+      const clickWasOutside = dropdown !== this.#dropdown;
+      if (clickWasOutside) { this._close(); }
     }
-    return handleDocumentClick;
   }
 }
 

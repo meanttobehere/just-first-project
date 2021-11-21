@@ -26,6 +26,8 @@ mixin dropdown(params)
           each item in items
             +dropdown__item(item)
         if (buttons)
-          .dropdown__buttons-container.js-dropdown__buttons-container
-            +button({title: 'очистить', theme: 'no-border'})
-            +button({title: 'применить', theme: 'no-border'})
+          .dropdown__buttons-container
+            .dropdown__button.js-dropdown__button
+              +button({title: 'очистить', theme: 'no-border'})
+            .dropdown__button.js-dropdown__button
+              +button({title: 'применить', theme: 'no-border'})
