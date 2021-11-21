@@ -8,10 +8,25 @@ mixin header(params)
     const {
       isLoggedIn = false,
       username = 'No name',
-      headerItems = [],
-      signupButtonLink = '#',
-      loginButtonLink = '#',
-      logotypeLink = '#',
+      headerItems = [
+        {title: 'О нас'},
+        {title: 'Услуги', children: [
+          {title: 'Хорошая услуга'},
+          {title: 'Плохая услуга'},
+          {title: 'Отличная услуга'},
+          {title: 'Простая услуга'}
+        ]},
+        {title: 'Вакансии'},
+        {title: 'Новости'},
+        {title: 'Соглашения', children: [
+          {title: 'Соглашение первое'},
+          {title: 'Соглашение второе'},
+          {title: 'Соглашение третье'}
+        ]}
+      ],
+      loginButtonLink = '/mock-address/change-me',
+      signupButtonLink = '/mock-address/change-me',
+      logotypeLink = '/mock-address/change-me',
     } = params;
 
   .header.js-header

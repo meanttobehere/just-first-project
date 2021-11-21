@@ -2,7 +2,7 @@ mixin header__item(params)
   -
     const {
       title = 'title',
-      href = '#',
+      href = '/mock-address/change-me',
       selected = false,
       children = [],
     } = params;
@@ -20,4 +20,5 @@ mixin header__item(params)
           i.material-icons expand_more
       .header-item__children-container
         each child in children
-          a.header-item__child(href=child.href)= child.title
+          - const link = child.href ? child.href : '/mock-address/change-me';
+          a.header-item__child(href=link)= child.title

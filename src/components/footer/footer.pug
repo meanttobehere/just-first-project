@@ -5,15 +5,27 @@ mixin footer(params)
   -
     params = params ? params : {};
     const {
-      groups = [{
-        title: 'title',
-        items: [{
-          name: 'item1', 
-          href: '#',
-        }],
-      }],
+      groups = [
+        {title: 'Навигация', items: [
+          {name: 'О нас'},
+          {name: 'Новости'},
+          {name: 'Служба поддержки'},
+          {name: 'Услуги'}
+        ]},
+        {title: 'О нас', items: [
+          {name: 'О сервисе'},
+          {name: 'Наша команда'},
+          {name: 'Вакансии'},
+          {name: 'Инвесторы'}
+        ]},
+        {title: 'Служба поддержки', items: [
+          {name: 'Соглашения'},
+          {name: 'Сообщества'},
+          {name: 'Связь с нами'}
+        ]}
+      ],
       submitLink = 'https://echo.htmlacademy.ru',
-      logotypeLink = '#',
+      logotypeLink = '/mock-address/change-me',
       partial = false,
     } = params;
     const class_partial = partial ? 'footer_type-partial' : '';
@@ -30,7 +42,8 @@ mixin footer(params)
         .footer__group.js-footer__group
           .footer__group-title.js-footer__group-title= group.title
           each item in group.items
-            a.footer__group-item(href=item.href)= item.name
+            - const link = item.href ? item.href : '/mock-address/change-me';
+            a.footer__group-item(href=link)= item.name
       .footer__group
         .footer__group-title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
@@ -43,12 +56,25 @@ mixin footer(params)
         })
     .footer__bottom-container
       .footer__bottom-item
-        +logotype()
+        a.footer__logotype(href=logotypeLink)
+          +logotype()
       .footer__bottom-item Copyright © 2018 Toxin отель. Все права защищены.
       .footer__bottom-item
-        a.footer__link(href="https://twitter.com/")
+        a.footer__link(
+          href="https://twitter.com/",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
           i.footer__icon.fab.fa-twitter
-        a.footer__link(href="https://facebook.com/")
+        a.footer__link(
+          href="https://facebook.com/",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
           i.footer__icon.fab.fa-facebook-square
-        a.footer__link(href="https://instagram.com/")
+        a.footer__link(
+          href="https://instagram.com/",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
           i.footer__icon.fab.fa-instagram
