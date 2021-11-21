@@ -4,10 +4,10 @@ class CheckboxList {
   constructor(list) {
     this.#list = list;
     const title = list.querySelector('.js-checkbox-list__title');
-    title.onclick = this._handleTitleClick.bind(this);
+    title.onclick = this.#handleTitleClick.bind(this);
   }
 
-  _handleTitleClick() {
+  #handleTitleClick() {
     this.#list.classList.toggle('checkbox-list_open');
   }
 }
@@ -15,5 +15,6 @@ class CheckboxList {
 document
   .querySelectorAll('.js-checkbox-list.checkbox-list_expandable')
   .forEach((list) => {
-    list._checkboxList = new CheckboxList(list);
+    const listDOM = list;
+    listDOM.checkboxList = new CheckboxList(list);
   });
