@@ -1,52 +1,44 @@
 class HeaderItem{
   #item;
-  #eventBubblesUpFromTitle;
+  #title;
+  #handleDocumentClick;
 
   constructor(item){
     this.#item = item;
-    item
-      .querySelector('.js-header-item__title-container')
-      .addEventListener('click', this._handleTitleClick.bind(this));
+    this.#title = item.querySelector('.js-header-item__title-container');
+
+    this._init();
+  }
+
+  _init(){
+    this.#title.addEventListener('click', this._handleTitleClick.bind(this));
+    this._initDocumentClickHandler();
   }
 
   _open(){
     this.#item.classList.add('header-item_open');
+    document.addEventListener('click', this.#handleDocumentClick);
   }
 
   _close(){
     this.#item.classList.remove('header-item_open');
+    document.removeEventListener('click', this.#handleDocumentClick);
   }
 
   _isOpen(){
     return this.#item.classList.contains('header-item_open') === true;
   }
 
-  _handleTitleClick(event){
-    const itemIsNotOpen = this._isOpen() === false;
-
-    if (itemIsNotOpen){
-      this._open();
-      this.#eventBubblesUpFromTitle = true;
-      document.addEventListener('click', this._makeDocumentClickHandler());
-    }
+  _handleTitleClick(){
+    if (this._isOpen()) { this._close(); } else { this._open(); }
   }
 
-  _makeDocumentClickHandler(){
-    const handleDocumentClick = (event) => {
-      if (this.#eventBubblesUpFromTitle === true) {
-        this.#eventBubblesUpFromTitle = false;
-        return;
-      }
+  _initDocumentClickHandler(){
+    this.#handleDocumentClick = (event) => {
       const item = event.target.closest('.js-header-item');
-      const title = event.target.closest('.js-header-item__title-container');
       const clickWasOutside = item !== this.#item;
-      const clickWasOnTitle = item === this.#item && title;
-      if (clickWasOutside || clickWasOnTitle) {
-        this._close();
-        document.removeEventListener('click', handleDocumentClick);
-      }
+      if (clickWasOutside) { this._close(); }
     }
-    return handleDocumentClick;
   }
 }
 

@@ -14,11 +14,16 @@ class Header{
     this.#navbar = header.querySelector('.js-header__navbar');
     this.#buttons = this.#userblock.querySelectorAll('.button');
 
+    this._init();
+  }
+
+  _init(){
     this.#menu.addEventListener('click', this._handleMenuClick.bind(this));
 
     const widthQuery = window.matchMedia('(min-width: 600px)');
-    this._changeHierarchy(widthQuery.matches);
     widthQuery.addEventListener('change', this._handleQueryWidth.bind(this));
+
+    this._changeHierarchy(widthQuery.matches);
   }
 
   _handleMenuClick(){
