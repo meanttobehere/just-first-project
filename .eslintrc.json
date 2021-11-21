@@ -1,12 +1,13 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "jquery": true
   },
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["**/range-slider/*"],
+  "ignorePatterns": ["**/lib/*"],
   "extends": [
     "airbnb-base"
   ],

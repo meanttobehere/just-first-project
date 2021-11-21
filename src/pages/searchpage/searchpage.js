@@ -37,10 +37,10 @@ class Searchpage {
     this.#dataContainer = searchpage
       .querySelector('.js-searchpage__data-container');
 
-    this.#filter.addEventListener('click', this._handleFilterClick.bind(this));
+    this.#filter.addEventListener('click', this.#handleFilterClick.bind(this));
   }
 
-  _handleFilterClick() {
+  #handleFilterClick() {
     this.#filterContainer.classList.toggle('searchpage__filter-container_open');
     const filterContainerIsOpen = this.#filterContainer
       .classList.contains('searchpage__filter-container_open');
@@ -55,4 +55,5 @@ class Searchpage {
   }
 }
 
-new Searchpage(document.querySelector('.searchpage'));
+/* eslint-disable-next-line */
+const searchpage = new Searchpage(document.querySelector('.searchpage'));

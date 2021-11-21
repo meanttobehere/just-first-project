@@ -31,8 +31,7 @@
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "deploy": "node publish",
-    "eslint": "eslint src/",
-    "eslintfix": "eslint src/ --fix"
+    "eslint": "eslint src/"
   },
   "keywords": [],
   "author": "",
