@@ -11,34 +11,34 @@ class DateDropdown {
 
   #calendar;
 
-  #handleDocumentClick;
-
   constructor(dropdown) {
     this.#dropdown = dropdown;
     this.#containers = dropdown.querySelectorAll('.js-date-dropdown__container');
-    [this.#text, this.#secondText] = dropdown.querySelectorAll('.js-date-dropdown__text');
+    [
+      this.#text,
+      this.#secondText,
+    ] = dropdown.querySelectorAll('.js-date-dropdown__text');
     this.#calendar = dropdown.querySelector('.js-calendar').calendar;
 
-    this._init();
+    this.#init();
   }
 
-  _init() {
+  #init() {
     this.#calendar.setObserver({
-      acceptClick: this._handleCalendarAcceptClick.bind(this),
-      clearClick: this._handleCalendarClearClick.bind(this),
-      travelChange: this._handleCalendarTravelChange.bind(this),
+      acceptClick: this.#handleCalendarAcceptClick.bind(this),
+      clearClick: this.#handleCalendarClearClick.bind(this),
+      travelChange: this.#handleCalendarTravelChange.bind(this),
     });
 
     this.#containers.forEach((container) => {
       container
-        .addEventListener('click', this._handleContainerClick.bind(this));
+        .addEventListener('click', this.#handleContainerClick.bind(this));
     });
 
-    this._initDocumentClickHandler();
-    this._updateText();
+    this.#updateText();
   }
 
-  _updateText() {
+  #updateText() {
     if (this.#secondText !== undefined) {
       this.#text.textContent = this.#calendar.getArrivalDate();
       this.#secondText.textContent = this.#calendar.getDepartureDate();
@@ -47,45 +47,44 @@ class DateDropdown {
     }
   }
 
-  _handleCalendarAcceptClick() {
-    this._close();
+  #handleCalendarAcceptClick() {
+    this.#close();
   }
 
-  _handleCalendarClearClick() {
-    this._close();
+  #handleCalendarClearClick() {
+    this.#close();
   }
 
-  _handleCalendarTravelChange() {
-    this._updateText();
+  #handleCalendarTravelChange() {
+    this.#updateText();
   }
 
-  _handleContainerClick() {
-    if (this._isOpen()) { this._close(); } else { this._open(); }
+  #handleContainerClick() {
+    if (this.#isOpen) { this.#close(); } else { this.#open(); }
   }
 
-  _isOpen() {
+  get #isOpen() {
     return this.#dropdown.classList.contains('date-dropdown_active');
   }
 
-  _open() {
+  #open() {
     this.#dropdown.classList.add('date-dropdown_active');
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
-  _close() {
+  #close() {
     this.#dropdown.classList.remove('date-dropdown_active');
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
-  _initDocumentClickHandler() {
-    this.#handleDocumentClick = (event) => {
-      const dateDropdown = event.target.closest('.js-date-dropdown');
-      const clickWasOutside = dateDropdown !== this.#dropdown;
-      if (clickWasOutside) { this._close(); }
-    };
-  }
+  #handleDocumentClick = (event) => {
+    const dateDropdown = event.target.closest('.js-date-dropdown');
+    const clickWasOutside = dateDropdown !== this.#dropdown;
+    if (clickWasOutside) { this.#close(); }
+  };
 }
 
-document.querySelectorAll('.js-date-dropdown').forEach((dropdown) => {
-  dropdown._dateDropdown = new DateDropdown(dropdown);
+document.querySelectorAll('.js-date-dropdown').forEach((dateDropdown) => {
+  const dateDropdownDOM = dateDropdown;
+  dateDropdownDOM.dateDropdown = new DateDropdown(dateDropdown);
 });
