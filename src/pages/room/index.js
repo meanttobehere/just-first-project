@@ -1,0 +1,9 @@
+import '../../components/header/index';
+import '../../components/footer/index';
+import '../../components/guests-dropdown/index';
+import '../../components/dropdown/index';
+import '../../components/room-dropdown/index';
+import '../../components/room-card/index';
+import '../../components/date-dropdown/index';
+import '../../components/summary-form/index';
+import './room.scss';

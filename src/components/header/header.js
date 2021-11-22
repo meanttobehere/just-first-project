@@ -1,5 +1,3 @@
-import './__item/header__item';
-
 class Header {
   #container;
 
@@ -54,7 +52,4 @@ class Header {
   }
 }
 
-document.querySelectorAll('.js-header').forEach((header) => {
-  const headerDOM = header;
-  headerDOM.header = new Header(header);
-});
+export default Header;

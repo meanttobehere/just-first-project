@@ -18,7 +18,4 @@ class Footer {
   }
 }
 
-document.querySelectorAll('.js-footer').forEach((footer) => {
-  const footerDOM = footer;
-  footerDOM.footer = new Footer(footer);
-});
+export default Footer;

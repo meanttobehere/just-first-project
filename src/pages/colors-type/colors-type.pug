@@ -1,0 +1,32 @@
+include ../../components/components
+
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/colors-type/colors-type.json'));
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="description" content="colorstype page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, colorstype")
+    title Colors & Type
+  body.colors-type
+    .colors-type__logotype-container
+      +logotype(data.logotype)
+    .colors-type__data-container
+      .colors-type__left-column
+        each item in data.colorItems
+          +color-item(item)
+      .colors-type__right-column
+        .colors-type__item H1
+        .colors-type__item This one is the sub-section or widget title
+        .colors-type__item H2
+        .colors-type__item Next one is the item title inside widgets
+        .colors-type__item H3
+        .colors-type__item This is a label or CTA text
+        .colors-type__item Body
+        .colors-type__item 
+          |This is the body text which is used for 
+          |most of the design, like paragraphs, lists, etc.

@@ -1,0 +1,43 @@
+include ../../components/components
+
+-
+  const path = require('path');
+  const fs = require('fs');
+  const data = JSON.parse(fs.readFileSync('./src/pages/search-page/search-page.json'));
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="description" content="search page of Toxin Pages project")
+    meta(name="keywords" content="toxin pages, searchpage")
+    meta(name="viewport" content="width=device-width")
+    title TOXIN
+  body.search-page
+    header.search-page__header
+      +header(data.header)
+      .search-page__filter.js-search-page__filter Фильтр
+    main.search-page__main
+      .search-page__filter-container.js-search-page__filter-container
+        .search-page__date-dropdown-container
+          +date-dropdown(data.dateDropdown)
+        .search-page__guests-dropdown-container
+          +guests-dropdown(data.guestsDropdown)
+        .search-page__range-slider-container
+          +range-slider(data.rangeSlider)
+        .search-page__rules-checkbox-container
+          +checkbox-list(data.rulesCheckbox)
+        .search-page__availability-checkbox-container
+          +checkbox-list(data.availabilityCheckbox)
+        .search-page__room-dropdown-container
+          +room-dropdown(data.roomDropdown)
+        +checkbox-list(data.amenitiesCheckbox)
+      .search-page__data-container.js-search-page__data-container
+        .search-page__title Номера, которые мы для вас подобрали
+        .search-page__rooms-container
+          each roomCard in data.roomCards
+            .search-page__room-card-container
+              +room-card(roomCard)
+        +pagination()
+    footer.search-page__footer.js-search-page__footer
+      +footer(data.footer)

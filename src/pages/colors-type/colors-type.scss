@@ -1,0 +1,116 @@
+@import '../../components/components.scss';
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background-color: #E5E5E5;
+}
+
+body{
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: auto;
+  background: #FFFFFF; 
+}
+
+.colors-type{
+  &__logotype-container{
+    padding: 30px 0 0 30px;
+  }
+
+  &__data-container{
+    margin-top: 67px;
+    margin-left: 150px;
+    display: grid;
+    grid-template-columns: 697px 436px;
+    align-items: start;
+  }
+
+  &__left-column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__right-column{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 30px;
+  }
+
+  &__item{
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: normal;
+    color: $gray-color;
+    font-size: 14px;
+    line-height: 24px;
+
+    &_text-bold{
+      font-weight: bold;
+    }
+
+    &_text-right{
+      text-align: right;
+      color: $gray-color-25;
+    }
+
+    &_size-x{
+      font-size: 24px;
+      line-height: 29.26px;
+    }
+
+    &_size-l{
+      font-size: 19px;
+      line-height: 23.16px;
+    }
+
+    &_size-m{
+      font-size: 12px;
+      line-height: 14.63px;
+      text-transform: uppercase;
+    }
+
+    &:nth-child(1){
+      @extend .colors-type__item_size-x;
+      @extend .colors-type__item_text-right;
+    }
+
+    &:nth-child(2){
+      @extend .colors-type__item_text-bold;
+      @extend .colors-type__item_size-x;
+      margin-bottom: 52px;
+    }
+
+    &:nth-child(3){
+      @extend .colors-type__item_text-right;
+      @extend .colors-type__item_size-l;
+    }
+
+    &:nth-child(4){
+      @extend .colors-type__item_text-bold;
+      @extend .colors-type__item_size-l;
+      margin-bottom: 53px;
+    }
+
+    &:nth-child(5){
+      @extend .colors-type__item_text-right;
+      @extend .colors-type__item_size-m;
+    }
+
+    &:nth-child(6){
+      @extend .colors-type__item_text-bold;
+      @extend .colors-type__item_size-m;
+      margin-bottom: 47px;
+    }
+
+    &:nth-child(7){
+      @extend .colors-type__item_text-right;
+    }
+
+    &:nth-child(8){
+      color: $gray-color-75;
+      max-width: 310px;
+    }
+  }
+}

@@ -7,15 +7,16 @@ const fs = require('fs');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, './src/pages/main/main.js'),
-    signup: path.resolve(__dirname, './src/pages/signup/signup.js'),
-    login: path.resolve(__dirname, './src/pages/login/login.js'),
-    searchpage: path.resolve(__dirname, './src/pages/searchpage/searchpage.js'),
-    room: path.resolve(__dirname, './src/pages/room/room.js'),
-    formelements: path.resolve(__dirname, './src/pages/formelements/formelements.js'),
-    colorstype: path.resolve(__dirname, './src/pages/colorstype/colorstype.js'),
-    cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
-    headersfooters: path.resolve(__dirname, './src/pages/headersfooters/headersfooters.js'),
+    main: path.resolve(__dirname, './src/pages/main/index.js'),
+    signup: path.resolve(__dirname, './src/pages/signup/index.js'),
+    login: path.resolve(__dirname, './src/pages/login/index.js'),
+    searchpage: path.resolve(__dirname, './src/pages/search-page/index.js'),
+    room: path.resolve(__dirname, './src/pages/room/index.js'),
+    formelements: path.resolve(__dirname, './src/pages/form-elements/index.js'),
+    colorstype: path.resolve(__dirname, './src/pages/colors-type/index.js'),
+    cards: path.resolve(__dirname, './src/pages/cards/index.js'),
+    headersfooters: path.resolve(__dirname, './src/pages/headers-footers/index.js'),
+    resources: path.resolve(__dirname, './src/resources/index.js'),
   },
 
   output: {
@@ -114,7 +115,7 @@ function generateHtmlPlugins() {
     const name = path.basename(item).split('.')[0];
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
-      chunks: [name],
+      chunks: [name.replace('-','')],
       template: item,
     });
   });

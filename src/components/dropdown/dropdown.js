@@ -1,5 +1,3 @@
-import './__item/dropdown__item';
-
 class Dropdown {
   #dropdown;
 
@@ -97,7 +95,4 @@ class Dropdown {
   };
 }
 
-document.querySelectorAll('.js-dropdown').forEach((dropdown) => {
-  const dropdownDOM = dropdown;
-  dropdownDOM.dropdown = new Dropdown(dropdown);
-});
+export default Dropdown;

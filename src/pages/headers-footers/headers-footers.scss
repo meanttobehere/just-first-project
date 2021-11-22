@@ -1,0 +1,36 @@
+@import '../../components/components.scss';
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background-color: #E5E5E5;
+}
+
+body{
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: auto;
+  background: #F4F4F6;
+}
+
+.headers-footers{
+  &__logotype-container{
+    padding: 30px 0 62px 30px;
+  }
+
+  &__data-container{
+    display: flex;
+    flex-flow: column;
+    gap: 40px;
+  }
+
+  &__header{
+    position: relative;
+    z-index: 1000;
+  }
+
+  &__footer{
+    min-width: 768px;
+    margin: auto;
+  }
+}
