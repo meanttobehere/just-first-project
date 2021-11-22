@@ -8,15 +8,17 @@ mixin field(params)
       submitLink,
       value,
       name = 'name',
+      masked = false,
     } = params;
     const class_size = size ? `field_size-${size}` : '';
+    const class_mask = masked ? 'field_masked' : '';
 
-  .field(class=class_size)
+  .field.js-field(class=class_size, class=class_mask)
     if (title)
       .field__title= title
     if(submitLink !== undefined)
       form.field__container(action=submitLink)
-        input.field__input(
+        input.field__input.js-field__input(
           placeholder=placeholder,
           type=type,
           value=value,
@@ -26,7 +28,7 @@ mixin field(params)
           i.field__arrow.material-icons arrow_forward
     else
       .field__container
-        input.field__input(
+        input.field__input.js-field__input(
           placeholder=placeholder,
           type=type,
           value=value,

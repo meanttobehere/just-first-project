@@ -22,6 +22,7 @@
     },
     "inpt3":{
       "title": "masked text field",
+      "masked": true,
       "placeholder": "ДД.ММ.ГГГГ"
     },
     "inpt4":{

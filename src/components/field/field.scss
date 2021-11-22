@@ -43,13 +43,8 @@
       color: $gray-color-25;
     }
 
-    &:hover{
+    &:hover, &:focus{
       border-color: $gray-color-50;
-    }
-
-    &:focus{
-      border-color: $gray-color-50;
-      box-shadow: 0px 0px 5px $gray-color-50;
     }
   }
 
