@@ -12,20 +12,20 @@
       "size": "m", 
       "text": "19 авг - 23 авг"
     },
-    "inpt1":{
+    "field1":{
       "title": "text field",
       "placeholder": "Email"
     },
-    "inpt2":{
+    "field2":{
       "title": "text field",
       "value": "This is pretty awesome"
     },
-    "inpt3":{
+    "field3":{
       "title": "masked text field",
       "masked": true,
       "placeholder": "ДД.ММ.ГГГГ"
     },
-    "inpt4":{
+    "field4":{
       "title": "subscription text field",
       "size": "m",
       "placeholder": "Email",
