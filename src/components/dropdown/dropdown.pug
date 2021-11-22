@@ -10,6 +10,7 @@ mixin dropdown(params)
       title,
       buttons = false,
       alwaysOpen = false,
+      name = 'name',
     } = params;
 
     const class_size = size ? `dropdown_size-${size}` : '';
@@ -18,9 +19,13 @@ mixin dropdown(params)
   .dropdown.js-dropdown(class=class_size, class=class_open)
     if (title)
       .dropdown__title= title
-    .dropdown__container
-      .dropdown__field.js-dropdown__field= text
-        i.dropdown__arrow.material-icons expand_more
+    .dropdown__container.js-dropdown__container
+      input.dropdown__field.js-dropdown__field(
+        value=text,
+        name=name,
+        readonly="true"
+      )
+      i.dropdown__arrow.material-icons expand_more
       .dropdown__menu.js-dropdown__menu
         .dropdown__menu-container
           each item in items

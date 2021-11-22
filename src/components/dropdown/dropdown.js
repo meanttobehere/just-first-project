@@ -27,7 +27,7 @@ class Dropdown {
   }
 
   setText(text) {
-    this.#field.childNodes[0].textContent = text;
+    this.#field.setAttribute('value', text);
   }
 
   getItems() {
@@ -73,7 +73,7 @@ class Dropdown {
   }
 
   #handleFieldClick() {
-    if (this.isOpen) { this.#close(); } else { this.#open(); }
+    if (this.#isOpen) { this.#close(); } else { this.#open(); }
   }
 
   get #isOpen() {

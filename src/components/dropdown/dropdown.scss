@@ -24,34 +24,47 @@
     margin-bottom: 5px;
   }
 
+  &__container{
+    position: relative;
+  }
+
   &__field{
     height: 44px;
     width: 100%;
-    border: 1px solid $gray-color-25;
+    padding: 0;
     box-sizing: border-box;
     border-radius: 4px;
-    color: $gray-color-75;
-    cursor: pointer;
+    border: 1px solid $gray-color-25;
     transition: border-radius 200ms;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    color: $gray-color-75;
     text-indent: 15px;
+    outline-style: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+
+    &::selection{
+      color: $gray-color-75;
+    }
+
+    &:focus{
+      border-color: $gray-color-50;
+    }
   }
 
   &__arrow{
-    text-indent: 0;
-    margin-left: auto;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
     width: 44px;
     height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: $gray-color-75;
-  }
-
-  &__container{
-    position: relative;
   }
 
   &__menu{
