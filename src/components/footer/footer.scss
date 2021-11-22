@@ -88,6 +88,7 @@
     @media screen and (min-width: 600px){
       max-height: max-content;
       align-items: flex-start;
+      overflow: visible;
       flex-grow: 1;
 
       &:nth-child(1){
@@ -105,10 +106,6 @@
       &:nth-child(5){
         max-width: 260px;
       }
-    }
-
-    & > .inpt{
-      min-width: 260px;
     }
   }
 
