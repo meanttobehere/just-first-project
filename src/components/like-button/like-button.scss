@@ -8,40 +8,36 @@
   display: flex;
   align-items: center;
   user-select: none;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: normal;
+  padding: 0 5px 0 5px;
 
-  &__icon{
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &::before{
+    content: 'favorite_border';
+    font-family: 'Material Icons';
     font-size: 10px;
     line-height: 10px;
   }
 
-  &__likes{
+  &__counter{
     font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
     font-size: 10px;
     line-height: 12px;
-    display: flex;
-    align-items: center;
+    flex-grow: 1;
+    text-align: center;
   }
 
   &_emphasized{
     border: 1px solid $primary-color;
     color: $primary-color;
 
-    .like-button__icon{
+    &::before{
+      content: 'favorite';
       background: $primary-gradient;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-  }
-
-  &_gap{
-    column-gap: 2px;
   }
 }

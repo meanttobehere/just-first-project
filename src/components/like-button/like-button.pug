@@ -5,9 +5,6 @@ mixin like-button(params)
       emphasized = false,
     } = params;
     const class_emphasized = emphasized ? 'like-button_emphasized' : '';
-    const class_gap = params.likes < 10 ? 'like-button_column-gap' : '';
-    const icon = emphasized ? 'favorite' : 'favorite_border';
 
-  .like-button(class=class_emphasized class=class_gap)
-    i.like-button__icon.material-icons= icon
-    .like-button__likes=numLikes
+  .like-button(class=class_emphasized).js-like-button
+    .like-button__counter.js-like-button__counter=numLikes
