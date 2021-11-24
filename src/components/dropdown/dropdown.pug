@@ -13,7 +13,7 @@ mixin dropdown(params)
       name = 'name',
     } = params;
 
-    const class_size = size ? `dropdown_size-${size}` : '';
+    const class_size = size ? `dropdown_size_${size}` : '';
     const class_open = alwaysOpen ? 'dropdown_always-open' : '';
 
   .dropdown.js-dropdown(class=class_size, class=class_open)

@@ -85,52 +85,24 @@
     justify-content: center;
     position: relative;
     cursor: pointer;
+    &:hover{
+      background: $primary-gradient-25;
+    }
 
     &:nth-child(-n + 7){
       font-weight: bold;
       color: $primary-color;
       cursor: default;
-    }
-
-    &_not-current-month-date{
-      color: $gray-color-25;
-    }
-
-    &_arrival-departure-date{
-      background: $primary-gradient-75;
-      color: $white-color;
-      border-radius: 50%;
-      font-weight: bold;
-      z-index: 0;
-
-      &:after{
-        content: '';
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: none;
-        background: $primary-gradient-25;
-      }
-
-      &:hover:not(.calendar__grid-item_current-date){
-        background: $primary-gradient;
+      &:hover{
+        background: none;
       }
     }
 
-    &_arrival-day-set:after{
-      border-radius: 50% 0 0 50%;
-      display: block;
+    &_hidden{
+      display: none;
     }
 
-    &_departure-day-set:after{
-      border-radius: 0 50% 50% 0;
-      display: block;
-    }
-
-    &_between-arival-departure-date{
+    &_selected{
       background: $primary-gradient-25;
       color: $gray-color-50;
 
@@ -139,7 +111,11 @@
       }
     }
 
-    &_current-date{
+    &_color_light{
+      color: $gray-color-25;
+    }
+
+    &_with-green-circle{
       background: $secondary-gradient-75;
       border-radius: 50%;
       color: $white-color;
@@ -150,16 +126,43 @@
       }
     }
 
-    &_current-date.calendar__grid-item_arrival-departure-date{
-      background: $secondary-gradient;
+    &_with-purple-circle{
+      background: $primary-gradient-75;
+      border-radius: 50%;
+      color: $white-color;
+      font-weight: bold;
+      position: relative;
+      z-index: 0;
+
+      &:hover{
+        background: $primary-gradient;
+      }
     }
 
-    &_hidden{
-      display: none;
-    }
-
-    &:hover:not(&_arrival-departure-date):not(&_between-arival-departure-date):not(&_current-date):not(&:nth-child(-n + 7)){
+    &_selected-left:before{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: $primary-gradient-25;
+      border-radius: 50% 0 0 50%;
+      display: block;
+    }
+
+    &_selected-right:before{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $primary-gradient-25;
+      border-radius: 0 50% 50% 0;
+      display: block;
     }
   }
 }

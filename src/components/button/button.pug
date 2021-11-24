@@ -10,8 +10,8 @@ mixin button(params)
       href,
     } = params;
 
-    const class_size = size ? `button_size-${size}` : '';
-    const class_theme = theme ? `button_theme-${theme}` : '';
+    const class_size = size ? `button_size_${size}` : '';
+    const class_theme = theme ? `button_theme_${theme}` : '';
     const class_disabled = disabled ? 'button_disabled' : '';
 
   if (href)

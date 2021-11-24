@@ -33,28 +33,28 @@
     box-shadow: 0px 0px 15px $primary-color;
   }
 
-  &_size-m{
+  &_size_m{
     width: 196px;
     height: 34px;
   }
 
-  &_size-s{
+  &_size_s{
     width: 99px;
     height: 44px
   }
 
-  &_size-ss{
+  &_size_ss{
     width: 87px;
     height: 34px
   }
 
-  &_size-l{
+  &_size_l{
     width: 100%;
     max-width: 320px;
     height: 44px;
   }
 
-  &_size-xl{
+  &_size_xl{
     width: 100%;
     max-width: 420px;
     height: 44px;
@@ -62,17 +62,17 @@
 
   &_disabled{
     background-image: $primary-gradient-50;
+
+    .button_theme-white{
+      background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50
+    }
+
+    .button_theme-no-border{
+      color: $gray-color-50;
+    }
   }
 
-  &_disabled.button_theme-white{
-    background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50;
-  }
-
-  &_disabled.button_theme-no-border{
-    color: $gray-color-50;
-  }
-
-  &_theme-no-border{
+  &_theme_no-border{
     background: none;
     color: $primary-color;
     width: auto;
@@ -89,7 +89,7 @@
     }
   }
 
-  &_theme-white{
+  &_theme_white{
     color: $primary-color;
     box-sizing: border-box;
     border: double 2px transparent;

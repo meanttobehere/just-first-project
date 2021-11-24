@@ -214,40 +214,39 @@ class Calendar {
     day.textContent = dayObj.day;
 
     if (dayObj.isArrivalDeraptureDay) {
-      day.classList.add('calendar__grid-item_arrival-departure-date');
+      day.classList.add('calendar__grid-item_with-purple-circle');
     } else {
-      day.classList.remove('calendar__grid-item_arrival-departure-date');
+      day.classList.remove('calendar__grid-item_with-purple-circle');
     }
 
     if (dayObj.isCurrentMonth === false) {
-      day.classList.add('calendar__grid-item_not-current-month-date');
+      day.classList.add('calendar__grid-item_color_light');
     } else {
-      day.classList.remove('calendar__grid-item_not-current-month-date');
+      day.classList.remove('calendar__grid-item_color_light');
     }
 
     if (dayObj.isCurrentDay) {
-      day.classList.add('calendar__grid-item_current-date');
+      day.classList.add('calendar__grid-item_with-green-circle');
     } else {
-      day.classList.remove('calendar__grid-item_current-date');
+      day.classList.remove('calendar__grid-item_with-green-circle');
     }
 
     if (dayObj.isBetweenArrivalDeparture) {
-      day.classList.add('calendar__grid-item_between-arival-departure-date');
+      day.classList.add('calendar__grid-item_selected');
     } else {
-      day.classList
-        .remove('calendar__grid-item_between-arival-departure-date');
+      day.classList.remove('calendar__grid-item_selected');
     }
 
     if (dayObj.isArrivalDay) {
-      day.classList.add('calendar__grid-item_arrival-day-set');
+      day.classList.add('calendar__grid-item_selected-left');
     } else {
-      day.classList.remove('calendar__grid-item_arrival-day-set');
+      day.classList.remove('calendar__grid-item_selected-left');
     }
 
     if (dayObj.isDepartureDay) {
-      day.classList.add('calendar__grid-item_departure-day-set');
+      day.classList.add('calendar__grid-item_selected-right');
     } else {
-      day.classList.remove('calendar__grid-item_departure-day-set');
+      day.classList.remove('calendar__grid-item_selected-right');
     }
   }
 

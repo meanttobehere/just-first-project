@@ -10,7 +10,7 @@ mixin field(params)
       name = 'name',
       masked = false,
     } = params;
-    const class_size = size ? `field_size-${size}` : '';
+    const class_size = size ? `field_size_${size}` : '';
     const class_mask = masked ? 'field_masked' : '';
 
   .field.js-field(class=class_size, class=class_mask)
