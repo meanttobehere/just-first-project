@@ -30,8 +30,9 @@
     "webpack-cli": "^4.9.1"
   },
   "scripts": {
-    "dev": "webpack --mode development",
+    "start": "webpack serve --mode development",
     "watch": "webpack --mode development --watch",
+    "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "eslint": "eslint src/",
     "deploy": "node publish"

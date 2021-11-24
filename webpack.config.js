@@ -7,6 +7,7 @@ const fs = require('fs');
 
 module.exports = {
   entry: {
+    navigation: path.resolve(__dirname, './src/pages/navigation/index.js'),
     main: path.resolve(__dirname, './src/pages/main/index.js'),
     signup: path.resolve(__dirname, './src/pages/signup/index.js'),
     login: path.resolve(__dirname, './src/pages/login/index.js'),
@@ -17,6 +18,12 @@ module.exports = {
     cards: path.resolve(__dirname, './src/pages/cards/index.js'),
     headersfooters: path.resolve(__dirname, './src/pages/headers-footers/index.js'),
     resources: path.resolve(__dirname, './src/resources/index.js'),
+  },
+
+  devServer: {
+    static: './dist',
+    compress: true,
+    open: ['/navigation.html'],
   },
 
   output: {

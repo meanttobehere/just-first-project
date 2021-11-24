@@ -1,0 +1,30 @@
+@import '../../resources/style.scss';
+@import '../../resources/fonts.scss';
+
+.navigation{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding-top: 30px;
+
+  font: normal normal 24px/24px $primary-font;
+
+  &__group{
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    padding: 30px;
+    justify-content: space-between;
+  }
+
+  &__link{
+    text-decoration: none;
+    color: $primary-color;
+
+    &:hover{
+      color: $secondary-color;
+    }
+  }
+}
