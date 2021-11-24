@@ -4,10 +4,10 @@
   },
   "colorItems": [
     {"title": "Dark Shade 100%", "color": "#1F2041"},
-    {"title": "Dark Shade 75%", "color": "#1F2041"},
-    {"title": "Dark Shade 50%", "color": "#1F2041"},
-    {"title": "Dark Shade 25%", "color": "#1F2041"},
-    {"title": "Dark Shade 5%", "color": "#1F2041"},
+    {"title": "Dark Shade 75%", "color": "#1F2041C0"},
+    {"title": "Dark Shade 50%", "color": "#1F204180"},
+    {"title": "Dark Shade 25%", "color": "#1F204140"},
+    {"title": "Dark Shade 5%", "color": "#1F20410D"},
     {"title": "Purple", "color": "#BC9CFF"},
     {"title": "Green", "color": "#6FCF97"}
   ]

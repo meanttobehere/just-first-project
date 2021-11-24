@@ -9,4 +9,4 @@ mixin color-item(params)
     .color-item__box(style={background: color})
     .color-item__title
       .color-item__firstline= title
-      .color-item__secondline= color
+      .color-item__secondline= color.substring(0, 7)
