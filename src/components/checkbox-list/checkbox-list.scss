@@ -58,6 +58,7 @@
   &_open{
     .checkbox-list__list{
       max-height: max-content;
+      overflow: visible;
     }
 
     .checkbox-list__arrow{
