@@ -1,4 +1,4 @@
-include ./__checkbox/checkbox-list__checkbox
+include ../checkbox/checkbox
 
 mixin checkbox-list(params)
   -
@@ -21,4 +21,4 @@ mixin checkbox-list(params)
       -let i = -1;
       while ++i < items.length
         li.checkbox-list__item
-          +checkbox-list__checkbox(items[i])
+          +checkbox(items[i])

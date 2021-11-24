@@ -1,4 +1,4 @@
-include ./__item/dropdown__item
+include ../dropdown-item/dropdown-item
 include ../button/button
 
 mixin dropdown(params)
@@ -29,7 +29,7 @@ mixin dropdown(params)
       .dropdown__menu.js-dropdown__menu
         .dropdown__menu-container
           each item in items
-            +dropdown__item(item)
+            +dropdown-item(item)
         if (buttons)
           .dropdown__buttons-container
             .dropdown__button.js-dropdown__button
