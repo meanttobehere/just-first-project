@@ -1,17 +1,17 @@
 .radio-button{
   user-select: none;
-  display: flex;
-  align-items: center;
 
   &__label{
-    position: relative;
+    display: inline-block;
     height: 20px;
-    width: 20px;
+    padding-left: 30px;
+    position: relative;
     cursor: pointer;
+    font: normal normal 14px/20px $primary-font;
+    color: $gray-color-75;
   }
 
   &__input{
-    padding: 0;
     appearance: none;
     cursor: inherit;
 
@@ -28,6 +28,10 @@
       background: $white-color;
     }
 
+    &:checked::before{
+      border-color: $primary-color;
+    }
+
     &:focus::before{
       box-shadow: 0 0 10px $primary-color;
     }
@@ -41,24 +45,10 @@
       height: 12px;
       border-radius: 10px;
       background: $white-color;
-    }  
-  }
+    }
 
-  &__input:checked::before{
-    border-color: $primary-color;
-  }
-
-  &__input:checked::after{
-    background: $primary-gradient;
-  }
-
-  &__title{
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
-    color: $gray-color-75;
-    margin-left: 10px;
+    &:checked::after{
+      background: $primary-gradient;
+    }
   }
 }

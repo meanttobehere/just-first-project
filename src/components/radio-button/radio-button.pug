@@ -8,11 +8,10 @@ mixin radio-button(params)
     } = params;
 
   .radio-button
-    label.radio-button__label
+    label.radio-button__label= title
       input.radio-button__input(
         type="radio",
         name=name,
         value=value,
         checked=checked
       )
-    .radio-button__title=title
