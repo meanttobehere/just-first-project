@@ -12,22 +12,11 @@ mixin button(params)
 
     const class_size = size ? `button_size_${size}` : '';
     const class_theme = theme ? `button_theme_${theme}` : '';
-    const class_disabled = disabled ? 'button_disabled' : '';
+    const classes = `${class_size} ${class_theme}`;
 
   if (href)
-    a.button(
-      class=class_size,
-      class=class_theme,
-      class=class_disabled,
-      href=href
-    )= title
+    a.button(class=classes, href=href)= title
   else
-    button.button(
-      class=class_size,
-      class=class_theme,
-      class=class_disabled,
-      type=type,
-      disabled=disabled,
-   )= title
+    button.button(class=classes, type=type, disabled=disabled)= title
     if (arrow)
       i.button__arrow.material-icons arrow_forward

@@ -4,24 +4,19 @@
   border: none;
   cursor: pointer;
   position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 99px;
   height: 44px;
   border-radius: 22px;
   padding: 0;
-  background-image: $primary-gradient;
-  color: $white-color;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  font: bold normal 12px/15px $primary-font;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  color: $white-color;
+  background-image: $primary-gradient;
 
-  &:hover{
+  &:hover, &:disabled{
     background-image: $primary-gradient-50;
   }
 
@@ -33,43 +28,24 @@
     box-shadow: 0px 0px 15px $primary-color;
   }
 
-  &_size_m{
-    width: 196px;
-    height: 34px;
-  }
-
-  &_size_s{
-    width: 99px;
-    height: 44px
-  }
-
   &_size_ss{
     width: 87px;
     height: 34px
   }
 
+  &_size_m{
+    width: 196px;
+    height: 34px;
+  }
+
   &_size_l{
     width: 100%;
     max-width: 320px;
-    height: 44px;
   }
 
   &_size_xl{
     width: 100%;
     max-width: 420px;
-    height: 44px;
-  }
-
-  &_disabled{
-    background-image: $primary-gradient-50;
-
-    .button_theme-white{
-      background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50
-    }
-
-    .button_theme-no-border{
-      color: $gray-color-50;
-    }
   }
 
   &_theme_no-border{
@@ -78,7 +54,7 @@
     width: auto;
     height: auto;
 
-    &:hover{
+    &:hover, &:disabled{
       color: $gray-color-50;
       background-image: none;
     }
@@ -97,7 +73,7 @@
     background-clip: content-box, border-box;
     background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient;
 
-    &:hover{
+    &:hover, &:disabled{
       background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50; 
     }
   }
