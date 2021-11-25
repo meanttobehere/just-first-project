@@ -36,6 +36,12 @@ git clone https://github.com/meanttobehere/just-first-project
 npm install
 ```
 
+### Запуск dev server
+
+```
+npm run start 
+```
+
 ### Production сборка проекта
 
 ```

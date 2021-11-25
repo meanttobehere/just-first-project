@@ -1,9 +1,7 @@
+@import '../global.scss';
 @import '../../components/components.scss';
 
 html, body{
-  margin: 0px;
-  padding: 0px;
-  -webkit-tap-highlight-color: transparent;
   background: $white-color;
 }
 
