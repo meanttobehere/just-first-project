@@ -18,7 +18,8 @@
     },
     "field2":{
       "title": "text field",
-      "value": "This is pretty awesome"
+      "value": "This is pretty awesome",
+      "focused": true
     },
     "field3":{
       "title": "masked text field",
