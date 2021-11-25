@@ -13,11 +13,9 @@ class Calendar {
 
   #currentDate;
 
-  #month;
+  #pageMonth;
 
-  #day;
-
-  #year;
+  #pageYear;
 
   #observer;
 
@@ -31,9 +29,9 @@ class Calendar {
     this.#travelData = { arrival: false, departure: false };
 
     this.#findHtmlElements(calendar);
-    this.#readDates(calendar);
     this.#bindEventHandlers();
     this.#setCurrentDate();
+    this.#readDates(calendar);
 
     this.#renderPage();
   }
@@ -41,7 +39,7 @@ class Calendar {
   getNumDays() {
     if (this.#arrival instanceof Date && this.#departure instanceof Date) {
       return ((this.#departure.getTime() - this.#arrival.getTime())
-        / (1000 * 3600 * 24) + 1);
+        / (1000 * 3600 * 24));
     }
     return 0;
   }
@@ -78,6 +76,11 @@ class Calendar {
 
     if (!Number.isNaN(arrivalDate.getTime())) {
       this.setArrivalDate(arrivalDate);
+      this.#pageMonth = arrivalDate.getMonth();
+      this.#pageYear = arrivalDate.getFullYear();
+    } else {
+      this.#pageMonth = this.#currentDate.getMonth();
+      this.#pageYear = this.#currentDate.getFullYear();
     }
 
     if (!Number.isNaN(departureDate.getTime())) {
@@ -100,10 +103,7 @@ class Calendar {
 
   #setCurrentDate() {
     const currentDate = new Date();
-    this.#month = currentDate.getMonth();
-    this.#year = currentDate.getFullYear();
-    this.#day = currentDate.getDate();
-    this.#currentDate = new Date(this.#year, this.#month, this.#day);
+    this.#currentDate = new Date(Calendar.#getDateWithoutHours(currentDate));
   }
 
   #bindEventHandlers() {
@@ -160,8 +160,8 @@ class Calendar {
     this.#arrival = {};
     this.#departure = {};
 
-    this.#month = this.#currentDate.getMonth();
-    this.#year = this.#currentDate.getFullYear();
+    this.#pageMonth = this.#currentDate.getMonth();
+    this.#pageYear = this.#currentDate.getFullYear();
 
     this.#renderPage();
 
@@ -169,26 +169,23 @@ class Calendar {
   }
 
   #handleBackClick() {
-    const date = new Date();
-    const mmm = date.getMonth();
-    const yyy = date.getFullYear();
+    if (this.#pageMonth === this.#currentDate.getMonth()
+      && this.#pageYear === this.#currentDate.getFullYear()) { return; }
 
-    if (this.#month === mmm && this.#year === yyy) { return; }
-
-    this.#month -= 1;
-    if (this.#month < 0) {
-      this.#month = 11;
-      this.#year -= 1;
+    this.#pageMonth -= 1;
+    if (this.#pageMonth < 0) {
+      this.#pageMonth = 11;
+      this.#pageYear -= 1;
     }
 
     this.#renderPage();
   }
 
   #handleForwardClick() {
-    this.#month += 1;
-    if (this.#month > 11) {
-      this.#month = 0;
-      this.#year += 1;
+    this.#pageMonth += 1;
+    if (this.#pageMonth > 11) {
+      this.#pageMonth = 0;
+      this.#pageYear += 1;
     }
 
     this.#renderPage();
@@ -204,7 +201,7 @@ class Calendar {
       } else { day.classList.add('calendar__grid-item_hidden'); }
     });
 
-    this.#title.textContent = `${Calendar.#getMonthString(this.#month)} ${this.#year}`;
+    this.#title.textContent = `${Calendar.#getMonthString(this.#pageMonth)} ${this.#pageYear}`;
   }
 
   #renderDay(idx) {
@@ -251,26 +248,27 @@ class Calendar {
   }
 
   #updatePageData() {
-    let prevMonth = this.#month;
-    let prevYear = this.#year;
+    let prevMonth = this.#pageMonth;
+    let prevYear = this.#pageYear;
     prevMonth -= 1;
     if (prevMonth < 0) {
       prevMonth = 11;
       prevYear -= 1;
     }
 
-    let nextMonth = this.#month;
-    let nextYear = this.#year;
+    let nextMonth = this.#pageMonth;
+    let nextYear = this.#pageYear;
     nextMonth += 1;
     if (nextMonth > 11) {
       nextMonth = 0;
       nextYear += 1;
     }
 
-    let numDaysCurrentMonth = Calendar.#getDaysInMonth(this.#month, this.#year);
+    let numDaysCurrentMonth = Calendar
+      .#getDaysInMonth(this.#pageMonth, this.#pageYear);
     const numDaysPrevMonth = Calendar.#getDaysInMonth(prevMonth, prevYear);
 
-    const date = new Date(this.#year, this.#month, 1);
+    const date = new Date(this.#pageYear, this.#pageMonth, 1);
     let weekDay = date.getDay();
     weekDay -= 1;
     if (weekDay < 0) { weekDay = 6; }
@@ -289,7 +287,9 @@ class Calendar {
 
     let buf = numDaysCurrentMonth;
     while (numDaysCurrentMonth > 0) {
-      dates.push(new Date(this.#year, this.#month, buf - numDaysCurrentMonth));
+      dates.push(
+        new Date(this.#pageYear, this.#pageMonth, buf - numDaysCurrentMonth)
+      );
       numDaysCurrentMonth -= 1;
     }
 
@@ -328,7 +328,7 @@ class Calendar {
       dayObj.isBetweenArrivalDeparture = true;
     }
 
-    if (date.getMonth() === this.#month) { dayObj.isCurrentMonth = true; }
+    if (date.getMonth() === this.#pageMonth) { dayObj.isCurrentMonth = true; }
 
     if (this.#departure !== false
       && +date === +this.#arrival
