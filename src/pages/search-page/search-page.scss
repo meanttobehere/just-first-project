@@ -78,16 +78,17 @@
     padding-top: 30px;
     max-width: 270px;
 
-    &_open{
-      max-height: max-content;
-      min-height: 100vh;
-    }
-
     @media screen and (max-width: 650px){
       background: $white-color;
       overflow: hidden;
       margin: auto;
       max-height: 0;
+
+      &_open{
+        overflow: visible;
+        min-height: 100vh;
+        max-height: max-content;
+      }
     }
   }
 
