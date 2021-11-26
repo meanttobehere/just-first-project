@@ -1,137 +1,94 @@
 .footer{
   background: $white-color;
-  font-family: $primary-font;
+  font: normal normal 12px/15px $primary-font;
   color: $gray-color;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
 
   &__top-container{
     box-shadow: 0px 1px 0px $gray-color-10;
-    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 40px;
+    margin: auto;
+    padding: 79px 25px 100px 25px;
 
-    & > :first-child, & > :last-child{
+    @media screen and (max-width: 768px){
       display: none;
     }
+  }
 
-    @media screen and (min-width: 600px){
-      display: flex;
-      flex-flow: row;
-      justify-content: space-evenly;
-      align-items: flex-start;
-      column-gap: 20px;
+  &__group{
+    padding-top: 25px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 20px;
+    flex-grow: 1;
+
+    &:nth-child(1){
+      padding-top: 21px;
+      row-gap: 17px;
+      max-width: 260px;
     }
-
-    @media screen and (min-width: 1130px){
-      justify-content: center;
-      align-items: flex-start;
-      column-gap: 40px;
-      margin: auto;
-      padding: 79px 25px 100px 25px;
-
-      & > :first-child, & > :last-child{
-        display: flex;
-      }
+    &:nth-child(2){
+      max-width: 160px;
+    }
+    &:nth-child(3){
+      max-width: 160px;
+    }
+    &:nth-child(4){
+      max-width: 160px;
+    }
+    &:nth-child(5){
+      max-width: 260px;
+      row-gap: 18px;
     }
   }
 
   &__group-title{
-    cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
+  }
 
-    @media screen and (min-width: 600px){
-      cursor: default;
-      pointer-events: none;
-    }
-
-    & + .footer__group-item{
-      margin-top: 2px;
-    }
+  &__group-title + &__group-item{
+    margin-top: 2px;
   }
 
   &__group-item{
-    display: block;
+    display: inline-block;
     text-decoration: none;
     font-size: 14px;
     line-height: 17px;
-    height: 18px;
+    min-height: 18px;
     color: $gray-color-50;
     &:hover{
       color: $gray-color;
     }
   }
 
-  &__group{
-    padding-top: 25px;
-
-    &:first-child{
-      padding-top: 21px;
-      row-gap: 17px;
-    }
-
-    &:last-child{
-      row-gap: 18px;
-    }
-
-    max-height: 16px;
-    overflow: hidden;
-    user-select: none;
-    transition: max-height 0.2s;
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: center;
-    row-gap: 20px;
-
-    @media screen and (min-width: 600px){
-      max-height: max-content;
-      align-items: flex-start;
-      overflow: visible;
-      flex-grow: 1;
-
-      &:nth-child(1){
-        max-width: 260px;
-      }
-      &:nth-child(2){
-        max-width: 160px;
-      }
-      &:nth-child(3){
-        max-width: 160px;
-      }
-      &:nth-child(4){
-        max-width: 160px;
-      }
-      &:nth-child(5){
-        max-width: 260px;
-      }
-    }
+  &__text{
+    line-height: 24px;
+    font-size: 14px;
+    color: $gray-color-75;
+    margin-bottom: 5px;
   }
 
   &__bottom-container{
-    padding: 25px;
+    padding: 0 25px 0 25px;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     row-gap: 25px;
+    height: 367px;
 
-    @media screen and (min-width: 600px){
-      padding-top: 0;
-      padding-bottom: 0;
-      height: 367px;
-    }
-
-    @media screen and (min-width: 1130px){
+    @media screen and (min-width: 768px){
       height: 70px;
       max-width: 1160px;
       margin: auto;
       flex-flow: row;
       justify-content: space-between;
-      & > :first-child{
-        display: none;
-      }
     }
   }
 
@@ -142,6 +99,11 @@
     text-align: center;
     display: flex;
     gap: 20px;
+    @media screen and (min-width: 768px){
+      &:first-child{
+        display: none;
+      }
+    }
   }
 
   &__link{
@@ -166,13 +128,6 @@
     }
   }
 
-  &__text{
-    line-height: 24px;
-    font-size: 14px;
-    color: $gray-color-75;
-    margin-bottom: 5px;
-  }
-
   &_type-partial{
     .footer__top-container{
         display: none;
@@ -185,10 +140,10 @@
       justify-content: center;
       align-items: center;
       row-gap: 25px;
+    }
 
-      & > :first-child{
-          display: block;
-      }
+    .footer__bottom-item:first-child{
+      display: block;
     }
   }
 }
