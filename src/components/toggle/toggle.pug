@@ -7,6 +7,5 @@ mixin toggle(params)
     } = params;
 
   .toggle
-    label.toggle__label 
+    label.toggle__label= title
       input.toggle__input(type="checkbox", checked=checked, name=name)
-    .toggle__title= title
