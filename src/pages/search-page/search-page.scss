@@ -1,5 +1,7 @@
 .search-page{
   background: $white-color;
+  font: normal normal 18px/20px $primary-font;
+  color: $gray-color;
 
   &__header{
     position: sticky;
@@ -16,11 +18,6 @@
     margin: auto;
     padding: 0 20px 70px 20px;
     border-bottom: 1px solid $gray-color-25;
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    color: $gray-color;
-
     @media screen and (max-width: 650px){
       flex-flow: column;
     }
@@ -28,6 +25,7 @@
 
   &__filter{
     display: none;
+    font-weight: bold;
 
     @media screen and (max-width: 650px){
       height: 40px;
