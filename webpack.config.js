@@ -6,19 +6,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-  entry: {
-    navigation: path.resolve(__dirname, './src/pages/navigation/index.js'),
-    main: path.resolve(__dirname, './src/pages/main/index.js'),
-    signup: path.resolve(__dirname, './src/pages/signup/index.js'),
-    login: path.resolve(__dirname, './src/pages/login/index.js'),
-    searchpage: path.resolve(__dirname, './src/pages/search-page/index.js'),
-    room: path.resolve(__dirname, './src/pages/room/index.js'),
-    formelements: path.resolve(__dirname, './src/pages/form-elements/index.js'),
-    colorstype: path.resolve(__dirname, './src/pages/colors-type/index.js'),
-    cards: path.resolve(__dirname, './src/pages/cards/index.js'),
-    headersfooters: path.resolve(__dirname, './src/pages/headers-footers/index.js'),
-    resources: path.resolve(__dirname, './src/resources/index.js'),
-  },
+  entry: './src/index.js',
 
   devServer: {
     static: './dist',
@@ -36,7 +24,7 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)$/,
         type: 'asset/resource',
-        include: [path.resolve(__dirname, 'src/resources/fonts'), path.resolve(__dirname, 'node_modules')],
+        include: [path.resolve(__dirname, 'src/fonts'), path.resolve(__dirname, 'node_modules')],
         generator: {
           filename: './fonts/[name][ext]',
         },
@@ -44,7 +32,7 @@ module.exports = {
       {
         test: /\.(jpe?g|svg|png)$/,
         type: 'asset/resource',
-        exclude: [path.resolve(__dirname, 'src/resources/fonts'), path.resolve(__dirname, 'node_modules')],
+        exclude: [path.resolve(__dirname, 'src/fonts'), path.resolve(__dirname, 'node_modules')],
         generator: {
           filename: './images/[name][ext]',
         },
@@ -71,7 +59,10 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true },
+            options: {
+              additionalData: `@import "./src/style.scss";`,
+              sourceMap: true,
+            },
           },
         ],
       },
@@ -84,7 +75,7 @@ module.exports = {
       jQuery: 'jquery',
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/resources/images/favicon.png',
+      logo: './src/favicon/favicon.png',
       prefix: 'favicons/',
       favicons: {
         icons: {
@@ -122,7 +113,6 @@ function generateHtmlPlugins() {
     const name = path.basename(item).split('.')[0];
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
-      chunks: [name.replace('-','')],
       template: item,
     });
   });
