@@ -1,12 +1,13 @@
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="navigation page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, navigation")
-    meta(name="viewport" content="width=device-width")
-    title TOXIN
-  body.navigation
+extends ../base-template/base-template
+
+block data
+  -
+    const title = 'TOXIN';
+    const description = 'navigation page of Toxin Pages project';
+    const keywords = 'toxin pages, navigation'
+
+block content
+  .navigation
     .navigation__group
       a.navigation__link(href="./colors-type.html") Colors & Type
       a.navigation__link(href="./form-elements.html") Form Elements

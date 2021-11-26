@@ -1,19 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/room/room.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/room/room.json'));
+    const title = 'TOXIN';
+    const description = 'room page of Toxin Pages project';
+    const keywords = 'toxin pages, room"'
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="room page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, room")
-    meta(name="viewport" content="width=device-width")
-    title TOXIN
-  body.room
+block content
+  .room
     header.room__header
       +header(data.header)
     main.room__main

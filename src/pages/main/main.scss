@@ -1,13 +1,11 @@
 @import '../global.scss';
 @import '../../components/components.scss';
 
-body{
+.mainpage{
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
-}
 
-.mainpage{
   &__header{
     position: fixed;
     top: 0;

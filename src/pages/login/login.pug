@@ -1,19 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/login/login.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/login/login.json'));
+    const title = 'TOXIN';
+    const description = 'login page of Toxin Pages project';
+    const keywords = 'toxin pages, login';
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="login page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, login")
-    meta(name="viewport" content="width=device-width")
-    title TOXIN
-  body.login
+block content
+  .login
     header.login__header
       +header(data.header)
     main.login__main

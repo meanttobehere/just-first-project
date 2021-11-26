@@ -1,18 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/headers-footers/headers-footers.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/headers-footers/headers-footers.json'));
+    const title = 'Headers & Footers';
+    const description = 'headers-footers page of Toxin Pages project';
+    const keywords = 'toxin pages, headers-footers';
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="headersfooters page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, headersfooters")
-    title Headers & Footers
-  body.headers-footers
+block content
+  .headers-footers
     .headers-footers__logotype-container
       +logotype(data.logotype)
     .headers-footers__data-container

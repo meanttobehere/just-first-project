@@ -1,18 +1,12 @@
 @import '../global.scss';
 @import '../../components/components.scss';
 
-html {
-  background-color: #E5E5E5;
-}
-
-body{
+.cards{
   max-width: 1440px;
   min-height: 100vh;
   margin: auto;
   background-color: #F4F4F6;
-}
 
-.cards{
   &__logotype-container{
     padding: 30px 0 0 30px;
   }

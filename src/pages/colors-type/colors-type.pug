@@ -1,18 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/colors-type/colors-type.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/colors-type/colors-type.json'));
+    const title = 'Colors & Type';
+    const description = 'colors-type page of Toxin Pages project';
+    const keywords = 'toxin pages, colors-type';
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="colorstype page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, colorstype")
-    title Colors & Type
-  body.colors-type
+block content
+  .colors-type
     .colors-type__logotype-container
       +logotype(data.logotype)
     .colors-type__data-container

@@ -1,11 +1,9 @@
 @import '../global.scss';
 @import '../../components/components.scss';
 
-html, body{
-  background: $white-color;
-}
-
 .search-page{
+  background: $white-color;
+
   &__header{
     position: sticky;
     top: 0;

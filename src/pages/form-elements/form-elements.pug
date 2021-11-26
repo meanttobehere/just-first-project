@@ -1,18 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/form-elements/form-elements.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/form-elements/form-elements.json'));
+    const title = 'Form Elements';
+    const description = 'form-elements page of Toxin Pages project';
+    const keywords = 'toxin pages, form-elements';
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="formelements page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, formelements")
-    title Form Elements
-  body.form-elements
+block content
+  .form-elements
     .form-elements__logotype-container
       +logotype(data.logotype)
     .form-elements__data-container

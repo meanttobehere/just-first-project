@@ -1,19 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/search-page/search-page.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/search-page/search-page.json'));
+    const title = 'TOXIN';
+    const description = 'search page of Toxin Pages project';
+    const keywords = 'toxin pages, search-page';
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="search page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, searchpage")
-    meta(name="viewport" content="width=device-width")
-    title TOXIN
-  body.search-page
+block content
+  .search-page
     header.search-page__header
       +header(data.header)
       .search-page__filter.js-search-page__filter Фильтр

@@ -1,19 +1,16 @@
-include ../../components/components
+extends ../base-template/base-template
 
--
-  const path = require('path');
-  const fs = require('fs');
-  const data = JSON.parse(fs.readFileSync('./src/pages/main/main.json'));
+block data
+  -
+    const path = require('path');
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('./src/pages/main/main.json'));
+    const title = 'TOXIN';
+    const description = 'main page of Toxin Pages project';
+    const keywords = 'toxin pages, main';
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="description" content="main page of Toxin Pages project")
-    meta(name="keywords" content="toxin pages, main")
-    meta(name="viewport" content="width=device-width")
-    title TOXIN
-  body.mainpage
+block content
+  .mainpage
     header.mainpage__header
       +header(data.header)
     main.mainpage__main
