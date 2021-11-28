@@ -14,9 +14,9 @@ block content
     header.mainpage__header
       +header(data.header)
     main.mainpage__main
-      .mainpage__search-form-container
-        +search-form(data.searchForm)
-      .mainpage__text-container
+      .mainpage__container
+        .mainpage__search-form
+          +search-form(data.searchForm)
         .mainpage__text
           |Лучшие номера для вашей работы, 
           |отдыха и просто вдохновения
