@@ -80,7 +80,6 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    row-gap: 25px;
     height: 367px;
 
     @media screen and (min-width: 768px){
@@ -99,9 +98,16 @@
     text-align: center;
     display: flex;
     gap: 20px;
+    &:nth-child(2){
+      margin-top: 21px;
+      margin-bottom: 25px;
+    }
     @media screen and (min-width: 768px){
       &:first-child{
         display: none;
+      }
+      &:nth-child(2){
+        margin: 0;
       }
     }
   }
@@ -135,15 +141,18 @@
 
     .footer__bottom-container{
       height: 367px;
-      display: flex;
       flex-flow: column;
       justify-content: center;
-      align-items: center;
-      row-gap: 25px;
     }
 
-    .footer__bottom-item:first-child{
-      display: block;
+    .footer__bottom-item{
+      &:first-child{
+        display: block;
+      }
+      &:nth-child(2){
+        margin-top: 21px;
+        margin-bottom: 25px;
+      }
     }
   }
 }
