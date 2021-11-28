@@ -1,11 +1,7 @@
 .dropdown{
   max-width: 320px;
   user-select: none;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  font: normal normal 14px/18px $primary-font;
   color: $gray-color;
 
   &_size_s{
@@ -37,12 +33,11 @@
     border: 1px solid $gray-color-25;
     transition: border-radius 200ms;
     color: $gray-color-75;
-    text-indent: 15px;
+    text-indent: 14px;
+    font: inherit;
+    padding-bottom: 2px;
     outline-style: none;
     background: none;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
     cursor: pointer;
 
     &::selection{
@@ -64,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $gray-color-75;
+    color: $gray-color-50;
   }
 
   &__menu{

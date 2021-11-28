@@ -43,14 +43,15 @@
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid $gray-color-25;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
+    padding-left: 14px;
+    position: relative;
   }
 
   &__arrow{
     color: $gray-color-50;
+    position: absolute;
+    top: 0;
+    right: -1px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +63,7 @@
     min-width: 0px;
     overflow: hidden;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 41px;
     color: $gray-color-75;
   }
 

@@ -6,9 +6,14 @@ class RoomDropdown {
     roomDropdown
       .querySelector('.js-dropdown__menu')
       .addEventListener('click', this.#handleMenuClick.bind(this));
+    this.#updateText();
   }
 
   #handleMenuClick() {
+    this.#updateText();
+  }
+
+  #updateText(){
     const [
       bedrooms,
       beds,

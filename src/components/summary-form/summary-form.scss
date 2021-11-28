@@ -5,14 +5,10 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   user-select: none;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  font: normal normal 14px/18px $primary-font;
   color: $gray-color;
   max-width: 380px;
-  padding: 40px 20px 30px 20px;
+  padding: 39px 20px 30px 20px;
 
   &__head{
     height: 30px;
@@ -36,7 +32,7 @@
       content: '№';
       font-size: 14px;
       line-height: 17px;
-      margin-right: 5px;
+      margin-right: 4px;
       padding-bottom: 3px;
     }
 
@@ -56,6 +52,7 @@
     &::after{
       font-weight: normal;
       font-size: 12px;
+      line-height: 20px;
       content: ' в сутки';
     }
   }
@@ -63,19 +60,20 @@
   &__date-dropdown-container{
     max-width: 320px;
     margin: auto;
-    margin-bottom: 20.56px;
+    margin-bottom: 21px;
   }
 
   &__guests-dropdown-container{
     max-width: 320px;
     margin: auto;
-    margin-bottom: 20.56px;
+    margin-bottom: 21px;
   }
 
   &__calculator{
-    max-width: 320px;
+    padding-left: 1px;
+    max-width: 319px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
   }
 
   &__button-container{
@@ -90,7 +88,7 @@
   &__calculator-row{
     display: flex;
     justify-content: space-between;
-    height: 24px;
+    height: 26px;
     &:last-child{
       margin-top: 30px;
       font-weight: bold;
@@ -103,7 +101,7 @@
   &__calculator-grid{
     margin-top: 8px;
     display: grid;
-    row-gap: 16px;
+    row-gap: 14px;
     grid-template-columns: minmax(min-content, 214px) max-content 1fr;
   }
 

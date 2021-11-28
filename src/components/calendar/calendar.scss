@@ -6,13 +6,10 @@
   box-shadow: 0px 10px 20px $gray-color-5;
   background: $white-color;
   padding: 6.25%;
+  padding-top: 5.625%;
+  padding-bottom: 5.9375%;
   user-select: none;
-
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font: normal normal 12px/15px $primary-font;
   color: $gray-color-50;
 
   &__month-selector{
@@ -48,7 +45,7 @@
   }
 
   &__day-selector{
-    margin-top: 10.375%;
+    margin-top: 11%;
     width: 100%;;
     display: grid;
     align-items: center;
@@ -71,7 +68,7 @@
   }
 
   &__buttons-container{
-    margin-top: 8.375%;
+    margin-top: 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;

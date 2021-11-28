@@ -9,7 +9,7 @@
   min-width: 0;
   width: 100%;
   height: max-content;
-  padding: 40px 10px 0 10px;
+  padding: 39px 10px 0 10px;
 
   &__title{
     font-family: $primary-font;
@@ -20,7 +20,7 @@
     color: $gray-color;
     max-width: 320px;
     margin: auto;
-    margin-bottom: 21px;
+    margin-bottom: 22px;
   }
 
   &__date-dropdown-container{
@@ -38,6 +38,6 @@
   &__button-container{
     max-width: 320px;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
   }
 }

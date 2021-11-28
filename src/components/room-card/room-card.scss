@@ -88,17 +88,13 @@
 
   &__container{
     cursor: pointer;
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 18px;
+    font: normal bold 14px/18px $primary-font;
     color: $gray-color;
     padding: 20px 17px 20px 20px;
   }
 
   &__top{
-    height: 23px;
+    height: 22px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -146,6 +142,7 @@
     &::after{
       font-weight: normal;
       font-size: 12px;
+      line-height: 16px;
       content: ' в сутки';
     }
   }

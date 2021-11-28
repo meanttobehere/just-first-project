@@ -14,6 +14,10 @@
   "summaryForm":{
     "guestsDropdown":{
       "adults": 3
+    },
+    "calendar":{
+      "arrivalDate": "2022-08-19",
+      "departureDate": "2022-08-23"
     }
   },
   "roomCard1":{

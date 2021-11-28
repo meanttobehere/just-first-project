@@ -17,7 +17,7 @@ mixin login-form(params)
       +field({placeholder: 'Email', type: 'email', name: 'email'})
       +field({placeholder: 'Пароль', type: 'password', name: 'password'})
     .login-form__button-container
-      +button({title: 'войти', size: 'l', type: 'submit'})
+      +button({title: 'войти', size: 'l', type: 'submit', arrow: true})
     .login-form__button-container Нет аккаунта на Toxin?
       .login-form__signup-button
         +button({title: 'создать', theme: 'white', href: signupButtonLink})

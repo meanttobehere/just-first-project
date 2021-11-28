@@ -5,19 +5,10 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   user-select: none;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  font: normal normal 14px/18px $primary-font;
   color: $gray-color;
   max-width: 380px;
-  height: max-content;
-  padding: 40px 10px 0 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 39px 10px 0 10px;
 
   &__title{
     max-width: 320px;
@@ -25,7 +16,8 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 20px;
+    margin: auto;
+    margin-bottom: 21px;
   }
 
   &__userdata-container{
@@ -34,6 +26,7 @@
     display: flex;
     flex-flow: column;
     gap: 10px;
+    margin: auto;
     margin-bottom: 23.6px;
   }
 
@@ -43,19 +36,21 @@
     display: flex;
     flex-flow: column;
     gap: 10px;
-    margin-bottom: 20px;
+    margin: auto;
+    margin-bottom: 24px;
   }
 
   &__radio-buttons-container{
     max-width: 320px;
     flex-grow: 1;
     display: flex;
-    gap: 20px;
+    gap: 12px;
   }
 
   &__birthdate-container{
     max-width: 320px;
     flex-grow: 1;
+    margin: auto;
     margin-bottom: 20px;
   }
 
@@ -64,10 +59,14 @@
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin: auto;
     margin-bottom: 30px;
+    line-height: 42px;
     gap: 20px;
     color: black;
+    &:last-child{
+      margin-bottom: 29px;
+    }
   }
 
   &__input-button{

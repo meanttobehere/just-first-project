@@ -2,11 +2,7 @@
   margin: 0 auto;
   width: 1440px;
   background-color: $white-color;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  font: normal normal 12px/15px $primary-font;
   color: $gray-color;
 
   &__logotype-container{
@@ -29,6 +25,7 @@
       position: relative;
       padding-top: 31px;
       &::before{
+        font-weight: bold;
         content: attr(data-text);
         display: block;
         position: absolute;
