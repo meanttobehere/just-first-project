@@ -11,7 +11,7 @@ class RoomCard {
 
   #dots;
 
-  #currentImageNum = 1;
+  #currentImageNum = 0;
 
   constructor(card) {
     this.#card = card;

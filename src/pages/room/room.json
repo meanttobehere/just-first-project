@@ -33,14 +33,14 @@
       "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
       "numLikes": 12,
       "likesEmphasized": true,
-      "photoUrl": "images/review1.jpg"
+      "photoUrl": "images/avatar-man.jpg"
     },
     {
       "name": "Патрисия Стёклышкова",
       "date": "Неделю назад",
       "text": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
       "numLikes": 2,
-      "photoUrl": "images/review2.jpg"
+      "photoUrl": "images/avatar-woman.jpg"
     }
   ],
   "rules":{
@@ -71,8 +71,8 @@
     }
   },
   "roomPhotos": [
-    {"url": "images/room1.jpg"},
-    {"url": "images/room2.jpg"},
-    {"url": "images/room3.jpg"}
+    {"url": "images/room-888-1.jpg"},
+    {"url": "images/room-888-2.jpg"},
+    {"url": "images/room-888-3.jpg"}
   ]
 }
