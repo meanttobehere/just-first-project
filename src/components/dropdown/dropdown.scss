@@ -83,22 +83,19 @@
   }
 
   &__menu-container{
-    margin-top: 6px;
-    margin-left: 15px;
-    margin-right: 7px;
-    margin-bottom: 8px;
+    margin: 3px 6px 10px 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 7px;
   }
 
   &__buttons-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 7px 13px 14px;
+    padding: 11px 7px 10px 14px;
   }
 
   &__button_hidden{

@@ -2,14 +2,9 @@
   user-select: none;
 
   &__title{
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font: normal bold 12px/15px $primary-font;
     text-transform: uppercase;
     color: $gray-color;
-
     max-width: 268px;
     display: flex;
     justify-content: space-between;
@@ -50,8 +45,10 @@
       overflow: hidden;
     }
 
-    .checkbox-list__item:first-child{
-      margin-top: 17.44px;
+    .checkbox-list__item{
+      &:first-child{
+        margin-top: 17.44px;
+      }
     }
   }
 

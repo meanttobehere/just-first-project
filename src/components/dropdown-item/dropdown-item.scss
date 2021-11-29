@@ -4,11 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
+  font: normal normal 18px/22px $primary-font;
   color: $gray-color;
 
   &__title{
@@ -28,6 +24,7 @@
 
   &__button{
     position: relative;
+    top: 2px;
     width: 30px;
     height: 30px;
     border: 1px solid $gray-color-25;

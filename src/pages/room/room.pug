@@ -25,7 +25,7 @@ block content
             img.room__photo(src=data.roomPhotos[2].url, alt="room photo")
       .room__section
         .room__container
-          .room__group
+          .room__top-group
             .room__group-block
               .room__title Сведения о номере
               .room__comfort-items-container
@@ -33,19 +33,22 @@ block content
                   +comfort-item(item)
             .room__group-block
               .room__title Впечатления от номера
-              +chart(data.chart)
-          .room__group
+              .room__chart-container
+                +chart(data.chart)
+          .room__middle-group
             .room__group-block
-              .room__title Отзывы посетителей номера
+              .room__title-container
+                .room__title Отзывы посетителей номера
                 .room__review-counter= `${data.reviews.length} отзыва`
               .room__reviews-container
                 each review in data.reviews
                   +review(review)
-          .room__group
-            .room__group-block.room__group-block_rules
-              .room__title.room__title_rules Правила
-              +bullet-list(data.rules)
-            .room__group-block.room__group-block_cancelation
+          .room__bottom-group
+            .room__group-block
+              .room__title.room__title_left-indented Правила
+              .room__bullet-list-container
+                +bullet-list(data.rules)
+            .room__group-block
               .room__title Отмена
               .room__cancelation-description= data.cancelation.description
         .room__summary-form-container
