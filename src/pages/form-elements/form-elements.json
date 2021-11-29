@@ -5,7 +5,11 @@
   "Col1Row1":{
     "dropdown1":{
       "title": "date dropdown",
-      "secondTitle": ""
+      "text": "ДД.ММ.ГГГГ"
+    },
+    "dropdown2":{
+      "title": "date dropdown",
+      "text": "19.08.2019"
     },
     "dropdown3":{
       "title": "filter date dropdown", 

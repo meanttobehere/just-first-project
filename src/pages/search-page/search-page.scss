@@ -17,7 +17,6 @@
     max-width: 1160px;
     margin: auto;
     padding: 0 20px 69px 20px;
-    border-bottom: 1px solid $gray-color-25;
     @media screen and (max-width: 650px){
       flex-flow: column;
     }
@@ -132,5 +131,9 @@
 
   &__pagination-container{
     padding-right: 14px;
+  }
+
+  &__footer{
+    border-top: 1px solid $gray-color-25;
   }
 }
