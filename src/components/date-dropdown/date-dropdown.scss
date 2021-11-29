@@ -44,18 +44,16 @@
     border-radius: 4px;
     border: 1px solid $gray-color-25;
     padding-left: 14px;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__arrow{
     color: $gray-color-50;
-    position: absolute;
-    top: 0;
-    right: -1px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
+    width: 42px;
     height: 44px;
   }
 

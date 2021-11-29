@@ -8,11 +8,10 @@
   font: normal normal 14px/18px $primary-font;
   color: $gray-color;
   max-width: 380px;
-  padding: 39px 10px 0 10px;
+  padding: 39px 20px 0 20px;
 
   &__title{
     max-width: 320px;
-    flex-grow: 1;
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
@@ -22,17 +21,15 @@
 
   &__userdata-container{
     max-width: 320px;
-    flex-grow: 1;
     display: flex;
     flex-flow: column;
     gap: 10px;
     margin: auto;
-    margin-bottom: 23.6px;
+    margin-bottom: 24px;
   }
 
   &__inputdata-container{
     max-width: 320px;
-    flex-grow: 1;
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -42,31 +39,32 @@
 
   &__radio-buttons-container{
     max-width: 320px;
-    flex-grow: 1;
     display: flex;
     gap: 12px;
   }
 
   &__birthdate-container{
     max-width: 320px;
-    flex-grow: 1;
     margin: auto;
     margin-bottom: 20px;
   }
 
   &__button-container{
     max-width: 320px;
-    flex-grow: 1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: auto;
     margin-bottom: 30px;
-    line-height: 42px;
     gap: 20px;
     color: black;
     &:last-child{
       margin-bottom: 29px;
     }
+  }
+
+  &__text{
+    padding-bottom: 2px;
   }
 
   &__input-button{

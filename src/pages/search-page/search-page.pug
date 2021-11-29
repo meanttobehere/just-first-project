@@ -35,6 +35,7 @@ block content
           each roomCard in data.roomCards
             .search-page__room-card-container
               +room-card(roomCard)
-        +pagination()
+        .search-page__pagination-container
+          +pagination()
     footer.search-page__footer.js-search-page__footer
       +footer(data.footer)
