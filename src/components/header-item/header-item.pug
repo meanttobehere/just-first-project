@@ -17,7 +17,6 @@ mixin header-item(params)
       .header-item__title-container.js-header-item__title-container
         .header-item__title= title
         .header-item__arrow
-          i.material-icons expand_more
       .header-item__children-container
         each child in children
           - const link = child.href ? child.href : '/mock-address/change-me';

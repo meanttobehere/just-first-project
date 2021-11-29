@@ -9,7 +9,7 @@ mixin comfort-item(params)
     const class_underline = underlined ? 'comfort-item_with-underline' : '';
 
   .comfort-item(class=class_underline)
-    i.comfort-item__icon.material-icons= icon
+    .comfort-item__icon(data-icon=icon)
     .comfort-item__text
       .comfort-item__title= title
       .comfort-item__description= description

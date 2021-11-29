@@ -1,10 +1,6 @@
 .pagination{
   user-select: none;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 12px;
+  font: normal normal 12px/12px $primary-font;
   color: $gray-color-50;
 
   &__container{
@@ -44,8 +40,19 @@
     }
   }
 
+  &__arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after{
+      font: normal normal 24px/24px 'Material Icons';
+      content: 'arrow_forward';
+
+    }
+  }
+
   &__description{
-    margin-top: 10.56px;
+    margin-top: 11px;
     padding-left: 5px;
     height: 24px;
     font-size: 14px;

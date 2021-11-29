@@ -112,16 +112,9 @@
     }
   }
 
-  &__link{
+  &__twitter-link, &__facebook-link, &__instagram-link{
     text-decoration: none;
-  }
-
-  &__icon{
-    width: 24px;
-    height: 24px;
-    font-size: 24px;
-    line-height: 23px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     background: $primary-gradient;
@@ -132,6 +125,26 @@
     &:hover{
       transform: scale(1.2);
     }
+    &::before{
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font: normal normal 24px/24px 'Font Awesome 5 Brands';
+    }
+  }
+
+  &__twitter-link::before{
+    content: '\f099';
+  }
+
+  &__facebook-link::before{
+    content: '\f082';
+  }
+
+  &__instagram-link::before{
+    content: '\f16d';
   }
 
   &_type-partial{

@@ -60,6 +60,10 @@
     align-items: center;
     justify-content: center;
     color: $gray-color-50;
+    &::after{
+      font: normal normal 24px/24px 'Material Icons';
+      content: 'expand_more';
+    }
   }
 
   &__menu{

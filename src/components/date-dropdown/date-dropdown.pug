@@ -18,12 +18,12 @@ mixin date-dropdown(params)
         .date-dropdown__title= title
         .date-dropdown__container.js-date-dropdown__container
           .date-dropdown__text.js-date-dropdown__text ДД.ММ.ГГГГ
-          i.date-dropdown__arrow.material-icons expand_more
+          .date-dropdown__arrow
       if (twoDropdowns)
         .date-dropdown__dropdown
           .date-dropdown__title= secondTitle
           .date-dropdown__container.js-date-dropdown__container
             .date-dropdown__text.js-date-dropdown__text ДД.ММ.ГГГГ
-            i.date-dropdown__arrow.material-icons expand_more
+            .date-dropdown__arrow
     .date-dropdown__calendar-container
       +calendar(calendar)

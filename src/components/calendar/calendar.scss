@@ -38,10 +38,20 @@
     }
   }
 
-  &__arrow{
+  &__arrow-back, &__arrow-forward{
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__arrow-back::after{
+    content: 'arrow_back';
+    font: normal normal 24px/24px 'Material Icons';
+  }
+
+  &__arrow-forward::after{
+    content: 'arrow_forward';
+    font: normal normal 24px/24px 'Material Icons';
   }
 
   &__day-selector{

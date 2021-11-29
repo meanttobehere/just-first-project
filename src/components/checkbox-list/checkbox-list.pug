@@ -16,7 +16,7 @@ mixin checkbox-list(params)
   .checkbox-list.js-checkbox-list(class=class_expandable class=class_open)
     .checkbox-list__title.js-checkbox-list__title= title
       if(expandable)
-        i.checkbox-list__arrow.material-icons expand_more
+        .checkbox-list__arrow
     ul.checkbox-list__list.js-checkbox-list__list
       -let i = -1;
       while ++i < items.length

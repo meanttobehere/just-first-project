@@ -87,5 +87,10 @@
     justify-content: center;
     width: 44px;
     height: 44px;
+    &::after{
+      content: 'arrow_forward';
+      font: normal normal 24px/24px 'Material Icons';
+      text-transform: none;
+    }
   }
 }

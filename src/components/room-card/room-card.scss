@@ -61,6 +61,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &::after{
+      font: normal normal 24px/24px 'Material Icons';
+      content: 'expand_more';
+    }
   }
 
   &__dots{

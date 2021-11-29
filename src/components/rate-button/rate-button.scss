@@ -3,8 +3,6 @@
   user-select: none;
 
   &__star{
-    width: 24px;
-    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,5 +10,9 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    &::after{
+      font: normal normal 24px/24px 'Material Icons';
+      content: attr(data-icon);
+    }
   }
 }

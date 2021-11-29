@@ -9,21 +9,15 @@
   align-items: center;
   user-select: none;
   cursor: pointer;
-  font-style: normal;
-  font-weight: normal;
+  font: normal normal 10px/12px $primary-font;
   padding: 0 5px 0 5px;
 
   &::before{
+    font: normal normal 10px/10px 'Material Icons';
     content: 'favorite_border';
-    font-family: 'Material Icons';
-    font-size: 10px;
-    line-height: 10px;
   }
 
   &__counter{
-    font-family: $primary-font;
-    font-size: 10px;
-    line-height: 12px;
     flex-grow: 1;
     text-align: center;
   }

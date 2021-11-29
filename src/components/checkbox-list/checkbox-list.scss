@@ -19,6 +19,11 @@
     align-items: center;
     justify-content: center;
     color: $gray-color-50;
+    &::after{
+      content: 'expand_more';
+      font: normal normal 24px/24px 'Material Icons';
+      text-transform: none;
+    }
   }
 
   &__list{

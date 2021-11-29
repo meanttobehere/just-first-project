@@ -73,6 +73,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    &::after{
+      font: normal normal 24px/24px 'Material Icons';
+      content: 'arrow_forward';
+    }
+
     &:hover{
       background: $primary-gradient-50;
       background-clip: text;

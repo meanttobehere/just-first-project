@@ -55,6 +55,10 @@
     justify-content: center;
     width: 42px;
     height: 44px;
+    &::after{
+      font: normal normal 24px/24px 'Material Icons';
+      content: 'expand_more';
+    }
   }
 
   &__text{

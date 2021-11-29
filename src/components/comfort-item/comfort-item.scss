@@ -9,12 +9,15 @@
   width: 280px;
 
   &__icon{
-    height: 48px;
-    font-size: 48px;
     background: $primary-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    &::after{
+      font: normal normal 48px/48px 'Material Icons';
+      content: attr(data-icon);
+    }
   }
 
   &__text{
