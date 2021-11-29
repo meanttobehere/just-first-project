@@ -7,7 +7,7 @@ mixin review(params)
       date = 'date',
       text = 'text',
       numLikes = 10,
-      likesEmphasized = false,
+      likeButtonChecked = false,
       photoUrl = '',
     } = params;
 
@@ -15,7 +15,7 @@ mixin review(params)
     .review__left-container
       .review__photo
         img.review__img(src=photoUrl, alt="user photo")
-      +like-button({emphasized: likesEmphasized, numLikes: numLikes})
+      +like-button({checked: likeButtonChecked, numLikes: numLikes})
     .review__right-container
       .review__name=name
       .review__date=date

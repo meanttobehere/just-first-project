@@ -68,7 +68,7 @@
     },
     "likeButton2":{
       "numLikes": 12,
-      "emphasized": true
+      "checked": true
     },
     "rateButton1": 4,
     "rateButton2": 5
@@ -219,7 +219,7 @@
       "date": "5 дней назад",
       "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
       "numLikes": 12,
-      "likesEmphasized": true,
+      "likeButtonChecked": true,
       "photoUrl": "images/avatar-man.jpg"
     }
   }

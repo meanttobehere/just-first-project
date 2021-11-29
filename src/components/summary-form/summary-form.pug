@@ -12,11 +12,12 @@ mixin summary-form(params)
       guestsDropdown,
       calendar,
     } = params;
-    const class_luxe = luxe ? 'summary-form__number_luxe' : '';
 
   form.summary-form.js-summary-form(data-price=price)
     .summary-form__head
-      .summary-form__number(class=class_luxe)= number
+      .summary-form__number= number
+        if (luxe)
+          .summary-form__number-luxe люкс
       .summary-form__price.js-summary-form__price= `${price} Р`
     .summary-form__date-dropdown-container.js-summary-form__date-dropdown-container
       +date-dropdown({calendar})

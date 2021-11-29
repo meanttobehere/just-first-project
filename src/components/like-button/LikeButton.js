@@ -20,15 +20,15 @@ class LikeButton{
   }
 
   #isEmphasized() {
-    return this.#likeButton.classList.contains('like-button_emphasized');
+    return this.#likeButton.classList.contains('like-button_checked');
   }
 
   #setEphasized(){
-    this.#likeButton.classList.add('like-button_emphasized');
+    this.#likeButton.classList.add('like-button_checked');
   }
 
   #unsetEmphasized(){
-    this.#likeButton.classList.remove('like-button_emphasized');
+    this.#likeButton.classList.remove('like-button_checked');
   }
 
   #getCounterValue(){

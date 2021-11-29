@@ -14,7 +14,6 @@ mixin room-card(params)
       link = '/mock-address/change-me',
     } = params;
     const class_buttons = visibleButtons ? 'room-card_buttons_visible' : '';
-    const class_luxe = luxe ? 'room-card__number_luxe' : '';
     const str = price.toString();
     const cardPrice
       = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
@@ -32,7 +31,9 @@ mixin room-card(params)
         .room-card__arrow
     .room-card__container.js-room-card__container
       .room-card__top
-        .room-card__number(class=class_luxe )= number
+        .room-card__number= number
+          if (luxe)
+            .room-card__number-luxe люкс
         .room-card__price= cardPrice
       .room-card__stick
       .room-card__bottom

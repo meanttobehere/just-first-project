@@ -12,7 +12,7 @@ mixin field(params)
       focused = false,
     } = params;
     const class_size = size ? `field_size_${size}` : '';
-    const class_mask = masked ? 'field_masked' : '';
+    const class_mask = masked ? 'field_type_masked' : '';
     const class_focused = focused ? 'field__input_focused' : '';
 
   .field.js-field(class=class_size, class=class_mask)

@@ -1,9 +1,5 @@
 .bullet-list{
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font: normal normal 12px/15px $primary-font;
   color: $gray-color;
 
   &__title{
@@ -22,10 +18,9 @@
     line-height: 24px;
     color: $gray-color-75;
     list-style: none;
-
     margin-bottom: 10px;
     display: flex;
-    gap: 10.43px;
+    gap: 10px;
 
     &:last-child{
       margin-bottom: 0px;
@@ -33,8 +28,8 @@
 
     &::before{
       content: '';
-      display: block;
-      width: 10.43px;
+      display: inline-block;
+      width: 10px;
       height: 10px;
       border-radius: 50%;
       background: $gray-color-25;

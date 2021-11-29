@@ -2,9 +2,9 @@ mixin like-button(params)
   -
     const {
       numLikes = 10,
-      emphasized = false,
+      checked = false,
     } = params;
-    const class_emphasized = emphasized ? 'like-button_emphasized' : '';
+    const class_checked = checked ? 'like-button_checked' : '';
 
-  .like-button(class=class_emphasized).js-like-button
-    .like-button__counter.js-like-button__counter=numLikes
+  .like-button.js-like-button(class=class_checked)
+    .like-button__counter.js-like-button__counter= numLikes

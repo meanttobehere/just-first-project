@@ -126,20 +126,20 @@
     align-items: flex-end;
 
     &::before{
-      display: block;
+      display: inline-block;
       content: '№';
       font-size: 14px;
       line-height: 17px;
       margin-right: 4px;
     }
+  }
 
-    &_luxe::after{
-      content: 'ЛЮКС';
-      color: $primary-color;
-      display: block;
-      font-size: 12px;
-      line-height: 15px;
-    }
+  &__number-luxe{
+    color: $primary-color;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
   }
 
   &__price{
