@@ -1,6 +1,13 @@
 extends ../base-template/base-template
 
 block data
+  include ../../components/calendar/calendar
+  include ../../components/login-form/login-form
+  include ../../components/logotype/logotype
+  include ../../components/room-card/room-card
+  include ../../components/search-form/search-form
+  include ../../components/signup-form/signup-form
+  include ../../components/summary-form/summary-form
   -
     const path = require('path');
     const fs = require('fs');
