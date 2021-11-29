@@ -8,7 +8,8 @@ class Field {
     Inputmask({
       alias: 'datetime',
       inputFormat: 'dd.mm.yyyy',
-      jitMasking: true,
+      placeholder: 'ДД.ММ.ГГГГ',
+      //jitMasking: true,
     }).mask(input);
   }
 }

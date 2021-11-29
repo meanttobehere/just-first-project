@@ -41,6 +41,9 @@
 
     &:hover, &:focus, &_focused{
       border-color: $gray-color-50;
+      &::placeholder{
+        color: $gray-color-75;
+      }
     }
   }
 
