@@ -24,10 +24,8 @@ mixin room-card(params)
       each link in imageLinks
         img.room-card__image.js-room-card__image(src=link, alt="room photo")
       .room-card__dots
-        .room-card__dot.js-room-card__dot
-        .room-card__dot.js-room-card__dot
-        .room-card__dot.js-room-card__dot
-        .room-card__dot.js-room-card__dot
+        each link in imageLinks
+          .room-card__dot.js-room-card__dot
       .room-card__button.js-room-card__button
         i.room-card__arrow.material-icons expand_more
       .room-card__button.js-room-card__button
