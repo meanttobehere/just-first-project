@@ -1,4 +1,4 @@
-mixin header__item(params)
+mixin header-item(params)
   -
     const {
       title = 'title',
@@ -9,11 +9,11 @@ mixin header__item(params)
     const class_selected = selected ? 'header-item_selected' : '';
 
   if (children.length == 0)
-    .header__item.header-item(class=class_selected)
+    .header-item(class=class_selected)
       .header-item__title-container
         a.header-item__title(href=href)= title
   else
-    .header__item.header-item.js-header-item(class=class_selected)
+    .header-item.js-header-item(class=class_selected)
       .header-item__title-container.js-header-item__title-container
         .header-item__title= title
         .header-item__arrow

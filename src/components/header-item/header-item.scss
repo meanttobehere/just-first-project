@@ -1,11 +1,7 @@
 .header-item{
   position: relative;
   min-height: 18px;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 20px;
+  font: normal normal 20px/20px $primary-font;
   color: $gray-color-50;
   cursor: pointer;
 

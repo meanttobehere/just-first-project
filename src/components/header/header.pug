@@ -1,4 +1,4 @@
-include ./__item/header__item
+include ../header-item/header-item
 include ../button/button
 include ../logotype/logotype
 include ../hamburger/hamburger
@@ -37,7 +37,8 @@ mixin header(params)
         +hamburger()
       nav.header__navbar.js-header__navbar
         each item in headerItems
-          +header__item(item)
+          .header__item
+            +header-item(item)
         .header__userblock.js-header__userblock
           if(isLoggedIn)
             .header__stick

@@ -1,4 +1,4 @@
-import './__item/index';
+import '../header-item/index';
 import Header from './Header';
 
 document.querySelectorAll('.js-header').forEach((header) => {
