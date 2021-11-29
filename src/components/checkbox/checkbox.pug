@@ -5,11 +5,10 @@ mixin checkbox(params)
       description,
       checked = false,
     } = params;
-    const isRich = description ? true : false;
-    const class_rich = isRich ? 'checkbox_rich' : '';
+    const class_description = description ? 'checkbox_with-description' : '';
 
-  .checkbox(class=class_rich)
+  .checkbox(class=class_description)
     label.checkbox__label= title
       input.checkbox__input(type="checkbox", checked=checked)
-    if(isRich)
-      p.checkbox__description= description
+      if(description)
+        p.checkbox__description= description

@@ -1,9 +1,11 @@
 .checkbox{
   user-select: none;
   font: normal normal 14px/20px $primary-font;
-  color: $gray-color-50; 
+  color: $gray-color-50;
+  margin-top: 10px;
 
-  &_rich{
+  &_with-description{
+    margin-top: 7px;
     .checkbox__label{
       font-weight: bold;
       color: $gray-color-75;
@@ -11,8 +13,8 @@
   }
 
   &__label{
+    margin: 0;
     display: inline-block;
-    height: 20px;
     padding-left: 30px;
     position: relative;
     cursor: pointer;
@@ -63,8 +65,8 @@
 
   &__description{
     margin: 5px 0 0 0;
-    padding-left: 30px;
     font-size: 12px;
     line-height: 14px;
+    font-weight: normal;
   }
 }
