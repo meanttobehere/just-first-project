@@ -75,7 +75,7 @@ class Calendar {
     const departureDate = new Date(calendar.getAttribute('data-departure'));
 
     if (!Number.isNaN(arrivalDate.getTime())) {
-      this.setArrivalDate(arrivalDate);
+      this.#arrival = Calendar.#getDateWithoutHours(arrivalDate);
       this.#pageMonth = arrivalDate.getMonth();
       this.#pageYear = arrivalDate.getFullYear();
     } else {
@@ -84,7 +84,7 @@ class Calendar {
     }
 
     if (!Number.isNaN(departureDate.getTime())) {
-      this.setDepartureDate(departureDate);
+      this.#departure = Calendar.#getDateWithoutHours(departureDate);
     }
   }
 
@@ -234,7 +234,7 @@ class Calendar {
       day.classList.remove('calendar__grid-item_selected');
     }
 
-    if (dayObj.isArrivalDay) {
+    if (dayObj.isArrivalDayAndDepartureDayIsSet) {
       day.classList.add('calendar__grid-item_selected-left');
     } else {
       day.classList.remove('calendar__grid-item_selected-left');
@@ -278,14 +278,14 @@ class Calendar {
     weekDayLastDay -= 1;
     if (weekDayLastDay < 0) { weekDayLastDay = 6; }
 
-    const dates = [];
+    let dates = [];
 
     while (weekDay > 0) {
-      dates.push(new Date(prevYear, prevMonth, numDaysPrevMonth - weekDay));
+      dates.push(new Date(prevYear, prevMonth, numDaysPrevMonth + 1 - weekDay));
       weekDay -= 1;
     }
 
-    let buf = numDaysCurrentMonth;
+    let buf = numDaysCurrentMonth + 1;
     while (numDaysCurrentMonth > 0) {
       dates.push(
         new Date(this.#pageYear, this.#pageMonth, buf - numDaysCurrentMonth)
@@ -299,9 +299,7 @@ class Calendar {
       buf += 1;
       weekDayLastDay += 1;
     }
-
     const newPage = dates.map((item) => this.#createDayObject(item));
-
     this.#pageData = newPage;
   }
 
@@ -310,12 +308,11 @@ class Calendar {
       d: date,
       day: date.getDate(),
       isArrivalDeraptureDay: false,
+      isArrivalDayAndDepartureDayIsSet: false,
+      isDepartureDay: false,
       isCurrentDay: false,
       isCurrentMonth: false,
       isBetweenArrivalDeparture: false,
-      isArrivalDay: false,
-      isDepartureDay: false,
-      isHoverMode: false,
     };
 
     if (+date === +this.#currentDate) { dayObj.isCurrentDay = true; }
@@ -333,7 +330,7 @@ class Calendar {
     if (this.#departure !== false
       && +date === +this.#arrival
       && +this.#departure !== +this.#arrival) {
-      dayObj.isArrivalDay = true;
+      dayObj.isArrivalDayAndDepartureDayIsSet = true;
     }
 
     if (this.#departure !== false
