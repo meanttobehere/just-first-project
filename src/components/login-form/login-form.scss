@@ -36,6 +36,9 @@
     gap: 20px;
     font-size: 14px;
     color: black;
+    &:last-child{
+      margin-bottom: 31px;
+    }
   }
 
   &__text{
