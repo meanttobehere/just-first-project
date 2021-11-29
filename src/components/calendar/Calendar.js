@@ -373,13 +373,13 @@ class Calendar {
   static #intervalToString(date1, date2) {
     if (date1 instanceof Date && date2 instanceof Date && date1 !== date2) {
       const formattedDate1 = date1
-        .toLocaleString('ru', { month: 'long', day: 'numeric' });
+        .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
       const formattedDate2 = date2
-        .toLocaleString('ru', { month: 'long', day: 'numeric' });
+        .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
       return `${formattedDate1} - ${formattedDate2}`;
     } if (date1 instanceof Date) {
       const formattedDate1 = date1
-        .toLocaleString('ru', { month: 'long', day: 'numeric' });
+        .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
       return `${formattedDate1}`;
     }
     return 'Время проживания';
