@@ -115,6 +115,8 @@
   &__twitter-link, &__facebook-link, &__instagram-link{
     text-decoration: none;
     display: inline-flex;
+    width: 24px;
+    height: 24px;
     justify-content: center;
     align-items: center;
     background: $primary-gradient;
