@@ -13,7 +13,7 @@ class RoomDropdown {
     this.#updateText();
   }
 
-  #updateText(){
+  #updateText() {
     const [
       bedrooms,
       beds,

@@ -9,7 +9,7 @@ class Field {
       alias: 'datetime',
       inputFormat: 'dd.mm.yyyy',
       placeholder: 'ДД.ММ.ГГГГ',
-      //jitMasking: true,
+      // jitMasking: true,
     }).mask(input);
   }
 }

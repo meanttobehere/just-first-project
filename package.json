@@ -36,6 +36,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "eslint": "eslint src/",
+    "eslint-fix": "eslint src/ --fix",
     "deploy": "node publish"
   },
   "keywords": [],

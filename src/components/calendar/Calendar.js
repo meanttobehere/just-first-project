@@ -278,7 +278,7 @@ class Calendar {
     weekDayLastDay -= 1;
     if (weekDayLastDay < 0) { weekDayLastDay = 6; }
 
-    let dates = [];
+    const dates = [];
 
     while (weekDay > 0) {
       dates.push(new Date(prevYear, prevMonth, numDaysPrevMonth + 1 - weekDay));
@@ -288,7 +288,7 @@ class Calendar {
     let buf = numDaysCurrentMonth + 1;
     while (numDaysCurrentMonth > 0) {
       dates.push(
-        new Date(this.#pageYear, this.#pageMonth, buf - numDaysCurrentMonth)
+        new Date(this.#pageYear, this.#pageMonth, buf - numDaysCurrentMonth),
       );
       numDaysCurrentMonth -= 1;
     }

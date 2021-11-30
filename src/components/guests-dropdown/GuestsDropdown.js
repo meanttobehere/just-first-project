@@ -13,7 +13,7 @@ class GuestsDropdown {
     this.#updateText();
   }
 
-  #updateText(){
+  #updateText() {
     const [
       adults,
       children,

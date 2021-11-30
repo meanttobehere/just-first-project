@@ -52,15 +52,18 @@ class Header {
     const container = event.target.closest('.js-header__container');
     const clickWasOutside = container !== this.#container;
     if (clickWasOutside) { this.#close(); }
-  }
+  };
 
   #handleQueryWidth(event) {
     this.#changeHierarchy(event.matches);
   }
 
   #changeHierarchy(isDesktopView) {
-    if (isDesktopView) { this.#container.appendChild(this.#userblock); }
-    else { this.#navbar.appendChild(this.#userblock); }
+    if (isDesktopView) {
+      this.#container.appendChild(this.#userblock);
+    } else {
+      this.#navbar.appendChild(this.#userblock);
+    }
   }
 }
 
