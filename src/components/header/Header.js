@@ -7,14 +7,14 @@ class Header {
 
   #navbar;
 
-  #buttons;
+  #hamburger;
 
   constructor(header) {
     this.#container = header.querySelector('.js-header__container');
     this.#menu = header.querySelector('.js-header__menu-icon');
     this.#userblock = header.querySelector('.js-header__userblock');
     this.#navbar = header.querySelector('.js-header__navbar');
-    this.#buttons = this.#userblock.querySelectorAll('.button');
+    this.#hamburger = header.querySelector('.js-hamburger').hamburger;
 
     this.#init();
   }
@@ -30,7 +30,7 @@ class Header {
 
   #handleMenuClick() {
     this.#navbar.classList.toggle('header__navbar_open');
-    this.#menu.children[0].classList.toggle('hamburger_active');
+    this.#hamburger.change();
   }
 
   #handleQueryWidth(event) {
@@ -38,17 +38,8 @@ class Header {
   }
 
   #changeHierarchy(isDesktopView) {
-    if (isDesktopView) {
-      this.#container.appendChild(this.#userblock);
-      this.#buttons.forEach((button) => {
-        button.classList.remove('button_size-xl');
-      });
-    } else {
-      this.#navbar.appendChild(this.#userblock);
-      this.#buttons.forEach((button) => {
-        button.classList.add('button_size-xl');
-      });
-    }
+    if (isDesktopView) { this.#container.appendChild(this.#userblock); }
+    else { this.#navbar.appendChild(this.#userblock); }
   }
 }
 
