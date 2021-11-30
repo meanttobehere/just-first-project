@@ -1,35 +1,36 @@
-.search-page{
+.search-page {
   background: $white-color;
   font: normal normal 18px/20px $primary-font;
   color: $gray-color;
 
-  &__header{
+  &__header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 6;
   }
 
-  &__main{
+  &__main {
     display: flex;
     justify-content: space-between;
     column-gap: 25px;
     max-width: 1160px;
     margin: auto;
-    padding: 0 20px 69px 20px;
-    @media screen and (max-width: 650px){
+    padding: 0 20px 69px;
+
+    @media screen and (max-width: 650px) {
       flex-flow: column;
     }
   }
 
-  &__filter{
+  &__filter {
     display: none;
     font-weight: bold;
 
-    @media screen and (max-width: 650px){
+    @media screen and (max-width: 650px) {
       height: 40px;
-      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-      border-top: 1px solid rgba(31, 32, 65, 0.05);
+      box-shadow: 0 10px 20px rgb(31 32 65 / 5%);
+      border-top: 1px solid rgb(31 32 65 / 5%);
       background: $white-color;
       cursor: pointer;
       user-select: none;
@@ -39,18 +40,18 @@
     }
   }
 
-  &__data-container{
+  &__data-container {
     padding-top: 30px;
     display: flex;
     flex-flow: column;
     align-items: center;
 
-    @media screen and (max-width: 650px){
+    @media screen and (max-width: 650px) {
       padding-top: 0;
     }
   }
 
-  &__title{
+  &__title {
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
@@ -58,7 +59,7 @@
     padding-bottom: 21px;
   }
 
-  &__rooms-container{
+  &__rooms-container {
     max-width: 834px;
     flex-grow: 1;
     padding-bottom: 41px;
@@ -67,23 +68,23 @@
     gap: 21px 12px;
   }
 
-  &__room-card-container{
+  &__room-card-container {
     flex: 1 1 30%;
   }
 
-  &__filter-container{
+  &__filter-container {
     position: sticky;
     top: 70px;
     padding-top: 30px;
     max-width: 270px;
 
-    @media screen and (max-width: 650px){
+    @media screen and (max-width: 650px) {
       background: $white-color;
       overflow: hidden;
       margin: auto;
       max-height: 0;
 
-      &_open{
+      &_open {
         overflow: visible;
         min-height: 100vh;
         max-height: max-content;
@@ -91,17 +92,18 @@
     }
   }
 
-  &__date-dropdown-container{
+  &__date-dropdown-container {
     margin-bottom: 20px;
   }
 
-  &__guests-dropdown-container{
+  &__guests-dropdown-container {
     margin-bottom: 30px;
   }
 
-  &__range-slider-container{
+  &__range-slider-container {
     margin-bottom: 30px;
-    &::after{
+
+    &::after {
       content: 'Стоимость за сутки пребывания в номере';
       display: block;
       font-size: 12px;
@@ -111,29 +113,29 @@
     }
   }
 
-  &__rules-checkbox-container{
+  &__rules-checkbox-container {
     margin-bottom: 29px;
     max-width: 222px;
   }
 
-  &__availability-checkbox-container{
+  &__availability-checkbox-container {
     margin-bottom: 29px;
     max-width: 264px;
 
-    .checkbox-list__item:first-child{
+    .checkbox-list__item:first-child {
       max-width: 222px;
     }
   }
 
-  &__room-dropdown-container{
+  &__room-dropdown-container {
     margin-bottom: 29px;
   }
 
-  &__pagination-container{
+  &__pagination-container {
     padding-right: 14px;
   }
 
-  &__footer{
+  &__footer {
     border-top: 1px solid $gray-color-25;
   }
 }

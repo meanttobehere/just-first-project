@@ -1,7 +1,7 @@
-.toggle{
+.toggle {
   user-select: none;
 
-  &__label{
+  &__label {
     display: inline-block;
     height: 20px;
     padding-left: 50px;
@@ -11,15 +11,15 @@
     color: $gray-color-75;
   }
 
-  &__input{
+  &__input {
     appearance: none;
     cursor: inherit;
 
-    &::before{
+    &::before {
       content: '';
       position: absolute;
-      top: 0px;
-      left: 0px;
+      top: 0;
+      left: 0;
       width: 40px;
       height: 20px;
       border-radius: 10px;
@@ -27,19 +27,19 @@
       border: 1px solid $gray-color-25;
     }
 
-    &:checked::before{
+    &:checked::before {
       border-color: $primary-color;
     }
 
-    &:focus::before{
+    &:focus::before {
       box-shadow: 0 0 10px $gray-color-50;
     }
 
-    &:checked:focus::before{
+    &:checked:focus::before {
       box-shadow: 0 0 10px $primary-color;
     }
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       top: 4px;
@@ -48,10 +48,10 @@
       height: 12px;
       border-radius: 10px;
       background: $gray-color-25;
-      transition: .21s;
+      transition: 0.21s;
     }
 
-    &:checked::after{
+    &:checked::after {
       transform: translateX(20px);
       background: $primary-gradient;
     }

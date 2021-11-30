@@ -1,25 +1,25 @@
-.headers-footers{
+.headers-footers {
   max-width: 1440px;
   min-height: 100vh;
   margin: auto;
-  background: #F4F4F6;
+  background: #f4f4f6;
 
-  &__logotype-container{
+  &__logotype-container {
     padding: 30px 0 62px 30px;
   }
 
-  &__data-container{
+  &__data-container {
     display: flex;
     flex-flow: column;
     gap: 40px;
   }
 
-  &__header{
+  &__header {
     position: relative;
     z-index: 1000;
   }
 
-  &__footer{
+  &__footer {
     min-width: 768px;
     margin: auto;
   }

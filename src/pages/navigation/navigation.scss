@@ -1,4 +1,4 @@
-.navigation{
+.navigation {
   background: white;
   min-height: 100vh;
   display: flex;
@@ -6,10 +6,9 @@
   gap: 100px;
   padding-top: 30px;
   align-items: flex-start;
-
   font: normal normal 24px/24px $primary-font;
 
-  &__group{
+  &__group {
     min-width: 230px;
     min-height: 300px;
     border: 2px solid $primary-color;
@@ -22,11 +21,11 @@
     align-items: center;
   }
 
-  &__link{
+  &__link {
     text-decoration: none;
     color: $primary-color;
 
-    &:hover{
+    &:hover {
       color: $secondary-color;
     }
   }

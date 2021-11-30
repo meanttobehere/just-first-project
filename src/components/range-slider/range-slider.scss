@@ -1,23 +1,23 @@
 @import './lib/slider';
 
-:root{
-  --slider-primary-color: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+:root {
+  --slider-primary-color: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 }
 
-.slider{
-  &__container{
+.slider {
+  &__container {
     font-size: 15px;
     padding: 0;
   }
 
-  &__bar-container{
+  &__bar-container {
     bottom: 29px;
   }
 
-  &__bar{
+  &__bar {
     background: white;
 
-    &::after{
+    &::after {
       content: '';
       display: block;
       width: 100%;
@@ -29,7 +29,7 @@
     }
   }
 
-  &__pointer::after{
+  &__pointer::after {
     content: '';
     display: block;
     width: 108%;
@@ -42,10 +42,10 @@
   }
 }
 
-.range-slider{
+.range-slider {
   max-width: 266px;
 
-  &__container{
+  &__container {
     padding-bottom: 26px;
     display: flex;
     justify-content: space-between;
@@ -59,18 +59,18 @@
     color: $gray-color;
   }
 
-  &__title{
+  &__title {
     font-weight: bold;
   }
 
-  &__price::after{
+  &__price::after {
     content: attr(data-value);
     display: block;
     text-align: right;
     color: $gray-color-50;
   }
 
-  &__slider{
+  &__slider {
     height: 6px;
   }
 }

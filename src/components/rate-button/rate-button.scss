@@ -1,16 +1,16 @@
-.rate-button{
+.rate-button {
   display: flex;
   user-select: none;
 
-  &__star{
+  &__star {
     display: flex;
     align-items: center;
     justify-content: center;
     background: $primary-gradient;
     background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    &::after{
+
+    &::after {
       font: normal normal 24px/24px 'Material Icons';
       content: attr(data-icon);
     }

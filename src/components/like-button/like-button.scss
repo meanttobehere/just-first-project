@@ -1,4 +1,4 @@
-.like-button{
+.like-button {
   width: 40px;
   height: 20px;
   border-radius: 10px;
@@ -10,27 +10,26 @@
   user-select: none;
   cursor: pointer;
   font: normal normal 10px/12px $primary-font;
-  padding: 0 5px 0 5px;
+  padding: 0 5px;
 
-  &::before{
+  &::before {
     font: normal normal 10px/10px 'Material Icons';
     content: 'favorite_border';
   }
 
-  &__counter{
+  &__counter {
     flex-grow: 1;
     text-align: center;
   }
 
-  &_checked{
+  &_checked {
     border: 1px solid $primary-color;
     color: $primary-color;
 
-    &::before{
+    &::before {
       content: 'favorite';
       background: $primary-gradient;
       background-clip: text;
-      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }

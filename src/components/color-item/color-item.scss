@@ -1,16 +1,16 @@
-.color-item{
+.color-item {
   display: flex;
   gap: 40px;
   justify-content: flex-start;
   align-items: center;
 
-  &__box{
+  &__box {
     width: 70px;
     height: 70px;
     border-radius: 6px;
   }
 
-  &__title{
+  &__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@
     line-height: 28px;
   }
 
-  &__firstline{
+  &__firstline {
     font-weight: bold;
   }
 }

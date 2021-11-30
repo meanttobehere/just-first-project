@@ -1,4 +1,4 @@
-.button{
+.button {
   outline: none;
   text-decoration: none;
   border: none;
@@ -16,61 +16,64 @@
   color: $white-color;
   background-image: $primary-gradient;
 
-  &:hover, &:disabled{
+  &:hover,
+  &:disabled {
     background-image: $primary-gradient-50;
   }
 
-  &:active{
+  &:active {
     top: 2px;
   }
 
-  &:focus{
-    box-shadow: 0px 0px 15px $primary-color;
+  &:focus {
+    box-shadow: 0 0 15px $primary-color;
   }
 
-  &_size_l{
+  &_size_l {
     width: 100%;
     max-width: 320px;
   }
 
-  &_size_xl{
+  &_size_xl {
     width: 100%;
     height: 100%;
     max-height: 44px;
     max-width: 420px;
   }
 
-  &_theme_no-border{
+  &_theme_no-border {
     background: none;
     color: $primary-color;
     width: auto;
     height: auto;
 
-    &:hover, &:disabled{
+    &:hover,
+    &:disabled {
       color: $gray-color-50;
       background-image: none;
     }
 
-    &:focus{
+    &:focus {
       background-image: $primary-gradient-25;
-      box-shadow: 0px 0px 10px $primary-color-50;
+      box-shadow: 0 0 10px $primary-color-50;
     }
   }
 
-  &_theme_white{
+  &_theme_white {
     color: $primary-color;
     box-sizing: border-box;
     border: double 2px transparent;
     background-origin: border-box;
     background-clip: content-box, border-box;
-    background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient;
+    background-image: linear-gradient(180deg, #fff 0%, #fff 100%), $primary-gradient;
 
-    &:hover, &:disabled{
-      background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), $primary-gradient-50; 
+    &:hover,
+    &:disabled {
+      background-image: linear-gradient(180deg, #fff 0%, #fff 100%), $primary-gradient-50;
     }
   }
 
-  &__arrow{
+  &__arrow {
     position: absolute;
     right: 0;
     top: 0;
@@ -79,7 +82,8 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-    &::after{
+
+    &::after {
       content: 'arrow_forward';
       font: normal normal 24px/24px 'Material Icons';
       text-transform: none;

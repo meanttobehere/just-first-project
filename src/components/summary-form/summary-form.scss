@@ -1,16 +1,16 @@
-.summary-form{
+.summary-form {
   background: $white-color;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgb(0 0 0 / 12%);
   border-radius: 4px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
   user-select: none;
   font: normal normal 14px/18px $primary-font;
   color: $gray-color;
   max-width: 380px;
-  padding: 39px 20px 30px 20px;
+  padding: 39px 20px 30px;
 
-  &__head{
+  &__head {
     height: 30px;
     font-weight: bold;
     display: flex;
@@ -21,13 +21,13 @@
     margin-bottom: 20px;
   }
 
-  &__number{
+  &__number {
     font-size: 24px;
     line-height: 29.62px;
     display: flex;
     align-items: flex-end;
 
-    &::before{
+    &::before {
       display: inline-block;
       content: '№';
       font-size: 14px;
@@ -37,7 +37,7 @@
     }
   }
 
-  &__number-luxe{
+  &__number-luxe {
     color: $primary-color;
     display: inline-block;
     font-size: 12px;
@@ -47,9 +47,10 @@
     padding-bottom: 3px;
   }
 
-  &__price{
+  &__price {
     color: $gray-color-50;
-    &::after{
+
+    &::after {
       font-weight: normal;
       font-size: 12px;
       line-height: 20px;
@@ -57,39 +58,37 @@
     }
   }
 
-  &__date-dropdown-container{
+  &__date-dropdown-container {
     max-width: 320px;
     margin: auto;
     margin-bottom: 21px;
   }
 
-  &__guests-dropdown-container{
+  &__guests-dropdown-container {
     max-width: 320px;
     margin: auto;
     margin-bottom: 21px;
   }
 
-  &__calculator{
+  &__calculator {
     padding-left: 1px;
     max-width: 319px;
     margin: auto;
     margin-bottom: 17px;
+    color: $gray-color-75;
   }
 
-  &__button-container{
+  &__button-container {
     max-width: 320px;
     margin: auto;
   }
 
-  &__calculator{
-    color: $gray-color-75;
-  }
-
-  &__calculator-row{
+  &__calculator-row {
     display: flex;
     justify-content: space-between;
     height: 26px;
-    &:last-child{
+
+    &:last-child {
       margin-top: 30px;
       font-weight: bold;
       font-size: 19px;
@@ -98,23 +97,23 @@
     }
   }
 
-  &__calculator-grid{
+  &__calculator-grid {
     margin-top: 8px;
     display: grid;
     row-gap: 14px;
     grid-template-columns: minmax(min-content, 214px) max-content 1fr;
   }
 
-  &__calculator-price{
+  &__calculator-price {
     text-align: right;
   }
 
-  &__calculator-item{
+  &__calculator-item {
     display: inline;
     justify-self: start;
   }
 
-  &__calculator-sign{
+  &__calculator-sign {
     width: 20px;
     height: 20px;
     margin: 0 5px;
@@ -128,7 +127,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &::after{
+
+    &::after {
       content: 'i';
     }
   }

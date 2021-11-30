@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "string-quotes": "single",
+    "selector-class-pattern": ".*",
+    "scss/percent-placeholder-pattern": ".*",
+    "font-family-no-missing-generic-family-keyword": [
+      true, 
+      { 
+        "ignoreFontFamilies": ["Material Icons", "Font Awesome 5 Brands"]
+      }
+    ],
+    "no-descending-specificity": null
+  }
+}

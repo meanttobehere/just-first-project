@@ -1,19 +1,19 @@
-.bullet-list{
+.bullet-list {
   font: normal normal 12px/15px $primary-font;
   color: $gray-color;
 
-  &__title{
+  &__title {
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 12px;
   }
 
-  &__list{
+  &__list {
     padding: 0;
     margin: 0;
   }
 
-  &__item{
+  &__item {
     font-size: 14px;
     line-height: 24px;
     color: $gray-color-75;
@@ -22,11 +22,11 @@
     display: flex;
     gap: 10px;
 
-    &:last-child{
-      margin-bottom: 0px;
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    &::before{
+    &::before {
       content: '';
       display: inline-block;
       width: 10px;

@@ -1,4 +1,4 @@
-.comfort-item{
+.comfort-item {
   user-select: none;
   font: normal bold 14px/24px $primary-font;
   color: $gray-color-75;
@@ -8,27 +8,26 @@
   column-gap: 10px;
   width: 280px;
 
-  &__icon{
+  &__icon {
     background: $primary-gradient;
     background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    &::after{
+    &::after {
       font: normal normal 48px/48px 'Material Icons';
       content: attr(data-icon);
     }
   }
 
-  &__text{
+  &__text {
     height: 48px;
   }
 
-  &__description{
+  &__description {
     font-weight: normal;
   }
 
-  &_with-underline::after{
+  &_with-underline::after {
     flex-basis: 280px;
     content: '';
     display: block;

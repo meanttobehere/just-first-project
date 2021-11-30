@@ -1,4 +1,4 @@
-.review{
+.review {
   font-family: $primary-font;
   font-style: normal;
   font-weight: normal;
@@ -8,29 +8,29 @@
   display: flex;
   gap: 9.93px;
 
-  &__name{
+  &__name {
     font-weight: bold;
   }
 
-  &__left-container{
+  &__left-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
   }
 
-  &__img{
+  &__img {
     display: block;
     width: 47.67px;
     height: 48px;
     border: 2px solid $white-color;
     box-sizing: border-box;
-    filter: drop-shadow(0px 10px 20px $gray-color-10);
+    filter: drop-shadow(0 10px 20px $gray-color-10);
     border-radius: 32px;
     object-fit: cover;
   }
 
-  &__text{
+  &__text {
     margin-top: 10px;
   }
 }

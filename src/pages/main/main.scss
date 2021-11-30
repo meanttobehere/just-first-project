@@ -1,16 +1,16 @@
-.mainpage{
+.mainpage {
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
 
-  &__header{
+  &__header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
   }
 
-  &__main{
+  &__main {
     background-image: url('./images/room-with-gray-sofa.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,22 +20,23 @@
     min-width: 0;
   }
 
-  &__container{
+  &__container {
     padding-top: 70px;
     max-width: 1440px;
     margin: auto;
   }
 
-  &__search-form{
+  &__search-form {
     margin-left: 140px;
     max-width: 380px;
-    @media screen and (max-width: 660px){
+
+    @media screen and (max-width: 660px) {
       margin: auto;
       padding: 0 10px;
     }
   }
 
-  &__text{
+  &__text {
     margin: 317px 124px 20px auto;
     max-width: 297px;
     padding: 0 10px;
@@ -43,7 +44,7 @@
     text-align: right;
     color: $gray-color-75;
 
-    @media screen and (max-width: 565px){
+    @media screen and (max-width: 565px) {
       margin-right: auto;
     }
   }

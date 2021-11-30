@@ -1,16 +1,16 @@
-.login{
+.login {
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
 
-  &__header{
+  &__header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
   }
 
-  &__main{
+  &__main {
     padding-top: 70px;
     background-image: url('./images/white-room.jpg');
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@
     background-position: center bottom;
   }
 
-  &__login-form-container{
+  &__login-form-container {
     padding: 172px 10px;
     max-width: 380px;
     margin: auto;

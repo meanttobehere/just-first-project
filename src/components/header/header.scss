@@ -1,15 +1,15 @@
-.header{
+.header {
   background-color: $white-color;
   font: normal normal 20px/20px $primary-font;
   color: $gray-color-50;
-  box-shadow: 0px 10px 20px $gray-color-5;
+  box-shadow: 0 10px 20px $gray-color-5;
 
-  @media screen and (min-width: 970px){
+  @media screen and (min-width: 970px) {
     font-size: 14px;
     line-height: 17px;
   }
 
-  &__container{
+  &__container {
     margin: auto;
     display: flex;
     align-items: center;
@@ -19,47 +19,47 @@
     position: relative;
   }
 
-  &__logotype{
+  &__logotype {
     margin-right: auto;
     margin-left: 20px;
   }
 
-  &__stick{
+  &__stick {
     width: 280px;
     height: 1px;
     background: $gray-color-10;
 
-    @media screen and (min-width: 600px){
+    @media screen and (min-width: 600px) {
       width: 1px;
       height: 30px;
     }
   }
 
-  &__navbar{
+  &__navbar {
     position: absolute;
     overflow: hidden;
     top: 65px;
-    left: 0px;
+    left: 0;
     width: 100%;
-    height: 0px;
+    height: 0;
     z-index: 999;
     background: $white-color;
     transition: height 0.2s ease-in-out;
 
-    &_open{
+    &_open {
       min-height: 100vh;
 
-      @media screen and (max-height: 500px){
+      @media screen and (max-height: 500px) {
         min-height: calc(100vh - 60px);
         overflow: auto;
       }
     }
 
-    @media screen and (min-width: 600px){
+    @media screen and (min-width: 600px) {
       width: 50%;
     }
 
-    @media screen and (min-width: 970px){
+    @media screen and (min-width: 970px) {
       position: static;
       height: auto;
       opacity: 1;
@@ -77,21 +77,21 @@
     }
   }
 
-  &__item{
-    margin: 30px 30px 0 30px;
+  &__item {
+    margin: 30px 30px 0;
 
-    @media screen and (min-width: 970px){
+    @media screen and (min-width: 970px) {
       margin: 0;
     }
   }
 
-  &__userblock{
+  &__userblock {
     margin: 30px;
     display: flex;
     flex-flow: column;
     row-gap: 25px;
 
-    @media screen and (min-width: 600px){
+    @media screen and (min-width: 600px) {
       flex-flow: row;
       align-items: center;
       gap: 20px;
@@ -99,30 +99,30 @@
     }
   }
 
-  &__button{
+  &__button {
     height: 44px;
     width: 100%;
 
-    @media screen and (min-width: 600px){
+    @media screen and (min-width: 600px) {
       height: 34px;
       width: 87px;
 
-      &:last-child{
+      &:last-child {
         width: 196px;
       }
     }
   }
 
-  &__menu-icon{
+  &__menu-icon {
     cursor: pointer;
     margin: 0 20px 0 0;
 
-    @media screen and (min-width: 600px){
+    @media screen and (min-width: 600px) {
       margin: 0 0 0 20px;
       order: -1;
     }
 
-    @media screen and (min-width: 970px){
+    @media screen and (min-width: 970px) {
       display: none;
     }
   }

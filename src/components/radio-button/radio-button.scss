@@ -1,7 +1,7 @@
-.radio-button{
+.radio-button {
   user-select: none;
 
-  &__label{
+  &__label {
     display: inline-block;
     height: 20px;
     padding-left: 30px;
@@ -11,11 +11,11 @@
     color: $gray-color-75;
   }
 
-  &__input{
+  &__input {
     appearance: none;
     cursor: inherit;
 
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       left: 0;
@@ -28,15 +28,15 @@
       background: $white-color;
     }
 
-    &:checked::before{
+    &:checked::before {
       border-color: $primary-color;
     }
 
-    &:focus::before{
+    &:focus::before {
       box-shadow: 0 0 10px $primary-color;
     }
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       left: 4px;
@@ -47,7 +47,7 @@
       background: $white-color;
     }
 
-    &:checked::after{
+    &:checked::after {
       background: $primary-gradient;
     }
   }

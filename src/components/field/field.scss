@@ -1,14 +1,14 @@
-.field{
+.field {
   font: normal normal 14px/18px $primary-font;
   color: $gray-color;
   max-width: 320px;
   width: 100%;
 
-  &_size_m{
+  &_size_m {
     max-width: 266px;
   }
 
-  &__title{
+  &__title {
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
@@ -16,11 +16,11 @@
     margin-bottom: 5px;
   }
 
-  &__container{
+  &__container {
     position: relative;
   }
 
-  &__input{
+  &__input {
     height: 44px;
     width: 100%;
     padding: 0;
@@ -35,19 +35,22 @@
     line-height: inherit;
     color: $gray-color-75;
 
-    &::placeholder{
+    &::placeholder {
       color: $gray-color-25;
     }
 
-    &:hover, &:focus, &_focused{
+    &:hover,
+    &:focus,
+    &_focused {
       border-color: $gray-color-50;
-      &::placeholder{
+
+      &::placeholder {
         color: $gray-color-75;
       }
     }
   }
 
-  &__button{
+  &__button {
     position: absolute;
     top: 0;
     right: 0;
@@ -57,12 +60,12 @@
     background: none;
     cursor: pointer;
 
-    &:focus{
-      background-image: radial-gradient(circle at center, #BC9CFF80 0, transparent 70%);
+    &:focus {
+      background-image: radial-gradient(circle at center, #bc9cff80 0, transparent 70%);
     }
   }
 
-  &__arrow{
+  &__arrow {
     width: 44px;
     height: 44px;
     display: flex;
@@ -70,18 +73,16 @@
     align-items: center;
     background: $primary-gradient;
     background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    &::after{
+    &::after {
       font: normal normal 24px/24px 'Material Icons';
       content: 'arrow_forward';
     }
 
-    &:hover{
+    &:hover {
       background: $primary-gradient-50;
       background-clip: text;
-      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }

@@ -3,21 +3,23 @@
   max-height: 257px;
   background: $white-color;
   color: $white-color;
-  box-shadow: 0px 10px 20px $gray-color-5;
+  box-shadow: 0 10px 20px $gray-color-5;
   border-radius: 4px;
-  transition: box-shadow .2s ease;
+  transition: box-shadow 0.2s ease;
+
   &:hover {
     box-shadow: 0 10px 20px $gray-color-25;
   }
+
   overflow: hidden;
 
-  &__images{
+  &__images {
     user-select: none;
     height: 151px;
     position: relative;
   }
 
-  &__image{
+  &__image {
     z-index: 1;
     position: absolute;
     display: block;
@@ -25,36 +27,38 @@
     height: 100%;
     width: 0%;
 
-    &_visible{
+    &_visible {
       width: 100%;
     }
   }
 
-  &:hover, &_buttons_visible{
-    .room-card__button{
+  &:hover,
+  &_buttons_visible {
+    .room-card__button {
       opacity: 1;
     }
   }
 
-  &__button{
+  &__button {
     cursor: pointer;
     width: 42px;
     height: 100%;
     position: absolute;
     z-index: 2;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-    transition: opacity .3s linear;
+    background: linear-gradient(90deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 0%) 99.99%, rgb(255 255 255 / 0%) 100%);
+    transition: opacity 0.3s linear;
     opacity: 0;
-    &:last-child{
+
+    &:last-child {
       right: 0;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
   }
 
-  &__arrow{
+  &__arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%) rotate(90deg); 
+    transform: translateY(-50%) rotate(90deg);
     z-index: 3;
     width: 44px;
     height: 44px;
@@ -62,13 +66,13 @@
     align-items: center;
     justify-content: center;
 
-    &::after{
+    &::after {
       font: normal normal 24px/24px 'Material Icons';
       content: 'expand_more';
     }
   }
 
-  &__dots{
+  &__dots {
     position: absolute;
     z-index: 3;
     display: flex;
@@ -77,28 +81,28 @@
     bottom: 15px;
   }
 
-  &__dot{
+  &__dot {
     cursor: pointer;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     box-sizing: border-box;
     border: 1px solid $white-color;
-    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+    box-shadow: 0 5px 5px rgb(31 32 65 / 30%);
 
-    &_selected{
+    &_selected {
       background: $white-color;
     }
   }
 
-  &__container{
+  &__container {
     cursor: pointer;
     font: normal bold 14px/18px $primary-font;
     color: $gray-color;
     padding: 20px 17px 20px 20px;
   }
 
-  &__top{
+  &__top {
     height: 22px;
     display: flex;
     justify-content: space-between;
@@ -106,26 +110,26 @@
     margin-bottom: 10px;
   }
 
-  &__stick{
+  &__stick {
     height: 1px;
     background: $gray-color-10;
     padding-right: 3px;
     margin-bottom: 11px;
   }
 
-  &__bottom{
+  &__bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
 
-  &__number{
+  &__number {
     font-size: 20px;
     line-height: 20px;
     display: flex;
     align-items: flex-end;
 
-    &::before{
+    &::before {
       display: inline-block;
       content: '№';
       font-size: 14px;
@@ -134,7 +138,7 @@
     }
   }
 
-  &__number-luxe{
+  &__number-luxe {
     color: $primary-color;
     display: inline-block;
     font-size: 12px;
@@ -142,9 +146,10 @@
     text-transform: uppercase;
   }
 
-  &__price{
+  &__price {
     color: $gray-color-50;
-    &::after{
+
+    &::after {
       font-weight: normal;
       font-size: 12px;
       line-height: 16px;
@@ -152,11 +157,12 @@
     }
   }
 
-  &__count{
+  &__count {
     color: $gray-color-50;
     padding-right: 3px;
     padding-bottom: 3px;
-    &::after{
+
+    &::after {
       font-weight: normal;
       content: ' Отзывов';
     }

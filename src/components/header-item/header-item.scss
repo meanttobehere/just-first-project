@@ -1,80 +1,82 @@
-.header-item{
+.header-item {
   position: relative;
   min-height: 18px;
   font: normal normal 20px/20px $primary-font;
   color: $gray-color-50;
   cursor: pointer;
 
-  @media screen and (min-width: 970px){
+  @media screen and (min-width: 970px) {
     font-size: 14px;
     line-height: 17px;
   }
 
-  &__title-container{
+  &__title-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    &:hover{
-      color:$gray-color;
+
+    &:hover {
+      color: $gray-color;
     }
   }
 
-  &__title{
+  &__title {
     text-decoration: none;
     color: inherit;
     line-height: 24px;
   }
 
-  &__arrow{
+  &__arrow {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &::after{
+    &::after {
       font: normal normal 24px/24px 'Material Icons';
       content: 'expand_more';
     }
   }
 
-  &__child{
+  &__child {
     display: block;
     margin-top: 30px;
     width: max-content;
     text-decoration: none;
     color: inherit;
-    &:hover{
+
+    &:hover {
       color: $gray-color;
     }
 
-    @media screen and (min-width: 970px){
+    @media screen and (min-width: 970px) {
       margin: 25px 15px;
     }
   }
 
-  &__children-container{
+  &__children-container {
     background: $white-color;
     display: none;
 
-    @media screen and (min-width: 970px){
+    @media screen and (min-width: 970px) {
       position: absolute;
       top: 34px;
       left: -15px;
       z-index: 19999;
       border-radius: 4px;
-      box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
+      box-shadow: 0 0 5px rgb(0 0 0 / 20%);
     }
   }
 
-  &_open{
-    .header-item__children-container{
+  &_open {
+    .header-item__children-container {
       display: block;
     }
   }
 
-  &_selected{
-    .header-item__title{
+  &_selected {
+    .header-item__title {
       font-weight: bold;
       color: $gray-color-75;
-     }
+    }
   }
 }

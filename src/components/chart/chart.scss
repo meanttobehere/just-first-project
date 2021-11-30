@@ -1,14 +1,13 @@
-$chart-yellow: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-$chart-green: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-$chart-purple: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-$chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+$chart-yellow: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$chart-green: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$chart-purple: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$chart-black: linear-gradient(180deg, #919191 0%, #3d4975 100%);
 
-.chart{
+.chart {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-
   font-family: $primary-font;
   font-style: normal;
   font-weight: normal;
@@ -16,13 +15,13 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
   line-height: 24px;
   color: $gray-color-75;
 
-  &__svg-container{
+  &__svg-container {
     width: 120px;
     height: 120px;
     position: relative;
   }
 
-  &__counter{
+  &__counter {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -33,7 +32,7 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
     font-size: 24px;
     line-height: 29px;
 
-    &::after{
+    &::after {
       content: 'голосов';
       display: block;
       font-size: 12px;
@@ -42,23 +41,23 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
     }
   }
 
-  &__svg{
+  &__svg {
     transform: rotate(90deg) scale(-1, 1);
   }
 
-  &__list{
+  &__list {
     display: block;
     padding: 28px 0 0 30px;
     margin: 0;
   }
 
-  &__item{
+  &__item {
     list-style: none;
     display: flex;
     align-items: center;
     column-gap: 5px;
 
-    &::before{
+    &::before {
       content: '';
       display: block;
       width: 10px;
@@ -67,19 +66,19 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3D4975 100%);
       background: $gray-color-25;
     }
 
-    &:nth-child(1)::before{
+    &:nth-child(1)::before {
       background: $chart-yellow;
     }
 
-    &:nth-child(2)::before{
+    &:nth-child(2)::before {
       background: $chart-green;
     }
 
-    &:nth-child(3)::before{
+    &:nth-child(3)::before {
       background: $chart-purple;
     }
 
-    &:nth-child(4)::before{
+    &:nth-child(4)::before {
       background: $chart-black;
     }
   }

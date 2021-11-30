@@ -1,23 +1,23 @@
-.footer{
+.footer {
   background: $white-color;
   font: normal normal 12px/15px $primary-font;
   color: $gray-color;
 
-  &__top-container{
-    box-shadow: 0px 1px 0px $gray-color-10;
+  &__top-container {
+    box-shadow: 0 1px 0 $gray-color-10;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     column-gap: 40px;
     margin: auto;
-    padding: 79px 25px 100px 25px;
+    padding: 79px 25px 100px;
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       display: none;
     }
   }
 
-  &__group{
+  &__group {
     padding-top: 25px;
     display: flex;
     flex-flow: column;
@@ -26,63 +26,68 @@
     row-gap: 20px;
     flex-grow: 1;
 
-    &:nth-child(1){
+    &:nth-child(1) {
       padding-top: 21px;
       row-gap: 17px;
       max-width: 260px;
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
       max-width: 160px;
     }
-    &:nth-child(3){
+
+    &:nth-child(3) {
       max-width: 160px;
     }
-    &:nth-child(4){
+
+    &:nth-child(4) {
       max-width: 160px;
     }
-    &:nth-child(5){
+
+    &:nth-child(5) {
       max-width: 260px;
       row-gap: 18px;
     }
   }
 
-  &__group-title{
+  &__group-title {
     text-transform: uppercase;
     font-weight: bold;
   }
 
-  &__group-title + &__group-item{
+  &__group-title + &__group-item {
     margin-top: 2px;
   }
 
-  &__group-item{
+  &__group-item {
     display: inline-block;
     text-decoration: none;
     font-size: 14px;
     line-height: 17px;
     min-height: 18px;
     color: $gray-color-50;
-    &:hover{
+
+    &:hover {
       color: $gray-color;
     }
   }
 
-  &__text{
+  &__text {
     line-height: 24px;
     font-size: 14px;
     color: $gray-color-75;
     margin-bottom: 5px;
   }
 
-  &__bottom-container{
-    padding: 0 25px 0 25px;
+  &__bottom-container {
+    padding: 0 25px;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     height: 367px;
 
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
       height: 70px;
       max-width: 1160px;
       margin: auto;
@@ -91,28 +96,33 @@
     }
   }
 
-  &__bottom-item{
+  &__bottom-item {
     font-size: 14px;
     line-height: 17px;
     color: $gray-color-75;
     text-align: center;
     display: flex;
     gap: 20px;
-    &:nth-child(2){
+
+    &:nth-child(2) {
       margin-top: 21px;
       margin-bottom: 25px;
     }
-    @media screen and (min-width: 768px){
-      &:first-child{
+
+    @media screen and (min-width: 768px) {
+      &:first-child {
         display: none;
       }
-      &:nth-child(2){
+
+      &:nth-child(2) {
         margin: 0;
       }
     }
   }
 
-  &__twitter-link, &__facebook-link, &__instagram-link{
+  &__twitter-link,
+  &__facebook-link,
+  &__instagram-link {
     text-decoration: none;
     display: inline-flex;
     width: 24px;
@@ -121,50 +131,50 @@
     align-items: center;
     background: $primary-gradient;
     background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.1s;
-    &:hover{
+
+    &:hover {
       transform: scale(1.2);
     }
-    &::before{
+
+    &::before {
       display: inline-block;
-      font-style: normal;
-      font-variant: normal;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
       font: normal normal 24px/24px 'Font Awesome 5 Brands';
     }
   }
 
-  &__twitter-link::before{
+  &__twitter-link::before {
     content: '\f099';
   }
 
-  &__facebook-link::before{
+  &__facebook-link::before {
     content: '\f082';
   }
 
-  &__instagram-link::before{
+  &__instagram-link::before {
     content: '\f16d';
   }
 
-  &_type_partial{
-    .footer__top-container{
-        display: none;
+  &_type_partial {
+    .footer__top-container {
+      display: none;
     }
 
-    .footer__bottom-container{
+    .footer__bottom-container {
       height: 367px;
       flex-flow: column;
       justify-content: center;
     }
 
-    .footer__bottom-item{
-      &:first-child{
+    .footer__bottom-item {
+      &:first-child {
         display: block;
       }
-      &:nth-child(2){
+
+      &:nth-child(2) {
         margin-top: 21px;
         margin-bottom: 25px;
       }

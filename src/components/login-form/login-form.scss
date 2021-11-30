@@ -1,23 +1,23 @@
-.login-form{
+.login-form {
   background: $white-color;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgb(0 0 0 / 12%);
   border-radius: 4px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
   user-select: none;
   font: normal normal 24px/29px $primary-font;
   color: $gray-color;
   max-width: 380px;
-  padding: 39px 20px 0 20px;
+  padding: 39px 20px 0;
 
-  &__title{
+  &__title {
     max-width: 320px;
     margin: auto;
     margin-bottom: 21px;
     font-weight: bold;
   }
 
-  &__inputdata-container{
+  &__inputdata-container {
     max-width: 320px;
     margin: auto;
     margin-bottom: 20px;
@@ -26,7 +26,7 @@
     gap: 10px;
   }
 
-  &__button-container{
+  &__button-container {
     max-width: 320px;
     margin: auto;
     margin-bottom: 30px;
@@ -36,16 +36,17 @@
     gap: 20px;
     font-size: 14px;
     color: black;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 31px;
     }
   }
 
-  &__text{
+  &__text {
     padding-bottom: 2px;
   }
 
-  &__signup-button{
+  &__signup-button {
     text-decoration: none;
   }
 }

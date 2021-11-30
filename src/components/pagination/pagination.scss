@@ -1,13 +1,13 @@
-.pagination{
+.pagination {
   user-select: none;
   font: normal normal 12px/12px $primary-font;
   color: $gray-color-50;
 
-  &__container{
+  &__container {
     display: flex;
   }
 
-  &__item{
+  &__item {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -18,40 +18,42 @@
     align-items: center;
     transition: transform 0.3s;
 
-    &:hover{
+    &:hover {
       background: $gray-color-10;
     }
 
-    &:first-child{
+    &:first-child {
       background: $primary-gradient;
       font-weight: bold;
       color: $white-color;
-      &:hover{
+
+      &:hover {
         background: $primary-gradient-75;
       }
     }
 
-    &:last-child{
+    &:last-child {
       background: $secondary-gradient;
       color: $white-color;
-      &:hover{
+
+      &:hover {
         background: $secondary-gradient-75;
       }
     }
   }
 
-  &__arrow{
+  &__arrow {
     display: flex;
     justify-content: center;
     align-items: center;
-    &::after{
+
+    &::after {
       font: normal normal 24px/24px 'Material Icons';
       content: 'arrow_forward';
-
     }
   }
 
-  &__description{
+  &__description {
     margin-top: 11px;
     padding-left: 5px;
     height: 24px;
