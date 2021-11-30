@@ -40,9 +40,8 @@
     margin: 317px 124px 20px auto;
     max-width: 297px;
     padding: 0 10px;
-    font: normal normal 14px/24px $primary-font;
+    line-height: 24px;
     text-align: right;
-    color: $gray-color-75;
 
     @media screen and (max-width: 565px) {
       margin-right: auto;

@@ -6,11 +6,7 @@
   align-items: center;
   gap: 20px;
   user-select: none;
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font: 12px/15px $primary-font;
 
   &_size_m {
     max-width: 266px;
@@ -34,7 +30,7 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $gray-color;
-    margin-bottom: 5.44px;
+    margin-bottom: 5px;
   }
 
   &__container {
@@ -57,7 +53,7 @@
     height: 44px;
 
     &::after {
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       content: 'expand_more';
     }
   }

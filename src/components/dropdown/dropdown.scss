@@ -1,7 +1,7 @@
 .dropdown {
   max-width: 320px;
   user-select: none;
-  font: normal normal 14px/18px $primary-font;
+  font: 14px/18px $primary-font;
   color: $gray-color;
 
   &_size_s {
@@ -62,7 +62,7 @@
     color: $gray-color-50;
 
     &::after {
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       content: 'expand_more';
     }
   }

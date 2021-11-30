@@ -9,7 +9,7 @@
   padding-top: 5.625%;
   padding-bottom: 5.9375%;
   user-select: none;
-  font: normal normal 12px/15px $primary-font;
+  font: 12px/15px $primary-font;
   color: $gray-color-50;
 
   &__month-selector {
@@ -48,12 +48,12 @@
 
   &__arrow-back::after {
     content: 'arrow_back';
-    font: normal normal 24px/24px 'Material Icons';
+    font: 24px 'Material Icons';
   }
 
   &__arrow-forward::after {
     content: 'arrow_forward';
-    font: normal normal 24px/24px 'Material Icons';
+    font: 24px 'Material Icons';
   }
 
   &__day-selector {

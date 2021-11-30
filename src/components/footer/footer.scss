@@ -1,6 +1,6 @@
 .footer {
   background: $white-color;
-  font: normal normal 12px/15px $primary-font;
+  font: 12px/15px $primary-font;
   color: $gray-color;
 
   &__top-container {
@@ -131,7 +131,7 @@
     align-items: center;
     background: $primary-gradient;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
     transition: 0.1s;
 
     &:hover {
@@ -141,8 +141,7 @@
     &::before {
       display: inline-block;
       text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      font: normal normal 24px/24px 'Font Awesome 5 Brands';
+      font: 24px 'Font Awesome 5 Brands';
     }
   }
 

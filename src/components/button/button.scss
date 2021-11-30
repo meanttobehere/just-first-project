@@ -11,7 +11,7 @@
   height: 44px;
   border-radius: 22px;
   padding: 0;
-  font: bold normal 12px/15px $primary-font;
+  font: bold 12px/15px $primary-font;
   text-transform: uppercase;
   color: $white-color;
   background-image: $primary-gradient;
@@ -85,7 +85,7 @@
 
     &::after {
       content: 'arrow_forward';
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       text-transform: none;
     }
   }

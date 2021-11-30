@@ -44,17 +44,13 @@
 
 .range-slider {
   max-width: 266px;
+  font: 12px/15px $primary-font;
 
   &__container {
     padding-bottom: 26px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
     color: $gray-color;
   }

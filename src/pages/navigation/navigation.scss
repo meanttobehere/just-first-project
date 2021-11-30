@@ -1,12 +1,13 @@
 .navigation {
-  background: white;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   gap: 100px;
   padding-top: 30px;
   align-items: flex-start;
-  font: normal normal 24px/24px $primary-font;
+  font-size: 24px;
+  line-height: 24px;
+  background: $white-color;
 
   &__group {
     min-width: 230px;

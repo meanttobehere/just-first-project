@@ -67,7 +67,7 @@
     justify-content: center;
 
     &::after {
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       content: 'expand_more';
     }
   }
@@ -97,7 +97,7 @@
 
   &__container {
     cursor: pointer;
-    font: normal bold 14px/18px $primary-font;
+    font: bold 14px/18px $primary-font;
     color: $gray-color;
     padding: 20px 17px 20px 20px;
   }

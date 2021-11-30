@@ -9,11 +9,11 @@
   align-items: center;
   user-select: none;
   cursor: pointer;
-  font: normal normal 10px/12px $primary-font;
+  font: 10px/12px $primary-font;
   padding: 0 5px;
 
   &::before {
-    font: normal normal 10px/10px 'Material Icons';
+    font: 10px 'Material Icons';
     content: 'favorite_border';
   }
 
@@ -30,7 +30,7 @@
       content: 'favorite';
       background: $primary-gradient;
       background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
   }
 }

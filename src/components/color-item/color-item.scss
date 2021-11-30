@@ -3,6 +3,7 @@
   gap: 40px;
   justify-content: flex-start;
   align-items: center;
+  font: 19px/28px $primary-font;
 
   &__box {
     width: 70px;
@@ -14,11 +15,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: $primary-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 19px;
-    line-height: 28px;
   }
 
   &__firstline {

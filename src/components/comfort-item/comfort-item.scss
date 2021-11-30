@@ -1,6 +1,6 @@
 .comfort-item {
   user-select: none;
-  font: normal bold 14px/24px $primary-font;
+  font: bold 14px/24px $primary-font;
   color: $gray-color-75;
   display: flex;
   align-items: center;
@@ -11,10 +11,10 @@
   &__icon {
     background: $primary-gradient;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 
     &::after {
-      font: normal normal 48px/48px 'Material Icons';
+      font: 48px 'Material Icons';
       content: attr(data-icon);
     }
   }

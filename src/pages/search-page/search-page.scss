@@ -1,6 +1,7 @@
 .search-page {
   background: $white-color;
-  font: normal normal 18px/20px $primary-font;
+  font-size: 18px;
+  line-height: 20px;
   color: $gray-color;
 
   &__header {

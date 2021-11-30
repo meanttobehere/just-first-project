@@ -1,6 +1,6 @@
 .pagination {
   user-select: none;
-  font: normal normal 12px/12px $primary-font;
+  font: 12px $primary-font;
   color: $gray-color-50;
 
   &__container {
@@ -48,7 +48,7 @@
     align-items: center;
 
     &::after {
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       content: 'arrow_forward';
     }
   }

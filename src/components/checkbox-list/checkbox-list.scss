@@ -2,7 +2,7 @@
   user-select: none;
 
   &__title {
-    font: normal bold 12px/15px $primary-font;
+    font: bold 12px/15px $primary-font;
     text-transform: uppercase;
     color: $gray-color;
     max-width: 268px;
@@ -22,7 +22,7 @@
 
     &::after {
       content: 'expand_more';
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       text-transform: none;
     }
   }
@@ -50,10 +50,8 @@
       overflow: hidden;
     }
 
-    .checkbox-list__item {
-      &:first-child {
-        margin-top: 17px;
-      }
+    .checkbox-list__item:first-child{
+      margin-top: 17px;
     }
   }
 

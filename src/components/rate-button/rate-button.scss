@@ -8,10 +8,10 @@
     justify-content: center;
     background: $primary-gradient;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 
     &::after {
-      font: normal normal 24px/24px 'Material Icons';
+      font: 24px 'Material Icons';
       content: attr(data-icon);
     }
   }
