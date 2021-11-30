@@ -1,9 +1,11 @@
+@use 'sass:color';
+
 $gray-color: #1f2041;
-$gray-color-75: rgb($gray-color 0.75);
-$gray-color-50: rgb($gray-color 0.5);
-$gray-color-25: rgb($gray-color 0.25);
-$gray-color-10: rgb($gray-color 0.1);
-$gray-color-5: rgb($gray-color 0.05);
+$gray-color-75: color.adjust($gray-color, $alpha: -0.25);
+$gray-color-50: color.adjust($gray-color, $alpha: -0.5);
+$gray-color-25: color.adjust($gray-color, $alpha: -0.75);
+$gray-color-10: color.adjust($gray-color, $alpha: -0.9);
+$gray-color-5: color.adjust($gray-color, $alpha: -0.95);
 $white-color: white;
 $primary-color: #bc9cff;
 $primary-color-50: #bc9cff7f;
