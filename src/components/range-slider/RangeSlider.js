@@ -1,4 +1,5 @@
-import './lib/slider';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import 'slider/dist/lib/slider';
 
 class RangeSlider {
   #$price;
