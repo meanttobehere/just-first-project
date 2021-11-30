@@ -29,8 +29,29 @@ class Header {
   }
 
   #handleMenuClick() {
-    this.#navbar.classList.toggle('header__navbar_open');
+    if (this.#isOpen) { this.#close(); } else { this.#open(); }
+  }
+
+  #open() {
+    this.#navbar.classList.add('header__navbar_open');
     this.#hamburger.change();
+    document.addEventListener('click', this.#handleDocumentClick);
+  }
+
+  #close() {
+    this.#navbar.classList.remove('header__navbar_open');
+    this.#hamburger.change();
+    document.removeEventListener('click', this.#handleDocumentClick);
+  }
+
+  get #isOpen() {
+    return this.#navbar.classList.contains('header__navbar_open');
+  }
+
+  #handleDocumentClick = (event) => {
+    const container = event.target.closest('.js-header__container');
+    const clickWasOutside = container !== this.#container;
+    if (clickWasOutside) { this.#close(); }
   }
 
   #handleQueryWidth(event) {

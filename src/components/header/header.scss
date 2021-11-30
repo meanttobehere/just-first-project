@@ -47,7 +47,12 @@
     transition: height 0.2s ease-in-out;
 
     &_open{
-      height: 100vh;
+      min-height: 100vh;
+
+      @media screen and (max-height: 500px){
+        min-height: calc(100vh - 60px);
+        overflow: auto;
+      }
     }
 
     @media screen and (min-width: 600px){
