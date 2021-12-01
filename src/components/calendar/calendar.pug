@@ -20,14 +20,10 @@ mixin calendar(params)
       button.calendar__month-button.js-calendar__month-button(type="button")
         .calendar__arrow-forward
     .calendar__day-selector.js-calendar__day-selector
-      .calendar__grid-item Пн
-      .calendar__grid-item Вт
-      .calendar__grid-item Ср
-      .calendar__grid-item Чт
-      .calendar__grid-item Пт
-      .calendar__grid-item Сб
-      .calendar__grid-item Вс
+      - let days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
       - let n = 0
+      each day in days
+        .calendar__grid-item= day
       while n < 42
         .calendar__grid-item.js-calendar__grid-item= n++
     .calendar__buttons-container

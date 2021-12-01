@@ -1,11 +1,7 @@
 mixin pagination()
   .pagination
+    - const paginationItems = ['1', '2', '3', '...', '15', ''];
     .pagination__container
-      .pagination__item 1
-      .pagination__item 2
-      .pagination__item 3
-      .pagination__item ...
-      .pagination__item 15
-      .pagination__item
-        .pagination__arrow
+      each item in paginationItems
+        .pagination__item= item
     .pagination__description 1 – 12 из 100+ вариантов аренды

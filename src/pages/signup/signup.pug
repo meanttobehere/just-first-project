@@ -5,19 +5,23 @@ block data
   include ../../components/header/header
   include ../../components/signup-form/signup-form
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/signup/signup.json'));
     const title = 'TOXIN';
     const description = 'signup page of Toxin Pages project';
     const keywords = 'toxin pages, signup';
+    const loginButtonLink = 'login.html';
+    const signupButtonLink = 'signup.html';
+    const logotypeLink= 'main.html';
 
 block content
   .signup
     header.signup__header
-      +header(data.header)
+      +header({
+        loginButtonLink: loginButtonLink,
+        signupButtonLink: signupButtonLink,
+        logotypeLink: logotypeLink
+      })
     main.signup__main
       .signup__search-form-container
-        +signup-form(data.signupForm)
+        +signup-form({loginButtonLink: loginButtonLink})
     footer.signup__footer
-      +footer(data.footer)
+      +footer({logotypeLink: logotypeLink})

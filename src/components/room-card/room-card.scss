@@ -48,25 +48,17 @@
     background: linear-gradient(90deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 0%) 99.99%, rgb(255 255 255 / 0%) 100%);
     transition: opacity 0.3s linear;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:last-child {
       right: 0;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
-  }
-
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    z-index: 3;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     &::after {
+      transform: rotate(90deg);
       font: 24px 'Material Icons';
       content: 'expand_more';
     }

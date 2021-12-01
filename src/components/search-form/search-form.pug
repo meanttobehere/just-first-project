@@ -2,9 +2,8 @@ include ../date-dropdown/date-dropdown
 include ../button/button
 include ../guests-dropdown/guests-dropdown
 
-mixin search-form(params)
+mixin search-form(params = {})
   -
-    params = params ? params : {};
     const {
       guestsDropdown,
       calendar,

@@ -4,29 +4,33 @@ block data
   include ../../components/color-item/color-item
   include ../../components/logotype/logotype
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/colors-type/colors-type.json'));
     const title = 'Colors & Type';
     const description = 'colors-type page of Toxin Pages project';
     const keywords = 'toxin pages, colors-type';
+    const colorItems = [
+      {title: 'Dark Shade 100%', color: '#1F2041'},
+      {title: 'Dark Shade 75%', color: '#1F2041C0'},
+      {title: 'Dark Shade 50%', color: '#1F204180'},
+      {title: 'Dark Shade 25%', color: '#1F204140'},
+      {title: 'Dark Shade 5%', color: '#1F20410D'},
+      {title: 'Purple', color: '#BC9CFF'},
+      {title: 'Green', color: '#6FCF97'}
+    ];
+    const textItems = [
+      'H1', 'This one is the sub-section or widget title',
+      'H2', 'Next one is the item title inside widgets',
+      'H3', 'This is a label or CTA text',
+      'Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'
+    ]
 
 block content
   .colors-type
     .colors-type__logotype-container
-      +logotype(data.logotype)
+      +logotype({partial: true})
     .colors-type__data-container
       .colors-type__left-column
-        each item in data.colorItems
+        each item in colorItems
           +color-item(item)
       .colors-type__right-column
-        .colors-type__item H1
-        .colors-type__item This one is the sub-section or widget title
-        .colors-type__item H2
-        .colors-type__item Next one is the item title inside widgets
-        .colors-type__item H3
-        .colors-type__item This is a label or CTA text
-        .colors-type__item Body
-        .colors-type__item 
-          |This is the body text which is used for 
-          |most of the design, like paragraphs, lists, etc.
+        each item in textItems
+          .colors-type__item= item

@@ -1,8 +1,7 @@
 include ../dropdown/dropdown
 
-mixin guests-dropdown(params)
+mixin guests-dropdown(params = {})
   -
-    params = params ? params : {};
     const {
       title = 'гости',
       alwaysOpen = false,

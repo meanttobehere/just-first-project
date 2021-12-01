@@ -5,21 +5,30 @@ block data
   include ../../components/header/header
   include ../../components/logotype/logotype
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/headers-footers/headers-footers.json'));
     const title = 'Headers & Footers';
     const description = 'headers-footers page of Toxin Pages project';
     const keywords = 'toxin pages, headers-footers';
+    const header1 = {
+      isLoggedIn: false,
+      username: 'Юлий Цезарь',
+      headerItems: [
+        {title: 'О нас', selected: true},
+        {title: 'Услуги', children: [{title: 'Услуга'}]},
+        {title: 'Вакансии'},
+        {title: 'Новости'},
+        {title: 'Соглашения', children: [{title: 'Соглашение'}]}
+      ]
+    }
+    const header2 = {...header1, ...{isLoggedIn: true}};
 
 block content
   .headers-footers
     .headers-footers__logotype-container
-      +logotype(data.logotype)
+      +logotype({partial: true})
     .headers-footers__data-container
       .headers-footers__header
-        +header(data.header1)
-      +header(data.header2)
-      +footer(data.footer1)
+        +header(header1)
+      +header(header2)
+      +footer()
       .headers-footers__footer
-        +footer(data.footer2)
+        +footer({partial: true})

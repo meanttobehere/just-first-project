@@ -5,23 +5,30 @@ block data
   include ../../components/header/header
   include ../../components/search-form/search-form
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/main/main.json'));
     const title = 'TOXIN';
     const description = 'main page of Toxin Pages project';
     const keywords = 'toxin pages, main';
+    const loginButtonLink = 'login.html';
+    const signupButtonLink = 'signup.html';
+    const logotypeLink= 'main.html';
 
 block content
   .mainpage
     header.mainpage__header
-      +header(data.header)
+      +header({
+        loginButtonLink: loginButtonLink,
+        signupButtonLink: signupButtonLink,
+        logotypeLink: logotypeLink
+      })
     main.mainpage__main
       .mainpage__container
         .mainpage__search-form
-          +search-form(data.searchForm)
+          +search-form({
+            calendar: {arrivalDate: '', departureDate: ''},
+            actionLink: 'search-page.html'
+          })
         .mainpage__text
           |Лучшие номера для вашей работы, 
           |отдыха и просто вдохновения
     footer.mainpage__footer
-      +footer(data.footer)
+      +footer({logotypeLink: logotypeLink})

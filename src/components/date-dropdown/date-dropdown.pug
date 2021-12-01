@@ -14,14 +14,10 @@ mixin date-dropdown(params)
 
   .date-dropdown.js-date-dropdown(class=class_size)
     .date-dropdown__date-container
-      .date-dropdown__dropdown
-        .date-dropdown__title= title
-        .date-dropdown__container.js-date-dropdown__container
-          .date-dropdown__text.js-date-dropdown__text ДД.ММ.ГГГГ
-          .date-dropdown__arrow
-      if (twoDropdowns)
+      - let numDropdowns = twoDropdowns ? 2 : 1;
+      while numDropdowns-- > 0
         .date-dropdown__dropdown
-          .date-dropdown__title= secondTitle
+          .date-dropdown__title= title
           .date-dropdown__container.js-date-dropdown__container
             .date-dropdown__text.js-date-dropdown__text ДД.ММ.ГГГГ
             .date-dropdown__arrow

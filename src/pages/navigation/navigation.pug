@@ -4,18 +4,26 @@ block data
   -
     const title = 'TOXIN';
     const description = 'navigation page of Toxin Pages project';
-    const keywords = 'toxin pages, navigation'
+    const keywords = 'toxin pages, navigation';
+    const uikit = [
+      {title: 'Colors & Type', link: './colors-type.html'},
+      {title: 'Form Elements', link: './form-elements.html'},
+      {title: 'Cards', link: './cards.html'},
+      {title: 'Headers & Footers', link: './headers-footers.html'}
+    ];
+    const pages = [
+      {title: 'Landing Page', link: './main.html'},
+      {title: 'Search Room', link: './search-page.html'},
+      {title: 'Room Details', link: './room.html'},
+      {title: 'Registration', link: './signup.html'},
+      {title: 'Sign In', link: './login.html'}
+    ]
 
 block content
   .navigation
     .navigation__group
-      a.navigation__link(href="./colors-type.html") Colors & Type
-      a.navigation__link(href="./form-elements.html") Form Elements
-      a.navigation__link(href="./cards.html") Cards
-      a.navigation__link(href="./headers-footers.html") Headers & Footers
+      each item in uikit
+        a.navigation__link(href=item.link)= item.title
     .navigation__group
-      a.navigation__link(href="./main.html") Landing Page
-      a.navigation__link(href="./search-page.html") Search Room
-      a.navigation__link(href="./room.html") Room Details
-      a.navigation__link(href="./signup.html") Registration
-      a.navigation__link(href="./login.html") Sign In
+      each item in pages
+        a.navigation__link(href=item.link)= item.title

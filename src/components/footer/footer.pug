@@ -59,19 +59,17 @@ mixin footer(params)
         a.footer__logotype(href=logotypeLink)
           +logotype()
       .footer__bottom-item Copyright © 2018 Toxin отель. Все права защищены.
+      -
+        const socialLinks = [
+          {link: 'https://twitter.com/', class: 'footer__twitter-link'},
+          {link: 'https://facebook.com/', class: 'footer__facebook-link'},
+          {link: 'https://instagram.com/', class: 'footer__instagram-link'}
+        ]
       .footer__bottom-item
-        a.footer__twitter-link(
-          href="https://twitter.com/",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-        a.footer__facebook-link(
-          href="https://facebook.com/",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-        a.footer__instagram-link(
-          href="https://instagram.com/",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
+        each social in socialLinks
+          a(
+            class=social.class,
+            href=social.link,
+            target="_blank",
+            rel="noopener noreferrer"
+          )

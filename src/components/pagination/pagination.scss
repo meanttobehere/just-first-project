@@ -40,14 +40,8 @@
         background: $secondary-gradient-75;
       }
     }
-  }
 
-  &__arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &::after {
+    &:last-child::after{
       font: 24px 'Material Icons';
       content: 'arrow_forward';
     }
