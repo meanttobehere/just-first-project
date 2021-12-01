@@ -1,7 +1,7 @@
 include ../dropdown-item/dropdown-item
 include ../button/button
 
-mixin dropdown(params)
+mixin dropdown(params = {})
   -
     const {
       size,
@@ -15,8 +15,9 @@ mixin dropdown(params)
 
     const class_size = size ? `dropdown_size_${size}` : '';
     const class_open = alwaysOpen ? 'dropdown_always-open' : '';
+    const classes = `${class_size} ${class_open}`;
 
-  .dropdown.js-dropdown(class=class_size, class=class_open)
+  .dropdown.js-dropdown(class=classes)
     if (title)
       .dropdown__title= title
     .dropdown__container.js-dropdown__container

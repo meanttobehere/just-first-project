@@ -1,8 +1,8 @@
-mixin color-item(params)
+mixin color-item(params = {})
   -
     const {
-      color,
-      title,
+      color = '#FFFFFFFF',
+      title = 'white',
     } = params;
 
   .color-item

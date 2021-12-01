@@ -1,8 +1,7 @@
 include ../button/button
 
-mixin calendar(params)
+mixin calendar(params = {})
   -
-    params = params ? params : {};
     let arrival = new Date();
     let departure = new Date();
     arrival.setDate(arrival.getDate() + 1);

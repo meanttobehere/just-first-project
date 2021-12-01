@@ -3,9 +3,8 @@ include ../button/button
 include ../toggle/toggle
 include ../radio-button/radio-button
 
-mixin login-form(params)
+mixin login-form(params = {})
   -
-    params = params ? params : {};
     const {
       actionLink = 'https://echo.htmlacademy.ru',
       signupButtonLink = '/mock-address/change-me',

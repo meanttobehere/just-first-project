@@ -1,8 +1,7 @@
 include ../calendar/calendar
 
-mixin date-dropdown(params)
+mixin date-dropdown(params = {})
   -
-    params = params ? params : {};
     const {
       twoDropdowns = true,
       title = 'прибытие',

@@ -1,8 +1,7 @@
 include ../rate-button/rate-button
 
-mixin room-card(params)
+mixin room-card(params = {})
   -
-    params = params ? params : {};
     const {
       imageLinks = [],
       number = 888,

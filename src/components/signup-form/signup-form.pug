@@ -3,9 +3,8 @@ include ../button/button
 include ../toggle/toggle
 include ../radio-button/radio-button
 
-mixin signup-form(params)
+mixin signup-form(params = {})
   -
-    params = params ? params : {};
     const {
       buttonTitle = 'зарегистрироваться',
       actionLink = 'https://echo.htmlacademy.ru',

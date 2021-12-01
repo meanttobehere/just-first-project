@@ -2,9 +2,8 @@ include ../date-dropdown/date-dropdown
 include ../button/button
 include ../guests-dropdown/guests-dropdown
 
-mixin summary-form(params)
+mixin summary-form(params = {})
   -
-    params = params ? params : {};
     const {
       price = 9990,
       number = 888,

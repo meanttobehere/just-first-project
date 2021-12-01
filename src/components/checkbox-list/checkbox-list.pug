@@ -1,10 +1,9 @@
 include ../checkbox/checkbox
 
-mixin checkbox-list(params)
+mixin checkbox-list(params = {})
   -
-    params = params ? params : {};
     const {
-      title,
+      title = 'list',
       items = [],
       expandable = false,
       defaultOpen = true,
@@ -12,8 +11,9 @@ mixin checkbox-list(params)
 
     const class_expandable = expandable ? 'checkbox-list_expandable' : '';
     const class_open = defaultOpen ? 'checkbox-list_open' : '';
+    const classes = `${class_expandable} ${class_open}`;
 
-  .checkbox-list.js-checkbox-list(class=class_expandable class=class_open)
+  .checkbox-list.js-checkbox-list(class=classes)
     .checkbox-list__title.js-checkbox-list__title= title
       if(expandable)
         .checkbox-list__arrow

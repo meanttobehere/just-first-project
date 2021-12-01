@@ -1,8 +1,7 @@
-mixin range-slider(params)
+mixin range-slider(params = {})
   -
-    params = params ? params : {};
     const {
-      title,
+      title = 'title',
       min = 0,
       max = 100,
       val1 = 20,

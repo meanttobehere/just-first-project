@@ -1,9 +1,8 @@
 include ../field/field
 include ../logotype/logotype
 
-mixin footer(params)
+mixin footer(params = {})
   -
-    params = params ? params : {};
     const {
       groups = [
         {title: 'Навигация', items: [
