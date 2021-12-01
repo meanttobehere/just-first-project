@@ -66,6 +66,12 @@ npm run watch
 npm run eslint
 ```
 
+### Запусук линтера Stylelint для всех scss файлов в src
+
+```
+npm run stylelint
+```
+
 ## Используемые интрументы
 
 ### Сборка проекта на:
