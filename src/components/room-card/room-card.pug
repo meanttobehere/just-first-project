@@ -24,8 +24,8 @@ mixin room-card(params = {})
       .room-card__dots
         each link in imageLinks
           .room-card__dot.js-room-card__dot
-      .room-card__button.js-room-card__button(class=class_visible)
-      .room-card__button.js-room-card__button(class=class_visible)
+      - for (let i = 0; i < 2; i++)
+        .room-card__button.js-room-card__button(class=class_visible)
     .room-card__container.js-room-card__container
       .room-card__top
         .room-card__number= number

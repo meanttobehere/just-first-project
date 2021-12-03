@@ -2,11 +2,10 @@
   user-select: none;
   font: 14px/20px $primary-font;
   color: $gray-color-50;
-  margin-top: 10px;
+  height: 20px;
 
   &_with-description {
-    margin-top: 7px;
-
+    height: auto;
     .checkbox__label {
       font-weight: bold;
       color: $gray-color-75;
@@ -15,21 +14,21 @@
 
   &__label {
     margin: 0;
-    display: inline-block;
-    padding-left: 30px;
-    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
     cursor: pointer;
   }
 
   &__input {
     appearance: none;
+    margin: 0 10px 0 0;
+    font-size: 0;
     cursor: inherit;
+    position: relative;
 
     &::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+      display: inline-block;
       width: 20px;
       height: 20px;
       border-radius: 4px;
@@ -65,9 +64,12 @@
   }
 
   &__description {
-    margin: 5px 0 0;
+    flex-basis: 100%;
+    padding: 4px 0 0 30px;
+    margin: 0;
     font-size: 12px;
     line-height: 14px;
     font-weight: normal;
+    vertical-align: top;
   }
 }

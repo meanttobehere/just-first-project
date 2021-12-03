@@ -8,7 +8,8 @@ mixin checkbox(params = {})
     const class_description = description ? 'checkbox_with-description' : '';
 
   .checkbox(class=class_description)
-    label.checkbox__label= title
+    label.checkbox__label
       input.checkbox__input(type="checkbox", checked=checked)
+      = title
       if(description)
-        p.checkbox__description= description
+        span.checkbox__description= description
