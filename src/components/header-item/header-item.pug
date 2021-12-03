@@ -6,14 +6,13 @@ mixin header-item(params = {})
       selected = false,
       children = [],
     } = params;
-    const class_selected = selected ? 'header-item_selected' : '';
 
-  if (children.length == 0)
-    .header-item(class=class_selected)
+  if (children.length === 0)
+    .header-item(class=selected && 'header-item_selected')
       .header-item__title-container
         a.header-item__title(href=href)= title
   else
-    .header-item.js-header-item(class=class_selected)
+    .header-item.js-header-item(class=selected && 'header-item_selected')
       .header-item__title-container.js-header-item__title-container
         .header-item__title= title
         .header-item__arrow

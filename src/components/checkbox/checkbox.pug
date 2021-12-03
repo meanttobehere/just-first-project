@@ -1,13 +1,12 @@
 mixin checkbox(params = {})
   -
     const {
-      title,
-      description,
+      title = 'title',
+      description = null,
       checked = false,
     } = params;
-    const class_description = description ? 'checkbox_with-description' : '';
 
-  .checkbox(class=class_description)
+  .checkbox(class=description && 'checkbox_with-description')
     label.checkbox__label
       input.checkbox__input(type="checkbox", checked=checked)
       = title

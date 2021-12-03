@@ -14,9 +14,8 @@ mixin color-item(params = {})
       {name: 'secondary', value: '#6FCF97'},
     ]
     const colorName = colors.find(item => item.value === color).name;
-    const class_color = `color-item_color_${colorName}`;
 
-  .color-item(class=class_color)
+  .color-item(class=`color-item_color_${colorName}`)
     .color-item__box
     .color-item__title
       .color-item__firstline= title

@@ -158,12 +158,12 @@
       "items": [
         {"title": "Ничего"}
       ], 
-      "expandable": true,
-      "defaultOpen": false
+      "expandable": true
     },
     "checkboxList2":{
       "title": "expandable checkbox list",
       "expandable": true,
+      "alwaysOpen": true,
       "items": [
         {"title": "Завтрак"},
         {"title": "Письменный стол", "checked": true},

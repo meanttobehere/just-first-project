@@ -4,18 +4,19 @@ include ../button/button
 mixin dropdown(params = {})
   -
     const {
-      size,
+      size = null,
       items = [],
       text = 'Text',
-      title,
+      title = null,
       buttons = false,
       alwaysOpen = false,
       name = 'name',
     } = params;
 
-    const class_size = size ? `dropdown_size_${size}` : '';
-    const class_open = alwaysOpen ? 'dropdown_always-open' : '';
-    const classes = `${class_size} ${class_open}`;
+    const classes = [
+      size && `dropdown_size_${size}`,
+      alwaysOpen && 'dropdown_always-open'
+    ];
 
   .dropdown.js-dropdown(class=classes)
     if (title)

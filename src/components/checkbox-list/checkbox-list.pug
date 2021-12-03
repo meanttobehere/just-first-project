@@ -6,12 +6,13 @@ mixin checkbox-list(params = {})
       title = 'list',
       items = [],
       expandable = false,
-      defaultOpen = true,
+      alwaysOpen = false,
     } = params;
 
-    const class_expandable = expandable ? 'checkbox-list_expandable' : '';
-    const class_open = defaultOpen ? 'checkbox-list_open' : '';
-    const classes = `${class_expandable} ${class_open}`;
+    const classes = [
+      expandable && 'checkbox-list_expandable',
+      alwaysOpen && 'checkbox-list_always-open'
+    ];
 
   .checkbox-list.js-checkbox-list(class=classes)
     .checkbox-list__title.js-checkbox-list__title= title

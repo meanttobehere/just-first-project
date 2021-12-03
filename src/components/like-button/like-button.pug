@@ -4,7 +4,6 @@ mixin like-button(params = {})
       numLikes = 10,
       checked = false,
     } = params;
-    const class_checked = checked ? 'like-button_checked' : '';
 
-  .like-button.js-like-button(class=class_checked)
+  .like-button.js-like-button(class=checked && 'like-button_checked')
     .like-button__counter.js-like-button__counter= numLikes

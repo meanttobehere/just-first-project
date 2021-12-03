@@ -1,27 +1,29 @@
 mixin field(params = {})
   -
     const {
-      title,
-      size,
-      placeholder,
+      title = null,
+      size = null,
+      submitLink = null,
+      value = '',
+      placeholder = '',
       type = 'text',
-      submitLink,
-      value,
       name = 'name',
       masked = false,
       focused = false,
     } = params;
-    const class_size = size ? `field_size_${size}` : '';
-    const class_mask = masked ? 'field_type_masked' : '';
-    const class_focused = focused ? 'field__input_focused' : '';
 
-  .field.js-field(class=class_size, class=class_mask)
+    const classes = [
+      size && `field_size_${size}`,
+      masked && 'field_type_masked'
+    ];
+
+  .field.js-field(class=classes)
     if (title)
       .field__title= title
-    if(submitLink !== undefined)
+    if(submitLink)
       form.field__container(action=submitLink)
         input.field__input.js-field__input(
-          class = class_focused,
+          class = focused && 'field__input_focused',
           placeholder=placeholder,
           type=type,
           value=value,
@@ -32,7 +34,7 @@ mixin field(params = {})
     else
       .field__container
         input.field__input.js-field__input(
-          class = class_focused,
+          class = focused && 'field__input_focused',
           placeholder=placeholder,
           type=type,
           value=value,

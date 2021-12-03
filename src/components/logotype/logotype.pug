@@ -3,6 +3,5 @@ mixin logotype(params = {})
     const {
       partial = false,
     } = params;
-    const class_partial = partial ? 'logotype_type_partial' : '';
 
-  .logotype(class=class_partial)
+  .logotype(class=partial && 'logotype_type_partial')

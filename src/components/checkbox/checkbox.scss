@@ -2,11 +2,10 @@
   user-select: none;
   font: 14px/20px $primary-font;
   color: $gray-color-50;
-  height: 20px;
 
   &_with-description {
-    height: auto;
     .checkbox__label {
+      flex-wrap: wrap;
       font-weight: bold;
       color: $gray-color-75;
     }
@@ -15,8 +14,8 @@
   &__label {
     margin: 0;
     display: inline-flex;
-    flex-wrap: wrap;
     cursor: pointer;
+    vertical-align: bottom;
   }
 
   &__input {

@@ -5,8 +5,8 @@ include ../guests-dropdown/guests-dropdown
 mixin search-form(params = {})
   -
     const {
-      guestsDropdown,
-      calendar,
+      guestsDropdown = {},
+      calendar = {},
       actionLink = '/mock-address/change-me',
     } = params;
 

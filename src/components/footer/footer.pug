@@ -27,9 +27,8 @@ mixin footer(params = {})
       logotypeLink = '/mock-address/change-me',
       partial = false,
     } = params;
-    const class_partial = partial ? 'footer_type_partial' : '';
 
-  .footer.js-footer(class=class_partial)
+  .footer.js-footer(class=partial && 'footer_type_partial')
     .footer__top-container
       .footer__group
         a.footer__logotype(href=logotypeLink)

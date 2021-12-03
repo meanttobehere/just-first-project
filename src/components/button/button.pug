@@ -1,18 +1,19 @@
 mixin button(params = {})
   -
     const {
-      size,
-      theme,
+      size = null,
+      theme = null,
       title = 'title',
       type = 'button',
       arrow = false,
       disabled = false,
-      href,
+      href = null,
     } = params;
 
-    const class_size = size ? `button_size_${size}` : '';
-    const class_theme = theme ? `button_theme_${theme}` : '';
-    const classes = `${class_size} ${class_theme}`;
+    const classes = [
+      size && `button_size_${size}`,
+      theme && `button_theme_${theme}`
+    ]
 
   if (href)
     a.button(class=classes, href=href)= title

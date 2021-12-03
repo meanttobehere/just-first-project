@@ -6,12 +6,11 @@ mixin date-dropdown(params = {})
       twoDropdowns = true,
       title = 'прибытие',
       secondTitle = 'выезд',
-      size,
-      calendar,
+      size = null,
+      calendar = {},
     } = params;
-    const class_size = size ? `date-dropdown_size_${size}` : '';
 
-  .date-dropdown.js-date-dropdown(class=class_size)
+  .date-dropdown.js-date-dropdown(class=size && `date-dropdown_size_${size}`)
     .date-dropdown__date-container
       - let numDropdowns = twoDropdowns ? 2 : 1;
       while numDropdowns-- > 0
