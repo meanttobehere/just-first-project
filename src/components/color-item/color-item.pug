@@ -1,12 +1,23 @@
 mixin color-item(params = {})
   -
     const {
-      color = '#FFFFFFFF',
+      color = '#FFFFFF',
       title = 'white',
     } = params;
+    const colors = [
+      {name: 'gray', value: '#1F2041'},
+      {name: 'gray-75', value: '#1F2041C0'},
+      {name: 'gray-50', value: '#1F204180'},
+      {name: 'gray-25', value: '#1F204140'},
+      {name: 'gray-10', value: '#1F20410D'},
+      {name: 'primary', value: '#BC9CFF'},
+      {name: 'secondary', value: '#6FCF97'},
+    ]
+    const colorName = colors.find(item => item.value === color).name;
+    const class_color = `color-item_color_${colorName}`;
 
-  .color-item
-    .color-item__box(style={background: color})
+  .color-item(class=class_color)
+    .color-item__box
     .color-item__title
       .color-item__firstline= title
       .color-item__secondline= color.substring(0, 7)

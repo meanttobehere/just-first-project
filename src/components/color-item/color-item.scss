@@ -20,4 +20,34 @@
   &__firstline {
     font-weight: bold;
   }
+
+  &_color {
+    &_gray .color-item__box {
+      background: $gray-color;
+    }
+
+    &_gray-75 .color-item__box {
+      background: $gray-color-75;
+    }
+
+    &_gray-50 .color-item__box {
+      background: $gray-color-50;
+    }
+
+    &_gray-25 .color-item__box {
+      background: $gray-color-25;
+    }
+
+    &_gray-10 .color-item__box {
+      background: $gray-color-10;
+    }
+
+    &_primary .color-item__box {
+      background: $primary-color;
+    }
+
+    &_secondary .color-item__box {
+      background: $secondary-color;
+    }
+  }
 }
