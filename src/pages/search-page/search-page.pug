@@ -12,40 +12,267 @@ block data
   include ../../components/room-card/room-card
   include ../../components/room-dropdown/room-dropdown
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/search-page/search-page.json'));
     const title = 'TOXIN';
     const description = 'search page of Toxin Pages project';
     const keywords = 'toxin pages, search-page';
+    const loginButtonLink = 'login.html';
+    const signupButtonLink = 'signup.html';
+    const logotypeLink= 'main.html';
+    const rooms = [
+      {
+        number: 888,
+        price: 9990,
+        luxe: true,
+        rate: 5,
+        reviewCount: 145,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-888.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 840,
+        price: 9900,
+        luxe: false,
+        rate: 4,
+        reviewCount: 65,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-840.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 980,
+        price: 8500,
+        luxe: true,
+        rate: 3,
+        reviewCount: 35,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-980.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 856,
+        price: 7300,
+        luxe: false,
+        rate: 5,
+        reviewCount: 19,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-856.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 740,
+        price: 6000,
+        luxe: false,
+        rate: 4,
+        reviewCount: 44,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-740.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 982,
+        price: 5800,
+        luxe: false,
+        rate: 3,
+        reviewCount: 56,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-982.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 678,
+        price: 5500,
+        luxe: false,
+        rate: 5,
+        reviewCount: 45,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-678.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 450,
+        price: 5300,
+        luxe: false,
+        rate: 4,
+        reviewCount: 39,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-450.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 350,
+        price: 5000,
+        luxe: false,
+        rate: 3,
+        reviewCount: 77,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-350.jpg',
+          './images/room-888.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 666,
+        price: 5000,
+        luxe: false,
+        rate: 5,
+        reviewCount: 25,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-666.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 444,
+        price: 5000,
+        luxe: false,
+        rate: 3,
+        reviewCount: 15,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-444.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      },
+      {
+        number: 352,
+        price: 5000,
+        luxe: false,
+        rate: 3,
+        reviewCount: 55,
+        link: 'room.html',
+        imageLinks: [
+          './images/room-352.jpg',
+          './images/room-350.jpg',
+          './images/room-352.jpg',
+          './images/room-450.jpg'
+        ]
+      }
+    ];
 
 block content
   .search-page
     header.search-page__header
-      +header(data.header)
+      +header({
+        loginButtonLink: loginButtonLink,
+        signupButtonLink: signupButtonLink,
+        logotypeLink: logotypeLink
+      })
       .search-page__filter.js-search-page__filter Фильтр
     main.search-page__main
       .search-page__filter-container.js-search-page__filter-container
         .search-page__date-dropdown-container
-          +date-dropdown(data.dateDropdown)
+          +date-dropdown({
+            twoDropdowns: false,
+            size: 'm', 
+            title: 'даты пребывания в отеле',
+            calendar:{
+              arrivalDate: '2022-08-19',
+              departureDate: '2022-08-23'
+            }
+          })
         .search-page__guests-dropdown-container
-          +guests-dropdown(data.guestsDropdown)
+          +guests-dropdown({
+            adults: 2,
+            children: 0,
+            babies: 1,
+            size: 'm'
+          })
         .search-page__range-slider-container
-          +range-slider(data.rangeSlider)
+          +range-slider({
+            title: 'диапазон цены',
+            min: 0,
+            max: 16000,
+            val1: 5000,
+            val2: 10000,
+            step: 100
+          })
         .search-page__rules-checkbox-container
-          +checkbox-list(data.rulesCheckbox)
+          +checkbox-list({
+            title: 'Правила дома',
+            items: [
+              {title: 'Можно курить'},
+              {title: 'Можно с питомцами', checked: true},
+              {title: 'Можно пригласить гостей (до 10 человек)', checked: true}
+            ]})
         .search-page__availability-checkbox-container
-          +checkbox-list(data.availabilityCheckbox)
+          +checkbox-list({
+            title: 'доступность',
+            items: [
+              {
+                title: 'Широкий коридор',
+                description: 'Ширина коридоров в номере не менее 91 см.'
+              },
+              {
+                title: 'Помощник для инвалидов',
+                description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+              }
+            ]})
         .search-page__room-dropdown-container
-          +room-dropdown(data.roomDropdown)
-        +checkbox-list(data.amenitiesCheckbox)
+          +room-dropdown({
+            title: 'удобства номера',
+            beds: 2,
+            bedrooms: 2,
+            size: 'm'
+          })
+        +checkbox-list({
+          title: 'дополнительные удобства',
+          items: [
+            {title: 'Завтрак'},
+            {title: 'Письменный стол', checked: true},
+            {title: 'Стул для кормления', checked: true},
+            {title: 'Кроватка', checked: true},
+            {title: 'Телевизор'},
+            {title: 'Шампунь'}
+          ], 
+          expandable: true,
+        })
       .search-page__data-container.js-search-page__data-container
         .search-page__title Номера, которые мы для вас подобрали
         .search-page__rooms-container
-          each roomCard in data.roomCards
+          each room in rooms
             .search-page__room-card-container
-              +room-card(roomCard)
+              +room-card(room)
         .search-page__pagination-container
           +pagination()
     footer.search-page__footer.js-search-page__footer
-      +footer(data.footer)
+      +footer({logotypeLink: logotypeLink})
