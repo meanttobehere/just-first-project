@@ -32,11 +32,8 @@
     }
   }
 
-  &:hover,
-  &_buttons_visible {
-    .room-card__button {
-      opacity: 1;
-    }
+  &:hover .room-card__button{
+    opacity: 1;
   }
 
   &__button {
@@ -61,6 +58,10 @@
       transform: rotate(90deg);
       font: 24px 'Material Icons';
       content: 'expand_more';
+    }
+
+    &_visible{
+      opacity: 1;
     }
   }
 

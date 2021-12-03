@@ -1,5 +1,4 @@
-/* eslint import/no-extraneous-dependencies:
-["error", {"devDependencies": true}] */
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import Inputmask from 'inputmask';
 
 class Field {
@@ -9,7 +8,6 @@ class Field {
       alias: 'datetime',
       inputFormat: 'dd.mm.yyyy',
       placeholder: 'ДД.ММ.ГГГГ',
-      // jitMasking: true,
     }).mask(input);
   }
 }

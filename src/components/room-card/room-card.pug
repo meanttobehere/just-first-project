@@ -12,20 +12,20 @@ mixin room-card(params = {})
       visibleButtons = false,
       link = '/mock-address/change-me',
     } = params;
-    const class_buttons = visibleButtons ? 'room-card_buttons_visible' : '';
+    const class_visible = visibleButtons ? 'room-card__button_visible' : '';
     const str = price.toString();
     const cardPrice
       = str.substr(0, str.length - 3) + ' ' + str.substr(-3) + '₽';
 
-  form.room-card.js-room-card(action=link, method="get", class=class_buttons)
+  form.room-card.js-room-card(action=link, method="get")
     .room-card__images
       each link in imageLinks
         img.room-card__image.js-room-card__image(src=link, alt="room photo")
       .room-card__dots
         each link in imageLinks
           .room-card__dot.js-room-card__dot
-      .room-card__button.js-room-card__button
-      .room-card__button.js-room-card__button
+      .room-card__button.js-room-card__button(class=class_visible)
+      .room-card__button.js-room-card__button(class=class_visible)
     .room-card__container.js-room-card__container
       .room-card__top
         .room-card__number= number
