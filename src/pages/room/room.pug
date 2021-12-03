@@ -9,56 +9,118 @@ block data
   include ../../components/review/review
   include ../../components/summary-form/summary-form
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/room/room.json'));
     const title = 'TOXIN';
     const description = 'room page of Toxin Pages project';
-    const keywords = 'toxin pages, room"'
+    const keywords = 'toxin pages, room';
+    const loginButtonLink = 'login.html';
+    const signupButtonLink = 'signup.html';
+    const logotypeLink= 'main.html';
 
 block content
   .room
     header.room__header
-      +header(data.header)
+      +header({
+        loginButtonLink: loginButtonLink,
+        signupButtonLink: signupButtonLink,
+        logotypeLink: logotypeLink
+      })
     main.room__main
       figure.room__figure
         .room__photo-group
           .room__photo-container
-            img.room__photo(src=data.roomPhotos[0].url, alt="room photo")
+            img.room__photo(src="images/room-888-1.jpg", alt="room photo")
         .room__photo-group
           .room__photo-container
-            img.room__photo(src=data.roomPhotos[1].url, alt="room photo")
+            img.room__photo(src="images/room-888-2.jpg", alt="room photo")
           .room__photo-container
-            img.room__photo(src=data.roomPhotos[2].url, alt="room photo")
+            img.room__photo(src="images/room-888-3.jpg", alt="room photo")
       .room__section
         .room__container
           .room__top-group
             .room__group-block
               .room__title Сведения о номере
               .room__comfort-items-container
-                each item in data.comfortItems
+                -
+                  const comfortItems = [
+                    {
+                      title: 'Комфорт',
+                      description: 'Шумопоглощающие стены',
+                      underlined: true,
+                      icon: 'insert_emoticon'
+                    },
+                    {
+                      title: 'Удобство',
+                      description: 'Окно в каждой из спален',
+                      underlined: true,
+                      icon: 'location_city'
+                    },
+                    {
+                      title: 'Уют',
+                      description: 'Номер оснащён камином',
+                      icon: 'whatshot'
+                    }
+                  ]
+                each item in comfortItems
                   +comfort-item(item)
             .room__group-block
               .room__title Впечатления от номера
               .room__chart-container
-                +chart(data.chart)
+                +chart()
           .room__middle-group
             .room__group-block
               .room__title-container
                 .room__title Отзывы посетителей номера
-                .room__review-counter= `${data.reviews.length} отзыва`
+                .room__review-counter 2 отзыва
               .room__reviews-container
-                each review in data.reviews
+                -
+                  const reviews = [
+                    {
+                      name: 'Мурад Сарафанов',
+                      date: '5 дней назад',
+                      text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                      numLikes: 12,
+                      likeButtonChecked: true,
+                      photoUrl: 'images/avatar-man.jpg'
+                    },
+                    {
+                      name: 'Патрисия Стёклышкова',
+                      date: 'Неделю назад',
+                      text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+                      numLikes: 2,
+                      photoUrl: 'images/avatar-woman.jpg'
+                    }
+                  ]
+                each review in reviews
                   +review(review)
           .room__bottom-group
             .room__group-block
               .room__title.room__title_left-indented Правила
               .room__bullet-list-container
-                +bullet-list(data.rules)
+                +bullet-list({
+                  items: [
+                    'Нельзя с питомцами',
+                    'Без вечеринок и мероприятий',
+                    'Время прибытия — после 13:00, а выезд до 12:00'
+                  ]
+                })
             .room__group-block
               .room__title Отмена
-              .room__cancelation-description= data.cancelation.description
+              .room__cancelation-description
+                |Бесплатная отмена в течение 48 ч. После этого при отмене не 
+                |позднее чем за 5 дн. до прибытия вы получите полный 
+                |возврат за вычетом сбора за услуги.
         .room__summary-form-container
-          +summary-form(data.summaryForm)
+          +summary-form({
+            price: 9990,
+            number: 888,
+            luxe: true,
+            guestsDropdown:{
+              adults: 3
+            },
+            calendar:{
+              arrivalDate: '2022-08-19',
+              departureDate: '2022-08-23'
+            }
+          })
     footer.room__footer
-      +footer(data.footer)
+      +footer({logotypeLink: logotypeLink})
