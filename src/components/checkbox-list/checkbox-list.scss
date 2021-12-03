@@ -46,6 +46,7 @@
     }
 
     .checkbox-list__list {
+      position: absolute;
       max-height: 0;
       overflow: hidden;
     }
