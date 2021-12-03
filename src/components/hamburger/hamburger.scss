@@ -24,21 +24,21 @@
       top: 20px;
     }
   }
-}
 
-.hamburger_active {
-  .hamburger__slice {
-    &:nth-child(1) {
-      transform: rotate(45deg) translateY(-2px);
-    }
+  &_active {
+    .hamburger__slice {
+      &:nth-child(1) {
+        transform: rotate(45deg) translateY(-2px);
+      }
 
-    &:nth-child(2) {
-      transform: scale(0);
-      opacity: 0;
-    }
+      &:nth-child(2) {
+        transform: scale(0);
+        opacity: 0;
+      }
 
-    &:nth-child(3) {
-      transform: rotate(-45deg) translateY(2px);
+      &:nth-child(3) {
+        transform: rotate(-45deg) translateY(2px);
+      }
     }
   }
 }

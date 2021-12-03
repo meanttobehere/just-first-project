@@ -1,5 +1,4 @@
 mixin hamburger()
   .hamburger.js-hamburger
-    .hamburger__slice
-    .hamburger__slice
-    .hamburger__slice
+    - for (let i = 0; i < 3; i++)
+      .hamburger__slice
