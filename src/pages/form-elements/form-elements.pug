@@ -19,9 +19,6 @@ block data
   include ../../components/room-dropdown/room-dropdown
   include ../../components/toggle/toggle
   -
-    const path = require('path');
-    const fs = require('fs');
-    const data = JSON.parse(fs.readFileSync('./src/pages/form-elements/form-elements.json'));
     const title = 'Form Elements';
     const description = 'form-elements page of Toxin Pages project';
     const keywords = 'toxin pages, form-elements';
@@ -29,86 +26,201 @@ block data
 block content
   .form-elements
     .form-elements__logotype-container
-      +logotype(data.logotype)
+      +logotype({partial: true})
     .form-elements__data-container
       .form-elements__row
         .form-elements__column
           .form-elements__item.form-elements__item_with-right-title(data-text-right="default")
-            +field(data.Col1Row1.field1)
+            +field({
+              title: 'text field',
+              placeholder: 'Email'
+            })
           .form-elements__item.form-elements__item_with-right-title(data-text-right="hover / focus")
-            +field(data.Col1Row1.field2)
+            +field({
+              title: 'text field',
+              value: 'This is pretty awesome',
+              focused: true
+            })
           .form-elements__item
-            +guests-dropdown(data.Col1Row1.guestsDropdown)
+            +guests-dropdown({title: 'dropdown'})
           .form-elements__item
-            +field(data.Col1Row1.field3)
+            +field({
+              title: 'masked text field',
+              masked: true,
+              placeholder: 'ДД.ММ.ГГГГ'
+            })
           .form-elements__item
-            +dropdown(data.Col1Row1.dropdown1)
-            +dropdown(data.Col1Row1.dropdown2)
+            +dropdown({
+              title: 'date dropdown',
+              text: 'ДД.ММ.ГГГГ'
+            })
+            +dropdown({
+              title: 'date dropdown',
+              text: '19.08.2019'
+            })
           .form-elements__item
-            +dropdown(data.Col1Row1.dropdown3)
+            +dropdown({
+              title: 'filter date dropdown',
+              size: 'm', 
+              text: '19 авг - 23 авг'
+            })
           .form-elements__item
-            +field(data.Col1Row1.field4)
+            +field({
+              title: 'subscription text field',
+              size: 'm',
+              placeholder: 'Email',
+              submitLink: '#'
+            })
         .form-elements__column
           .form-elements__item
-            +checkbox-list(data.Col2Row1.checkboxList)
+            +checkbox-list({
+              title: 'checkbox buttons',
+              items: [
+                {title: 'Можно курить'},
+                {title: 'Можно с питомцами', checked: true},
+                {title: 'Можно пригласить гостей (до 10 человек)', checked: true}
+              ]
+            })
           .form-elements__item.form-elements__item_with-title(data-text="radio buttons")
-            +radio-button(data.Col2Row1.radioButton1)
-            +radio-button(data.Col2Row1.radioButton2)
+            +radio-button({title: 'Мужчина', checked: true})
+            +radio-button({title: 'Женщина'})
           .form-elements__item.form-elements__item_with-title(data-text="toggle")
-            +toggle(data.Col2Row1.toggle1)
-            +toggle(data.Col2Row1.toggle2)
+            +toggle({title: 'Получать спецпредложения', checked: true})
+            +toggle({title: 'Получать спецпредложения'})
           .form-elements__item.form-elements__item_with-title(data-text="like button")
-            +like-button(data.Col2Row1.likeButton1)
-            +like-button(data.Col2Row1.likeButton2)
+            +like-button({numLikes: 2})
+            +like-button({numLikes: 12, checked: true})
           .form-elements__item.form-elements__item_with-title(data-text="rate button")
-            +rate-button(data.Col2Row1.rateButton1)
-            +rate-button(data.Col2Row1.rateButton2)
+            +rate-button(4)
+            +rate-button(5)
         .form-elements__column
           .form-elements__item
-            +range-slider(data.Col3Row1.rangeSlider)
+            +range-slider({
+              title: 'range slider',
+              min: 0,
+              max: 16000,
+              val1: 5000,
+              val2: 10000,
+              step: 100
+            })
           .form-elements__item.form-elements__item_with-title(data-text="buttons")
-            +button(data.Col3Row1.button1)
-            +button(data.Col3Row1.button2)
+            +button({title: 'click me', size: 's'})
+            +button({title: 'click me', size: 's', disabled: true})
           .form-elements__item
-            +button(data.Col3Row1.button3)
-            +button(data.Col3Row1.button4)
+            +button({title: 'click me', size: 's', theme: 'white'})
+            +button({title: 'click me', size: 's', theme: 'white', disabled: true})
           .form-elements__item
-            +button(data.Col3Row1.button5)
-            +button(data.Col3Row1.button6)
+            +button({title: 'click me', size: 's', theme: 'no-border'})
+            +button({title: 'click me', size: 's', theme: 'no-border', disabled: true})
           .form-elements__item
-            +button(data.Col3Row1.button7)
+            +button({title: 'перейти к оплате', size: 'l', arrow: true})
           .form-elements__item.form-elements__item_with-title(data-text="pagination")
             +pagination()
       .form-elements__row
         .form-elements__column
           .form-elements__item.form-elements__item_with-right-title(data-text-right="default")
-            +room-dropdown(data.Col1Row2.roomDropdown1)
+            +room-dropdown({
+              title: 'dropdown',
+              beds: 2,
+              bedrooms: 2,
+              bathrooms: 0
+            })
           .form-elements__item.form-elements__item_with-right-title(data-text-right="expanded")
-            +room-dropdown(data.Col1Row2.roomDropdown2)
+            +room-dropdown({
+              title: 'dropdown',
+              alwaysOpen: true,
+              beds: 2,
+              bedrooms: 2,
+              bathrooms: 0
+            })
         .form-elements__column
           .form-elements__item
-            +guests-dropdown(data.Col2Row2.guestsDropdown)
+            +guests-dropdown({
+              title: 'dropdown',
+              alwaysOpen: true,
+              adults: 0, 
+              children: 0,
+              babies: 0
+            })
         .form-elements__column
           .form-elements__item
-            +guests-dropdown(data.Col3Row2.guestsDropdown)
+            +guests-dropdown({
+              title: 'dropdown',
+              alwaysOpen: true,
+              adults: 2, 
+              children: 1,
+              babies: 0
+            })
       .form-elements__row
         .form-elements__column
           .form-elements__item
-            +checkbox-list(data.Col1Row3.checkboxList1)
+            +checkbox-list({
+              title: 'expandable checkbox list',
+              items: [{title: 'Ничего'}],
+              expandable: true
+            })
           .form-elements__item
-            +checkbox-list(data.Col1Row3.checkboxList2)
+            +checkbox-list({
+              title: 'expandable checkbox list',
+              expandable: true,
+              alwaysOpen: true,
+              items: [
+                {title: 'Завтрак'},
+                {title: 'Письменный стол', checked: true},
+                {title: 'Стул для кормления', checked: true},
+                {title: 'Кроватка', checked: true},
+                {title: 'Телевизор'},
+                {title: 'Шампунь'}
+              ]
+            })
         .form-elements__column
           .form-elements__item
-            +checkbox-list(data.Col2Row3.checkboxList)
+            +checkbox-list({
+              title: 'rich checkbox buttons',
+              items: [
+                {
+                  title: 'Широкий коридор',
+                  description: 'Ширина коридоров в номере не менее 91 см.'
+                },
+                {
+                  title: 'Помощник для инвалидов',
+                  description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+                }
+              ]
+            })
         .form-elements__column
           .form-elements__item
-            +bullet-list(data.Col3Row3.bulletList)
+            +bullet-list({
+              title: 'bullet list',
+              items: [
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00, а выезд до 12:00'
+              ]
+            })
       .form-elements__row
         .form-elements__column
           .form-elements__item
-            +comfort-item(data.Col1Row4.comfortItem1)
+            +comfort-item({
+              title: 'Комфорт',
+              description: 'Шумопоглощающие стены',
+              underlined: true,
+              icon: 'insert_emoticon'
+            })
           .form-elements__item
-            +comfort-item(data.Col1Row4.comfortItem2)
+            +comfort-item({
+              title: 'Удобство',
+              description: 'Окно в каждой из спален',
+              underlined: true,
+              icon: 'location_city'
+            })
         .form-elements__column
           .form-elements__item
-            +review(data.Col2Row4.review)
+            +review({
+              name: 'Мурад Сарафанов',
+              date: '5 дней назад',
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              numLikes: 12,
+              likeButtonChecked: true,
+              photoUrl: 'images/avatar-man.jpg'
+            })
