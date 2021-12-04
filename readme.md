@@ -10,17 +10,24 @@
 
 ## Демо страницы
 
-<table>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/main.html' target='_blank'>Landing Page</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/login.html' target='_blank'>Sign In</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/signup.html' target='_blank'>Registration</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/search-page.html' target='_blank'>Search Room</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/room.html' target='_blank'>Room Details</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/colors-type.html' target='_blank'>Colors & Type</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/form-elements.html' target='_blank'>Form Elements</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/cards.html' target='_blank'>Cards</a></th></tr>
-    <tr><th><a href='https://meanttobehere.github.io/toxinpages/headers-footers.html' target='_blank'>Headers & Footers</a></th></tr>
-</table>
+### Navigation
+
+- <a href='https://meanttobehere.github.io/toxinpages/navigation.html' target='_blank'>Navigation</a>
+
+### UI kit
+
+- <a href='https://meanttobehere.github.io/toxinpages/colors-type.html' target='_blank'>Colors & Type</a>
+- <a href='https://meanttobehere.github.io/toxinpages/form-elements.html' target='_blank'>Form Elements</a>
+- <a href='https://meanttobehere.github.io/toxinpages/cards.html' target='_blank'>Cards</a>
+- <a href='https://meanttobehere.github.io/toxinpages/headers-footers.html' target='_blank'>Headers & Footers</a>
+
+### Website pages
+
+- <a href='https://meanttobehere.github.io/toxinpages/main.html' target='_blank'>Landing Page</a>
+- <a href='https://meanttobehere.github.io/toxinpages/login.html' target='_blank'>Sign In</a>
+- <a href='https://meanttobehere.github.io/toxinpages/signup.html' target='_blank'>Registration</a>
+- <a href='https://meanttobehere.github.io/toxinpages/search-page.html' target='_blank'>Search Room</a>
+- <a href='https://meanttobehere.github.io/toxinpages/room.html' target='_blank'>Room Details</a>
 
 ## Быстрый старт 
 

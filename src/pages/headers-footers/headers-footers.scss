@@ -5,10 +5,12 @@
   background: #f4f4f6;
 
   &__logotype-container {
-    padding: 30px 0 62px 30px;
+    display: inline-block;
+    padding: 30px 0 0 30px;
   }
 
   &__data-container {
+    margin-top: 62px;
     display: flex;
     flex-flow: column;
     gap: 40px;
