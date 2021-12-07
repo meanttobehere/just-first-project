@@ -38,6 +38,10 @@
     &:hover {
       color: $gray-color-50;
     }
+
+    &:focus {
+      background-image: radial-gradient(circle at center, #bc9cff80 0, transparent 70%);
+    }
   }
 
   &__arrow-back,
