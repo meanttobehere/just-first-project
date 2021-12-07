@@ -38,11 +38,13 @@ class DropdownItem {
 
   #updateMinusButtonStyle() {
     if (this.getCounterValue() === 0) {
-      this.#minusButton.classList.add('dropdown-item__button_disable');
+      this.#minusButton.classList.add(DropdownItem.#classButtonDisable);
     } else {
-      this.#minusButton.classList.remove('dropdown-item__button_disable');
+      this.#minusButton.classList.remove(DropdownItem.#classButtonDisable);
     }
   }
+
+  static #classButtonDisable = 'dropdown-item__button_disable';
 }
 
 export default DropdownItem;

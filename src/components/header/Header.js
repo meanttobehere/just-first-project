@@ -33,19 +33,19 @@ class Header {
   }
 
   #open() {
-    this.#navbar.classList.add('header__navbar_open');
+    this.#navbar.classList.add(Header.#classNavbarOpen);
     this.#hamburger.change();
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
   #close() {
-    this.#navbar.classList.remove('header__navbar_open');
+    this.#navbar.classList.remove(Header.#classNavbarOpen);
     this.#hamburger.change();
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
   get #isOpen() {
-    return this.#navbar.classList.contains('header__navbar_open');
+    return this.#navbar.classList.contains(Header.#classNavbarOpen);
   }
 
   #handleDocumentClick = (event) => {
@@ -65,6 +65,8 @@ class Header {
       this.#navbar.appendChild(this.#userblock);
     }
   }
+
+  static #classNavbarOpen = 'header__navbar_open';
 }
 
 export default Header;

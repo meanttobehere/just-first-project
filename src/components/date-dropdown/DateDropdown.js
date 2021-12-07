@@ -62,16 +62,16 @@ class DateDropdown {
   }
 
   get #isOpen() {
-    return this.#dropdown.classList.contains('date-dropdown_active');
+    return this.#dropdown.classList.contains(DateDropdown.#classActive);
   }
 
   #open() {
-    this.#dropdown.classList.add('date-dropdown_active');
+    this.#dropdown.classList.add(DateDropdown.#classActive);
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
   #close() {
-    this.#dropdown.classList.remove('date-dropdown_active');
+    this.#dropdown.classList.remove(DateDropdown.#classActive);
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
@@ -80,6 +80,8 @@ class DateDropdown {
     const clickWasOutside = dateDropdown !== this.#dropdown;
     if (clickWasOutside) { this.#close(); }
   };
+
+  static #classActive = 'date-dropdown_active';
 }
 
 export default DateDropdown;

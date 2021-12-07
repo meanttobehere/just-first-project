@@ -20,15 +20,15 @@ class LikeButton {
   }
 
   #isEmphasized() {
-    return this.#likeButton.classList.contains('like-button_checked');
+    return this.#likeButton.classList.contains(LikeButton.#classChecked);
   }
 
   #setEphasized() {
-    this.#likeButton.classList.add('like-button_checked');
+    this.#likeButton.classList.add(LikeButton.#classChecked);
   }
 
   #unsetEmphasized() {
-    this.#likeButton.classList.remove('like-button_checked');
+    this.#likeButton.classList.remove(LikeButton.#classChecked);
   }
 
   #getCounterValue() {
@@ -38,6 +38,8 @@ class LikeButton {
   #setCounterValue(value) {
     this.#counter.textContent = value;
   }
+
+  static #classChecked = 'like-button_checked';
 }
 
 export default LikeButton;

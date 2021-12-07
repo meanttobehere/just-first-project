@@ -51,9 +51,9 @@ class Dropdown {
       .reduce((val1, val2) => val1 + val2);
 
     if (sum === 0) {
-      this.#clearButton.classList.add('dropdown__button_hidden');
+      this.#clearButton.classList.add(Dropdown.#classButtonHidden);
     } else {
-      this.#clearButton.classList.remove('dropdown__button_hidden');
+      this.#clearButton.classList.remove(Dropdown.#classButtonHidden);
     }
   }
 
@@ -75,16 +75,16 @@ class Dropdown {
   }
 
   get #isOpen() {
-    return this.#dropdown.classList.contains('dropdown_active');
+    return this.#dropdown.classList.contains(Dropdown.#classActive);
   }
 
   #open() {
-    this.#dropdown.classList.add('dropdown_active');
+    this.#dropdown.classList.add(Dropdown.#classActive);
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
   #close() {
-    this.#dropdown.classList.remove('dropdown_active');
+    this.#dropdown.classList.remove(Dropdown.#classActive);
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
@@ -93,6 +93,10 @@ class Dropdown {
     const clickWasOutside = dropdown !== this.#dropdown;
     if (clickWasOutside) { this.#close(); }
   };
+
+  static #classActive = 'dropdown_active';
+
+  static #classButtonHidden = 'dropdown__button_hidden';
 }
 
 export default Dropdown;

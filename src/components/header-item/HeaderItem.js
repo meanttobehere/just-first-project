@@ -11,17 +11,17 @@ class HeaderItem {
   }
 
   #open() {
-    this.#item.classList.add('header-item_open');
+    this.#item.classList.add(HeaderItem.#classOpen);
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
   #close() {
-    this.#item.classList.remove('header-item_open');
+    this.#item.classList.remove(HeaderItem.#classOpen);
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
   get #isOpen() {
-    return this.#item.classList.contains('header-item_open') === true;
+    return this.#item.classList.contains(HeaderItem.#classOpen) === true;
   }
 
   #handleTitleClick() {
@@ -33,6 +33,8 @@ class HeaderItem {
     const clickWasOutside = item !== this.#item;
     if (clickWasOutside) { this.#close(); }
   };
+
+  static #classOpen = 'header-item_open';
 }
 
 export default HeaderItem;

@@ -66,14 +66,14 @@ class RoomCard {
 
   #update() {
     this.#images.forEach((image, idx) => {
-      if (this.#currentImageNum === idx) {
-        image.classList.add('room-card__image_visible');
-      } else { image.classList.remove('room-card__image_visible'); }
+      const classVisible = 'room-card__image_visible';
+      if (this.#currentImageNum === idx) image.classList.add(classVisible);
+      else image.classList.remove(classVisible);
     });
     this.#dots.forEach((dot, idx) => {
-      if (this.#currentImageNum === idx) {
-        dot.classList.add('room-card__dot_selected');
-      } else { dot.classList.remove('room-card__dot_selected'); }
+      const classSelected = 'room-card__dot_selected';
+      if (this.#currentImageNum === idx) dot.classList.add(classSelected);
+      else dot.classList.remove(classSelected);
     });
   }
 }

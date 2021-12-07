@@ -21,16 +21,16 @@ class CheckboxList {
   }
 
   get #isOpen() {
-    return this.#list.classList.contains('checkbox-list_open');
+    return this.#list.classList.contains(CheckboxList.#classOpen);
   }
 
   #open() {
-    this.#list.classList.add('checkbox-list_open');
+    this.#list.classList.add(CheckboxList.#classOpen);
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
   #close() {
-    this.#list.classList.remove('checkbox-list_open');
+    this.#list.classList.remove(CheckboxList.#classOpen);
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
@@ -39,6 +39,8 @@ class CheckboxList {
     const clickWasOutside = list !== this.#list;
     if (clickWasOutside) { this.#close(); }
   };
+
+  static #classOpen = 'checkbox-list_open';
 }
 
 export default CheckboxList;

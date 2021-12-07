@@ -37,7 +37,7 @@ class Calendar {
   }
 
   getNumDays() {
-    if (this.#arrival instanceof Date && this.#departure instanceof Date) {
+    if (this.#arrival && this.#departure) {
       return ((this.#departure.getTime() - this.#arrival.getTime())
         / (1000 * 3600 * 24));
     }
@@ -136,14 +136,15 @@ class Calendar {
   #handleDayClick(idx) {
     const clikedDate = this.#pageData[idx].d;
 
-    if (clikedDate < +this.#currentDate) { return; }
+    if (clikedDate.getTime() < this.#currentDate.getTime()) { return; }
 
-    if (this.#arrival === false
-      || this.#arrival > clikedDate
-      || (this.#arrival !== false
-      && this.#departure !== false)) {
+    const isArrivalCanBeSetByClickedDate = !this.#arrival
+      || this.#departure
+      || this.#arrival.getTime() > clikedDate.getTime();
+
+    if (isArrivalCanBeSetByClickedDate) {
       this.#arrival = clikedDate;
-      this.#departure = false;
+      this.#departure = null;
     } else {
       this.#departure = clikedDate;
     }
@@ -156,8 +157,8 @@ class Calendar {
   }
 
   #handleClearClick() {
-    this.#arrival = {};
-    this.#departure = {};
+    this.#arrival = null;
+    this.#departure = null;
 
     this.#pageMonth = this.#currentDate.getMonth();
     this.#pageYear = this.#currentDate.getFullYear();
@@ -168,8 +169,9 @@ class Calendar {
   }
 
   #handleBackClick() {
-    if (this.#pageMonth === this.#currentDate.getMonth()
-      && this.#pageYear === this.#currentDate.getFullYear()) { return; }
+    const isPageOnCurrentMonth = this.#pageMonth === this.#currentDate.getMonth()
+      && this.#pageYear === this.#currentDate.getFullYear();
+    if (isPageOnCurrentMonth) { return; }
 
     [this.#pageMonth, this.#pageYear] = Calendar
       .#getPrevMonthAndYear(this.#pageMonth, this.#pageYear);
@@ -346,7 +348,8 @@ class Calendar {
   }
 
   static #intervalToString(date1, date2) {
-    if (date1 instanceof Date && date2 instanceof Date && date1 !== date2) {
+    if (date1 instanceof Date && date2 instanceof Date
+        && date1.getTime() !== date2.getTime()) {
       const formattedDate1 = date1
         .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
       const formattedDate2 = date2
