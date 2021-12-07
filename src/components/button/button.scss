@@ -11,7 +11,9 @@
   height: 44px;
   border-radius: 22px;
   padding: 0;
-  font: bold 12px/15px $primary-font;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
   text-transform: uppercase;
   color: $white-color;
   background-image: $primary-gradient;

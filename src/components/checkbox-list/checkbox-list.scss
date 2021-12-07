@@ -2,7 +2,9 @@
   user-select: none;
 
   &__title {
-    font: bold 12px/15px $primary-font;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
     text-transform: uppercase;
     color: $gray-color;
     max-width: 268px;

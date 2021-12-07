@@ -90,7 +90,9 @@
 
   &__container {
     cursor: pointer;
-    font: bold 14px/18px $primary-font;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
     color: $gray-color;
     padding: 20px 17px 20px 20px;
   }

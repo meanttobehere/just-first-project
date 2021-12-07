@@ -1,5 +1,6 @@
 .bullet-list {
-  font: 12px/15px $primary-font;
+  font-size: 12px;
+  line-height: 15px;
   color: $gray-color;
 
   &__title {

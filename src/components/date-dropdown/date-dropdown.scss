@@ -6,7 +6,8 @@
   align-items: center;
   gap: 20px;
   user-select: none;
-  font: 12px/15px $primary-font;
+  font-size: 12px;
+  line-height: 15px;
 
   &_size_m {
     max-width: 266px;

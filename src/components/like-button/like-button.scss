@@ -9,7 +9,8 @@
   align-items: center;
   user-select: none;
   cursor: pointer;
-  font: 10px/12px $primary-font;
+  font-size: 10px;
+  line-height: 12px;
   padding: 0 5px;
 
   &::before {

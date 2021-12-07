@@ -1,6 +1,7 @@
 .checkbox {
   user-select: none;
-  font: 14px/20px $primary-font;
+  font-size: 14px;
+  line-height: 20px;
   color: $gray-color-50;
 
   &_with-description {

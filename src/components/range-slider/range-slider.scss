@@ -44,7 +44,8 @@
 
 .range-slider {
   max-width: 266px;
-  font: 12px/15px $primary-font;
+  font-size: 12px;
+  line-height: 15px;
 
   &__container {
     padding-bottom: 26px;

@@ -9,7 +9,8 @@
   padding-top: 5.625%;
   padding-bottom: 5.9375%;
   user-select: none;
-  font: 12px/15px $primary-font;
+  font-size: 12px;
+  line-height: 15px;
   color: $gray-color-50;
 
   &__month-selector {

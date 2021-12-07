@@ -12,7 +12,9 @@
   padding: 39px 20px 0;
 
   &__title {
-    font: bold 24px/29px $primary-font;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: bold;
     color: $gray-color;
     max-width: 320px;
     margin: auto;

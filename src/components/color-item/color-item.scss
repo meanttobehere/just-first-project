@@ -3,7 +3,8 @@
   gap: 40px;
   justify-content: flex-start;
   align-items: center;
-  font: 19px/28px $primary-font;
+  font-size: 19px;
+  line-height: 28px;
 
   &__box {
     width: 70px;

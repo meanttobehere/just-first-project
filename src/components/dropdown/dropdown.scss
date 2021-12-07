@@ -1,7 +1,8 @@
 .dropdown {
   max-width: 320px;
   user-select: none;
-  font: 14px/18px $primary-font;
+  font-size: 14px;
+  line-height: 18px;
   color: $gray-color;
 
   &_size_s {

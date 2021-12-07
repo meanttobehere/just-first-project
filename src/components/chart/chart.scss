@@ -8,7 +8,8 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3d4975 100%);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  font: 14px/24px $primary-font;
+  font-size: 14px;
+  line-height: 24px;
   color: $gray-color-75;
 
   &__svg-container {
