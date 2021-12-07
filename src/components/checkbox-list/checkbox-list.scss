@@ -1,5 +1,7 @@
 .checkbox-list {
   user-select: none;
+  max-width: 268px;
+  position: relative;
 
   &__title {
     font-size: 12px;
@@ -7,7 +9,6 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $gray-color;
-    max-width: 268px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,8 +51,11 @@
 
     .checkbox-list__list {
       position: absolute;
+      width: 100%;
+      padding-bottom: 15px;
       max-height: 0;
       overflow: hidden;
+      background: $white-color;
     }
 
     .checkbox-list__item:first-child {

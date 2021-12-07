@@ -148,6 +148,7 @@
 
   .form-elements__row:nth-child(2) .form-elements__column:nth-child(1) .form-elements__item {
     max-width: 266px;
+    position: relative;
 
     &:nth-child(1) {
       z-index: 10;
@@ -157,8 +158,10 @@
 
   .form-elements__row:nth-child(3) .form-elements__column:nth-child(1) .form-elements__item {
     max-width: 267px;
+    position: relative;
 
     &:nth-child(1) {
+      z-index: 10;
       margin-bottom: 49px;
     }
   }
