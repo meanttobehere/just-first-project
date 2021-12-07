@@ -88,7 +88,8 @@
       &_open {
         overflow: visible;
         min-height: 100vh;
-        max-height: max-content;
+        max-height: none;
+        padding-bottom: 150px;
       }
     }
   }

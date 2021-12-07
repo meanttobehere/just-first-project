@@ -19,17 +19,29 @@ class SearchPage {
   }
 
   #handleFilterClick() {
-    this.#filterContainer.classList.toggle('search-page__filter-container_open');
-    const filterContainerIsOpen = this.#filterContainer
-      .classList.contains('search-page__filter-container_open');
-    if (filterContainerIsOpen) {
-      this.#footer.style.display = 'none';
-      this.#dataContainer.style.display = 'none';
-      window.scrollTo(0, 0);
+    if (this.#filterContainerIsOpen()) {
+      this.#closeFilterContainer();
     } else {
-      this.#footer.style.display = 'block';
-      this.#dataContainer.style.display = 'flex';
+      this.#openFilterContainer();
     }
+  }
+
+  #openFilterContainer() {
+    this.#filterContainer.classList.add('search-page__filter-container_open');
+    this.#footer.style.display = 'none';
+    this.#dataContainer.style.display = 'none';
+    window.scrollTo(0, 0);
+  }
+
+  #closeFilterContainer() {
+    this.#filterContainer.classList.remove('search-page__filter-container_open');
+    this.#footer.style.display = 'block';
+    this.#dataContainer.style.display = 'flex';
+  }
+
+  #filterContainerIsOpen() {
+    return (this.#filterContainer
+      .classList.contains('search-page__filter-container_open'));
   }
 }
 
