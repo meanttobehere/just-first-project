@@ -15,9 +15,11 @@ mixin button(params = {})
       theme && `button_theme_${theme}`
     ]
 
-  if (href)
-    a.button(class=classes, href=href)= title
-  else
-    button.button(class=classes, type=type, disabled=disabled)= title
-      if (arrow)
-        .button__arrow
+  button.button(
+    class=classes,
+    type=type,
+    disabled=disabled,
+    onclick = href && `window.open('${href}', '_self');`
+  )= title
+    if (arrow)
+      .button__arrow
