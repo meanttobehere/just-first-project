@@ -26,7 +26,7 @@ class Calendar {
   constructor(calendar) {
     this.#observer = {};
     this.#pageData = {};
-    this.#travelData = { arrival: false, departure: false };
+    this.#travelData = {};
 
     this.#findHtmlElements(calendar);
     this.#bindEventHandlers();
@@ -102,8 +102,7 @@ class Calendar {
   }
 
   #setCurrentDate() {
-    const currentDate = new Date();
-    this.#currentDate = new Date(Calendar.#getDateWithoutHours(currentDate));
+    this.#currentDate = Calendar.#getDateWithoutHours(new Date());
   }
 
   #bindEventHandlers() {
@@ -172,33 +171,28 @@ class Calendar {
     if (this.#pageMonth === this.#currentDate.getMonth()
       && this.#pageYear === this.#currentDate.getFullYear()) { return; }
 
-    this.#pageMonth -= 1;
-    if (this.#pageMonth < 0) {
-      this.#pageMonth = 11;
-      this.#pageYear -= 1;
-    }
+    [this.#pageMonth, this.#pageYear] = Calendar
+      .#getPrevMonthAndYear(this.#pageMonth, this.#pageYear);
 
     this.#renderPage();
   }
 
   #handleForwardClick() {
-    this.#pageMonth += 1;
-    if (this.#pageMonth > 11) {
-      this.#pageMonth = 0;
-      this.#pageYear += 1;
-    }
-
+    [this.#pageMonth, this.#pageYear] = Calendar
+      .#getNextMonthAndYear(this.#pageMonth, this.#pageYear);
     this.#renderPage();
   }
 
   #renderPage() {
     this.#updatePageData();
 
+    const classHidden = 'calendar__grid-item_hidden';
+
     this.#days.forEach((day, idx) => {
       if (idx < this.#pageData.length) {
-        day.classList.remove('calendar__grid-item_hidden');
+        day.classList.remove(classHidden);
         this.#renderDay(idx);
-      } else { day.classList.add('calendar__grid-item_hidden'); }
+      } else { day.classList.add(classHidden); }
     });
 
     this.#title.textContent = `${Calendar.#getMonthString(this.#pageMonth)} ${this.#pageYear}`;
@@ -208,136 +202,94 @@ class Calendar {
     const day = this.#days[idx];
     const dayObj = this.#pageData[idx];
 
+    const classes = {
+      purple: 'calendar__grid-item_with-purple-circle',
+      light: 'calendar__grid-item_color_light',
+      green: 'calendar__grid-item_with-green-circle',
+      selected: 'calendar__grid-item_selected',
+      selectedLeft: 'calendar__grid-item_selected-left',
+      selectedRight: 'calendar__grid-item_selected-right',
+    };
+
     day.textContent = dayObj.day;
 
-    if (dayObj.isArrivalDeraptureDay) {
-      day.classList.add('calendar__grid-item_with-purple-circle');
-    } else {
-      day.classList.remove('calendar__grid-item_with-purple-circle');
-    }
+    if (dayObj.isArrivalDeraptureDay) day.classList.add(classes.purple);
+    else day.classList.remove(classes.purple);
 
-    if (dayObj.isCurrentMonth === false) {
-      day.classList.add('calendar__grid-item_color_light');
-    } else {
-      day.classList.remove('calendar__grid-item_color_light');
-    }
+    if (dayObj.isCurrentMonth === false) day.classList.add(classes.light);
+    else day.classList.remove(classes.light);
 
-    if (dayObj.isCurrentDay) {
-      day.classList.add('calendar__grid-item_with-green-circle');
-    } else {
-      day.classList.remove('calendar__grid-item_with-green-circle');
-    }
+    if (dayObj.isCurrentDay) day.classList.add(classes.green);
+    else day.classList.remove(classes.green);
 
-    if (dayObj.isBetweenArrivalDeparture) {
-      day.classList.add('calendar__grid-item_selected');
-    } else {
-      day.classList.remove('calendar__grid-item_selected');
-    }
+    if (dayObj.isBetweenArrivalDeparture) day.classList.add(classes.selected);
+    else day.classList.remove(classes.selected);
 
     if (dayObj.isArrivalDayAndDepartureDayIsSet) {
-      day.classList.add('calendar__grid-item_selected-left');
-    } else {
-      day.classList.remove('calendar__grid-item_selected-left');
-    }
+      day.classList.add(classes.selectedLeft);
+    } else day.classList.remove(classes.selectedLeft);
 
-    if (dayObj.isDepartureDay) {
-      day.classList.add('calendar__grid-item_selected-right');
-    } else {
-      day.classList.remove('calendar__grid-item_selected-right');
-    }
+    if (dayObj.isDepartureDay) day.classList.add(classes.selectedRight);
+    else day.classList.remove(classes.selectedRight);
   }
 
   #updatePageData() {
-    let prevMonth = this.#pageMonth;
-    let prevYear = this.#pageYear;
-    prevMonth -= 1;
-    if (prevMonth < 0) {
-      prevMonth = 11;
-      prevYear -= 1;
-    }
+    const [prevMonth, prevYear] = Calendar
+      .#getPrevMonthAndYear(this.#pageMonth, this.#pageYear);
 
-    let nextMonth = this.#pageMonth;
-    let nextYear = this.#pageYear;
-    nextMonth += 1;
-    if (nextMonth > 11) {
-      nextMonth = 0;
-      nextYear += 1;
-    }
-
-    let numDaysCurrentMonth = Calendar
+    const numDaysCurrentMonth = Calendar
       .#getDaysInMonth(this.#pageMonth, this.#pageYear);
-    const numDaysPrevMonth = Calendar.#getDaysInMonth(prevMonth, prevYear);
 
-    const date = new Date(this.#pageYear, this.#pageMonth, 1);
-    let weekDay = date.getDay();
-    weekDay -= 1;
-    if (weekDay < 0) { weekDay = 6; }
+    const numDaysPrevMonth = Calendar
+      .#getDaysInMonth(prevMonth, prevYear);
 
-    date.setDate(numDaysCurrentMonth);
-    let weekDayLastDay = date.getDay();
-    weekDayLastDay -= 1;
-    if (weekDayLastDay < 0) { weekDayLastDay = 6; }
+    const weekDayFirstDay = Calendar.#getWeekDay(
+      new Date(this.#pageYear, this.#pageMonth, 1),
+    );
 
+    const weekDayLastDay = Calendar.#getWeekDay(
+      new Date(this.#pageYear, this.#pageMonth, numDaysCurrentMonth),
+    );
+
+    const numDates = weekDayFirstDay
+      + numDaysCurrentMonth
+      + (6 - weekDayLastDay);
+    const date = new Date(
+      prevYear,
+      prevMonth,
+      numDaysPrevMonth + 1 - weekDayFirstDay,
+    );
     const dates = [];
-
-    while (weekDay > 0) {
-      dates.push(new Date(prevYear, prevMonth, numDaysPrevMonth + 1 - weekDay));
-      weekDay -= 1;
+    while (dates.length < numDates) {
+      dates.push(new Date(date));
+      date.setDate(date.getDate() + 1);
     }
 
-    let buf = numDaysCurrentMonth + 1;
-    while (numDaysCurrentMonth > 0) {
-      dates.push(
-        new Date(this.#pageYear, this.#pageMonth, buf - numDaysCurrentMonth),
-      );
-      numDaysCurrentMonth -= 1;
-    }
-
-    buf = 1;
-    while (weekDayLastDay < 6) {
-      dates.push(new Date(nextYear, nextMonth, buf));
-      buf += 1;
-      weekDayLastDay += 1;
-    }
-    const newPage = dates.map((item) => this.#createDayObject(item));
-    this.#pageData = newPage;
+    this.#pageData = dates.map((item) => this.#createDayObject(item));
   }
 
   #createDayObject(date) {
     const dayObj = {
       d: date,
       day: date.getDate(),
-      isArrivalDeraptureDay: false,
-      isArrivalDayAndDepartureDayIsSet: false,
-      isDepartureDay: false,
-      isCurrentDay: false,
-      isCurrentMonth: false,
-      isBetweenArrivalDeparture: false,
     };
 
-    if (+date === +this.#currentDate) { dayObj.isCurrentDay = true; }
+    dayObj.isCurrentDay = Calendar.isEqualDates(date, this.#currentDate);
 
-    if (+this.#arrival === +date || +this.#departure === +date) {
-      dayObj.isArrivalDeraptureDay = true;
-    }
+    dayObj.isArrivalDeraptureDay = Calendar.isEqualDates(date, this.#arrival)
+     || Calendar.isEqualDates(date, this.#departure);
 
-    if (date > this.#arrival && date < this.#departure) {
-      dayObj.isBetweenArrivalDeparture = true;
-    }
+    dayObj.isBetweenArrivalDeparture = Calendar
+      .isDateInRange(date, this.#arrival, this.#departure);
 
-    if (date.getMonth() === this.#pageMonth) { dayObj.isCurrentMonth = true; }
+    dayObj.isCurrentMonth = date.getMonth() === this.#pageMonth;
 
-    if (this.#departure !== false
-      && +date === +this.#arrival
-      && +this.#departure !== +this.#arrival) {
-      dayObj.isArrivalDayAndDepartureDayIsSet = true;
-    }
+    dayObj.isArrivalDayAndDepartureDayIsSet = this.#departure
+      && Calendar.isEqualDates(date, this.#arrival)
+      && !Calendar.isEqualDates(this.#arrival, this.#departure);
 
-    if (this.#departure !== false
-      && +date === +this.#departure
-      && +this.#departure !== +this.#arrival) {
-      dayObj.isDepartureDay = true;
-    }
+    dayObj.isDepartureDay = Calendar.isEqualDates(date, this.#departure)
+      && !Calendar.isEqualDates(this.#arrival, this.#departure);
 
     return dayObj;
   }
@@ -350,6 +302,29 @@ class Calendar {
       date.setDate(date.getDate() + 1);
     }
     return days;
+  }
+
+  static #getPrevMonthAndYear(month, year) {
+    let prevYear = year;
+    let prevMonth = month - 1;
+    if (prevMonth < 0) {
+      prevMonth = 11;
+      prevYear -= 1;
+    }
+    return ([prevMonth, prevYear]);
+  }
+
+  static #getNextMonthAndYear(month, year) {
+    let nextYear = year;
+    const nextMonth = (month + 1) % 12;
+    if (nextMonth === 0) { nextYear += 1; }
+    return ([nextMonth, nextYear]);
+  }
+
+  static #getWeekDay(date) {
+    let weekDay = date.getDay() - 1;
+    if (weekDay < 0) { weekDay = 6; }
+    return weekDay;
   }
 
   static #getMonthString(month) {
@@ -387,6 +362,20 @@ class Calendar {
 
   static #getDateWithoutHours(date) {
     return (new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+  }
+
+  static isEqualDates(date1, date2) {
+    return (date1 instanceof Date
+      && date2 instanceof Date
+      && date1.getTime() === date2.getTime());
+  }
+
+  static isDateInRange(date, dateFrom, dateTo) {
+    return (date instanceof Date
+      && dateFrom instanceof Date
+      && dateTo instanceof Date
+      && date.getTime() > dateFrom.getTime()
+      && date.getTime() < dateTo.getTime());
   }
 }
 

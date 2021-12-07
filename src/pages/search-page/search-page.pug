@@ -254,19 +254,19 @@ block content
             bedrooms: 2,
             size: 'm'
           })
-        .search-page__checkbox-list-container.js-search-page_checkbox-list-container
-        +checkbox-list({
-          title: 'дополнительные удобства',
-          items: [
-            {title: 'Завтрак'},
-            {title: 'Письменный стол', checked: true},
-            {title: 'Стул для кормления', checked: true},
-            {title: 'Кроватка', checked: true},
-            {title: 'Телевизор'},
-            {title: 'Шампунь'}
-          ], 
-          expandable: true,
-        })
+        .search-page__checkbox-list-container
+          +checkbox-list({
+            title: 'дополнительные удобства',
+            items: [
+              {title: 'Завтрак'},
+              {title: 'Письменный стол', checked: true},
+              {title: 'Стул для кормления', checked: true},
+              {title: 'Кроватка', checked: true},
+              {title: 'Телевизор'},
+              {title: 'Шампунь'}
+            ], 
+            expandable: true,
+          })
       .search-page__data-container.js-search-page__data-container
         .search-page__title Номера, которые мы для вас подобрали
         .search-page__rooms-container
