@@ -8,11 +8,6 @@
     z-index: 5;
   }
 
-  &__main {
-    max-width: 1440px;
-    margin: auto;
-  }
-
   &__footer {
     border-top: 1px solid $gray-color-25;
   }
@@ -23,8 +18,6 @@
   }
 
   &__photo-group {
-    max-height: 485px;
-
     &:first-child {
       flex-basis: 68%;
 
