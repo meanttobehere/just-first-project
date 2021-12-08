@@ -45,13 +45,14 @@ mixin footer(params = {})
       .footer__group
         .footer__group-title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
-        +field({
-          size: 'm',
-          placeholder:
-          'Email', name:
-          'email',
-          submitLink: submitLink
-        })
+        form.footer__email-form(action=submitLink, method="post")
+          +field({
+            size: 'm',
+            placeholder: 'Email',
+            name: 'email',
+            type: 'email',
+            withSubmitButton: true
+          })
     .footer__bottom-container
       .footer__bottom-item
         a.footer__logotype(href=logotypeLink)

@@ -4,10 +4,7 @@
   color: $gray-color;
   max-width: 320px;
   width: 100%;
-
-  &_size_m {
-    max-width: 266px;
-  }
+  position: relative;
 
   &__title {
     font-weight: bold;
@@ -15,10 +12,6 @@
     line-height: 15px;
     text-transform: uppercase;
     margin-bottom: 5px;
-  }
-
-  &__container {
-    position: relative;
   }
 
   &__input {
@@ -53,7 +46,7 @@
 
   &__button {
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     padding: 0;
     outline: none;

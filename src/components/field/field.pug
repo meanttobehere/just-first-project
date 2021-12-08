@@ -2,41 +2,25 @@ mixin field(params = {})
   -
     const {
       title = null,
-      size = null,
-      submitLink = null,
       value = '',
       placeholder = '',
       type = 'text',
       name = 'name',
       masked = false,
       focused = false,
+      withSubmitButton = false,
     } = params;
 
-    const classes = [
-      size && `field_size_${size}`,
-      masked && 'field_type_masked'
-    ];
-
-  .field.js-field(class=classes)
+  .field.js-field(class=masked && 'field_type_masked')
     if (title)
       .field__title= title
-    if(submitLink)
-      form.field__container(action=submitLink)
-        input.field__input.js-field__input(
-          class = focused && 'field__input_focused',
-          placeholder=placeholder,
-          type=type,
-          value=value,
-          name=name
-        )
-        button.field__button(type="submit")
-          .field__arrow
-    else
-      .field__container
-        input.field__input.js-field__input(
-          class = focused && 'field__input_focused',
-          placeholder=placeholder,
-          type=type,
-          value=value,
-          name=name
-        )
+    input.field__input.js-field__input(
+      class = focused && 'field__input_focused',
+      placeholder=placeholder,
+      type=type,
+      value=value,
+      name=name
+    )
+    if (withSubmitButton)
+      button.field__button(type="submit")
+        .field__arrow

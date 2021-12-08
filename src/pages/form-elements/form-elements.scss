@@ -81,6 +81,10 @@
     &:nth-child(6) {
       margin-bottom: 41px;
     }
+
+    &:nth-child(7) {
+      max-width: 266px;
+    }
   }
 
   .form-elements__row:nth-child(1) .form-elements__column:nth-child(2) .form-elements__item {
