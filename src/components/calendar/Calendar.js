@@ -218,7 +218,7 @@ class Calendar {
     if (dayObj.isArrivalDeraptureDay) day.classList.add(classes.purple);
     else day.classList.remove(classes.purple);
 
-    if (dayObj.isCurrentMonth === false) day.classList.add(classes.light);
+    if (!dayObj.isCurrentMonth) day.classList.add(classes.light);
     else day.classList.remove(classes.light);
 
     if (dayObj.isCurrentDay) day.classList.add(classes.green);
@@ -236,32 +236,16 @@ class Calendar {
   }
 
   #updatePageData() {
-    const [prevMonth, prevYear] = Calendar
-      .#getPrevMonthAndYear(this.#pageMonth, this.#pageYear);
-
-    const numDaysCurrentMonth = Calendar
+    const numDaysPageMonth = Calendar
       .#getDaysInMonth(this.#pageMonth, this.#pageYear);
 
-    const numDaysPrevMonth = Calendar
-      .#getDaysInMonth(prevMonth, prevYear);
+    const weekDayFirstDay = Calendar
+      .#getWeekDay(new Date(this.#pageYear, this.#pageMonth, 1));
 
-    const weekDayFirstDay = Calendar.#getWeekDay(
-      new Date(this.#pageYear, this.#pageMonth, 1),
-    );
-
-    const weekDayLastDay = Calendar.#getWeekDay(
-      new Date(this.#pageYear, this.#pageMonth, numDaysCurrentMonth),
-    );
-
-    const numDates = weekDayFirstDay
-      + numDaysCurrentMonth
-      + (6 - weekDayLastDay);
-    const date = new Date(
-      prevYear,
-      prevMonth,
-      numDaysPrevMonth + 1 - weekDayFirstDay,
-    );
+    const numDates = Math.ceil((weekDayFirstDay + numDaysPageMonth) / 7) * 7;
+    const date = new Date(this.#pageYear, this.#pageMonth, 1 - weekDayFirstDay);
     const dates = [];
+
     while (dates.length < numDates) {
       dates.push(new Date(date));
       date.setDate(date.getDate() + 1);
@@ -339,26 +323,20 @@ class Calendar {
 
   static #dateToString(date) {
     if (date instanceof Date) {
-      const day = date.getDate().toString().padStart(2, '0');
-      const month = (date.getMonth() + 1).toString().padStart(2, '0');
-      const year = date.getFullYear();
-      return `${day}.${month}.${year}`;
+      return `${date.toLocaleDateString('ru')}`;
     }
     return 'ДД.ММ.ГГГГ';
   }
 
   static #intervalToString(date1, date2) {
+    const getLocalString = (date) => date
+      .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
+
     if (date1 instanceof Date && date2 instanceof Date
         && date1.getTime() !== date2.getTime()) {
-      const formattedDate1 = date1
-        .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
-      const formattedDate2 = date2
-        .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
-      return `${formattedDate1} - ${formattedDate2}`;
+      return `${getLocalString(date1)} - ${getLocalString(date2)}`;
     } if (date1 instanceof Date) {
-      const formattedDate1 = date1
-        .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
-      return `${formattedDate1}`;
+      return `${getLocalString(date1)}`;
     }
     return 'Время проживания';
   }
