@@ -9,6 +9,8 @@ class Header {
 
   #hamburger;
 
+  #bodyParams = {};
+
   constructor(header) {
     this.#container = header.querySelector('.js-header__container');
     this.#menu = header.querySelector('.js-header__menu-icon');
@@ -35,12 +37,14 @@ class Header {
   #open() {
     this.#navbar.classList.add(Header.#classNavbarOpen);
     this.#hamburger.change();
+    this.#lockBodyScroll();
     document.addEventListener('click', this.#handleDocumentClick);
   }
 
   #close() {
     this.#navbar.classList.remove(Header.#classNavbarOpen);
     this.#hamburger.change();
+    this.#unlockBodyScroll();
     document.removeEventListener('click', this.#handleDocumentClick);
   }
 
@@ -64,6 +68,20 @@ class Header {
     } else {
       this.#navbar.appendChild(this.#userblock);
     }
+  }
+
+  #lockBodyScroll() {
+    this.#bodyParams = {
+      overflow: document.body.style.overflow,
+      blockSize: document.body.style.blockSize,
+    };
+    document.body.style.overflow = 'hidden';
+    document.body.style.blockSize = '100%';
+  }
+
+  #unlockBodyScroll() {
+    document.body.style.overflow = this.#bodyParams.overflow;
+    document.body.style.blockSize = this.#bodyParams.blockSize;
   }
 
   static #classNavbarOpen = 'header__navbar_open';

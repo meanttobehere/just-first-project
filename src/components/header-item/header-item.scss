@@ -11,20 +11,17 @@
     line-height: 17px;
   }
 
-  &__title-container {
+  &__title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    text-decoration: none;
+    color: inherit;
+    line-height: 24px;
 
     &:hover {
       color: $gray-color;
     }
-  }
-
-  &__title {
-    text-decoration: none;
-    color: inherit;
-    line-height: 24px;
   }
 
   &__arrow {
@@ -56,7 +53,8 @@
 
   &__children-container {
     background: $white-color;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
 
     @media screen and (min-width: 970px) {
       position: absolute;
@@ -70,7 +68,7 @@
 
   &_open {
     .header-item__children-container {
-      display: block;
+      max-height: none;
     }
   }
 

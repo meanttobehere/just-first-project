@@ -9,12 +9,10 @@ mixin header-item(params = {})
 
   if (children.length === 0)
     .header-item(class=selected && 'header-item_selected')
-      .header-item__title-container
-        a.header-item__title(href=href)= title
+      a.header-item__title(href=href)= title
   else
     .header-item.js-header-item(class=selected && 'header-item_selected')
-      .header-item__title-container.js-header-item__title-container
-        .header-item__title= title
+      a.header-item__title.js-header-item__title= title
         .header-item__arrow
       .header-item__children-container
         each child in children

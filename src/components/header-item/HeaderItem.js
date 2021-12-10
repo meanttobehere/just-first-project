@@ -5,8 +5,7 @@ class HeaderItem {
 
   constructor(item) {
     this.#item = item;
-    this.#title = item.querySelector('.js-header-item__title-container');
-
+    this.#title = item.querySelector('.js-header-item__title');
     this.#title.addEventListener('click', this.#handleTitleClick.bind(this));
   }
 
