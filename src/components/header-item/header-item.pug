@@ -16,5 +16,6 @@ mixin header-item(params = {})
         .header-item__arrow
       .header-item__children-container
         each child in children
-          - const link = child.href ? child.href : '/mock-address/change-me';
-          a.header-item__child(href=link)= child.title
+          a.header-item__child(
+            href=child.href || '/mock-address/change-me'
+          )= child.title

@@ -40,8 +40,9 @@ mixin footer(params = {})
         .footer__group.js-footer__group
           .footer__group-title.js-footer__group-title= group.title
           each item in group.items
-            - const link = item.href ? item.href : '/mock-address/change-me';
-            a.footer__group-item(href=link)= item.name
+            a.footer__group-item(
+              href=item.href || '/mock-address/change-me'
+            )= item.name
       .footer__group
         .footer__group-title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
