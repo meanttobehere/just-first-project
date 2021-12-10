@@ -23,21 +23,20 @@ class DateDropdown {
 
   #init() {
     this.#calendar.setObserver({
-      acceptClick: this.#handleCalendarAcceptClick.bind(this),
-      clearClick: this.#handleCalendarClearClick.bind(this),
+      acceptClick: this.#handleCalendarAcceptOrClearClick.bind(this),
+      clearClick: this.#handleCalendarAcceptOrClearClick.bind(this),
       travelChange: this.#handleCalendarTravelChange.bind(this),
     });
 
     this.#containers.forEach((container) => {
-      container
-        .addEventListener('click', this.#handleContainerClick.bind(this));
+      container.addEventListener('click', this.#handleContainerClick.bind(this));
     });
 
     this.#updateText();
   }
 
   #updateText() {
-    if (this.#secondText !== undefined) {
+    if (this.#secondText) {
       this.#text.textContent = this.#calendar.getArrivalDate();
       this.#secondText.textContent = this.#calendar.getDepartureDate();
     } else {
@@ -45,11 +44,7 @@ class DateDropdown {
     }
   }
 
-  #handleCalendarAcceptClick() {
-    this.#close();
-  }
-
-  #handleCalendarClearClick() {
+  #handleCalendarAcceptOrClearClick() {
     this.#close();
   }
 
@@ -77,8 +72,8 @@ class DateDropdown {
 
   #handleDocumentClick = (event) => {
     const dateDropdown = event.target.closest('.js-date-dropdown');
-    const clickWasOutside = dateDropdown !== this.#dropdown;
-    if (clickWasOutside) { this.#close(); }
+    const isClickOutside = dateDropdown !== this.#dropdown;
+    if (isClickOutside) { this.#close(); }
   };
 
   static #classActive = 'date-dropdown_active';

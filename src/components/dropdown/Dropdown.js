@@ -67,7 +67,7 @@ class Dropdown {
   }
 
   #handleMenuClick() {
-    if (this.#clearButton !== undefined) { this.#updateClearButtonStyle(); }
+    if (this.#clearButton) { this.#updateClearButtonStyle(); }
   }
 
   #handleFieldClick() {
@@ -90,8 +90,8 @@ class Dropdown {
 
   #handleDocumentClick = (event) => {
     const dropdown = event.target.closest('.js-dropdown');
-    const clickWasOutside = dropdown !== this.#dropdown;
-    if (clickWasOutside) { this.#close(); }
+    const isClickOutside = dropdown !== this.#dropdown;
+    if (isClickOutside) { this.#close(); }
   };
 
   static #classActive = 'dropdown_active';

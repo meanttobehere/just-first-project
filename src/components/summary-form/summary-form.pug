@@ -10,9 +10,13 @@ mixin summary-form(params = {})
       luxe = true,
       guestsDropdown = {},
       calendar = {},
+      services = [
+        {name: 'Сбор за услуги', cost: -2179},
+        {name: 'Сбор за дополнительные услуги', cost: 300},
+      ]
     } = params;
 
-  form.summary-form.js-summary-form(data-price=price)
+  form.summary-form.js-summary-form(data-price=price, data-services=services)
     .summary-form__head
       .summary-form__number= number
         if (luxe)

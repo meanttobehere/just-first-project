@@ -29,8 +29,8 @@ class HeaderItem {
 
   #handleDocumentClick = (event) => {
     const item = event.target.closest('.js-header-item');
-    const clickWasOutside = item !== this.#item;
-    if (clickWasOutside) { this.#close(); }
+    const isClickOutside = item !== this.#item;
+    if (isClickOutside) { this.#close(); }
   };
 
   static #classOpen = 'header-item_open';

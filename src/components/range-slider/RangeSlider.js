@@ -53,8 +53,7 @@ class RangeSlider {
   }
 
   static #getFormattedPrice(price) {
-    const str = price.toString();
-    return `${str.substr(0, str.length - 3)} ${str.substr(-3)}₽`;
+    return `${price.toLocaleString('ru-RU')}₽`;
   }
 }
 

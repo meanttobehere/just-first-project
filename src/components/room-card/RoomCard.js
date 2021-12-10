@@ -47,10 +47,7 @@ class RoomCard {
   }
 
   #handleForwardClick() {
-    this.#currentImageNum += 1;
-    if (this.#currentImageNum >= this.#images.length) {
-      this.#currentImageNum = 0;
-    }
+    this.#currentImageNum = (this.#currentImageNum + 1) % this.#images.length;
     this.#update();
   }
 
@@ -66,14 +63,16 @@ class RoomCard {
 
   #update() {
     this.#images.forEach((image, idx) => {
+      const dot = this.#dots[idx];
       const classVisible = 'room-card__image_visible';
-      if (this.#currentImageNum === idx) image.classList.add(classVisible);
-      else image.classList.remove(classVisible);
-    });
-    this.#dots.forEach((dot, idx) => {
       const classSelected = 'room-card__dot_selected';
-      if (this.#currentImageNum === idx) dot.classList.add(classSelected);
-      else dot.classList.remove(classSelected);
+      if (this.#currentImageNum === idx) {
+        image.classList.add(classVisible);
+        dot.classList.add(classSelected);
+      } else {
+        image.classList.remove(classVisible);
+        dot.classList.remove(classSelected);
+      }
     });
   }
 }

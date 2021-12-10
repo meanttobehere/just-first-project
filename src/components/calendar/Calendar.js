@@ -38,8 +38,10 @@ class Calendar {
 
   getNumDays() {
     if (this.#arrival && this.#departure) {
-      return ((this.#departure.getTime() - this.#arrival.getTime())
-        / (1000 * 3600 * 24));
+      let days = ((this.#departure.getTime() - this.#arrival.getTime())
+      / (1000 * 3600 * 24));
+      if (days < 1) { days = 1; }
+      return days;
     }
     return 0;
   }

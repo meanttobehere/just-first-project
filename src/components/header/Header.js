@@ -9,7 +9,7 @@ class Header {
 
   #hamburger;
 
-  #bodyParams = {};
+  #bodyParams;
 
   constructor(header) {
     this.#container = header.querySelector('.js-header__container');
@@ -26,6 +26,8 @@ class Header {
 
     const widthQuery = window.matchMedia('(min-width: 600px)');
     widthQuery.addEventListener('change', this.#handleQueryWidth.bind(this));
+
+    this.#saveBodyParams();
 
     this.#changeHierarchy(widthQuery.matches);
   }
@@ -54,8 +56,8 @@ class Header {
 
   #handleDocumentClick = (event) => {
     const container = event.target.closest('.js-header__container');
-    const clickWasOutside = container !== this.#container;
-    if (clickWasOutside) { this.#close(); }
+    const isClickOutside = container !== this.#container;
+    if (isClickOutside) { this.#close(); }
   };
 
   #handleQueryWidth(event) {
@@ -70,11 +72,14 @@ class Header {
     }
   }
 
-  #lockBodyScroll() {
+  #saveBodyParams() {
     this.#bodyParams = {
       overflow: document.body.style.overflow,
       blockSize: document.body.style.blockSize,
     };
+  }
+
+  #lockBodyScroll() {
     document.body.style.overflow = 'hidden';
     document.body.style.blockSize = '100%';
   }
