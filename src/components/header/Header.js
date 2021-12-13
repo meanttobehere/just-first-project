@@ -27,8 +27,6 @@ class Header {
     const widthQuery = window.matchMedia('(min-width: 600px)');
     widthQuery.addEventListener('change', this.#handleQueryWidth.bind(this));
 
-    this.#saveBodyParams();
-
     this.#changeHierarchy(widthQuery.matches);
   }
 
@@ -72,14 +70,11 @@ class Header {
     }
   }
 
-  #saveBodyParams() {
+  #lockBodyScroll() {
     this.#bodyParams = {
       overflow: document.body.style.overflow,
       blockSize: document.body.style.blockSize,
     };
-  }
-
-  #lockBodyScroll() {
     document.body.style.overflow = 'hidden';
     document.body.style.blockSize = '100%';
   }

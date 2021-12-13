@@ -41,7 +41,8 @@ class SummaryForm {
 
     items = [...items, ...this.#services.map((item) => {
       if (item.cost < 0) {
-        return ({ ...item,
+        return ({
+          ...item,
           name: `${item.name}: скидка ${SummaryForm.#getFormattedPrice(-item.cost)}`,
         });
       }

@@ -63,7 +63,8 @@
     }
   }
 
-  &_open, &_always-open {
+  &_open,
+  &_always-open {
     .checkbox-list__list {
       max-height: max-content;
       overflow: visible;
