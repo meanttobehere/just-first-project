@@ -19,7 +19,7 @@ class SearchPage {
   }
 
   #handleFilterClick() {
-    if (this.#filterContainerIsOpen()) {
+    if (this.#isFilterContainerOpen()) {
       this.#closeFilterContainer();
     } else {
       this.#openFilterContainer();
@@ -39,7 +39,7 @@ class SearchPage {
     this.#dataContainer.style.display = 'flex';
   }
 
-  #filterContainerIsOpen() {
+  #isFilterContainerOpen() {
     return (this.#filterContainer
       .classList.contains('search-page__filter-container_open'));
   }

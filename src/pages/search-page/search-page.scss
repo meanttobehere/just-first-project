@@ -95,10 +95,14 @@
   }
 
   &__date-dropdown-container {
+    position: relative;
+    z-index: 10;
     margin-bottom: 20px;
   }
 
   &__guests-dropdown-container {
+    position: relative;
+    z-index: 5;
     margin-bottom: 30px;
   }
 
