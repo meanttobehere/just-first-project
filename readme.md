@@ -31,16 +31,10 @@
 
 ## Быстрый старт 
 
-### Клонирование репозитория
+### Клонирование репозитория и установка зависимостей
 
 ```
-git clone https://github.com/meanttobehere/just-first-project
-```
-
-### Установка зависимостей
-
-```
-npm install
+git clone https://github.com/meanttobehere/just-first-project && cd just-first-project && npm install
 ```
 
 ### Запуск dev server
@@ -49,35 +43,17 @@ npm install
 npm run start 
 ```
 
-### Production сборка проекта
+### Остальные скрипты
 
-```
-npm run build
-```
+#### `npm run build` – production сборка проекта
 
-### Development сборка проекта
+#### `npm run dev` - development сборка проекта
 
-```
-npm run dev
-```
+#### `npm run watch` - development сборка проекта с автопересборой при изменений файлов проекта
 
-### Development сборка проекта с авто пересборкой при изменеии файлов проекта
+#### `npm run eslint` - запусук линтера Eslint для всех js файлов в src
 
-```
-npm run watch
-```
-
-### Запусук линтера Eslint для всех js файлов в src
-
-```
-npm run eslint
-```
-
-### Запусук линтера Stylelint для всех scss файлов в src
-
-```
-npm run stylelint
-```
+#### `npm run stylelint` - запусук линтера Stylelint для всех scss файлов в src
 
 ## Используемые интрументы
 
@@ -92,32 +68,3 @@ npm run stylelint
 - inputmask v5.0.6
 - material-icons v1.10.0
 - jquery v3.6.0
-
-### Линтер для js:
-
-- eslint v8.3.0
-- eslint-config-airbnb-base v15.0.0
-- eslint-plugin-import v2.25.3
-
-### Инструменты для работы с кодом:
-- pug v3.0.2
-- sass 1.41.1
-- postcss v8.3.11
-- autoprefixer v10.4.0
-
-### Для упрощения работы с проектом:
-
-- favicons v6.2.2
-- gh-pages v3.2.3
-
-### Инструменты для Webpack:
-
-- html-webpack-plugin 5.3.2
-- favicons-webpack-plugin 5.0.2
-- clean-webpack-plugin 4.0.0
-- css-loader 6.3.0
-- postcss-loader 6.2.0
-- pug-loader 2.4.0
-- resolve-url-loader 4.0.0
-- sass-loader 12.1.0
-- style-loader 3.3.0
