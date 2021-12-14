@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const fs = require('fs');
+const glob = require('glob');
 
 module.exports = {
   entry: './src/index.js',
@@ -24,7 +24,10 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)$/,
         type: 'asset/resource',
-        include: [path.resolve(__dirname, 'src/fonts'), path.resolve(__dirname, 'node_modules')],
+        include: [
+          path.resolve(__dirname, 'src/fonts'),
+          path.resolve(__dirname, 'node_modules'),
+        ],
         generator: {
           filename: './fonts/[name][ext]',
         },
@@ -32,7 +35,10 @@ module.exports = {
       {
         test: /\.(jpe?g|svg|png)$/,
         type: 'asset/resource',
-        exclude: [path.resolve(__dirname, 'src/fonts'), path.resolve(__dirname, 'node_modules')],
+        exclude: [
+          path.resolve(__dirname, 'src/fonts'),
+          path.resolve(__dirname, 'node_modules'),
+        ],
         generator: {
           filename: './images/[name][ext]',
         },
@@ -60,7 +66,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: `@import "./src/style.scss";`,
+              additionalData: "@import './src/style.scss';",
               sourceMap: true,
             },
           },
@@ -87,33 +93,15 @@ module.exports = {
   ],
 };
 
-function findByExtension(directoryPath, extension) {
-  let result = [];
-  const items = fs.readdirSync(directoryPath);
-
-  items.forEach((item) => {
-    if (item.split('.')[1] === extension) {
-      result = [path.join(directoryPath, item), ...result];
-      return;
-    }
-
-    const newDirectoryPath = path.join(directoryPath, item);
-    if (fs.statSync(newDirectoryPath).isDirectory()) {
-      result = [...result, ...findByExtension(newDirectoryPath, extension, result)];
-    }
-  });
-
-  return result;
-}
-
 function generateHtmlPlugins() {
-  const items = findByExtension(path.resolve(__dirname, './src/pages/'), 'pug');
-
-  return items.map((item) => {
-    const name = path.basename(item).split('.')[0];
+  return glob.sync(
+    path.join(__dirname, '/src/pages/**/*.pug'),
+    { ignore: path.join(__dirname, '/src/pages/base-template/*') },
+  ).map((page) => {
+    const name = path.basename(page, '.pug');
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
-      template: item,
+      template: page,
     });
   });
 }
