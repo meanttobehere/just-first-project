@@ -45,7 +45,7 @@
     "eslint-fix": "eslint src/ --fix",
     "stylelint": "stylelint src/**/*.scss",
     "stylelint-fix": "stylelint src/**/*.scss --fix",
-    "deploy": "node publish"
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "keywords": [],
   "author": "",

@@ -12,22 +12,22 @@
 
 ### Navigation
 
-- <a href='https://meanttobehere.github.io/toxinpages/navigation.html' target='_blank'>Navigation</a>
+- <a href='https://meanttobehere.github.io/just-first-project/navigation.html' target='_blank'>Navigation</a>
 
 ### UI kit
 
-- <a href='https://meanttobehere.github.io/toxinpages/colors-type.html' target='_blank'>Colors & Type</a>
-- <a href='https://meanttobehere.github.io/toxinpages/form-elements.html' target='_blank'>Form Elements</a>
-- <a href='https://meanttobehere.github.io/toxinpages/cards.html' target='_blank'>Cards</a>
-- <a href='https://meanttobehere.github.io/toxinpages/headers-footers.html' target='_blank'>Headers & Footers</a>
+- <a href='https://meanttobehere.github.io/just-first-project/colors-type.html' target='_blank'>Colors & Type</a>
+- <a href='https://meanttobehere.github.io/just-first-project/form-elements.html' target='_blank'>Form Elements</a>
+- <a href='https://meanttobehere.github.io/just-first-project/cards.html' target='_blank'>Cards</a>
+- <a href='https://meanttobehere.github.io/just-first-project/headers-footers.html' target='_blank'>Headers & Footers</a>
 
 ### Website pages
 
-- <a href='https://meanttobehere.github.io/toxinpages/main.html' target='_blank'>Landing Page</a>
-- <a href='https://meanttobehere.github.io/toxinpages/login.html' target='_blank'>Sign In</a>
-- <a href='https://meanttobehere.github.io/toxinpages/signup.html' target='_blank'>Registration</a>
-- <a href='https://meanttobehere.github.io/toxinpages/search-page.html' target='_blank'>Search Room</a>
-- <a href='https://meanttobehere.github.io/toxinpages/room.html' target='_blank'>Room Details</a>
+- <a href='https://meanttobehere.github.io/just-first-project/main.html' target='_blank'>Landing Page</a>
+- <a href='https://meanttobehere.github.io/just-first-project/login.html' target='_blank'>Sign In</a>
+- <a href='https://meanttobehere.github.io/just-first-project/signup.html' target='_blank'>Registration</a>
+- <a href='https://meanttobehere.github.io/just-first-project/search-page.html' target='_blank'>Search Room</a>
+- <a href='https://meanttobehere.github.io/just-first-project/room.html' target='_blank'>Room Details</a>
 
 ## Быстрый старт 
 
