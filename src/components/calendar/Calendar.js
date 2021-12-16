@@ -38,12 +38,10 @@ class Calendar {
 
   getNumDays() {
     if (this.#arrival && this.#departure) {
-      const days = ((this.#departure.getTime() - this.#arrival.getTime())
-      / (1000 * 3600 * 24));
-      if (days < 1) {
-        return 1;
-      }
-      return days;
+      return Math.ceil(
+        (this.#departure.getTime() - this.#arrival.getTime())
+        / (1000 * 3600 * 24),
+      );
     }
     return 0;
   }
@@ -78,7 +76,7 @@ class Calendar {
     const arrivalDate = new Date(calendar.getAttribute('data-arrival'));
     const departureDate = new Date(calendar.getAttribute('data-departure'));
 
-    if (!Number.isNaN(arrivalDate.getTime())) {
+    if (Calendar.isCorrectDate(arrivalDate)) {
       this.#arrival = Calendar.#getDateWithoutHours(arrivalDate);
       this.#pageMonth = arrivalDate.getMonth();
       this.#pageYear = arrivalDate.getFullYear();
@@ -87,7 +85,7 @@ class Calendar {
       this.#pageYear = this.#currentDate.getFullYear();
     }
 
-    if (!Number.isNaN(departureDate.getTime())) {
+    if (Calendar.isCorrectDate(departureDate)) {
       this.#departure = Calendar.#getDateWithoutHours(departureDate);
     }
   }
@@ -304,10 +302,7 @@ class Calendar {
   }
 
   static #getWeekDay(date) {
-    const weekDay = date.getDay() - 1;
-    if (weekDay < 0) {
-      return 6;
-    }
+    const weekDay = (date.getDay() === 0) ? 6 : date.getDay() - 1;
     return weekDay;
   }
 
@@ -331,7 +326,7 @@ class Calendar {
       .toLocaleString('ru', { month: 'short', day: 'numeric' }).slice(0, -1);
 
     if (date1 instanceof Date && date2 instanceof Date
-        && date1.getTime() !== date2.getTime()) {
+        && !Calendar.isEqualDates(date1, date2)) {
       return `${getLocalString(date1)} - ${getLocalString(date2)}`;
     } if (date1 instanceof Date) {
       return `${getLocalString(date1)}`;
@@ -355,6 +350,10 @@ class Calendar {
       && dateTo instanceof Date
       && date.getTime() > dateFrom.getTime()
       && date.getTime() < dateTo.getTime());
+  }
+
+  static isCorrectDate(date) {
+    return !Number.isNaN(date.getTime());
   }
 }
 

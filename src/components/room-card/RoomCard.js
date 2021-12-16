@@ -39,10 +39,10 @@ class RoomCard {
   }
 
   #handleBackClick() {
-    this.#currentImageNum -= 1;
-    if (this.#currentImageNum < 0) {
-      this.#currentImageNum = this.#images.length - 1;
-    }
+    this.#currentImageNum = (this.#currentImageNum === 0)
+      ? this.#images.length - 1
+      : this.#currentImageNum - 1;
+
     this.#update();
   }
 
@@ -51,9 +51,8 @@ class RoomCard {
     this.#update();
   }
 
-  #handleDotClick(event) {
-    this.#currentImageNum = [...this.#dots]
-      .findIndex((dot) => dot === event.target);
+  #handleDotClick(e) {
+    this.#currentImageNum = [...this.#dots].findIndex((dot) => dot === e.target);
     this.#update();
   }
 

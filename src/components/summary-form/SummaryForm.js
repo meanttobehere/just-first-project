@@ -34,12 +34,12 @@ class SummaryForm {
   #update() {
     const days = this.#calendar.calendar.getNumDays();
 
-    let items = [{
+    const firstItem = {
       name: `${SummaryForm.#getFormattedPrice(this.#numberPrice)} x ${days} суток`,
       cost: this.#numberPrice * days,
-    }];
+    };
 
-    items = [...items, ...this.#services.map((item) => {
+    const serviceItems = this.#services.map((item) => {
       if (item.cost < 0) {
         return ({
           ...item,
@@ -47,18 +47,17 @@ class SummaryForm {
         });
       }
       return { ...item };
-    })];
+    });
 
-    const total = items
+    const totalCost = [firstItem, ...serviceItems]
       .map((item) => item.cost)
       .reduce((acc, cost) => acc + cost);
 
-    items.push({
-      name: 'Итого',
-      cost: total,
-    });
-
-    items.forEach((item, idx) => {
+    [
+      firstItem,
+      ...serviceItems,
+      { name: 'Итого', cost: totalCost },
+    ].forEach((item, idx) => {
       this.#calculatorItems[idx].textContent = item.name;
       this.#calculatorPrices[idx].textContent = SummaryForm
         .#getFormattedPrice(item.cost);

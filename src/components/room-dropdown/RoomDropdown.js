@@ -17,32 +17,42 @@ class RoomDropdown {
     const [
       bedrooms,
       beds,
+      bathrooms,
     ] = this.#dropdown.getItems().map((item) => item.getCounterValue());
-    this.#dropdown.setText(RoomDropdown.#generateText(bedrooms, beds));
+    this.#dropdown.setText(RoomDropdown.#getText(bedrooms, beds, bathrooms));
   }
 
-  static #generateText(bedrooms, beds) {
-    let text = '';
+  static #getText(bedrooms, beds) {
+    const getBedroomsString = (numBedrooms) => {
+      if (numBedrooms % 10 === 1 && numBedrooms !== 11) {
+        return `${numBedrooms} спальня`;
+      }
+      if (numBedrooms % 10 >= 2 && numBedrooms % 10 <= 4) {
+        return `${numBedrooms} спальни`;
+      }
+      return `${numBedrooms} спален`;
+    };
 
-    if (bedrooms % 10 === 1 && bedrooms !== 11) {
-      text = `${bedrooms} спальня`;
-    } else if (bedrooms % 10 >= 2 && bedrooms % 10 <= 4) {
-      text = `${bedrooms} спальни`;
-    } else {
-      text = `${bedrooms} спален`;
+    const getBedsString = (numBeds) => {
+      if (numBeds % 10 === 1 && numBeds !== 11) {
+        return `${numBeds} кровать`;
+      }
+      if (numBeds % 10 >= 2 && numBeds % 10 <= 4) {
+        return `${numBeds} кровати`;
+      }
+      return `${numBeds} кроватей`;
+    };
+
+    if (bedrooms > 0 && beds > 0) {
+      return `${getBedroomsString(bedrooms)}, ${getBedsString(beds)}...`;
     }
-
-    if (beds === 0) { return text; }
-
-    if (beds % 10 === 1 && beds !== 11) {
-      text += `, ${beds} кровать...`;
-    } else if (beds % 10 >= 2 && beds % 10 <= 4) {
-      text += `, ${beds} кровати...`;
-    } else {
-      text += `, ${beds} кроватей...`;
+    if (bedrooms > 0) {
+      return getBedroomsString(bedrooms);
     }
-
-    return text;
+    if (beds > 0) {
+      return getBedsString(beds);
+    }
+    return 'Сколько спален';
   }
 }
 

@@ -36,7 +36,7 @@ class Dropdown {
     this.#menu.addEventListener('click', this.#handleMenuClick.bind(this));
     this.#field.addEventListener('click', this.#handleFieldClick.bind(this));
 
-    if (this.#clearButton !== undefined && this.#acceptButton !== undefined) {
+    if (this.#clearButton && this.#acceptButton) {
       this.#clearButton
         .addEventListener('click', this.#handleClearButtonClick.bind(this));
       this.#acceptButton
@@ -48,7 +48,7 @@ class Dropdown {
   #updateClearButtonStyle() {
     const sum = this.#items
       .map((item) => item.dropdownItem.getCounterValue())
-      .reduce((val1, val2) => val1 + val2);
+      .reduce((acc, val) => acc + val);
 
     if (sum === 0) {
       this.#clearButton.classList.add(Dropdown.#classButtonHidden);

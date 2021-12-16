@@ -19,34 +19,38 @@ class GuestsDropdown {
       children,
       babies,
     ] = this.#dropdown.getItems().map((item) => item.getCounterValue());
-    this.#dropdown.setText(GuestsDropdown.#genText(adults, children, babies));
+    this.#dropdown.setText(GuestsDropdown.#getText(adults, children, babies));
   }
 
-  static #genText(adults, children, babies) {
-    let text = '';
+  static #getText(adults, children, babies) {
+    const getGuestsString = (numGuests) => {
+      if (numGuests % 10 === 1 && numGuests !== 11) {
+        return `${numGuests} гость`;
+      }
+      if (numGuests % 10 >= 2 && numGuests % 10 <= 4) {
+        return `${numGuests} гостя`;
+      }
+      return `${numGuests} гостей`;
+    };
+
+    const getBabiesString = (numBabies) => {
+      if (numBabies % 10 === 1 && numBabies !== 11) {
+        return `${numBabies} младенец`;
+      }
+      if (numBabies % 10 >= 2 && numBabies % 10 <= 4) {
+        return `${numBabies} младенца`;
+      }
+      return `${numBabies} младенцев`;
+    };
+
     const guests = adults + children + babies;
-
-    if (guests === 0) { return ('Сколько гостей'); }
-
-    if (guests % 10 === 1 && guests !== 11) {
-      text = `${guests} гость`;
-    } else if (guests % 10 >= 2 && guests % 10 <= 4) {
-      text = `${guests} гостя`;
-    } else {
-      text = `${guests} гостей`;
+    if (guests > 0 && babies > 0) {
+      return `${getGuestsString(guests)}, ${getBabiesString(babies)}`;
     }
-
-    if (babies === 0) { return text; }
-
-    if (babies % 10 === 1 && babies !== 11) {
-      text += `, ${babies} младенец`;
-    } else if (babies % 10 >= 2 && babies % 10 <= 4) {
-      text += `, ${babies} младенца`;
-    } else {
-      text += `, ${babies} младенцев`;
+    if (guests > 0) {
+      return getGuestsString(guests);
     }
-
-    return text;
+    return 'Сколько гостей';
   }
 }
 

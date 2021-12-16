@@ -23,8 +23,8 @@ class DateDropdown {
 
   #init() {
     this.#calendar.setObserver({
-      acceptClick: this.#handleCalendarAcceptOrClearClick.bind(this),
-      clearClick: this.#handleCalendarAcceptOrClearClick.bind(this),
+      acceptClick: this.#handleCalendarButtonClick.bind(this),
+      clearClick: this.#handleCalendarButtonClick.bind(this),
       travelChange: this.#handleCalendarTravelChange.bind(this),
     });
 
@@ -44,7 +44,7 @@ class DateDropdown {
     }
   }
 
-  #handleCalendarAcceptOrClearClick() {
+  #handleCalendarButtonClick() {
     this.#close();
   }
 

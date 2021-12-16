@@ -24,13 +24,19 @@ class HeaderItem {
   }
 
   #handleTitleClick() {
-    if (this.#isOpen) { this.#close(); } else { this.#open(); }
+    if (this.#isOpen) {
+      this.#close();
+    } else {
+      this.#open();
+    }
   }
 
   #handleDocumentClick = (event) => {
     const item = event.target.closest('.js-header-item');
     const isClickOutside = item !== this.#item;
-    if (isClickOutside) { this.#close(); }
+    if (isClickOutside) {
+      this.#close();
+    }
   };
 
   static #classOpen = 'header-item_open';

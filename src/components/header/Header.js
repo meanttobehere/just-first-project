@@ -31,7 +31,11 @@ class Header {
   }
 
   #handleMenuClick() {
-    if (this.#isOpen) { this.#close(); } else { this.#open(); }
+    if (this.#isOpen) {
+      this.#close();
+    } else {
+      this.#open();
+    }
   }
 
   #open() {
@@ -55,7 +59,9 @@ class Header {
   #handleDocumentClick = (event) => {
     const container = event.target.closest('.js-header__container');
     const isClickOutside = container !== this.#container;
-    if (isClickOutside) { this.#close(); }
+    if (isClickOutside) {
+      this.#close();
+    }
   };
 
   #handleQueryWidth(event) {
