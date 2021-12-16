@@ -20,11 +20,13 @@ class RangeSlider {
   }
 
   #getSliderInitObject() {
-    const val1 = parseInt(this.#$slider.attr('data-val1'), 10);
-    const val2 = parseInt(this.#$slider.attr('data-val2'), 10);
-    const step = parseInt(this.#$slider.attr('data-step'), 10);
-    const min = parseInt(this.#$slider.attr('data-min'), 10);
-    const max = parseInt(this.#$slider.attr('data-max'), 10);
+    const [val1, val2, stepVal, min, max] = [
+      'data-val1',
+      'data-val2',
+      'data-step',
+      'data-min',
+      'data-max',
+    ].map((item) => parseInt(this.#$slider.attr(item), 10));
 
     return {
       displayTips: false,
@@ -32,7 +34,7 @@ class RangeSlider {
       secondPointerPosition: val2,
       minValue: min,
       maxValue: max,
-      step,
+      step: stepVal,
     };
   }
 

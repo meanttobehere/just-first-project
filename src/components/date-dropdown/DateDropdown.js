@@ -53,7 +53,11 @@ class DateDropdown {
   }
 
   #handleContainerClick() {
-    if (this.#isOpen) { this.#close(); } else { this.#open(); }
+    if (this.#isOpen) {
+      this.#close();
+    } else {
+      this.#open();
+    }
   }
 
   get #isOpen() {
@@ -73,7 +77,9 @@ class DateDropdown {
   #handleDocumentClick = (event) => {
     const dateDropdown = event.target.closest('.js-date-dropdown');
     const isClickOutside = dateDropdown !== this.#dropdown;
-    if (isClickOutside) { this.#close(); }
+    if (isClickOutside) {
+      this.#close();
+    }
   };
 
   static #classActive = 'date-dropdown_active';

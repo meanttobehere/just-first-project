@@ -26,7 +26,9 @@ class DropdownItem {
   }
 
   #handleMinusButtonClick() {
-    if (this.getCounterValue() === 0) { return; }
+    if (this.getCounterValue() === 0) {
+      return;
+    }
     this.#counter.textContent = this.getCounterValue() - 1;
     this.#updateMinusButtonStyle();
   }

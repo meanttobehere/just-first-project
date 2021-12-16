@@ -1,6 +1,7 @@
 .dropdown {
   max-width: 320px;
-  user-select: none;
+  -webkit-user-select: none;
+          user-select: none;
   font-size: 14px;
   line-height: 18px;
   color: $gray-color;
@@ -76,7 +77,8 @@
     box-sizing: border-box;
     box-shadow: 0 10px 20px $gray-color-5;
     background: $white-color;
-    user-select: none;
+    -webkit-user-select: none;
+            user-select: none;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

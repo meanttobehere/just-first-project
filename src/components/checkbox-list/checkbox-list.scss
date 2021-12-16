@@ -1,5 +1,6 @@
 .checkbox-list {
-  user-select: none;
+  -webkit-user-select: none;
+          user-select: none;
   max-width: 268px;
   position: relative;
 

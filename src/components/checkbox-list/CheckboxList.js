@@ -17,7 +17,11 @@ class CheckboxList {
   }
 
   #handleTitleClick() {
-    if (this.#isOpen) { this.#close(); } else { this.#open(); }
+    if (this.#isOpen) {
+      this.#close();
+    } else {
+      this.#open();
+    }
   }
 
   get #isOpen() {
@@ -37,7 +41,9 @@ class CheckboxList {
   #handleDocumentClick = (event) => {
     const list = event.target.closest('.js-checkbox-list');
     const isClickOutside = list !== this.#list;
-    if (isClickOutside) { this.#close(); }
+    if (isClickOutside) {
+      this.#close();
+    }
   };
 
   static #classOpen = 'checkbox-list_open';

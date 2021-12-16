@@ -20,8 +20,10 @@
     "inputmask": "^5.0.6",
     "jquery": "^3.6.0",
     "material-icons": "^1.10.0",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "postcss-loader": "^6.2.0",
+    "postcss-scss": "^4.0.2",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
     "resolve-url-loader": "^4.0.0",
@@ -45,12 +47,14 @@
     "eslint-fix": "eslint src/ --fix",
     "stylelint": "stylelint src/**/*.scss",
     "stylelint-fix": "stylelint src/**/*.scss --fix",
+    "postcss-fix": "postcss src/**/*.scss -r",
     "deploy": "gh-pages -d dist -b gh-pages"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "browserslist": [
-    "cover 100%"
-  ]
+    "> 1%"
+  ],
+  "dependencies": {}
 }

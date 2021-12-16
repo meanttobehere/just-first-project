@@ -1,13 +1,15 @@
 .rate-button {
   display: flex;
-  user-select: none;
+  -webkit-user-select: none;
+          user-select: none;
 
   &__star {
     display: flex;
     align-items: center;
     justify-content: center;
     background: $primary-gradient;
-    background-clip: text;
+    -webkit-background-clip: text;
+            background-clip: text;
     color: transparent;
 
     &::after {

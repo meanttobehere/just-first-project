@@ -66,7 +66,8 @@
     justify-content: center;
     align-items: center;
     background: $primary-gradient;
-    background-clip: text;
+    -webkit-background-clip: text;
+            background-clip: text;
     color: transparent;
 
     &::after {
@@ -76,7 +77,8 @@
 
     &:hover {
       background: $primary-gradient-50;
-      background-clip: text;
+      -webkit-background-clip: text;
+              background-clip: text;
     }
   }
 }

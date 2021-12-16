@@ -34,7 +34,8 @@
       border-top: 1px solid rgb(31 32 65 / 5%);
       background: $white-color;
       cursor: pointer;
-      user-select: none;
+      -webkit-user-select: none;
+              user-select: none;
       display: flex;
       justify-content: center;
       align-items: center;

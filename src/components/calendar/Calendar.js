@@ -38,9 +38,11 @@ class Calendar {
 
   getNumDays() {
     if (this.#arrival && this.#departure) {
-      let days = ((this.#departure.getTime() - this.#arrival.getTime())
+      const days = ((this.#departure.getTime() - this.#arrival.getTime())
       / (1000 * 3600 * 24));
-      if (days < 1) { days = 1; }
+      if (days < 1) {
+        return 1;
+      }
       return days;
     }
     return 0;
@@ -136,9 +138,11 @@ class Calendar {
   }
 
   #handleDayClick(idx) {
-    const clikedDate = this.#pageData[idx].d;
+    const clikedDate = this.#pageData[idx];
 
-    if (clikedDate.getTime() < this.#currentDate.getTime()) { return; }
+    if (clikedDate.getTime() < this.#currentDate.getTime()) {
+      return;
+    }
 
     const isArrivalCanBeSetByClickedDate = !this.#arrival
       || this.#departure
@@ -173,7 +177,10 @@ class Calendar {
   #handleBackClick() {
     const isPageOnCurrentMonth = this.#pageMonth === this.#currentDate.getMonth()
       && this.#pageYear === this.#currentDate.getFullYear();
-    if (isPageOnCurrentMonth) { return; }
+
+    if (isPageOnCurrentMonth) {
+      return;
+    }
 
     [this.#pageMonth, this.#pageYear] = Calendar
       .#getPrevMonthAndYear(this.#pageMonth, this.#pageYear);
@@ -196,7 +203,9 @@ class Calendar {
       if (idx < this.#pageData.length) {
         day.classList.remove(classHidden);
         this.#renderDay(idx);
-      } else { day.classList.add(classHidden); }
+      } else {
+        day.classList.add(classHidden);
+      }
     });
 
     this.#title.textContent = `${Calendar.#getMonthString(this.#pageMonth)} ${this.#pageYear}`;
@@ -204,37 +213,44 @@ class Calendar {
 
   #renderDay(idx) {
     const day = this.#days[idx];
-    const dayObj = this.#pageData[idx];
+    const date = this.#pageData[idx];
+    const dayConditionValues = this.#getDayConditionValues(date);
 
-    const classes = {
-      purple: 'calendar__grid-item_with-purple-circle',
-      light: 'calendar__grid-item_color_light',
-      green: 'calendar__grid-item_with-green-circle',
-      selected: 'calendar__grid-item_selected',
-      selectedLeft: 'calendar__grid-item_selected-left',
-      selectedRight: 'calendar__grid-item_selected-right',
-    };
+    const classes = [
+      {
+        name: 'calendar__grid-item_with-purple-circle',
+        isRequired: dayConditionValues.isArrivalDeraptureDay,
+      },
+      {
+        name: 'calendar__grid-item_color_light',
+        isRequired: !dayConditionValues.isCurrentMonth,
+      },
+      {
+        name: 'calendar__grid-item_with-green-circle',
+        isRequired: dayConditionValues.isCurrentDay,
+      },
+      {
+        name: 'calendar__grid-item_selected',
+        isRequired: dayConditionValues.isBetweenArrivalDeparture,
+      },
+      {
+        name: 'calendar__grid-item_selected-left',
+        isRequired: dayConditionValues.isArrivalDayAndDepartureDayIsSet,
+      },
+      {
+        name: 'calendar__grid-item_selected-right',
+        isRequired: dayConditionValues.isDepartureDay,
+      },
+    ];
 
-    day.textContent = dayObj.day;
-
-    if (dayObj.isArrivalDeraptureDay) day.classList.add(classes.purple);
-    else day.classList.remove(classes.purple);
-
-    if (!dayObj.isCurrentMonth) day.classList.add(classes.light);
-    else day.classList.remove(classes.light);
-
-    if (dayObj.isCurrentDay) day.classList.add(classes.green);
-    else day.classList.remove(classes.green);
-
-    if (dayObj.isBetweenArrivalDeparture) day.classList.add(classes.selected);
-    else day.classList.remove(classes.selected);
-
-    if (dayObj.isArrivalDayAndDepartureDayIsSet) {
-      day.classList.add(classes.selectedLeft);
-    } else day.classList.remove(classes.selectedLeft);
-
-    if (dayObj.isDepartureDay) day.classList.add(classes.selectedRight);
-    else day.classList.remove(classes.selectedRight);
+    day.textContent = date.getDate();
+    classes.forEach((cssClass) => {
+      if (cssClass.isRequired) {
+        day.classList.add(cssClass.name);
+      } else {
+        day.classList.remove(cssClass.name);
+      }
+    });
   }
 
   #updatePageData() {
@@ -253,65 +269,45 @@ class Calendar {
       date.setDate(date.getDate() + 1);
     }
 
-    this.#pageData = dates.map((item) => this.#createDayObject(item));
+    this.#pageData = dates;
   }
 
-  #createDayObject(date) {
-    const dayObj = {
-      d: date,
-      day: date.getDate(),
-    };
-
-    dayObj.isCurrentDay = Calendar.isEqualDates(date, this.#currentDate);
-
-    dayObj.isArrivalDeraptureDay = Calendar.isEqualDates(date, this.#arrival)
-     || Calendar.isEqualDates(date, this.#departure);
-
-    dayObj.isBetweenArrivalDeparture = Calendar
-      .isDateInRange(date, this.#arrival, this.#departure);
-
-    dayObj.isCurrentMonth = date.getMonth() === this.#pageMonth;
-
-    dayObj.isArrivalDayAndDepartureDayIsSet = this.#departure
-      && Calendar.isEqualDates(date, this.#arrival)
-      && !Calendar.isEqualDates(this.#arrival, this.#departure);
-
-    dayObj.isDepartureDay = Calendar.isEqualDates(date, this.#departure)
-      && !Calendar.isEqualDates(this.#arrival, this.#departure);
-
-    return dayObj;
+  #getDayConditionValues(date) {
+    return ({
+      isCurrentDay: Calendar.isEqualDates(date, this.#currentDate),
+      isArrivalDeraptureDay: Calendar.isEqualDates(date, this.#arrival)
+        || Calendar.isEqualDates(date, this.#departure),
+      isBetweenArrivalDeparture: Calendar
+        .isDateInRange(date, this.#arrival, this.#departure),
+      isCurrentMonth: date.getMonth() === this.#pageMonth,
+      isArrivalDayAndDepartureDayIsSet: this.#departure
+        && Calendar.isEqualDates(date, this.#arrival)
+        && !Calendar.isEqualDates(this.#arrival, this.#departure),
+      isDepartureDay: Calendar.isEqualDates(date, this.#departure)
+        && !Calendar.isEqualDates(this.#arrival, this.#departure),
+    });
   }
 
   static #getDaysInMonth(month, year) {
-    const date = new Date(year, month, 1);
-    let days = 0;
-    while (date.getMonth() === month) {
-      days += 1;
-      date.setDate(date.getDate() + 1);
-    }
-    return days;
+    return new Date(year, month, 0).getDate();
   }
 
   static #getPrevMonthAndYear(month, year) {
-    let prevYear = year;
-    let prevMonth = month - 1;
-    if (prevMonth < 0) {
-      prevMonth = 11;
-      prevYear -= 1;
-    }
-    return ([prevMonth, prevYear]);
+    const date = new Date(year, month, 0);
+    return ([date.getMonth(), date.getFullYear()]);
   }
 
   static #getNextMonthAndYear(month, year) {
-    let nextYear = year;
     const nextMonth = (month + 1) % 12;
-    if (nextMonth === 0) { nextYear += 1; }
+    const nextYear = nextMonth === 0 ? year + 1 : year;
     return ([nextMonth, nextYear]);
   }
 
   static #getWeekDay(date) {
-    let weekDay = date.getDay() - 1;
-    if (weekDay < 0) { weekDay = 6; }
+    const weekDay = date.getDay() - 1;
+    if (weekDay < 0) {
+      return 6;
+    }
     return weekDay;
   }
 

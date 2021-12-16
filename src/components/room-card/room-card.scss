@@ -14,7 +14,8 @@
   overflow: hidden;
 
   &__images {
-    user-select: none;
+    -webkit-user-select: none;
+            user-select: none;
     height: 151px;
     position: relative;
   }
@@ -23,7 +24,8 @@
     z-index: 1;
     position: absolute;
     display: block;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 100%;
     width: 0%;
 

@@ -1,5 +1,6 @@
 .comfort-item {
-  user-select: none;
+  -webkit-user-select: none;
+          user-select: none;
   font-size: 14px;
   line-height: 24px;
   font-weight: bold;
@@ -12,7 +13,8 @@
 
   &__icon {
     background: $primary-gradient;
-    background-clip: text;
+    -webkit-background-clip: text;
+            background-clip: text;
     color: transparent;
 
     &::after {

@@ -67,11 +67,17 @@ class Dropdown {
   }
 
   #handleMenuClick() {
-    if (this.#clearButton) { this.#updateClearButtonStyle(); }
+    if (this.#clearButton) {
+      this.#updateClearButtonStyle();
+    }
   }
 
   #handleFieldClick() {
-    if (this.#isOpen) { this.#close(); } else { this.#open(); }
+    if (this.#isOpen) {
+      this.#close();
+    } else {
+      this.#open();
+    }
   }
 
   get #isOpen() {
@@ -91,7 +97,9 @@ class Dropdown {
   #handleDocumentClick = (event) => {
     const dropdown = event.target.closest('.js-dropdown');
     const isClickOutside = dropdown !== this.#dropdown;
-    if (isClickOutside) { this.#close(); }
+    if (isClickOutside) {
+      this.#close();
+    }
   };
 
   static #classActive = 'dropdown_active';
