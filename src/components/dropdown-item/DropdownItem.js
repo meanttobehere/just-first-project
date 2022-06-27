@@ -14,6 +14,8 @@ class DropdownItem {
 
     this.#minusButton.onclick = this.#handleMinusButtonClick.bind(this);
     this.#plusButton.onclick = this.#handlePlusButtonClick.bind(this);
+
+    this.#updateMinusButtonStyle();
   }
 
   getCounterValue() {

@@ -47,10 +47,10 @@
 
     &_disable {
       opacity: 0.38;
-      position: static;
 
       &:hover {
         border-color: $gray-color-25;
+        cursor: default;
       }
     }
   }
