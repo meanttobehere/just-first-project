@@ -50,19 +50,16 @@ block content
               placeholder: 'ДД.ММ.ГГГГ'
             })
           .form-elements__item
-            +dropdown({
+            +date-dropdown({
               title: 'date dropdown',
-              text: 'ДД.ММ.ГГГГ'
-            })
-            +dropdown({
-              title: 'date dropdown',
-              text: '19.08.2019'
+              secondTitle: 'date dropdown',
+              calendar: calendar
             })
           .form-elements__item
-            +dropdown({
+            +date-dropdown({
+              twoDropdowns: false,
               title: 'filter date dropdown',
-              size: 'm', 
-              text: '19 авг - 23 авг'
+              calendar: calendar
             })
           .form-elements__item
             +field({
