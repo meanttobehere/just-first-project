@@ -28,7 +28,8 @@ mixin signup-form(params = {})
       +field({
         title: 'дата рождения',
         placeholder: 'ДД.ММ.ГГГГ',
-        name: 'birthdate'
+        name: 'birthdate',
+        masked: true,
       })
     .signup-form__inputdata-container
       +field({
