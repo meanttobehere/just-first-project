@@ -52,7 +52,8 @@ $chart-black: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     list-style: none;
     display: flex;
     align-items: center;
-    column-gap: 5px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
 
     &::before {
       content: '';

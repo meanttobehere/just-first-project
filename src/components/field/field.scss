@@ -17,8 +17,7 @@
   &__input {
     height: 44px;
     width: 100%;
-    padding: 0;
-    text-indent: 15px;
+    padding: 0 15px;
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid $gray-color-25;
@@ -29,6 +28,14 @@
     line-height: inherit;
     color: $gray-color-75;
 
+    &::-moz-placeholder {
+      color: $gray-color-25;
+    }
+
+    &:-ms-input-placeholder {
+      color: $gray-color-25;
+    }
+
     &::placeholder {
       color: $gray-color-25;
     }
@@ -37,6 +44,14 @@
     &:focus,
     &_focused {
       border-color: $gray-color-50;
+
+      &::-moz-placeholder {
+        color: $gray-color-75;
+      }
+
+      &:-ms-input-placeholder {
+        color: $gray-color-75;
+      }
 
       &::placeholder {
         color: $gray-color-75;
@@ -79,6 +94,12 @@
       background: $primary-gradient-50;
       -webkit-background-clip: text;
               background-clip: text;
+    }
+  }
+
+  &_with-submit-button {
+    .field__input {
+      padding: 0 44px 0 15px;
     }
   }
 }

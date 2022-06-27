@@ -19,6 +19,7 @@
 
   &__row {
     display: grid;
+    grid-template-columns: 446px minmax(392px, -webkit-max-content) auto;
     grid-template-columns: 446px minmax(392px, max-content) auto;
   }
 

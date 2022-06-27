@@ -15,7 +15,9 @@
 
   &__images {
     -webkit-user-select: none;
-            user-select: none;
+            -moz-user-select: none;
+             -ms-user-select: none;
+         user-select: none;
     height: 151px;
     position: relative;
   }

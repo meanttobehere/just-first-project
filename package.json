@@ -54,7 +54,7 @@
   "author": "",
   "license": "ISC",
   "browserslist": [
-    "> 1%"
+    "defaults"
   ],
   "dependencies": {}
 }

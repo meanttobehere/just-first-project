@@ -1,7 +1,9 @@
 .dropdown {
   max-width: 320px;
   -webkit-user-select: none;
-          user-select: none;
+          -moz-user-select: none;
+           -ms-user-select: none;
+       user-select: none;
   font-size: 14px;
   line-height: 18px;
   color: $gray-color;
@@ -42,6 +44,10 @@
     background: none;
     cursor: pointer;
 
+    &::-moz-selection {
+      color: $gray-color-75;
+    }
+
     &::selection {
       color: $gray-color-75;
     }
@@ -78,7 +84,9 @@
     box-shadow: 0 10px 20px $gray-color-5;
     background: $white-color;
     -webkit-user-select: none;
-            user-select: none;
+            -moz-user-select: none;
+             -ms-user-select: none;
+         user-select: none;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

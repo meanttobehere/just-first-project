@@ -1,6 +1,8 @@
 .toggle {
   -webkit-user-select: none;
-          user-select: none;
+          -moz-user-select: none;
+           -ms-user-select: none;
+       user-select: none;
 
   &__label {
     display: inline-block;
@@ -15,7 +17,8 @@
 
   &__input {
     -webkit-appearance: none;
-            appearance: none;
+            -moz-appearance: none;
+         appearance: none;
     cursor: inherit;
 
     &::before {

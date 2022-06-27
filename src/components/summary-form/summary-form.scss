@@ -5,7 +5,9 @@
   box-sizing: border-box;
   box-shadow: 0 0 25px rgb(0 0 0 / 20%);
   -webkit-user-select: none;
-          user-select: none;
+          -moz-user-select: none;
+           -ms-user-select: none;
+       user-select: none;
   font-size: 14px;
   line-height: 18px;
   color: $gray-color;
@@ -103,6 +105,7 @@
     margin-top: 8px;
     display: grid;
     row-gap: 14px;
+    grid-template-columns: minmax(-webkit-min-content, 214px) -webkit-max-content 1fr;
     grid-template-columns: minmax(min-content, 214px) max-content 1fr;
   }
 

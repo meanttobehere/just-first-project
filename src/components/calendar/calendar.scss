@@ -9,7 +9,9 @@
   padding-top: 5.625%;
   padding-bottom: 5.9375%;
   -webkit-user-select: none;
-          user-select: none;
+          -moz-user-select: none;
+           -ms-user-select: none;
+       user-select: none;
   font-size: 12px;
   line-height: 15px;
   color: $gray-color-50;

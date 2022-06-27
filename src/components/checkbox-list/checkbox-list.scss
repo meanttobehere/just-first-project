@@ -1,6 +1,8 @@
 .checkbox-list {
   -webkit-user-select: none;
-          user-select: none;
+          -moz-user-select: none;
+           -ms-user-select: none;
+       user-select: none;
   max-width: 268px;
   position: relative;
 
@@ -67,6 +69,8 @@
   &_open,
   &_always-open {
     .checkbox-list__list {
+      max-height: -webkit-max-content;
+      max-height: -moz-max-content;
       max-height: max-content;
       overflow: visible;
     }

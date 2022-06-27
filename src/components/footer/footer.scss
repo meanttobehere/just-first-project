@@ -9,7 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    column-gap: 40px;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
     margin: auto;
     padding: 79px 25px 100px;
 

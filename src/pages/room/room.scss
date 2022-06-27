@@ -2,6 +2,7 @@
   background: $white-color;
 
   &__header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     width: 100%;
@@ -50,7 +51,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 68px;
+    -moz-column-gap: 68px;
+         column-gap: 68px;
     row-gap: 30px;
     padding: 71px 40px 72px;
     max-width: 1160px;
@@ -119,7 +121,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    column-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
     row-gap: 10px;
   }
 

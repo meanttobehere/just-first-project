@@ -69,7 +69,8 @@
       flex-flow: row;
       align-items: center;
       justify-content: center;
-      column-gap: 20px;
+      -moz-column-gap: 20px;
+           column-gap: 20px;
       margin-right: 20px;
     }
   }

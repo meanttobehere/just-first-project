@@ -5,6 +5,7 @@
   color: $gray-color;
 
   &__header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     width: 100%;
@@ -14,7 +15,8 @@
   &__main {
     display: flex;
     justify-content: space-between;
-    column-gap: 25px;
+    -moz-column-gap: 25px;
+         column-gap: 25px;
     max-width: 1160px;
     margin: auto;
     padding: 0 20px 69px;
@@ -35,7 +37,9 @@
       background: $white-color;
       cursor: pointer;
       -webkit-user-select: none;
-              user-select: none;
+              -moz-user-select: none;
+               -ms-user-select: none;
+           user-select: none;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -75,6 +79,7 @@
   }
 
   &__filter-container {
+    position: -webkit-sticky;
     position: sticky;
     top: 70px;
     padding-top: 30px;

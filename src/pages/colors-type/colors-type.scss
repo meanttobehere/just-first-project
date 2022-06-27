@@ -26,7 +26,8 @@
   &__right-column {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
   }
 
   &__item {

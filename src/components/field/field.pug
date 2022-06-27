@@ -11,7 +11,10 @@ mixin field(params = {})
       withSubmitButton = false,
     } = params;
 
-  .field.js-field(class=masked && 'field_type_masked')
+  .field.js-field(
+    class=masked && 'field_type_masked',
+    class=withSubmitButton && 'field_with-submit-button'
+  )
     if (title)
       .field__title= title
     input.field__input.js-field__input(
