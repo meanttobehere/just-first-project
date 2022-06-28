@@ -29,7 +29,7 @@ class RangeSlider {
     ].map((item) => parseInt(this.#$slider.attr(item), 10));
 
     return {
-      displayTips: false,
+      shouldDisplayTips: false,
       pointerPosition: val1,
       secondPointerPosition: val2,
       minValue: min,
@@ -39,9 +39,14 @@ class RangeSlider {
   }
 
   #updatePrice() {
-    const pos1 = this.#$slider.superSlider('pointerPosition');
-    const pos2 = this.#$slider.superSlider('secondPointerPosition');
-    this.#$price.attr('data-value', RangeSlider.#getPriceAttr(pos1, pos2));
+    const {
+      pointerPosition,
+      secondPointerPosition
+    } = this.#$slider.data('sliderInterface').getOptions();
+
+    const priceAttr = RangeSlider.#getPriceAttr(pointerPosition, secondPointerPosition);
+
+    this.#$price.attr('data-value', priceAttr);
   }
 
   #handleSliderUpdate() {

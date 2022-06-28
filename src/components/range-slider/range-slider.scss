@@ -5,13 +5,15 @@
 }
 
 .slider {
+  padding: 0;
+
   &__container {
     font-size: 15px;
     padding: 0;
-  }
 
-  &__bar-container {
-    bottom: 29px;
+    &:nth-child(1) {
+      height: 0;
+    }
   }
 
   &__bar {
@@ -48,7 +50,7 @@
   line-height: 15px;
 
   &__container {
-    padding-bottom: 26px;
+    padding-bottom: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
