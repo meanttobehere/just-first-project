@@ -183,5 +183,13 @@
       border-radius: 0 50% 50% 0;
       display: block;
     }
+
+    &_not-clickable {
+      cursor: default;
+
+      &:hover {
+        background: none;
+      }
+    }
   }
 }

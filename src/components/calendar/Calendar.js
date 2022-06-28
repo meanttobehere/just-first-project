@@ -173,13 +173,6 @@ class Calendar {
   }
 
   #handleBackClick() {
-    const isPageOnCurrentMonth = this.#pageMonth === this.#currentDate.getMonth()
-      && this.#pageYear === this.#currentDate.getFullYear();
-
-    if (isPageOnCurrentMonth) {
-      return;
-    }
-
     [this.#pageMonth, this.#pageYear] = Calendar
       .#getPrevMonthAndYear(this.#pageMonth, this.#pageYear);
 
@@ -239,6 +232,10 @@ class Calendar {
         name: 'calendar__grid-item_selected-right',
         isRequired: dayConditionValues.isDepartureDay,
       },
+      {
+        name: 'calendar__grid-item_not-clickable',
+        isRequired: dayConditionValues.isBeforeCurrentDay,
+      }
     ];
 
     day.textContent = date.getDate();
@@ -283,6 +280,7 @@ class Calendar {
         && !Calendar.isEqualDates(this.#arrival, this.#departure),
       isDepartureDay: Calendar.isEqualDates(date, this.#departure)
         && !Calendar.isEqualDates(this.#arrival, this.#departure),
+      isBeforeCurrentDay: date.getTime() < this.#currentDate.getTime(),
     });
   }
 
